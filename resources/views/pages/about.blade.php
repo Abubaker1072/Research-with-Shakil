@@ -4,13 +4,13 @@
 
 @section('content')
 
+@include('partials.under-development-banner')
+
 <!-- Header Banner -->
-<section style="padding: 6rem 0 3rem 0; background: #0f172a; color: #ffffff;">
+<section style="padding: 4.5rem 0 2.5rem 0; background: #0f172a; color: #ffffff;">
     <div class="container text-center">
         <h1 style="font-size: 2.75rem; color: #ffffff; margin-bottom: 0.75rem;">About Dr. Muhammad Shakil Ahmad</h1>
-        <p style="color: #cbd5e1; max-width: 650px; margin: 0 auto;">
-            PhD in Management, Academic Journal Editor, Research Grant PI, and Executive Life Coach.
-        </p>
+        <p style="color: #cbd5e1; max-width: 650px; margin: 0 auto;">PhD in Management, Researcher, Academic Editor & Executive Mentor</p>
     </div>
 </section>
 

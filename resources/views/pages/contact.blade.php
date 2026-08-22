@@ -4,13 +4,15 @@
 
 @section('content')
 
+@include('partials.under-development-banner')
+
 <!-- MDi Style Contact Page Hero (Matching User Image 1 Exactly) -->
 <section class="mdi-contact-hero-wrapper">
     <div class="container">
         <div class="mdi-contact-banner-container">
             <!-- Overlapping White Query Card -->
             <div class="mdi-contact-overlay-box">
-                <div class="mdi-query-subtitle">HAVE A QUERY?</div>
+               
                 <h1 class="mdi-query-heading">We're here for you</h1>
                 <p class="mdi-query-subtext">Comments or questions are welcome.</p>
 

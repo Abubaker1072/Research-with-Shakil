@@ -4,6 +4,8 @@
 
 @section('content')
 
+@include('partials.under-development-banner')
+
 <!-- Header Banner -->
 <section style="padding: 6rem 0 3rem 0; background: #0f172a; color: #ffffff;">
     <div class="container text-center">

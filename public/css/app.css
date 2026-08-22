@@ -1218,3 +1218,61 @@ textarea.form-control {
     right: 1.25rem;
   }
 }
+
+/* Under Development Top Banner */
+.under-development-banner {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #ffffff;
+  padding: 1.25rem 1rem;
+  border-bottom: 4px solid #f59e0b;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  position: relative;
+  z-index: 99;
+}
+
+.under-development-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.under-development-badge {
+  background: #f59e0b;
+  color: #0f172a;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
+}
+
+.under-development-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  font-family: var(--font-body), sans-serif;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .under-development-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .under-development-title {
+    font-size: 1.35rem;
+  }
+}
+
