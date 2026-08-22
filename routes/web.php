@@ -6,6 +6,8 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TrainingController;
+use App\Http\Controllers\ConsultationController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminController;
 
@@ -16,6 +18,12 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 // Course Catalog
 Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
 Route::get('/courses/{slug}', [CourseController::class, 'show'])->name('courses.show');
+
+// Trainings Page
+Route::get('/trainings', [TrainingController::class, 'index'])->name('trainings.index');
+
+// Consultation Page
+Route::get('/consultation', [ConsultationController::class, 'index'])->name('consultation.index');
 
 // Research & Publications
 Route::get('/publications', [PublicationController::class, 'index'])->name('publications.index');

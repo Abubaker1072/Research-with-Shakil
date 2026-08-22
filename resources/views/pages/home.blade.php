@@ -20,9 +20,6 @@
                 <a href="#booking-form-section" class="btn-navy" id="hero-get-in-touch">
                     GET IN TOUCH
                 </a>
-                <a href="#courses-section" class="btn-light-surface" id="hero-explore-courses">
-                    Explore 18 Courses
-                </a>
             </div>
         </div>
 
@@ -88,125 +85,88 @@
     </div>
 </section>
 
-<!-- COURSES SECTION ("My courses (18)" with Dynamic Scroll Animations Left/Right/Bottom) -->
-<section class="section-padding" style="background: var(--surface);" id="courses-section">
+<!-- THREE HOMEPAGE OVERVIEW SECTIONS (Courses, Trainings, Consultation) -->
+<section class="section-padding" style="background: var(--surface);" id="overview-section">
     <div class="container">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-            <div>
-                <h2 style="font-family: var(--font-body); font-size: 2.2rem; font-weight: 800; color: var(--navy);">My courses (18)</h2>
-            </div>
-            <a href="{{ route('courses.index') }}" class="btn-navy" style="padding: 0.6rem 1.2rem; font-size: 0.8rem;">
-                Browse All <i class="fas fa-arrow-right"></i>
-            </a>
-        </div>
-
-        <div class="cards-grid">
-            @php
-                $thumbnails = [
-                    'course_slr_thumb.png',
-                    'course_thematic_thumb.png',
-                    'course_meta_thumb.png',
-                    'course_lit_review_thumb.png',
-                    'course_bibliometrics_thumb.png',
-                    'course_qualitative_thumb.png',
-                ];
-
-                $animationClasses = [
-                    'animate-slide-left',
-                    'animate-slide-bottom',
-                    'animate-slide-right',
-                    'animate-slide-left',
-                    'animate-slide-bottom',
-                    'animate-slide-right'
-                ];
-            @endphp
-
-            @foreach($featuredCourses as $index => $course)
-            <div class="udemy-course-card {{ $animationClasses[$index % 6] }}">
-                <div class="udemy-thumbnail-wrapper">
-                    @if($index === 0)
-                        <span class="udemy-bestseller-badge">Bestseller</span>
-                    @endif
-                    <img src="{{ asset('images/' . ($thumbnails[$index % 6])) }}" alt="{{ $course->title }}" class="udemy-thumbnail-img">
-                </div>
-
-                <h3 class="udemy-course-title">{{ $course->title }}</h3>
-                <p class="udemy-course-subtitle">{{ Str::limit($course->description, 90) }}</p>
-                <div class="udemy-instructor">Muhammad Shakil Ahmad</div>
-
-                <div class="udemy-tags-row">
-                    <span class="udemy-tag-pill">Course</span>
-                    <span class="udemy-tag-pill rating"><i class="fas fa-star" style="color: var(--navy);"></i> {{ $course->rating }}</span>
-                    <span class="udemy-tag-pill">{{ $course->reviews_count }} ratings</span>
-                    <span class="udemy-tag-pill">{{ $course->duration }}</span>
-                    <span class="udemy-tag-pill">{{ $course->lectures_count }} lectures</span>
-                    <span class="udemy-tag-pill">{{ $course->level }}</span>
-                </div>
-
-                <div class="udemy-price-row">
-                    <span class="udemy-current-price">${{ number_format($course->price, 2) }}</span>
-                    <span class="udemy-old-price">${{ number_format($course->price * 5, 2) }}</span>
-                    <a href="{{ $course->udemy_url }}" target="_blank" class="btn-navy" style="margin-left: auto; padding: 0.45rem 0.9rem; font-size: 0.75rem;" id="udemy-course-btn-{{ $course->id }}">
-                        View Course
-                    </a>
-                </div>
-            </div>
-            @endforeach
-        </div>
-    </div>
-</section>
-
-<!-- COACHING & CONSULTATION PROGRAMS SECTION (Sticky Stacking Scroll Cards) -->
-<section id="coaching-section" class="section-padding" style="background: #ffffff; border-y: 1px solid var(--border);">
-    <div class="container" style="max-width: 1100px;">
-        <div class="section-header">
-            <div class="section-subtitle">HOW WE PARTNER WITH YOU</div>
-            <h2 class="section-title">Coaching & Consultation Programs</h2>
-            <p style="color: var(--muted); font-size: 1rem;">
-                Scroll down to explore our specialized 1-on-1 mentorship programs for research scholars and faculty.
+        <div class="section-header text-center" style="margin-bottom: 3rem;">
+            <div class="section-subtitle">WHAT WE OFFER</div>
+            <h2 class="section-title">Academic Programs & Advisory Overview</h2>
+            <p style="color: var(--muted); max-width: 650px; margin: 0 auto; font-size: 1rem;">
+                Explore our high-impact online courses, institutional training workshops, and personalized 1-on-1 consultation services below.
             </p>
         </div>
 
-        @php
-            $programPreviews = [
-                'course_lit_review_thumb.png',
-                'course_slr_thumb.png',
-                'course_qualitative_thumb.png',
-                'course_bibliometrics_thumb.png',
-                'course_meta_thumb.png',
-            ];
-        @endphp
-
-        <div class="stacked-cards-container">
-            @foreach($services as $index => $service)
-            <div class="stacked-card">
-                <div class="stacked-card-grid">
-                    <!-- Left: Program Visual Preview -->
-                    <div>
-                        <img src="{{ asset('images/' . ($programPreviews[$index % 5])) }}" alt="{{ $service->title }}" class="stacked-card-preview-img">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            
+            <!-- 1. COURSES OVERVIEW SECTION -->
+            <div style="background: #ffffff; border-radius: 16px; border: 1px solid var(--border); padding: 2.25rem; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow-sm);" class="overview-card">
+                <div>
+                    <div style="width: 56px; height: 56px; border-radius: 12px; background: rgba(30, 58, 138, 0.08); color: var(--navy); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.25rem;">
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
-
-                    <!-- Right: Details & Features List -->
-                    <div>
-                        <div class="stacked-card-category">1-ON-1 ADVISORY PROGRAM {{ $index + 1 }}</div>
-                        <h3 class="stacked-card-title">{{ $service->title }}</h3>
-                        <p class="stacked-card-desc">{{ $service->short_description }}</p>
-
-                        @if($service->features)
-                        <ul class="stacked-card-features">
-                            @foreach($service->features as $f)
-                            <li><i class="fas fa-check"></i> {{ $f }}</li>
-                            @endforeach
-                        </ul>
-                        @endif
-
-                        <a href="javascript:void(0)" onclick="openBookingModal('{{ $service->title }}')" class="btn-navy" style="width: 100%;" id="stacked-apply-btn-{{ $service->id }}">
-                            APPLY NOW <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--navy); margin-bottom: 0.75rem;">Courses</h3>
+                    <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.5rem;">
+                        Comprehensive online bootcamps covering Systematic Literature Reviews, Qualitative & Thematic Analysis (NVivo/MAXQDA), Meta-Analysis, Bibliometrics, and Scopus/SSCI Journal Writing.
+                    </p>
+                    <ul style="list-style: none; padding: 0; margin: 0 0 1.75rem 0; color: #475569; font-size: 0.88rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 8px;"></i> 18 Self-Paced Video Bootcamps</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 8px;"></i> Practical Methodologies & Templates</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 8px;"></i> Global Scholar Community</li>
+                    </ul>
+                </div>
+                <div>
+                    <a href="{{ route('courses.index') }}" class="btn-navy" style="width: 100%; text-align: center; display: inline-block;" id="overview-view-courses-btn">
+                        View Courses <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
+                    </a>
                 </div>
             </div>
-            @endforeach
+
+            <!-- 2. TRAININGS OVERVIEW SECTION -->
+            <div style="background: #ffffff; border-radius: 16px; border: 1px solid var(--border); padding: 2.25rem; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow-sm);" class="overview-card">
+                <div>
+                    <div style="width: 56px; height: 56px; border-radius: 12px; background: rgba(30, 58, 138, 0.08); color: var(--navy); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.25rem;">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--navy); margin-bottom: 0.75rem;">Trainings</h3>
+                    <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.5rem;">
+                        Interactive institutional workshops, university faculty development seminars, and hands-on intensive research capacity-building bootcamps customized for academic institutions.
+                    </p>
+                    <ul style="list-style: none; padding: 0; margin: 0 0 1.75rem 0; color: #475569; font-size: 0.88rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 8px;"></i> Live Workshop & Seminar Sessions</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 8px;"></i> University & ORIC Faculty Training</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 8px;"></i> Customized Research Toolkits</li>
+                    </ul>
+                </div>
+                <div>
+                    <a href="{{ route('trainings.index') }}" class="btn-navy" style="width: 100%; text-align: center; display: inline-block;" id="overview-explore-trainings-btn">
+                        Explore Trainings <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 3. CONSULTATION OVERVIEW SECTION -->
+            <div style="background: #ffffff; border-radius: 16px; border: 1px solid var(--border); padding: 2.25rem; display: flex; flex-direction: column; justify-space-between; box-shadow: var(--shadow-sm);" class="overview-card">
+                <div>
+                    <div style="width: 56px; height: 56px; border-radius: 12px; background: rgba(30, 58, 138, 0.08); color: var(--navy); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.25rem;">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--navy); margin-bottom: 0.75rem;">Consultation</h3>
+                    <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.5rem;">
+                        Dedicated 1-on-1 personalized academic advisory and mentorship for PhD candidates, Master's thesis scholars, journal paper revision, and academic grant applications.
+                    </p>
+                    <ul style="list-style: none; padding: 0; margin: 0 0 1.75rem 0; color: #475569; font-size: 0.88rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 8px;"></i> 1-on-1 Dissertation Mentorship</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 8px;"></i> Journal Peer-Review Advisory</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 8px;"></i> Grant Proposal Strategy</li>
+                    </ul>
+                </div>
+                <div>
+                    <a href="{{ route('consultation.index') }}" class="btn-navy" style="width: 100%; text-align: center; display: inline-block;" id="overview-book-consultation-btn">
+                        Book Consultation <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
+                    </a>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>

@@ -78,4 +78,32 @@
     </div>
 </section>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const filterButtons = document.querySelectorAll(".course-filter-btn");
+    const courseCards = document.querySelectorAll(".course-card-item");
+
+    filterButtons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+            filterButtons.forEach(b => {
+                b.classList.remove("btn-gold");
+                b.classList.add("btn-outline");
+            });
+            this.classList.remove("btn-outline");
+            this.classList.add("btn-gold");
+
+            const category = this.getAttribute("data-category");
+
+            courseCards.forEach(function (card) {
+                if (category === "all" || card.getAttribute("data-category") === category) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
+    });
+});
+</script>
+
 @endsection

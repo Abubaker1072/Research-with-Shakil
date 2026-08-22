@@ -20,14 +20,14 @@
                 <h4 class="footer-col-title" style="margin-bottom: 0;">Contact Us</h4>
             </div>
 
-            <!-- Col 2: Programs -->
+            <!-- Col 2: Offerings -->
             <div>
-                <h4 class="footer-col-title">Programs</h4>
+                <h4 class="footer-col-title">Offerings</h4>
                 <ul class="footer-links-list">
-                    <li><a href="{{ route('services.index') }}">Systematic Literature Review</a></li>
-                    <li><a href="{{ route('services.index') }}">Thematic & Qualitative Analysis</a></li>
-                    <li><a href="{{ route('services.index') }}">Meta-Analysis Coaching</a></li>
-                    <li><a href="{{ route('services.index') }}">Dissertation Writing Bootcamp</a></li>
+                    <li><a href="{{ route('courses.index') }}">All 18 Online Courses</a></li>
+                    <li><a href="{{ route('trainings.index') }}">Institutional Trainings</a></li>
+                    <li><a href="{{ route('consultation.index') }}">1-on-1 Consultation</a></li>
+                    <li><a href="{{ route('consultation.index') }}#consultation-booking-form">Dissertation Mentorship</a></li>
                 </ul>
             </div>
 
@@ -35,7 +35,7 @@
             <div>
                 <h4 class="footer-col-title">Resources</h4>
                 <ul class="footer-links-list">
-                    <li><a href="https://www.udemy.com/user/dr-muhammad-shakil-ahmad/" target="_blank">Udemy 18 Courses Profile</a></li>
+                    <li><a href="{{ route('courses.index') }}">Udemy 18 Courses</a></li>
                     <li><a href="{{ route('publications.index') }}">Research Publications</a></li>
                     <li><a href="{{ route('publications.index') }}">Oman & HEC Grants</a></li>
                     <li><a href="{{ route('admin.inquiries') }}">Admin Portal</a></li>
@@ -49,7 +49,7 @@
                     <li><a href="{{ route('about') }}">Dr. Shakil Ahmad Bio</a></li>
                     <li><a href="{{ route('about') }}">ASPA Young Scholar Award</a></li>
                     <li><a href="{{ route('about') }}">ORIC Leadership</a></li>
-                    <li><a href="{{ route('contact.index') }}">Booking & Consultation</a></li>
+                    <li><a href="{{ route('consultation.index') }}">Booking & Consultation</a></li>
                 </ul>
             </div>
         </div>

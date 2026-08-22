@@ -36,10 +36,28 @@
                     Courses <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-left: 2px;"></i>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="{{ route('courses.index') }}" class="dropdown-item">All 18 Udemy Courses</a></li>
+                    <li><a href="{{ route('courses.index') }}" class="dropdown-item">All 18 Online Courses</a></li>
                     <li><a href="{{ route('courses.index') }}?category=Systematic+Literature+Review" class="dropdown-item">Systematic Literature Review</a></li>
                     <li><a href="{{ route('courses.index') }}?category=Qualitative+Analysis" class="dropdown-item">Qualitative & Thematic Analysis</a></li>
                     <li><a href="{{ route('courses.index') }}?category=Bibliometrics" class="dropdown-item">Bibliometrics & Meta-Analysis</a></li>
+                </ul>
+            </li>
+
+            <!-- TRAININGS Page -->
+            <li>
+                <a href="{{ route('trainings.index') }}" class="nav-link {{ request()->routeIs('trainings.*') ? 'active' : '' }}">
+                    Trainings
+                </a>
+            </li>
+
+            <!-- CONSULTATION Dropdown Menu -->
+            <li class="nav-item-dropdown">
+                <a href="{{ route('consultation.index') }}" class="nav-link {{ request()->routeIs('consultation.*') ? 'active' : '' }}">
+                    Consultation <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-left: 2px;"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="{{ route('consultation.index') }}" class="dropdown-item">1-on-1 Consultation Overview</a></li>
+                    <li><a href="{{ route('consultation.index') }}#consultation-booking-form" class="dropdown-item">Book Advisory Session</a></li>
                 </ul>
             </li>
 
@@ -47,19 +65,6 @@
                 <a href="{{ route('publications.index') }}" class="nav-link {{ request()->routeIs('publications.*') ? 'active' : '' }}">
                     Publications
                 </a>
-            </li>
-
-            <!-- SERVICES Dropdown Menu -->
-            <li class="nav-item-dropdown">
-                <a href="{{ route('services.index') }}" class="nav-link {{ request()->routeIs('services.*') ? 'active' : '' }}">
-                    Services <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-left: 2px;"></i>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a href="{{ route('services.index') }}" class="dropdown-item">All Coaching Programs</a></li>
-                    <li><a href="{{ route('services.index') }}#dissertation-coaching" class="dropdown-item">Dissertation & Thesis Mentorship</a></li>
-                    <li><a href="{{ route('services.index') }}#journal-publishing" class="dropdown-item">Q1 Journal Publishing Advisory</a></li>
-                    <li><a href="{{ route('services.index') }}#grant-writing" class="dropdown-item">Grant Writing & Funding Advisory</a></li>
-                </ul>
             </li>
 
             <li>
