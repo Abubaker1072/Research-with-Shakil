@@ -6,8 +6,15 @@
 <style>
     .about-header-banner {
         background: #f3edff;
-        padding: 3rem 0 3rem 0;
+        padding: 3.5rem 0 3.5rem 0;
         border-bottom: 1px solid #e9d5ff;
+        position: relative;
+    }
+    .about-header-grid {
+        display: grid;
+        grid-template-columns: 1fr 360px;
+        gap: 3.5rem;
+        align-items: flex-end;
     }
     .about-instructor-label {
         font-size: 0.8rem;
@@ -19,30 +26,37 @@
     }
     .about-instructor-name {
         font-family: var(--font-heading);
-        font-size: 2.5rem;
-        font-weight: 700;
+        font-size: 2.6rem;
+        font-weight: 800;
         color: #111827;
         margin-bottom: 0.35rem;
+        line-height: 1.2;
     }
     .about-instructor-subtitle {
         font-size: 1.1rem;
         color: #4b5563;
         font-weight: 500;
     }
+    .about-main-grid {
+        display: grid;
+        grid-template-columns: 1fr 360px;
+        gap: 3.5rem;
+        align-items: start;
+    }
     .about-profile-card {
         background: #ffffff;
-        border-radius: 20px;
-        border: 1px solid #f1f5f9;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+        border-radius: 24px;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
         padding: 2.5rem 1.75rem;
         text-align: center;
-        margin-top: -5rem;
+        margin-top: -6.5rem;
         position: relative;
-        z-index: 10;
+        z-index: 20;
     }
     .about-avatar-circle {
-        width: 150px;
-        height: 150px;
+        width: 155px;
+        height: 155px;
         border-radius: 50%;
         background: #eab308;
         margin: 0 auto 1.5rem auto;
@@ -50,7 +64,8 @@
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        box-shadow: 0 6px 16px rgba(234, 179, 8, 0.3);
+        box-shadow: 0 8px 20px rgba(234, 179, 8, 0.35);
+        border: 4px solid #ffffff;
     }
     .about-avatar-circle img {
         width: 100%;
@@ -61,7 +76,7 @@
         display: flex;
         justify-content: center;
         gap: 0.6rem;
-        margin-top: 1rem;
+        margin-top: 1.25rem;
     }
     .about-social-btn {
         width: 44px;
@@ -111,6 +126,36 @@
         line-height: 1.8;
         margin-bottom: 1.5rem;
     }
+    .about-domains-flex {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.65rem;
+        margin-bottom: 2.5rem;
+    }
+    .about-domain-tag {
+        padding: 0.45rem 1rem;
+        border-radius: 8px;
+        font-size: 0.88rem;
+        font-weight: 600;
+        background: #f8fafc;
+        border: 1px solid #cbd5e1;
+        color: #1e293b;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    /* Mobile View Responsive Adjustment (< 768px) */
+    @media (max-width: 768px) {
+        .about-header-grid,
+        .about-main-grid {
+            grid-template-columns: 1fr !important;
+            gap: 1.5rem !important;
+        }
+        .about-profile-card {
+            margin-top: 1.5rem !important;
+            width: 100% !important;
+        }
+    }
 </style>
 @endpush
 
@@ -125,12 +170,12 @@
                 <h1 class="about-instructor-name">Muhammad Shakil Ahmad</h1>
                 <div class="about-instructor-subtitle">Researcher, Editor, Trainer and Life Coach</div>
             </div>
-            <div><!-- Spacer for Profile Card --></div>
+            <div><!-- Spacer for Top Right Profile Card --></div>
         </div>
     </div>
 </section>
 
-<!-- Content & Profile Card Grid matching Image 1 -->
+<!-- Content & Top Right Floating Profile Card Grid matching Image 1 -->
 <section style="padding: 2.5rem 0 5rem 0; background: #ffffff;">
     <div class="container">
         <div class="about-main-grid">
@@ -138,7 +183,7 @@
             <!-- Left Side: Stats & About Me Bio -->
             <div>
                 <!-- Stats Row matching Image 1 -->
-                <div class="about-stats-row">
+                <div class="about-stats-container">
                     <div style="display: flex; align-items: center; gap: 0.75rem;">
                         <i class="fas fa-user-graduate" style="font-size: 1.5rem; color: #1e3a8a;"></i>
                         <div>
@@ -189,7 +234,7 @@
                 </div>
             </div>
 
-            <!-- Right Side: Floating Profile Card matching Image 1 -->
+            <!-- Right Side: Top Right Floating Profile Card matching Image 1 -->
             <div>
                 <div class="about-profile-card">
                     <!-- Circular avatar with mustard background -->
