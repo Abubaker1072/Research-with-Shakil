@@ -203,7 +203,7 @@
 <section class="section-padding" style="background: #ffffff;">
     <div class="container">
         
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; margin-bottom: 5rem;">
+        <div class="trainings-overview-grid" style="margin-bottom: 5rem;">
             <div>
                 <div style="font-size: 0.85rem; font-weight: 700; color: #1e3a8a; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 0.5rem;">GLOBAL RESEARCH ADVISORY</div>
                 <h2 style="font-family: var(--font-heading); font-size: 2.25rem; color: #0f172a; margin-bottom: 1.25rem; line-height: 1.25;">
@@ -221,7 +221,7 @@
             </div>
 
             <!-- Pictures Grid -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="trainings-pictures-grid">
                 <div style="border-radius: 14px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.08);">
                     <img src="{{ asset('images/hero_img_3.jpg') }}" alt="Computer Lab Workshop" style="width: 100%; height: 210px; object-fit: cover; display: block;">
                 </div>
@@ -418,7 +418,7 @@
 
             <form action="{{ route('contact.store') }}" method="POST" id="trainingProposalForm">
                 @csrf
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+                <div class="form-row-grid">
                     <div class="form-group">
                         <label class="form-label">Full Name / Representative *</label>
                         <input type="text" name="name" class="form-control" placeholder="Dr. / Prof. Your Name" required>
@@ -429,7 +429,7 @@
                     </div>
                 </div>
 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+                <div class="form-row-grid">
                     <div class="form-group">
                         <label class="form-label">WhatsApp / Official Phone *</label>
                         <input type="text" name="whatsapp" class="form-control" placeholder="+92 300 0000000" required>

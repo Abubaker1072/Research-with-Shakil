@@ -119,7 +119,7 @@
 <!-- Header Banner matching Image 1 -->
 <section class="about-header-banner">
     <div class="container">
-        <div style="display: grid; grid-template-columns: 1fr 380px; gap: 3.5rem; align-items: flex-end;">
+        <div class="about-header-grid">
             <div>
                 <div class="about-instructor-label">INSTRUCTOR</div>
                 <h1 class="about-instructor-name">Muhammad Shakil Ahmad</h1>
@@ -133,19 +133,26 @@
 <!-- Content & Profile Card Grid matching Image 1 -->
 <section style="padding: 2.5rem 0 5rem 0; background: #ffffff;">
     <div class="container">
-        <div style="display: grid; grid-template-columns: 1fr 380px; gap: 3.5rem; align-items: start;">
+        <div class="about-main-grid">
             
             <!-- Left Side: Stats & About Me Bio -->
             <div>
                 <!-- Stats Row matching Image 1 -->
-                <div class="about-stats-container">
-                    <div>
-                        <div class="about-stat-number">21,555</div>
-                        <div class="about-stat-label">Total learners</div>
+                <div class="about-stats-row">
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <i class="fas fa-user-graduate" style="font-size: 1.5rem; color: #1e3a8a;"></i>
+                        <div>
+                            <div class="about-stat-number">21,555</div>
+                            <div class="about-stat-label">Total learners</div>
+                        </div>
                     </div>
-                    <div>
-                        <div class="about-stat-number">1,867</div>
-                        <div class="about-stat-label">Reviews</div>
+
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <i class="fas fa-star" style="font-size: 1.5rem; color: #eab308;"></i>
+                        <div>
+                            <div class="about-stat-number">1,867</div>
+                            <div class="about-stat-label">Reviews</div>
+                        </div>
                     </div>
                 </div>
 
@@ -163,9 +170,19 @@
 
                 <!-- Primary Research Interests Tag List -->
                 <h3 style="font-size: 1.2rem; font-weight: 700; margin: 2rem 0 1rem 0; color: #111827;">Primary Research & Coaching Domains</h3>
-                <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2.5rem;">
-                    @foreach($researchInterests as $interest)
-                    <span style="padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.88rem; font-weight: 600; background: #f8fafc; border: 1px solid #cbd5e1; color: #1e293b;">
+                <div class="about-domains-flex">
+                    @php
+                        $interests = $researchInterests ?? [
+                            'Workplace Dignity',
+                            'Servant Leadership',
+                            'Sustainable Healthcare Management',
+                            'Organizational Sustainability through Innovation',
+                            'Bibliometrics & Science Mapping',
+                            'Systematic Literature Reviews & Meta-Analysis'
+                        ];
+                    @endphp
+                    @foreach($interests as $interest)
+                    <span class="about-domain-tag">
                         <i class="fas fa-hashtag" style="color: #7e22ce; margin-right: 4px;"></i> {{ $interest }}
                     </span>
                     @endforeach
