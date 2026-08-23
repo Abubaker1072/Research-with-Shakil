@@ -1,69 +1,199 @@
 @extends('layouts.app')
 
-@section('title', 'Contact Us | Research with Shakil')
+@section('title', 'Contact Us & Book Consultation | Research with Shakil')
+
+@push('styles')
+<style>
+    .contact-hero-section {
+        padding: 5rem 0 3.5rem 0;
+        background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
+        color: #ffffff;
+    }
+    .contact-hero-title {
+        font-family: var(--font-heading);
+        font-size: 2.75rem;
+        font-weight: 800;
+        color: #ffffff;
+        margin-bottom: 0.75rem;
+    }
+    .contact-hero-subtitle {
+        color: #cbd5e1;
+        max-width: 650px;
+        margin: 0 auto;
+        font-size: 1.05rem;
+        line-height: 1.6;
+    }
+
+    /* Info Cards Grid */
+    .contact-info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
+        margin-top: -3rem;
+        margin-bottom: 4rem;
+        position: relative;
+        z-index: 10;
+    }
+    .contact-info-card {
+        background: #ffffff;
+        border-radius: 16px;
+        border: 1px solid #e2e8f0;
+        padding: 2rem 1.5rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+        text-align: center;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .contact-info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 16px 32px rgba(30, 58, 138, 0.12);
+    }
+    .contact-info-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 16px;
+        background: rgba(30, 58, 138, 0.08);
+        color: #1e3a8a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin: 0 auto 1.25rem auto;
+    }
+    .contact-info-heading {
+        font-family: var(--font-heading);
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 0.5rem;
+    }
+    .contact-info-text {
+        color: #64748b;
+        font-size: 0.92rem;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    /* FAQ Accordion */
+    .faq-accordion-container {
+        margin-top: 4rem;
+    }
+    .faq-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 14px;
+        margin-bottom: 1rem;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+    .faq-header {
+        padding: 1.25rem 1.5rem;
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #0f172a;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        user-select: none;
+        transition: background 0.2s ease;
+    }
+    .faq-header:hover {
+        background: #f8fafc;
+    }
+    .faq-header i {
+        transition: transform 0.3s ease;
+        color: #1e3a8a;
+    }
+    .faq-header.active i {
+        transform: rotate(180deg);
+    }
+    .faq-body {
+        padding: 0 1.5rem 1.25rem 1.5rem;
+        color: #475569;
+        font-size: 0.95rem;
+        line-height: 1.65;
+        display: none;
+        border-top: 1px solid #f1f5f9;
+        padding-top: 1rem;
+    }
+</style>
+@endpush
 
 @section('content')
 
-@include('partials.under-development-banner')
-
-<!-- MDi Style Contact Page Hero (Matching User Image 1 Exactly) -->
-<section class="mdi-contact-hero-wrapper">
-    <div class="container">
-        <div class="mdi-contact-banner-container">
-            <!-- Overlapping White Query Card -->
-            <div class="mdi-contact-overlay-box">
-               
-                <h1 class="mdi-query-heading">We're here for you</h1>
-                <p class="mdi-query-subtext">Comments or questions are welcome.</p>
-
-                <div class="mdi-contact-info-list">
-                    <!-- Location Item -->
-                    <div class="mdi-contact-item">
-                        <i class="fas fa-map-marker-alt mdi-contact-icon"></i>
-                        <div>
-                            <div class="mdi-contact-title">Location</div>
-                            <div class="mdi-contact-desc">
-                                ORIC Leadership Complex, Street 1-A,<br>
-                                Research Enclave, Islamabad, Pakistan
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Email Item -->
-                    <div class="mdi-contact-item">
-                        <i class="fas fa-envelope-open-text mdi-contact-icon"></i>
-                        <div>
-                            <div class="mdi-contact-title">Email us</div>
-                            <div class="mdi-contact-desc">
-                                info@researchwithshakil.com
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Call Us Item -->
-                    <div class="mdi-contact-item">
-                        <i class="fas fa-phone-alt mdi-contact-icon"></i>
-                        <div>
-                            <div class="mdi-contact-title">Call us</div>
-                            <div class="mdi-contact-desc">
-                                +92 300 0000000 | 051 8480200
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!-- Hero Header Banner -->
+<section class="contact-hero-section">
+    <div class="container text-center">
+        <h1 class="contact-hero-title">We're Here for Your Academic Success</h1>
+        <p class="contact-hero-subtitle">
+            Have questions about 1-on-1 advisory, institutional workshops, or thesis mentorship? Send us a message and Dr. Shakil's team will respond within 24 hours.
+        </p>
     </div>
 </section>
 
-<!-- Consultation Inquiry Form Section -->
-<section class="section-padding" style="background: var(--bg-main);">
-    <div class="container" style="max-width: 850px;">
-        <div class="glass-card" style="padding: 3rem;">
-            <div class="section-header" style="margin-bottom: 2rem;">
-                <div class="section-subtitle">Send Your Inquiry</div>
-                <h2 class="section-title">Schedule a Consultation Session</h2>
-                <p style="color: #64748b; font-size: 0.95rem;">
+<!-- 4 Interactive Information Cards -->
+<section style="background: #f8fafc; padding-bottom: 4rem;">
+    <div class="container">
+        
+        <div class="contact-info-grid">
+            <!-- Card 1: Location -->
+            <div class="contact-info-card">
+                <div class="contact-info-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3 class="contact-info-heading">Our Office Location</h3>
+                <p class="contact-info-text">
+                    ORIC Leadership Complex, Street 1-A,<br>
+                    Research Enclave, Islamabad, Pakistan
+                </p>
+            </div>
+
+            <!-- Card 2: Email -->
+            <div class="contact-info-card">
+                <div class="contact-info-icon">
+                    <i class="fas fa-envelope-open-text"></i>
+                </div>
+                <h3 class="contact-info-heading">Email Advisory</h3>
+                <p class="contact-info-text">
+                    info@researchwithshakil.com<br>
+                    <span style="font-size: 0.82rem; color: #1e3a8a; font-weight: 600;">24-Hour Response Guarantee</span>
+                </p>
+            </div>
+
+            <!-- Card 3: Call Us -->
+            <div class="contact-info-card">
+                <div class="contact-info-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <h3 class="contact-info-heading">Phone Helpline</h3>
+                <p class="contact-info-text">
+                    +92 300 0000000<br>
+                    051 8480200 (Mon - Sat, 9 AM - 6 PM)
+                </p>
+            </div>
+
+            <!-- Card 4: WhatsApp -->
+            <div class="contact-info-card">
+                <div class="contact-info-icon" style="background: #dcfce7; color: #166534;">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <h3 class="contact-info-heading">WhatsApp Instant Chat</h3>
+                <p class="contact-info-text" style="margin-bottom: 0.75rem;">
+                    Chat directly with our mentorship team for quick advisory.
+                </p>
+                <a href="https://wa.me/923000000000?text=Hello%20Dr.%20Shakil,%20I%20would%20like%20to%20inquire%20about%20research%20consultation" target="_blank" style="color: #166534; font-weight: 700; font-size: 0.88rem; text-decoration: none;">
+                    Start WhatsApp Chat <i class="fas fa-arrow-right" style="font-size: 0.75rem;"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Consultation Form Box -->
+        <div style="max-width: 850px; margin: 0 auto; background: #ffffff; padding: 3rem; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(0,0,0,0.06);">
+            
+            <div class="section-header text-center" style="margin-bottom: 2rem;">
+                <div class="section-subtitle">SEND YOUR INQUIRY</div>
+                <h2 class="section-title" style="font-size: 2rem;">Schedule a Consultation Session</h2>
+                <p style="color: #64748b; font-size: 0.95rem; margin-top: 0.5rem;">
                     Please fill out the form below and Dr. Shakil Ahmad's advisory team will respond within 24 hours.
                 </p>
             </div>
@@ -77,7 +207,7 @@
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="email">Email Address *</label>
-                        <input type="email" name="email" id="email" class="form-control" placeholder="Email" required>
+                        <input type="email" name="email" id="email" class="form-control" placeholder="your.name@university.edu" required>
                     </div>
                 </div>
 
@@ -92,13 +222,13 @@
                             <option value="PhD Candidate">PhD Candidate</option>
                             <option value="Master's Researcher">Master's Student</option>
                             <option value="University Faculty">University Faculty</option>
-                            <option value="Other">Other Scholar</option>
+                            <option value="Independent Scholar">Independent Scholar</option>
                         </select>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-label" for="service_type">Select Service *</label>
+                    <label class="form-label" for="service_type">Select Service / Program *</label>
                     <select name="service_type" id="service_type" class="form-control" required>
                         <option value="Dissertation & Thesis Coaching">Dissertation & Thesis Coaching</option>
                         <option value="Systematic Literature Review & Meta-Analysis Consulting">Systematic Literature Review & Meta-Analysis Consulting</option>
@@ -109,17 +239,90 @@
 
                 <div class="form-group">
                     <label class="form-label" for="message">Your Research Goal / Inquiry *</label>
-                    <textarea name="message" id="message" class="form-control" placeholder="Provide details about your thesis or paper publication goal..." required></textarea>
+                    <textarea name="message" id="message" class="form-control" placeholder="Provide details about your thesis topic, current progress, or publication goal..." rows="4" required></textarea>
                 </div>
 
-                <div style="text-align: center; margin-top: 1.5rem;">
-                    <button type="submit" class="btn-mdi" style="padding: 0.9rem 2.5rem;" id="contact-submit-btn">
-                        Submit Inquiry
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button type="submit" class="btn-navy" style="padding: 0.9rem 2.5rem; font-size: 1rem;" id="contact-submit-btn">
+                        Submit Inquiry <i class="fas fa-paper-plane" style="margin-left: 6px;"></i>
                     </button>
                 </div>
             </form>
         </div>
+
+        <!-- Interactive FAQ Accordion -->
+        <div class="faq-accordion-container" style="max-width: 850px; margin: 4rem auto 0 auto;">
+            <div class="section-header text-center" style="margin-bottom: 2rem;">
+                <div class="section-subtitle">GOT QUESTIONS?</div>
+                <h2 class="section-title" style="font-size: 1.8rem;">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-header">
+                    <span>How quickly will Dr. Shakil's team respond to my inquiry?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-body">
+                    Our team reviews all consultation applications within 24 hours. You will receive an email and a WhatsApp message with available strategy call time slots.
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-header">
+                    <span>Are 1-on-1 advisory sessions conducted online or in-person?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-body">
+                    1-on-1 advisory sessions are conducted online via Zoom or Microsoft Teams for international scholars across the UK, USA, Europe, Middle East, and Asia. In-person sessions can be scheduled at the ORIC Complex in Islamabad.
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-header">
+                    <span>Can institutional workshops be customized for our university?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-body">
+                    Yes! All institutional workshops and ORIC faculty capacity-building seminars are tailored to your department's specific research domain, software tools (NVivo, SmartPLS, VOSviewer), and target defense timeline.
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-header">
+                    <span>How do I access Dr. Shakil's 18 online video bootcamps?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-body">
+                    You can browse all 18 online courses on our <a href="{{ route('courses.index') }}">Courses page</a>. Clicking any course redirects to Dr. Shakil's official Udemy instructor profile for instant enrollment and lifetime access.
+                </div>
+            </div>
+
+        </div>
+
     </div>
 </section>
+
+<!-- Interactive FAQ Accordion JavaScript -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const faqHeaders = document.querySelectorAll(".faq-header");
+
+    faqHeaders.forEach(function (header) {
+        header.addEventListener("click", function () {
+            const body = this.nextElementSibling;
+            const isOpen = body.style.display === "block";
+
+            // Close all
+            document.querySelectorAll(".faq-body").forEach(b => b.style.display = "none");
+            document.querySelectorAll(".faq-header").forEach(h => h.classList.remove("active"));
+
+            if (!isOpen) {
+                body.style.display = "block";
+                this.classList.add("active");
+            }
+        });
+    });
+});
+</script>
 
 @endsection

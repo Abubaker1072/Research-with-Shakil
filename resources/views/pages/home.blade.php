@@ -96,72 +96,108 @@
             </p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.25rem; align-items: stretch;">
             
             <!-- 1. COURSES OVERVIEW SECTION -->
-            <div style="background: #ffffff; border-radius: 16px; border: 1px solid var(--border); padding: 2.25rem; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow-sm);" class="overview-card">
+            <div style="background: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%;" class="overview-card-editorial">
                 <div>
-                    <div style="width: 56px; height: 56px; border-radius: 12px; background: rgba(30, 58, 138, 0.08); color: var(--navy); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.25rem;">
-                        <i class="fas fa-graduation-cap"></i>
+                    <!-- Visual Top Header Image -->
+                    <div style="height: 170px; position: relative; overflow: hidden; background: #0f172a;">
+                        <img src="{{ asset('images/course_slr_thumb.png') }}" alt="Courses Overview" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+                        <div style="position: absolute; top: 14px; left: 14px; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.2); color: #fef08a; font-size: 0.75rem; font-weight: 700; padding: 0.3rem 0.75rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.8px;">
+                            <i class="fas fa-graduation-cap" style="margin-right: 4px;"></i> 18 Online Bootcamps
+                        </div>
                     </div>
-                    <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--navy); margin-bottom: 0.75rem;">Courses</h3>
-                    <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.5rem;">
-                        Comprehensive online bootcamps covering Systematic Literature Reviews, Qualitative & Thematic Analysis (NVivo/MAXQDA), Meta-Analysis, Bibliometrics, and Scopus/SSCI Journal Writing.
-                    </p>
-                    <ul style="list-style: none; padding: 0; margin: 0 0 1.75rem 0; color: #475569; font-size: 0.88rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 8px;"></i> 18 Self-Paced Video Bootcamps</li>
-                        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 8px;"></i> Practical Methodologies & Templates</li>
-                        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 8px;"></i> Global Scholar Community</li>
-                    </ul>
+
+                    <!-- Card Body -->
+                    <div style="padding: 1.75rem 1.75rem 1rem 1.75rem;">
+                        <h3 style="font-family: var(--font-heading); font-size: 1.45rem; font-weight: 700; color: #0f172a; margin-bottom: 0.6rem;">Courses</h3>
+                        <p style="color: #475569; font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.25rem;">
+                            Comprehensive self-paced video bootcamps covering Systematic Literature Reviews, Qualitative & Thematic Analysis (NVivo/MAXQDA), Meta-Analysis, Bibliometrics, and Scopus Q1 Journal Writing.
+                        </p>
+
+                        <!-- Feature Badges Row -->
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 1.25rem;">
+                            <span style="font-size: 0.78rem; font-weight: 600; padding: 0.25rem 0.65rem; border-radius: 6px; background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0;">PRISMA 2020</span>
+                            <span style="font-size: 0.78rem; font-weight: 600; padding: 0.25rem 0.65rem; border-radius: 6px; background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0;">NVivo & MAXQDA</span>
+                            <span style="font-size: 0.78rem; font-weight: 600; padding: 0.25rem 0.65rem; border-radius: 6px; background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0;">VOSviewer</span>
+                            <span style="font-size: 0.78rem; font-weight: 600; padding: 0.25rem 0.65rem; border-radius: 6px; background: #fef9c3; color: #854d0e; border: 1px solid #fef08a;">Udemy Profile Link</span>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <a href="{{ route('courses.index') }}" class="btn-navy" style="width: 100%; text-align: center; display: inline-block;" id="overview-view-courses-btn">
-                        View Courses <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
+
+                <div style="padding: 0 1.75rem 1.75rem 1.75rem; margin-top: auto;">
+                    <a href="{{ route('courses.index') }}" class="btn-navy" style="width: 100%; text-align: center; display: block; padding: 0.85rem 1.5rem; font-weight: 700; border-radius: 12px;" id="overview-view-courses-btn">
+                        View All 18 Courses <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
                     </a>
                 </div>
             </div>
 
             <!-- 2. TRAININGS OVERVIEW SECTION -->
-            <div style="background: #ffffff; border-radius: 16px; border: 1px solid var(--border); padding: 2.25rem; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow-sm);" class="overview-card">
+            <div style="background: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%;" class="overview-card-editorial">
                 <div>
-                    <div style="width: 56px; height: 56px; border-radius: 12px; background: rgba(30, 58, 138, 0.08); color: var(--navy); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.25rem;">
-                        <i class="fas fa-chalkboard-teacher"></i>
+                    <!-- Visual Top Header Image -->
+                    <div style="height: 170px; position: relative; overflow: hidden; background: #0f172a;">
+                        <img src="{{ asset('images/hero_img_3.jpg') }}" alt="Trainings Overview" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+                        <div style="position: absolute; top: 14px; left: 14px; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.2); color: #fef08a; font-size: 0.75rem; font-weight: 700; padding: 0.3rem 0.75rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.8px;">
+                            <i class="fas fa-chalkboard-teacher" style="margin-right: 4px;"></i> Institutional Workshops
+                        </div>
                     </div>
-                    <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--navy); margin-bottom: 0.75rem;">Trainings</h3>
-                    <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.5rem;">
-                        Interactive institutional workshops, university faculty development seminars, and hands-on intensive research capacity-building bootcamps customized for academic institutions.
-                    </p>
-                    <ul style="list-style: none; padding: 0; margin: 0 0 1.75rem 0; color: #475569; font-size: 0.88rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 8px;"></i> Live Workshop & Seminar Sessions</li>
-                        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 8px;"></i> University & ORIC Faculty Training</li>
-                        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 8px;"></i> Customized Research Toolkits</li>
-                    </ul>
+
+                    <!-- Card Body -->
+                    <div style="padding: 1.75rem 1.75rem 1rem 1.75rem;">
+                        <h3 style="font-family: var(--font-heading); font-size: 1.45rem; font-weight: 700; color: #0f172a; margin-bottom: 0.6rem;">Trainings</h3>
+                        <p style="color: #475569; font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.25rem;">
+                            Interactive university workshops, faculty development seminars, and intensive research capacity-building bootcamps customized for ORIC centers and global academic institutions.
+                        </p>
+
+                        <!-- Feature Badges Row -->
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 1.25rem;">
+                            <span style="font-size: 0.78rem; font-weight: 600; padding: 0.25rem 0.65rem; border-radius: 6px; background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0;">Faculty Seminars</span>
+                            <span style="font-size: 0.78rem; font-weight: 600; padding: 0.25rem 0.65rem; border-radius: 6px; background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0;">ORIC Building</span>
+                            <span style="font-size: 0.78rem; font-weight: 600; padding: 0.25rem 0.65rem; border-radius: 6px; background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0;">Live / On-Campus</span>
+                            <span style="font-size: 0.78rem; font-weight: 600; padding: 0.25rem 0.65rem; border-radius: 6px; background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd;">Custom Syllabus</span>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <a href="{{ route('trainings.index') }}" class="btn-navy" style="width: 100%; text-align: center; display: inline-block;" id="overview-explore-trainings-btn">
+
+                <div style="padding: 0 1.75rem 1.75rem 1.75rem; margin-top: auto;">
+                    <a href="{{ route('trainings.index') }}" class="btn-navy" style="width: 100%; text-align: center; display: block; padding: 0.85rem 1.5rem; font-weight: 700; border-radius: 12px;" id="overview-explore-trainings-btn">
                         Explore Trainings <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
                     </a>
                 </div>
             </div>
 
             <!-- 3. CONSULTATION OVERVIEW SECTION -->
-            <div style="background: #ffffff; border-radius: 16px; border: 1px solid var(--border); padding: 2.25rem; display: flex; flex-direction: column; justify-space-between; box-shadow: var(--shadow-sm);" class="overview-card">
+            <div style="background: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%;" class="overview-card-editorial">
                 <div>
-                    <div style="width: 56px; height: 56px; border-radius: 12px; background: rgba(30, 58, 138, 0.08); color: var(--navy); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.25rem;">
-                        <i class="fas fa-user-tie"></i>
+                    <!-- Visual Top Header Image -->
+                    <div style="height: 170px; position: relative; overflow: hidden; background: #0f172a;">
+                        <img src="{{ asset('images/hero_img_1.jpg') }}" alt="Consultation Overview" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+                        <div style="position: absolute; top: 14px; left: 14px; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.2); color: #fef08a; font-size: 0.75rem; font-weight: 700; padding: 0.3rem 0.75rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.8px;">
+                            <i class="fas fa-user-tie" style="margin-right: 4px;"></i> 1-on-1 Mentorship
+                        </div>
                     </div>
-                    <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--navy); margin-bottom: 0.75rem;">Consultation</h3>
-                    <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.5rem;">
-                        Dedicated 1-on-1 personalized academic advisory and mentorship for PhD candidates, Master's thesis scholars, journal paper revision, and academic grant applications.
-                    </p>
-                    <ul style="list-style: none; padding: 0; margin: 0 0 1.75rem 0; color: #475569; font-size: 0.88rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 8px;"></i> 1-on-1 Dissertation Mentorship</li>
-                        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 8px;"></i> Journal Peer-Review Advisory</li>
-                        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 8px;"></i> Grant Proposal Strategy</li>
-                    </ul>
+
+                    <!-- Card Body -->
+                    <div style="padding: 1.75rem 1.75rem 1rem 1.75rem;">
+                        <h3 style="font-family: var(--font-heading); font-size: 1.45rem; font-weight: 700; color: #0f172a; margin-bottom: 0.6rem;">Consultation</h3>
+                        <p style="color: #475569; font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.25rem;">
+                            Dedicated 1-on-1 personalized academic advisory and mentorship for PhD candidates, Master's thesis defense, Scopus journal revisions, and international grant proposals.
+                        </p>
+
+                        <!-- Feature Badges Row -->
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 1.25rem;">
+                            <span style="font-size: 0.78rem; font-weight: 600; padding: 0.25rem 0.65rem; border-radius: 6px; background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0;">PhD Dissertation</span>
+                            <span style="font-size: 0.78rem; font-weight: 600; padding: 0.25rem 0.65rem; border-radius: 6px; background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0;">Peer-Review Support</span>
+                            <span style="font-size: 0.78rem; font-weight: 600; padding: 0.25rem 0.65rem; border-radius: 6px; background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0;">Grant Strategy</span>
+                            <span style="font-size: 0.78rem; font-weight: 600; padding: 0.25rem 0.65rem; border-radius: 6px; background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0;">Zoom / Teams</span>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <a href="{{ route('consultation.index') }}" class="btn-navy" style="width: 100%; text-align: center; display: inline-block;" id="overview-book-consultation-btn">
+
+                <div style="padding: 0 1.75rem 1.75rem 1.75rem; margin-top: auto;">
+                    <a href="{{ route('consultation.index') }}" class="btn-navy" style="width: 100%; text-align: center; display: block; padding: 0.85rem 1.5rem; font-weight: 700; border-radius: 12px;" id="overview-book-consultation-btn">
                         Book Consultation <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
                     </a>
                 </div>
@@ -191,6 +227,54 @@
                 <div class="scholar-author-name">— Dr. Ayesha Rehman</div>
                 <div class="scholar-author-tag">SCOPUS Q1 PUBLISHED SCHOLAR 2024</div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3-COLUMN VALUE PROPOSITION FEATURE SECTION (Custom Dual-Tone Vector Badges & Authentic Icons) -->
+<section style="background: #f8fafc; padding: 4.5rem 0; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
+    <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            
+            <!-- Card 1: Academic & Career Impact -->
+            <div style="background: #ffffff; padding: 2.25rem 2rem; border-radius: 16px; border: 1px solid #e2e8f0; display: flex; align-items: flex-start; gap: 1.5rem; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04); transition: transform 0.25s ease;" class="value-prop-card">
+                <div style="width: 66px; height: 66px; border-radius: 16px; background: rgba(30, 58, 138, 0.07); border: 1px solid rgba(30, 58, 138, 0.15); color: #1e3a8a; display: flex; align-items: center; justify-content: center; font-size: 1.65rem; flex-shrink: 0; box-shadow: 0 4px 10px rgba(30, 58, 138, 0.06);">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem;">Academic & Career Impact</h3>
+                    <p style="color: #475569; font-size: 0.94rem; line-height: 1.65; margin: 0;">
+                        Our scholars publish in top Scopus Q1 and SSCI journals worldwide, securing faculty tenure, post-doctoral fellowships, and executive research leadership roles.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 2: Institutional Recognition -->
+            <div style="background: #ffffff; padding: 2.25rem 2rem; border-radius: 16px; border: 1px solid #e2e8f0; display: flex; align-items: flex-start; gap: 1.5rem; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04); transition: transform 0.25s ease;" class="value-prop-card">
+                <div style="width: 66px; height: 66px; border-radius: 16px; background: rgba(30, 58, 138, 0.07); border: 1px solid rgba(30, 58, 138, 0.15); color: #1e3a8a; display: flex; align-items: center; justify-content: center; font-size: 1.65rem; flex-shrink: 0; box-shadow: 0 4px 10px rgba(30, 58, 138, 0.06);">
+                    <i class="fas fa-university"></i>
+                </div>
+                <div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem;">Institutional Recognition</h3>
+                    <p style="color: #475569; font-size: 0.94rem; line-height: 1.65; margin: 0;">
+                        Our training modules and advisory frameworks are recognized across HEC Pakistan, Ministry of Higher Education (Oman), and leading university ORIC centers.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 3: Methodological Mastery -->
+            <div style="background: #ffffff; padding: 2.25rem 2rem; border-radius: 16px; border: 1px solid #e2e8f0; display: flex; align-items: flex-start; gap: 1.5rem; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04); transition: transform 0.25s ease;" class="value-prop-card">
+                <div style="width: 66px; height: 66px; border-radius: 16px; background: rgba(30, 58, 138, 0.07); border: 1px solid rgba(30, 58, 138, 0.15); color: #1e3a8a; display: flex; align-items: center; justify-content: center; font-size: 1.65rem; flex-shrink: 0; box-shadow: 0 4px 10px rgba(30, 58, 138, 0.06);">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem;">Methodological Mastery</h3>
+                    <p style="color: #475569; font-size: 0.94rem; line-height: 1.65; margin: 0;">
+                        Gain hands-on mastery of PRISMA 2020 literature review matrices, NVivo/MAXQDA qualitative coding, VOSviewer science mapping, and SmartPLS/AMOS SEM.
+                    </p>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>

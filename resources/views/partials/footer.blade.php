@@ -35,7 +35,7 @@
             <div>
                 <h4 class="footer-col-title">Resources</h4>
                 <ul class="footer-links-list">
-                    <li><a href="{{ route('courses.index') }}">Udemy 18 Courses</a></li>
+                    <li><a href="https://www.udemy.com/user/dr-muhammad-shakil-ahmad/" target="_blank">Udemy Instructor Profile</a></li>
                     <li><a href="{{ route('publications.index') }}">Research Publications</a></li>
                     <li><a href="{{ route('publications.index') }}">Oman & HEC Grants</a></li>
                     <li><a href="{{ route('admin.inquiries') }}">Admin Portal</a></li>
