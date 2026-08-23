@@ -98,8 +98,8 @@
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.25rem; align-items: stretch;">
             
-            <!-- 1. COURSES OVERVIEW SECTION -->
-            <div style="background: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%;" class="overview-card-editorial">
+            <!-- 1. COURSES OVERVIEW SECTION (100% Clickable Card Box & Image) -->
+            <div style="background: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%; cursor: pointer;" class="overview-card-editorial" onclick="window.location.href='{{ route('courses.index') }}'">
                 <div>
                     <!-- Visual Top Header Image -->
                     <div style="height: 170px; position: relative; overflow: hidden; background: #0f172a;">
@@ -127,14 +127,14 @@
                 </div>
 
                 <div style="padding: 0 1.75rem 1.75rem 1.75rem; margin-top: auto;">
-                    <a href="{{ route('courses.index') }}" class="btn-navy" style="width: 100%; text-align: center; display: block; padding: 0.85rem 1.5rem; font-weight: 700; border-radius: 12px;" id="overview-view-courses-btn">
+                    <a href="{{ route('courses.index') }}" class="btn-navy" style="width: 100%; text-align: center; display: block; padding: 0.85rem 1.5rem; font-weight: 700; border-radius: 12px;" id="overview-view-courses-btn" onclick="event.stopPropagation();">
                         View All 18 Courses <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- 2. TRAININGS OVERVIEW SECTION -->
-            <div style="background: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%;" class="overview-card-editorial">
+            <!-- 2. TRAININGS OVERVIEW SECTION (100% Clickable Card Box & Image) -->
+            <div style="background: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%; cursor: pointer;" class="overview-card-editorial" onclick="window.location.href='{{ route('trainings.index') }}'">
                 <div>
                     <!-- Visual Top Header Image -->
                     <div style="height: 170px; position: relative; overflow: hidden; background: #0f172a;">
@@ -162,14 +162,14 @@
                 </div>
 
                 <div style="padding: 0 1.75rem 1.75rem 1.75rem; margin-top: auto;">
-                    <a href="{{ route('trainings.index') }}" class="btn-navy" style="width: 100%; text-align: center; display: block; padding: 0.85rem 1.5rem; font-weight: 700; border-radius: 12px;" id="overview-explore-trainings-btn">
+                    <a href="{{ route('trainings.index') }}" class="btn-navy" style="width: 100%; text-align: center; display: block; padding: 0.85rem 1.5rem; font-weight: 700; border-radius: 12px;" id="overview-explore-trainings-btn" onclick="event.stopPropagation();">
                         Explore Trainings <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- 3. CONSULTATION OVERVIEW SECTION -->
-            <div style="background: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%;" class="overview-card-editorial">
+            <!-- 3. CONSULTATION OVERVIEW SECTION (100% Clickable Card Box & Image) -->
+            <div style="background: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%; cursor: pointer;" class="overview-card-editorial" onclick="window.location.href='{{ route('consultation.index') }}'">
                 <div>
                     <!-- Visual Top Header Image -->
                     <div style="height: 170px; position: relative; overflow: hidden; background: #0f172a;">
@@ -197,7 +197,7 @@
                 </div>
 
                 <div style="padding: 0 1.75rem 1.75rem 1.75rem; margin-top: auto;">
-                    <a href="{{ route('consultation.index') }}" class="btn-navy" style="width: 100%; text-align: center; display: block; padding: 0.85rem 1.5rem; font-weight: 700; border-radius: 12px;" id="overview-book-consultation-btn">
+                    <a href="{{ route('consultation.index') }}" class="btn-navy" style="width: 100%; text-align: center; display: block; padding: 0.85rem 1.5rem; font-weight: 700; border-radius: 12px;" id="overview-book-consultation-btn" onclick="event.stopPropagation();">
                         Book Consultation <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
                     </a>
                 </div>
