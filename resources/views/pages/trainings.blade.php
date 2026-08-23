@@ -220,19 +220,19 @@
                 </a>
             </div>
 
-            <!-- Pictures Grid -->
+            <!-- Pictures Grid (4-Photo Layout for Desktop & Mobile) -->
             <div class="trainings-pictures-grid">
-                <div style="border-radius: 14px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.08);">
+                <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
                     <img src="{{ asset('images/hero_img_3.jpg') }}" alt="Computer Lab Workshop" style="width: 100%; height: 210px; object-fit: cover; display: block;">
                 </div>
-                <div style="border-radius: 14px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.08);">
+                <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
                     <img src="{{ asset('images/hero_img_4.jpg') }}" alt="CPD Centre Building" style="width: 100%; height: 210px; object-fit: cover; display: block;">
                 </div>
-                <div style="border-radius: 14px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.08);">
+                <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
                     <img src="{{ asset('images/course_qualitative_thumb.png') }}" alt="Qualitative Training Workshop" style="width: 100%; height: 210px; object-fit: cover; display: block;">
                 </div>
-                <div style="border-radius: 14px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.08);">
-                    <img src="{{ asset('images/hero_dr_shakil_cutout_v2.jpg') }}" alt="Dr. Shakil Interactive Session" style="width: 100%; height: 210px; object-fit: cover; display: block;">
+                <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
+                    <img src="{{ asset('images/course_slr_thumb.png') }}" alt="Systematic Review Workshop" style="width: 100%; height: 210px; object-fit: cover; display: block;">
                 </div>
             </div>
         </div>
