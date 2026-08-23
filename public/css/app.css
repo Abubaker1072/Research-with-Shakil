@@ -1565,4 +1565,30 @@ img {
   .about-domain-tag {
     width: auto !important;
   }
+
+  /* Completely Disable Sticky Stacking on Mobile/Tablets to Prevent Overlap (Fixes Image 1) */
+  .stacked-cards-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+  }
+
+  .stacked-card {
+    position: relative !important;
+    top: 0 !important;
+    z-index: 1 !important;
+    margin-bottom: 1.5rem !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05) !important;
+    transform: none !important;
+  }
+
+  /* Value Proposition Cards Mobile Vertical Stack (Fixes Image 2) */
+  .value-prop-card {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+    padding: 1.5rem 1.25rem !important;
+    border-radius: 16px !important;
+  }
 }
+
