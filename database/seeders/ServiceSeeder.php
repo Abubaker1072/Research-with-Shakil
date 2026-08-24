@@ -32,7 +32,7 @@ class ServiceSeeder extends Seeder
                 'title' => 'Systematic Literature Review & Meta-Analysis Consulting',
                 'slug' => Str::slug('Systematic Literature Review & Meta-Analysis Consulting'),
                 'icon' => 'fas fa-book-open',
-                'image' => 'course_slr_thumb.png',
+                'image' => 'consultation_prog_2.jpg',
                 'short_description' => 'End-to-end guidance on PRISMA guidelines, protocol registration, search matrix, data extraction & meta-analytic modeling.',
                 'full_description' => 'Transform scattered literature into high-impact systematic reviews. Structured advisory covers PRISMA 2020 compliance, database search strings (Scopus, Web of Science, PubMed), quality appraisal tools, and effect size synthesis.',
                 'features' => [
@@ -49,7 +49,7 @@ class ServiceSeeder extends Seeder
                 'title' => 'Scientific Paper Writing & Journal Submission Support',
                 'slug' => Str::slug('Scientific Paper Writing & Journal Submission Support'),
                 'icon' => 'fas fa-feather-alt',
-                'image' => 'course_qualitative_thumb.png',
+                'image' => 'consultation_prog_3.jpg',
                 'short_description' => 'Expert editing, journal targeting, response to reviewers, and structural polishing for Scopus & WOS indexed journals.',
                 'full_description' => 'Maximize your publication success rate in top-tier journals (SSCI, SCI, Scopus Q1/Q2). Receive detailed review of your manuscript structure, Academic English flow, reviewer response letter drafting, and journal matching.',
                 'features' => [
@@ -66,7 +66,7 @@ class ServiceSeeder extends Seeder
                 'title' => 'Grant Writing & Research Advisory',
                 'slug' => Str::slug('Grant Writing & Research Advisory'),
                 'icon' => 'fas fa-award',
-                'image' => 'course_bibliometrics_thumb.png',
+                'image' => 'consultation_prog_4.jpg',
                 'short_description' => 'Consultancy for national and international research grant applications (HEC, Ministry grants, international funds).',
                 'full_description' => 'Securing competitive research funding requires a compelling narrative, realistic budget breakdown, clear milestone matrix, and demonstrated societal impact. Leverage Dr. Shakil\'s track record in securing grants from Oman MoHESR and HEC Pakistan.',
                 'features' => [
@@ -83,7 +83,7 @@ class ServiceSeeder extends Seeder
                 'title' => '1-on-1 Academic & Career Life Coaching',
                 'slug' => Str::slug('1-on-1 Academic & Career Life Coaching'),
                 'icon' => 'fas fa-user-tie',
-                'image' => 'course_meta_thumb.png',
+                'image' => 'consultation_prog_5.jpg',
                 'short_description' => 'Personalized executive coaching to overcome academic burnout, establish career direction, and build academic brand.',
                 'full_description' => 'Tailored coaching sessions focusing on productivity systems, research career roadmap, managing academic stress, building ORCID / Google Scholar visibility, and achieving work-life balance in higher education.',
                 'features' => [
