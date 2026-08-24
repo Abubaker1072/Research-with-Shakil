@@ -319,7 +319,7 @@
         </div>
         <h1 class="pub-hero-title">Research & Peer-Reviewed Publications</h1>
         <p class="pub-hero-subtitle">
-            Author of 53+ papers in SSCI and Scopus Q1 journals across Human Resource Management, Project Management, Healthcare, and Sustainable Development.
+            Author of 90+ papers in SSCI and Scopus Q1 journals across Human Resource Management, Project Management, Healthcare, and Sustainable Development.
         </p>
 
         <!-- Official Google Scholar Card -->
@@ -332,7 +332,7 @@
 
             <div style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
                 <div class="scholar-stat-item">
-                    <div class="scholar-stat-num">53+</div>
+                    <div class="scholar-stat-num">90+</div>
                     <div class="scholar-stat-label">Publications</div>
                 </div>
                 <div class="scholar-stat-item">

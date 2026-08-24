@@ -128,7 +128,7 @@
 
             <div>
                 <a href="{{ route('courses.index') }}" class="btn-navy" style="padding: 0.85rem 1.8rem; font-weight: 700;">
-                    View All Courses on Udemy <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
+                    View All 18 Courses on Udemy <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
                 </a>
             </div>
         </div>
@@ -302,10 +302,10 @@
 
             <details style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1.25rem 1.5rem; cursor: pointer;">
                 <summary style="font-weight: 800; font-size: 1.05rem; color: #0f172a;">
-                    Is a background in statistics required to take the research methodology courses?
+                    Do I need a background in statistics to take the research methodology courses?
                 </summary>
                 <p style="color: #475569; font-size: 0.96rem; line-height: 1.65; margin-top: 0.85rem;">
-                    No. The courses are designed for beginners through advanced researchers, with dedicated modules for statistical tools like SPSS, AMOS, and SmartPLS for those who need them.
+                    No. The courses are designed for beginners through advanced researchers, with dedicated modules for statistical tools like SPSS and AMOS for those who need them.
                 </p>
             </details>
 
@@ -345,7 +345,7 @@
     },
     {
       "@type": "Question",
-      "name": "Is a background in statistics required to take the research methodology courses?",
+      "name": "Do I need a background in statistics to take the research methodology courses?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "No. The courses are designed for beginners through advanced researchers, with dedicated modules for statistical tools like SPSS and AMOS for those who need them."
@@ -362,12 +362,12 @@
             Not Sure Where to Start?
         </h2>
         <p style="color: #cbd5e1; font-size: 1.05rem; line-height: 1.65; margin-bottom: 2rem;">
-            If you're unsure whether a course, a training program, or a consultation is the right fit, reach out — Dr. Shakil will help you find the path that matches your goals.
+            If you're unsure whether a course, a training program, or a consultation is the right fit, reach out — I'll help you find the path that matches your goals.
         </p>
         
         <div>
             <a href="{{ route('contact.index') }}" class="btn-navy" style="background: #eab308; color: #0f172a; font-weight: 800; padding: 0.85rem 2.2rem; font-size: 1rem;">
-                Contact Advisory Team <i class="fas fa-envelope" style="margin-left: 6px;"></i>
+                Contact Me <i class="fas fa-envelope" style="margin-left: 6px;"></i>
             </a>
         </div>
     </div>

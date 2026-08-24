@@ -1,6 +1,63 @@
 @extends('layouts.app')
 
-@section('title', 'Dr. Muhammad Shakil Ahmad | Senior Lecturer & Academic Researcher')
+@section('title', 'Dr. Shakil Ahmad | Research Methodology Courses, Training & HR Consulting')
+@section('meta_description', 'Dr. Muhammad Shakil Ahmad, PhD, is a UK-based research methodology expert and HR consultant with 16,000+ learners trained. Explore courses, trainings & consultations.')
+@section('meta_keywords', 'research methodology courses online, dissertation coach, PhD research training, academic writing consultant, HR consultant UK, thesis writing help, Dr. Shakil Ahmad')
+
+@push('styles')
+<style>
+    /* Smooth Scroll Reveal Animation Styles */
+    .reveal-scroll {
+        opacity: 0;
+        transform: translateY(35px);
+        transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+    }
+    .reveal-scroll-left {
+        opacity: 0;
+        transform: translateX(-35px);
+        transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+    }
+    .reveal-scroll-right {
+        opacity: 0;
+        transform: translateX(35px) scale(0.95);
+        transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+    }
+
+    .reveal-scroll.in-view,
+    .reveal-scroll-left.in-view,
+    .reveal-scroll-right.in-view {
+        opacity: 1 !important;
+        transform: translate(0, 0) scale(1) !important;
+    }
+
+    /* Staggered Career Achievement Box Animations */
+    .achievement-card-box {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease !important;
+        will-change: opacity, transform;
+    }
+    .achievement-card-box.in-view {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+    .achievement-card-box:hover {
+        transform: translateY(-6px) !important;
+        box-shadow: 0 14px 30px rgba(2, 132, 199, 0.14) !important;
+        border-color: #0284c7 !important;
+    }
+
+    @media (max-width: 768px) {
+        .reveal-scroll-left,
+        .reveal-scroll-right {
+            transform: translateY(30px) !important;
+        }
+    }
+</style>
+@endpush
 
 @section('content')
 
@@ -10,22 +67,22 @@
         <!-- Left Side: Title, Description & Primary CTA -->
         <div>
             <div style="font-size: 0.85rem; font-weight: 800; color: #fef08a; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 0.5rem;">TEESSIDE INTERNATIONAL BUSINESS SCHOOL (UK)</div>
-            <h1 class="hero-title-mdi">
-                Research with Shakil
+            <h1 class="hero-title-mdi" style="font-size: 2.25rem; line-height: 1.25;">
+                Research Methodology Courses, Training & HR Consulting with Dr. Shakil Ahmad
             </h1>
             <p class="hero-text-mdi" style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.25rem;">
-                Dr. Muhammad Shakil Ahmad is a Senior Lecturer at Teesside International Business School, Teesside University (UK), and a research methodology, project management, and HR expert who has trained over 16,000 learners worldwide through online courses, live training programs, and one-on-one consultations. He holds a PhD in Management, has published 53+ papers in SSCI-indexed journals (H-index 39), and has 15+ years of academic experience across the UK, Oman, Pakistan, and South Korea.
+                Dr. Muhammad Shakil Ahmad is a Senior Lecturer at Teesside International Business School, Teesside University (UK), and a research methodology, project management, and HR expert who has trained over 16,000 learners worldwide through online courses, live training programs, and one-on-one consultations. He holds a PhD in Management, has published 90+ papers in SSCI-indexed journals (H-index 39), and has 15+ years of academic experience across the UK, Oman, Pakistan, and South Korea.
             </p>
-            <p style="color: #cbd5e1; font-size: 0.95rem; margin-bottom: 2rem; line-height: 1.6;">
-                Several publications feature in Scopus Q1 and SSCI indexed journals across leading global publishers in the UK, USA, Europe, Middle East, and Asia.
+            <p style="color: #cbd5e1; font-size: 1rem; margin-bottom: 2rem; line-height: 1.6; font-weight: 500;">
+                Get expert help with research methodology, academic writing, and HR strategy — through self-paced courses, institutional training, or direct consultation.
             </p>
             
             <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <a href="#booking-form-section" class="btn-navy" id="hero-get-in-touch" style="padding: 0.9rem 2.2rem; font-weight: 800;">
-                    BOOK CONSULTATION <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
+                <a href="{{ route('courses.index') }}" class="btn-navy" id="hero-explore-courses" style="padding: 0.9rem 2.2rem; font-weight: 800; background: #eab308; color: #0f172a;">
+                    Explore My Courses <i class="fas fa-graduation-cap" style="margin-left: 6px;"></i>
                 </a>
-                <a href="/courses" class="btn-light-surface" style="padding: 0.9rem 1.8rem; font-weight: 700;">
-                    Explore Online Courses
+                <a href="{{ route('consultation.index') }}" class="btn-light-surface" style="padding: 0.9rem 1.8rem; font-weight: 700;">
+                    Book a Consultation <i class="fas fa-calendar-check" style="margin-left: 6px;"></i>
                 </a>
             </div>
         </div>
@@ -39,24 +96,24 @@
     </div>
 </section>
 
-<!-- Compact Stat Bar with Zero-to-Target Animated Counters -->
+<!-- Trust Strip / Stat Bar -->
 <section class="stats-bar-compact" id="stats-bar-trigger">
     <div class="container stats-grid-compact">
         <div class="stat-card-compact">
             <div class="stat-number-compact" data-target="16000">0</div>
-            <div class="stat-label-compact">Global Learners</div>
+            <div class="stat-label-compact">16,000+ Learners Empowered Worldwide</div>
         </div>
         <div class="stat-card-compact">
-            <div class="stat-number-compact" data-target="53">0</div>
-            <div class="stat-label-compact">SSCI / Scopus Papers</div>
-        </div>
-        <div class="stat-card-compact">
-            <div class="stat-number-compact" data-target="39">0</div>
-            <div class="stat-label-compact">Google Scholar H-Index</div>
+            <div class="stat-number-compact" data-target="1800">0</div>
+            <div class="stat-label-compact">1,800+ Five-Star Reviews on Udemy</div>
         </div>
         <div class="stat-card-compact">
             <div class="stat-number-compact" data-target="{{ $stats['courses'] }}">0</div>
-            <div class="stat-label-compact">Udemy Courses</div>
+            <div class="stat-label-compact">18 Courses in Research Methodology & Academic Writing</div>
+        </div>
+        <div class="stat-card-compact">
+            <div class="stat-number-compact" data-target="90">0</div>
+            <div class="stat-label-compact">90+ Papers in SSCI-Indexed Journals | H-Index 39</div>
         </div>
     </div>
 </section>
@@ -67,14 +124,48 @@
 
 
 
-<!-- THREE HOMEPAGE OVERVIEW SECTIONS (Courses, Trainings, Consultation) -->
+<!-- MEET DR. MUHAMMAD SHAKIL AHMAD SECTION -->
+<section class="section-padding" style="background: #ffffff; border-bottom: 1px solid #e2e8f0; overflow: hidden;" id="meet-shakil-section">
+    <div class="container" style="max-width: 1050px;">
+        <div style="display: grid; grid-template-columns: 1fr 320px; gap: 3rem; align-items: center;">
+            <div class="reveal-scroll-left">
+                <div class="section-subtitle" style="color: #0284c7; font-weight: 800; letter-spacing: 1.5px;">ABOUT THE INSTRUCTOR</div>
+                <h2 style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800; color: #0f172a; margin-bottom: 1.25rem;">
+                    Meet Dr. Muhammad Shakil Ahmad
+                </h2>
+                <p style="color: #334155; font-size: 1.02rem; line-height: 1.75; margin-bottom: 1rem;">
+                    Dr. Muhammad Shakil Ahmad is a management researcher and educator specializing in Human Resource Management, Project Management, and Organizational Innovation, currently teaching at Teesside University in the UK.
+                </p>
+                <p style="color: #334155; font-size: 1.02rem; line-height: 1.75; margin-bottom: 1rem;">
+                    With over 15 years of academic experience across the UK, Oman, Pakistan, and South Korea, he has built a career around one goal: making advanced research skills and professional development accessible — to undergraduates, postgraduates, executives, and organizations alike.
+                </p>
+                <p style="color: #334155; font-size: 1.02rem; line-height: 1.75; margin-bottom: 1rem;">
+                    He has authored more than 90 papers in SSCI-indexed journals (H-index: 39), supervised DBA, MBA, and PhD scholars, and led funded research projects spanning healthcare, education, and sustainable development.
+                </p>
+                <p style="color: #334155; font-size: 1.02rem; line-height: 1.75; margin-bottom: 1.5rem;">
+                    Outside the classroom, his courses, workshops, and consultations have helped thousands of learners understand research methodology, defend dissertations with confidence, and strengthen HR practice inside their organizations.
+                </p>
+                <a href="{{ route('about') }}" class="btn-navy" style="padding: 0.85rem 1.75rem; font-weight: 700;">
+                    Read the Full Bio <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
+                </a>
+            </div>
+            <div style="text-align: center;" class="reveal-scroll-right">
+                <div style="border-radius: 20px; overflow: hidden; border: 4px solid #ffffff; box-shadow: 0 15px 35px rgba(0,0,0,0.12); background: #0f172a; transition: transform 0.3s ease;">
+                    <img src="{{ asset($bioImage ?? 'images/dr_shakil_presentation_quote.jpg') }}" alt="Dr. Muhammad Shakil Ahmad Presentation Bio" style="width: 100%; height: 380px; object-fit: cover; display: block;">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHAT I CAN HELP YOU WITH SECTION (3 Service Blocks) -->
 <section class="section-padding" style="background: var(--surface);" id="overview-section">
     <div class="container">
         <div class="section-header text-center" style="margin-bottom: 3rem;">
-            <div class="section-subtitle">ACADEMIC OFFERINGS</div>
-            <h2 class="section-title">Academic Programs & Advisory Overview</h2>
+            <div class="section-subtitle">SERVICES OFFERED</div>
+            <h2 class="section-title">What I Can Help You With</h2>
             <p style="color: var(--muted); max-width: 650px; margin: 0 auto; font-size: 1rem;">
-                Explore high-impact online courses, institutional training workshops, and personalized 1-on-1 consultation services below.
+                Get expert help through self-paced courses, institutional training, or direct consultation.
             </p>
         </div>
 
@@ -86,30 +177,29 @@
                     <div style="height: 160px; position: relative; overflow: hidden; background: #0f172a;">
                         <img src="{{ asset('images/courses_overview_banner.png') }}" alt="Courses Overview" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.95;">
                         <div style="position: absolute; top: 12px; left: 12px; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.2); color: #fef08a; font-size: 0.75rem; font-weight: 700; padding: 0.28rem 0.7rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.8px;">
-                            <i class="fas fa-graduation-cap" style="margin-right: 4px;"></i> Online Bootcamps
+                            <i class="fas fa-graduation-cap" style="margin-right: 4px;"></i> On-Demand Courses
                         </div>
                     </div>
 
                     <div style="padding: 1.4rem 1.4rem 0.85rem 1.4rem;">
                         <div style="min-height: 2.8rem; display: flex; align-items: center; margin-bottom: 0.4rem;">
-                            <h3 style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 800; color: #0f172a; margin: 0;">Courses</h3>
+                            <h3 style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 800; color: #0f172a; margin: 0;">On-Demand Courses</h3>
                         </div>
-                        <p style="color: #475569; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem; min-height: 4.8rem;">
-                            Comprehensive self-paced video bootcamps covering Systematic Literature Reviews, Qualitative & Thematic Analysis (NVivo/MAXQDA), Meta-Analysis, Bibliometrics, and Scopus Q1 Journal Writing.
+                        <p style="color: #475569; font-size: 0.92rem; line-height: 1.6; margin-bottom: 1rem; min-height: 4.8rem;">
+                            18 self-paced courses covering research methodology, dissertation writing, and data analysis, available on Udemy with lifetime access.
                         </p>
 
                         <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; min-height: 52px; align-content: flex-start;">
-                            <span style="font-size: 0.76rem; font-weight: 600; padding: 0.22rem 0.6rem; border-radius: 6px; background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0;">PRISMA 2020</span>
-                            <span style="font-size: 0.76rem; font-weight: 600; padding: 0.22rem 0.6rem; border-radius: 6px; background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0;">NVivo & MAXQDA</span>
-                            <span style="font-size: 0.76rem; font-weight: 600; padding: 0.22rem 0.6rem; border-radius: 6px; background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0;">VOSviewer</span>
-                            <span style="font-size: 0.76rem; font-weight: 600; padding: 0.22rem 0.6rem; border-radius: 6px; background: #fef9c3; color: #854d0e; border: 1px solid #fef08a;">Direct Udemy Links</span>
+                            <span style="font-size: 0.76rem; font-weight: 600; padding: 0.22rem 0.6rem; border-radius: 6px; background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0;">18 Courses</span>
+                            <span style="font-size: 0.76rem; font-weight: 600; padding: 0.22rem 0.6rem; border-radius: 6px; background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0;">Lifetime Access</span>
+                            <span style="font-size: 0.76rem; font-weight: 600; padding: 0.22rem 0.6rem; border-radius: 6px; background: #fef9c3; color: #854d0e; border: 1px solid #fef08a;">Udemy Platform</span>
                         </div>
                     </div>
                 </div>
 
                 <div style="padding: 0 1.4rem 1.4rem 1.4rem; margin-top: auto;">
-                    <a href="/courses" class="btn-navy" style="width: 100%; text-align: center; display: block; padding: 0.75rem 1.25rem; font-size: 0.88rem; font-weight: 700; border-radius: 10px;" id="overview-view-courses-btn" onclick="event.stopPropagation();">
-                        View All Courses <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
+                    <a href="{{ route('courses.index') }}" class="btn-navy" style="width: 100%; text-align: center; display: block; padding: 0.75rem 1.25rem; font-size: 0.88rem; font-weight: 700; border-radius: 10px;" id="overview-view-courses-btn" onclick="event.stopPropagation();">
+                        Browse Courses <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
                     </a>
                 </div>
             </div>
@@ -120,7 +210,7 @@
                     <div style="height: 160px; position: relative; overflow: hidden; background: #0f172a;">
                         <img src="{{ asset('images/trainings_overview_banner.jpg') }}" alt="Trainings Overview" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.95;">
                         <div style="position: absolute; top: 12px; left: 12px; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.2); color: #fef08a; font-size: 0.75rem; font-weight: 700; padding: 0.28rem 0.7rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.8px;">
-                            <i class="fas fa-chalkboard-teacher" style="margin-right: 4px;"></i> Institutional Workshops
+                            <i class="fas fa-chalkboard-teacher" style="margin-right: 4px;"></i> Live Workshops
                         </div>
                     </div>
 
@@ -128,22 +218,21 @@
                         <div style="min-height: 2.8rem; display: flex; align-items: center; margin-bottom: 0.4rem;">
                             <h3 style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 800; color: #0f172a; margin: 0; line-height: 1.25;">Live Trainings & Workshops</h3>
                         </div>
-                        <p style="color: #475569; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem; min-height: 4.8rem;">
-                            Cohort-based programs tailored to your goals built for universities, HR teams, and organizations that want practical skill development. Delivered online or in person.
+                        <p style="color: #475569; font-size: 0.92rem; line-height: 1.6; margin-bottom: 1rem; min-height: 4.8rem;">
+                            Customized, cohort-based training for universities, HR departments, and organizations, delivered online or in person.
                         </p>
 
                         <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; min-height: 52px; align-content: flex-start;">
-                            <span style="font-size: 0.76rem; font-weight: 600; padding: 0.22rem 0.6rem; border-radius: 6px; background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0;">Faculty Seminars</span>
-                            <span style="font-size: 0.76rem; font-weight: 600; padding: 0.22rem 0.6rem; border-radius: 6px; background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0;">ORIC Building</span>
-                            <span style="font-size: 0.76rem; font-weight: 600; padding: 0.22rem 0.6rem; border-radius: 6px; background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0;">Live / On-Campus</span>
-                            <span style="font-size: 0.76rem; font-weight: 600; padding: 0.22rem 0.6rem; border-radius: 6px; background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd;">Custom Syllabus</span>
+                            <span style="font-size: 0.76rem; font-weight: 600; padding: 0.22rem 0.6rem; border-radius: 6px; background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0;">Universities</span>
+                            <span style="font-size: 0.76rem; font-weight: 600; padding: 0.22rem 0.6rem; border-radius: 6px; background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0;">HR Departments</span>
+                            <span style="font-size: 0.76rem; font-weight: 600; padding: 0.22rem 0.6rem; border-radius: 6px; background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd;">Online / In Person</span>
                         </div>
                     </div>
                 </div>
 
                 <div style="padding: 0 1.4rem 1.4rem 1.4rem; margin-top: auto;">
-                    <a href="/trainings" class="btn-navy" style="width: 100%; text-align: center; display: block; padding: 0.75rem 1.25rem; font-size: 0.88rem; font-weight: 700; border-radius: 10px;" id="overview-explore-trainings-btn" onclick="event.stopPropagation();">
-                        Explore Trainings <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
+                    <a href="{{ route('trainings.index') }}" class="btn-navy" style="width: 100%; text-align: center; display: block; padding: 0.75rem 1.25rem; font-size: 0.88rem; font-weight: 700; border-radius: 10px;" id="overview-explore-trainings-btn" onclick="event.stopPropagation();">
+                        View Trainings <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
                     </a>
                 </div>
             </div>
@@ -154,30 +243,29 @@
                     <div style="height: 160px; position: relative; overflow: hidden; background: #0f172a;">
                         <img src="{{ asset('images/consultation_overview_banner.jpg') }}" alt="Consultation Overview" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.95;">
                         <div style="position: absolute; top: 12px; left: 12px; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.2); color: #fef08a; font-size: 0.75rem; font-weight: 700; padding: 0.28rem 0.7rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.8px;">
-                            <i class="fas fa-user-tie" style="margin-right: 4px;"></i> 1-on-1 Mentorship
+                            <i class="fas fa-user-tie" style="margin-right: 4px;"></i> 1-on-1 Advisory
                         </div>
                     </div>
 
                     <div style="padding: 1.4rem 1.4rem 0.85rem 1.4rem;">
                         <div style="min-height: 2.8rem; display: flex; align-items: center; margin-bottom: 0.4rem;">
-                            <h3 style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 800; color: #0f172a; margin: 0;">Consultation</h3>
+                            <h3 style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 800; color: #0f172a; margin: 0;">One-on-One Consultation</h3>
                         </div>
-                        <p style="color: #475569; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem; min-height: 4.8rem;">
-                            Dedicated 1-on-1 personalized academic advisory and mentorship for PhD candidates, Master's thesis defense, Scopus journal revisions, and international grant proposals.
+                        <p style="color: #475569; font-size: 0.92rem; line-height: 1.6; margin-bottom: 1rem; min-height: 4.8rem;">
+                            Direct, personalized guidance on dissertations, research design, journal publication, and HR strategy from a published SSCI author.
                         </p>
 
                         <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; min-height: 52px; align-content: flex-start;">
-                            <span style="font-size: 0.76rem; font-weight: 600; padding: 0.22rem 0.6rem; border-radius: 6px; background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0;">PhD Dissertation</span>
-                            <span style="font-size: 0.76rem; font-weight: 600; padding: 0.22rem 0.6rem; border-radius: 6px; background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0;">Peer-Review Support</span>
-                            <span style="font-size: 0.76rem; font-weight: 600; padding: 0.22rem 0.6rem; border-radius: 6px; background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0;">Grant Strategy</span>
-                            <span style="font-size: 0.76rem; font-weight: 600; padding: 0.22rem 0.6rem; border-radius: 6px; background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0;">Zoom / Teams</span>
+                            <span style="font-size: 0.76rem; font-weight: 600; padding: 0.22rem 0.6rem; border-radius: 6px; background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0;">Dissertation Mentorship</span>
+                            <span style="font-size: 0.76rem; font-weight: 600; padding: 0.22rem 0.6rem; border-radius: 6px; background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0;">SSCI Journals</span>
+                            <span style="font-size: 0.76rem; font-weight: 600; padding: 0.22rem 0.6rem; border-radius: 6px; background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0;">HR Strategy</span>
                         </div>
                     </div>
                 </div>
 
                 <div style="padding: 0 1.4rem 1.4rem 1.4rem; margin-top: auto;">
-                    <a href="/consultation" class="btn-navy" style="width: 100%; text-align: center; display: block; padding: 0.75rem 1.25rem; font-size: 0.88rem; font-weight: 700; border-radius: 10px;" id="overview-book-consultation-btn" onclick="event.stopPropagation();">
-                        Book Consultation <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
+                    <a href="{{ route('consultation.index') }}" class="btn-navy" style="width: 100%; text-align: center; display: block; padding: 0.75rem 1.25rem; font-size: 0.88rem; font-weight: 700; border-radius: 10px;" id="overview-book-consultation-btn" onclick="event.stopPropagation();">
+                        Book a Session <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
                     </a>
                 </div>
             </div>
@@ -208,48 +296,74 @@
     </div>
 </section>
 
-<!-- 3-COLUMN VALUE PROPOSITION FEATURE SECTION (VN2, Item 5 & 6 Light Blue Accent Contrast) -->
-<section style="background: #f0f7ff; padding: 4.5rem 0; border-top: 1px solid #bae6fd; border-bottom: 1px solid #bae6fd;">
+<!-- CAREER ACHIEVEMENTS SECTION (6 Bullets with Staggered Scroll Animation) -->
+<section style="background: #f0f7ff; padding: 4.5rem 0; border-top: 1px solid #bae6fd; border-bottom: 1px solid #bae6fd; overflow: hidden;" id="career-achievements-section">
     <div class="container">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+        <div class="section-header text-center reveal-scroll" style="margin-bottom: 2.5rem;">
+            <div class="section-subtitle" style="color: #0284c7;">ACADEMIC & MENTORSHIP HIGHLIGHTS</div>
+            <h2 class="section-title">Career Achievements</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
             
-            <!-- Card 1: Academic & Career Impact (VN2, Item 5) -->
-            <div style="background: #ffffff; padding: 2.25rem 2rem; border-radius: 16px; border: 1px solid #cbd5e1; display: flex; align-items: flex-start; gap: 1.5rem; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04); transition: transform 0.25s ease;" class="value-prop-card">
-                <div style="width: 66px; height: 66px; border-radius: 16px; background: rgba(30, 58, 138, 0.08); border: 1px solid rgba(30, 58, 138, 0.18); color: #1e3a8a; display: flex; align-items: center; justify-content: center; font-size: 1.65rem; flex-shrink: 0; box-shadow: 0 4px 10px rgba(30, 58, 138, 0.06);">
-                    <i class="fas fa-user-graduate"></i>
+            <!-- Bullet 1: Research Leadership -->
+            <div class="achievement-card-box" style="background: #ffffff; padding: 1.5rem 1.6rem; border-radius: 14px; border: 1px solid #cbd5e1; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);" data-delay="0">
+                <div style="font-weight: 800; font-size: 1.05rem; color: #0f172a; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-microscope" style="color: #0284c7;"></i> Research Leadership
                 </div>
-                <div>
-                    <h3 style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem;">Live Trainings & Workshops</h3>
-                    <p style="color: #475569; font-size: 0.94rem; line-height: 1.65; margin: 0;">
-                        I design cohort-based programs tailored to your goals built for universities, HR teams, and organizations that want practical, lasting skill development. Delivered online or in person, wherever your people are.
-                    </p>
-                </div>
+                <p style="color: #475569; font-size: 0.92rem; line-height: 1.65; margin: 0;">
+                    Principal Investigator and Co-Principal Investigator on funded projects in healthcare, education, and sustainable development policy.
+                </p>
             </div>
 
-            <!-- Card 2: Institutional Recognition -->
-            <div style="background: #ffffff; padding: 2.25rem 2rem; border-radius: 16px; border: 1px solid #cbd5e1; display: flex; align-items: flex-start; gap: 1.5rem; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04); transition: transform 0.25s ease;" class="value-prop-card">
-                <div style="width: 66px; height: 66px; border-radius: 16px; background: rgba(30, 58, 138, 0.08); border: 1px solid rgba(30, 58, 138, 0.18); color: #1e3a8a; display: flex; align-items: center; justify-content: center; font-size: 1.65rem; flex-shrink: 0; box-shadow: 0 4px 10px rgba(30, 58, 138, 0.06);">
-                    <i class="fas fa-university"></i>
+            <!-- Bullet 2: Teaching & Mentorship -->
+            <div class="achievement-card-box" style="background: #ffffff; padding: 1.5rem 1.6rem; border-radius: 14px; border: 1px solid #cbd5e1; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);" data-delay="1">
+                <div style="font-weight: 800; font-size: 1.05rem; color: #0f172a; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-user-graduate" style="color: #0284c7;"></i> Teaching & Mentorship
                 </div>
-                <div>
-                    <h3 style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem;">Institutional Recognition</h3>
-                    <p style="color: #475569; font-size: 0.94rem; line-height: 1.65; margin: 0;">
-                        Training modules and advisory frameworks are recognized across HEC Pakistan, Ministry of Higher Education (Oman), and leading university ORIC centers.
-                    </p>
-                </div>
+                <p style="color: #475569; font-size: 0.92rem; line-height: 1.65; margin: 0;">
+                    DBA, MBA, PhD, and undergraduate instruction with student satisfaction ratings of 4.6+.
+                </p>
             </div>
 
-            <!-- Card 3: Methodological Mastery -->
-            <div style="background: #ffffff; padding: 2.25rem 2rem; border-radius: 16px; border: 1px solid #cbd5e1; display: flex; align-items: flex-start; gap: 1.5rem; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04); transition: transform 0.25s ease;" class="value-prop-card">
-                <div style="width: 66px; height: 66px; border-radius: 16px; background: rgba(30, 58, 138, 0.08); border: 1px solid rgba(30, 58, 138, 0.18); color: #1e3a8a; display: flex; align-items: center; justify-content: center; font-size: 1.65rem; flex-shrink: 0; box-shadow: 0 4px 10px rgba(30, 58, 138, 0.06);">
-                    <i class="fas fa-laptop-code"></i>
+            <!-- Bullet 3: Published Authority -->
+            <div class="achievement-card-box" style="background: #ffffff; padding: 1.5rem 1.6rem; border-radius: 14px; border: 1px solid #cbd5e1; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);" data-delay="2">
+                <div style="font-weight: 800; font-size: 1.05rem; color: #0f172a; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-book-open" style="color: #0284c7;"></i> Published Authority
                 </div>
-                <div>
-                    <h3 style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem;">Methodological Mastery</h3>
-                    <p style="color: #475569; font-size: 0.94rem; line-height: 1.65; margin: 0;">
-                        Gain hands-on mastery of PRISMA 2020 literature review matrices, NVivo/MAXQDA qualitative coding, VOSviewer science mapping, and SmartPLS/AMOS SEM.
-                    </p>
+                <p style="color: #475569; font-size: 0.92rem; line-height: 1.65; margin: 0;">
+                    Peer-reviewed work in the Journal of Knowledge Management, Personnel Review, Leadership & Organization Development Journal, Journal of Intellectual Capital, and CSR & Environmental Management.
+                </p>
+            </div>
+
+            <!-- Bullet 4: Institutional Leadership -->
+            <div class="achievement-card-box" style="background: #ffffff; padding: 1.5rem 1.6rem; border-radius: 14px; border: 1px solid #cbd5e1; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);" data-delay="3">
+                <div style="font-weight: 800; font-size: 1.05rem; color: #0f172a; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-university" style="color: #0284c7;"></i> Institutional Leadership
                 </div>
+                <p style="color: #475569; font-size: 0.92rem; line-height: 1.65; margin: 0;">
+                    Former Head, Office of Research, Innovation and Commercialization (ORIC); member of academic councils, ethics committees, and editorial boards.
+                </p>
+            </div>
+
+            <!-- Bullet 5: Global Recognition -->
+            <div class="achievement-card-box" style="background: #ffffff; padding: 1.5rem 1.6rem; border-radius: 14px; border: 1px solid #cbd5e1; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);" data-delay="4">
+                <div style="font-weight: 800; font-size: 1.05rem; color: #0f172a; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-award" style="color: #0284c7;"></i> Global Recognition
+                </div>
+                <p style="color: #475569; font-size: 0.92rem; line-height: 1.65; margin: 0;">
+                    Young Scholar Award nominee, American Society for Public Administration (2015); member, ASPA and the Community of Inquiry Framework (University of Calgary, Canada); Associate Regional Director, International Institute of Marketing Professionals, Canada.
+                </p>
+            </div>
+
+            <!-- Bullet 6: Grant Success -->
+            <div class="achievement-card-box" style="background: #ffffff; padding: 1.5rem 1.6rem; border-radius: 14px; border: 1px solid #cbd5e1; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);" data-delay="5">
+                <div style="font-weight: 800; font-size: 1.05rem; color: #0f172a; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-hand-holding-usd" style="color: #0284c7;"></i> Grant Success
+                </div>
+                <p style="color: #475569; font-size: 0.92rem; line-height: 1.65; margin: 0;">
+                    Research funding from the Ministry of Higher Education and Scientific Research (Oman) and the Higher Education Commission of Pakistan.
+                </p>
             </div>
 
         </div>
@@ -406,46 +520,68 @@
         <!-- 2-Card Horizontal Scroll Track -->
         <div id="testimonialTrack" style="display: flex; gap: 1.5rem; overflow-x: auto; scroll-behavior: smooth; scrollbar-width: none; -ms-overflow-style: none; padding: 0.5rem 0.25rem 1.5rem 0.25rem;">
             
-            <!-- Review Card 1 (Pakistani PhD Scholar) -->
+            <!-- Review Card 1 (Andrew - Udemy Quote) -->
             <div style="flex: 0 0 calc(50% - 0.75rem); box-sizing: border-box; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 16px; padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 12px rgba(0,0,0,0.03);" class="testimonial-slide-card">
                 <div>
                     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
                         <div style="color: #eab308;">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <span style="font-size: 0.75rem; font-weight: 700; background: #e0f2fe; color: #0369a1; padding: 0.2rem 0.6rem; border-radius: 6px;">Scopus Q1 Accepted</span>
+                        <span style="font-size: 0.75rem; font-weight: 700; background: #e0f2fe; color: #0369a1; padding: 0.2rem 0.6rem; border-radius: 6px;">Udemy Review</span>
                     </div>
-                    <blockquote style="font-size: 0.95rem; color: #334155; line-height: 1.65; margin: 0 0 1.25rem 0; font-style: italic;">
-                        “Dr. Shakil's PRISMA 2020 systematic literature review framework was instrumental in getting my PhD paper accepted in a Scopus Q1 journal. His step-by-step matrix eliminated months of confusion during my data synthesis phase.”
+                    <blockquote style="font-size: 1.05rem; color: #334155; line-height: 1.65; margin: 0 0 1.25rem 0; font-style: italic; font-weight: 600;">
+                        “This course was the key to my successful defense.”
                     </blockquote>
                 </div>
                 <div style="border-top: 1px solid #e2e8f0; padding-top: 0.85rem; display: flex; align-items: center; gap: 0.75rem;">
-                    <div style="width: 42px; height: 42px; border-radius: 50%; background: #0f172a; color: #fef08a; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem;">TM</div>
+                    <div style="width: 42px; height: 42px; border-radius: 50%; background: #0f172a; color: #fef08a; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem;">A</div>
                     <div>
-                        <div style="font-weight: 800; color: #0f172a; font-size: 0.92rem;">Dr. Tariq Mahmood</div>
-                        <div style="font-weight: 500; color: #64748b; font-size: 0.8rem;">Assistant Professor & PhD Scholar (Pakistan)</div>
+                        <div style="font-weight: 800; color: #0f172a; font-size: 0.92rem;">Andrew</div>
+                        <div style="font-weight: 500; color: #64748b; font-size: 0.8rem;">Udemy Student • Research Methodology</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Review Card 2 (International UK Scholar) -->
+            <!-- Review Card 2 (Michael - Udemy Quote) -->
             <div style="flex: 0 0 calc(50% - 0.75rem); box-sizing: border-box; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 16px; padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 12px rgba(0,0,0,0.03);" class="testimonial-slide-card">
                 <div>
                     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
                         <div style="color: #eab308;">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <span style="font-size: 0.75rem; font-weight: 700; background: #fef9c3; color: #854d0e; padding: 0.2rem 0.6rem; border-radius: 6px;">Master's Distinction</span>
+                        <span style="font-size: 0.75rem; font-weight: 700; background: #fef9c3; color: #854d0e; padding: 0.2rem 0.6rem; border-radius: 6px;">Udemy Review</span>
                     </div>
-                    <blockquote style="font-size: 0.95rem; color: #334155; line-height: 1.65; margin: 0 0 1.25rem 0; font-style: italic;">
-                        “Taking Dr. Shakil's NVivo qualitative coding bootcamp transformed my dissertation. His practical thematic analysis framework helped me structure complex interview data seamlessly and pass my defense with distinction.”
+                    <blockquote style="font-size: 1.05rem; color: #334155; line-height: 1.65; margin: 0 0 1.25rem 0; font-style: italic; font-weight: 600;">
+                        “Transformed my research into a strong defense.”
                     </blockquote>
                 </div>
                 <div style="border-top: 1px solid #e2e8f0; padding-top: 0.85rem; display: flex; align-items: center; gap: 0.75rem;">
-                    <div style="width: 42px; height: 42px; border-radius: 50%; background: #1e3a8a; color: #ffffff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem;">EV</div>
+                    <div style="width: 42px; height: 42px; border-radius: 50%; background: #1e3a8a; color: #ffffff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem;">M</div>
                     <div>
-                        <div style="font-weight: 800; color: #0f172a; font-size: 0.92rem;">Eleanor Vance</div>
-                        <div style="font-weight: 500; color: #64748b; font-size: 0.8rem;">Master's Graduate (Teesside University, UK)</div>
+                        <div style="font-weight: 800; color: #0f172a; font-size: 0.92rem;">Michael</div>
+                        <div style="font-weight: 500; color: #64748b; font-size: 0.8rem;">Udemy Student • Academic Writing</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review Card 3 (Erich - Udemy Quote) -->
+            <div style="flex: 0 0 calc(50% - 0.75rem); box-sizing: border-box; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 16px; padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 12px rgba(0,0,0,0.03);" class="testimonial-slide-card">
+                <div>
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+                        <div style="color: #eab308;">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <span style="font-size: 0.75rem; font-weight: 700; background: #f0fdf4; color: #166534; padding: 0.2rem 0.6rem; border-radius: 6px;">Udemy Review</span>
+                    </div>
+                    <blockquote style="font-size: 1.05rem; color: #334155; line-height: 1.65; margin: 0 0 1.25rem 0; font-style: italic; font-weight: 600;">
+                        “Turned my ideas into a polished dissertation.”
+                    </blockquote>
+                </div>
+                <div style="border-top: 1px solid #e2e8f0; padding-top: 0.85rem; display: flex; align-items: center; gap: 0.75rem;">
+                    <div style="width: 42px; height: 42px; border-radius: 50%; background: #065f46; color: #ffffff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem;">E</div>
+                    <div>
+                        <div style="font-weight: 800; color: #0f172a; font-size: 0.92rem;">Erich</div>
+                        <div style="font-weight: 500; color: #64748b; font-size: 0.8rem;">Udemy Student • Thesis Structuring</div>
                     </div>
                 </div>
             </div>
@@ -626,7 +762,7 @@
                     Who is Dr. Muhammad Shakil Ahmad?
                 </summary>
                 <p style="color: #475569; font-size: 0.96rem; line-height: 1.65; margin-top: 0.85rem;">
-                    Dr. Muhammad Shakil Ahmad is a Senior Lecturer at Teesside International Business School, Teesside University (UK), specializing in Human Resource Management, Project Management, and Organizational Innovation, with 15+ years of academic experience and 53+ published papers in SSCI-indexed journals.
+                    Dr. Muhammad Shakil Ahmad is a Senior Lecturer at Teesside International Business School, Teesside University (UK), specializing in Human Resource Management, Project Management, and Organizational Innovation, with 15+ years of academic experience and 90+ published papers in SSCI-indexed journals.
                 </p>
             </details>
 
@@ -681,7 +817,7 @@
       "name": "Who is Dr. Muhammad Shakil Ahmad?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Dr. Muhammad Shakil Ahmad is a Senior Lecturer at Teesside International Business School, Teesside University (UK), specializing in Human Resource Management, Project Management, and Organizational Innovation, with 15+ years of academic experience and 53+ published papers in SSCI-indexed journals."
+        "text": "Dr. Muhammad Shakil Ahmad is a Senior Lecturer at Teesside International Business School, Teesside University (UK), specializing in Human Resource Management, Project Management, and Organizational Innovation, with 15+ years of academic experience and 90+ published papers in SSCI-indexed journals."
       }
     },
     {
@@ -727,7 +863,7 @@
             Ready to Take the Next Step?
         </h2>
         <p style="color: #e2e8f0; font-size: 1.1rem; line-height: 1.7; max-width: 650px; margin: 0 auto 2rem auto;">
-            Whether finishing a dissertation, upskilling a research team, or building a stronger HR strategy — get in touch with the advisory team today.
+            Whether you're finishing a dissertation, upskilling your team, or building a stronger HR strategy — let's work on it together.
         </p>
         
         <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
@@ -738,7 +874,7 @@
                 Book a Consultation <i class="fas fa-calendar-check" style="margin-left: 4px;"></i>
             </a>
             <a href="{{ route('contact.index') }}" style="padding: 0.85rem 1.8rem; background: rgba(255,255,255,0.15); color: #ffffff !important; border: 1px solid rgba(255,255,255,0.4); font-weight: 700; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; text-decoration: none; transition: all 0.2s ease;" onmouseover="this.style.background='rgba(255,255,255,0.25)';" onmouseout="this.style.background='rgba(255,255,255,0.15)';">
-                Contact Advisory Team <i class="fas fa-envelope"></i>
+                Contact Me <i class="fas fa-envelope"></i>
             </a>
         </div>
     </div>
@@ -813,6 +949,38 @@ document.addEventListener("DOMContentLoaded", function () {
         }, { threshold: 0.3 });
 
         statsObserver.observe(statsTrigger);
+    }
+
+    // Scroll Reveal Observer for Meet Dr. Shakil & Career Achievements
+    const scrollRevealObserver = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("in-view");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll(".reveal-scroll, .reveal-scroll-left, .reveal-scroll-right").forEach(function (el) {
+        scrollRevealObserver.observe(el);
+    });
+
+    const achievementCards = document.querySelectorAll(".achievement-card-box");
+    if (achievementCards.length > 0) {
+        const achievementObserver = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    const delayIndex = parseInt(entry.target.getAttribute("data-delay") || "0", 10);
+                    entry.target.style.transitionDelay = (delayIndex * 0.1) + "s";
+                    entry.target.classList.add("in-view");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        achievementCards.forEach(function (card) {
+            achievementObserver.observe(card);
+        });
     }
 });
 </script>

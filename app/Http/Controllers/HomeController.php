@@ -23,11 +23,14 @@ class HomeController extends Controller
         $heroGallery = Schema::hasTable('galleries') ? Gallery::whereIn('page', ['home', 'all'])->where('is_active', true)->orderBy('sort_order')->get() : collect([]);
 
         $stats = [
-            'learners' => (int) SiteSetting::get('stat_learners', 21550),
-            'reviews' => (int) SiteSetting::get('stat_reviews', 1865),
-            'courses' => Schema::hasTable('courses') ? Course::count() : 18,
+            'learners' => (int) SiteSetting::get('stat_learners', 16000),
+            'reviews' => (int) SiteSetting::get('stat_reviews', 1800),
+            'courses' => Schema::hasTable('courses') && Course::count() > 0 ? Course::count() : 18,
+            'ssci_papers' => 90,
             'grants_count' => Schema::hasTable('publications') ? Publication::where('type', 'Grant')->count() : 2,
         ];
+
+        $bioImage = SiteSetting::get('home_bio_image', 'images/dr_shakil_presentation_quote.jpg');
 
         return view('pages.home', compact(
             'courses',
@@ -36,7 +39,8 @@ class HomeController extends Controller
             'highlightedPubs',
             'testimonials',
             'heroGallery',
-            'stats'
+            'stats',
+            'bioImage'
         ));
     }
 }

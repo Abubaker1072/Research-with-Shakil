@@ -254,7 +254,7 @@
                     <div style="display: flex; align-items: center; gap: 0.75rem;">
                         <i class="fas fa-journal-whills" style="font-size: 1.5rem; color: #0284c7;"></i>
                         <div>
-                            <div class="about-stat-number">{{ $stats['ssci_papers'] ?? '53+ Papers' }}</div>
+                            <div class="about-stat-number">{{ $stats['ssci_papers'] ?? '90+ Papers' }}</div>
                             <div class="about-stat-label">SSCI & Scopus Q1</div>
                         </div>
                     </div>
@@ -280,7 +280,7 @@
                 </p>
 
                 <p class="about-text-body">
-                    He has authored more than 53 papers in SSCI-indexed journals (H-index: 39), supervised DBA, MBA, and PhD scholars, and led funded research projects spanning healthcare, education, and sustainable development.
+                    He has authored more than 90 papers in SSCI-indexed journals (H-index: 39), supervised DBA, MBA, and PhD scholars, and led funded research projects spanning healthcare, education, and sustainable development.
                 </p>
 
                 <p class="about-text-body">
@@ -391,7 +391,7 @@
                     <div>
                         <div style="font-size: 0.8rem; font-weight: 800; color: #fef08a; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.35rem;">SCOPUS & GOOGLE SCHOLAR</div>
                         <div style="font-size: 1.2rem; font-weight: 800;">Google Scholar Citations & H-Index 39 Profile</div>
-                        <div style="font-size: 0.88rem; color: #cbd5e1; margin-top: 0.2rem;">Author of 53+ papers in peer-reviewed SSCI & Scopus Q1 journals.</div>
+                        <div style="font-size: 0.88rem; color: #cbd5e1; margin-top: 0.2rem;">Author of 90+ papers in peer-reviewed SSCI & Scopus Q1 journals.</div>
                     </div>
                     <a href="https://scholar.google.com/citations?user=Kr6MOa0AAAAJ&hl=en&oi=ao" target="_blank" class="btn-navy" style="background: #eab308; color: #0f172a; font-weight: 800; padding: 0.8rem 1.5rem; border-radius: 10px; text-decoration: none; white-space: nowrap;">
                         <i class="fas fa-graduation-cap" style="margin-right: 6px;"></i> View Scholar Profile <i class="fas fa-external-link-alt" style="font-size: 0.75rem; margin-left: 4px;"></i>
