@@ -12,7 +12,7 @@
                     <strong>Email</strong> info@researchwithshakil.com
                 </p>
                 <p style="margin-bottom: 1.5rem;">
-                    <a href="/contact" style="color: var(--gold); font-size: 0.88rem; text-decoration: underline;">Contact & Advisory Inquiry</a>
+                    <a href="{{ route('contact.index') }}" style="color: var(--gold); font-size: 0.88rem; text-decoration: underline;">Contact & Advisory Inquiry</a>
                 </p>
             </div>
 
@@ -20,10 +20,11 @@
             <div>
                 <h4 class="footer-col-title">Offerings</h4>
                 <ul class="footer-links-list">
-                    <li><a href="/courses">All Online Courses</a></li>
-                    <li><a href="/trainings">Institutional Trainings</a></li>
-                    <li><a href="/consultation">1-on-1 Consultation</a></li>
-                    <li><a href="/consultation#consultation-booking-form">Dissertation Mentorship</a></li>
+                    <li><a href="{{ route('courses.index') }}">All Online Courses</a></li>
+                    <li><a href="{{ route('services.index') }}">Consultancy Services</a></li>
+                    <li><a href="{{ route('trainings.index') }}">Institutional Trainings</a></li>
+                    <li><a href="{{ route('consultation.index') }}">1-on-1 Consultation</a></li>
+                    <li><a href="{{ route('consultation.index') }}#consultation-booking-form">Dissertation Mentorship</a></li>
                 </ul>
             </div>
 
@@ -33,9 +34,9 @@
                 <ul class="footer-links-list">
                     <li><a href="https://scholar.google.com/citations?user=Kr6MOa0AAAAJ&hl=en&oi=ao" target="_blank">Google Scholar Profile</a></li>
                     <li><a href="https://www.udemy.com/user/dr-muhammad-shakil-ahmad/" target="_blank">Udemy Instructor Profile</a></li>
-                    <li><a href="/publications">Research Publications</a></li>
-                    <li><a href="/publications">Oman & HEC Grants</a></li>
-                    <li><a href="/admin/inquiries">Admin Portal</a></li>
+                    <li><a href="{{ route('publications.index') }}">Research Publications</a></li>
+                    <li><a href="{{ route('publications.index') }}#grants">Oman & HEC Grants</a></li>
+                    <li><a href="{{ route('admin.inquiries') }}">Admin Portal</a></li>
                 </ul>
             </div>
 
@@ -43,10 +44,10 @@
             <div>
                 <h4 class="footer-col-title">About</h4>
                 <ul class="footer-links-list">
-                    <li><a href="/about">Dr. Shakil Ahmad Bio</a></li>
-                    <li><a href="/about">Academic Achievements</a></li>
-                    <li><a href="/about">ORIC Leadership</a></li>
-                    <li><a href="/consultation">Booking & Consultation</a></li>
+                    <li><a href="{{ route('about') }}">Dr. Shakil Ahmad Bio</a></li>
+                    <li><a href="{{ route('about') }}#qualifications">Academic Achievements</a></li>
+                    <li><a href="{{ route('about') }}#teaching-experience">ORIC Leadership</a></li>
+                    <li><a href="{{ route('consultation.index') }}">Booking & Consultation</a></li>
                 </ul>
             </div>
         </div>
@@ -58,9 +59,9 @@
             </div>
             
             <div style="display: flex; gap: 1.25rem; font-size: 0.88rem;">
-                <a href="/about" style="color: #cbd5e1;">Privacy Policy</a>
+                <a href="{{ route('about') }}" style="color: #cbd5e1;">Privacy Policy</a>
                 <span style="color: #475569;">|</span>
-                <a href="/contact" style="color: #cbd5e1;">Contact</a>
+                <a href="{{ route('contact.index') }}" style="color: #cbd5e1;">Contact</a>
             </div>
 
             <!-- Social Icon Boxes -->
