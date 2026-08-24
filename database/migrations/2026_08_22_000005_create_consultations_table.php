@@ -14,7 +14,8 @@ return new class extends Migration
             $table->string('email');
             $table->string('whatsapp');
             $table->string('service_type');
-            $table->string('academic_level')->default('PhD Candidate');
+            $table->string('academic_level')->nullable()->default('PhD Candidate');
+            $table->string('institution')->nullable();
             $table->text('message');
             $table->string('status')->default('pending'); // pending, contacted, completed
             $table->timestamps();

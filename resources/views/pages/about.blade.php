@@ -246,7 +246,7 @@
                     <div style="display: flex; align-items: center; gap: 0.75rem;">
                         <i class="fas fa-users" style="font-size: 1.5rem; color: #1e3a8a;"></i>
                         <div>
-                            <div class="about-stat-number">16,000+</div>
+                            <div class="about-stat-number">{{ $stats['learners'] ?? '16,000+' }}</div>
                             <div class="about-stat-label">Global Learners</div>
                         </div>
                     </div>
@@ -254,7 +254,7 @@
                     <div style="display: flex; align-items: center; gap: 0.75rem;">
                         <i class="fas fa-journal-whills" style="font-size: 1.5rem; color: #0284c7;"></i>
                         <div>
-                            <div class="about-stat-number">53+ Papers</div>
+                            <div class="about-stat-number">{{ $stats['ssci_papers'] ?? '53+ Papers' }}</div>
                             <div class="about-stat-label">SSCI & Scopus Q1</div>
                         </div>
                     </div>
@@ -262,7 +262,7 @@
                     <div style="display: flex; align-items: center; gap: 0.75rem;">
                         <i class="fas fa-star" style="font-size: 1.5rem; color: #eab308;"></i>
                         <div>
-                            <div class="about-stat-number">H-Index 39</div>
+                            <div class="about-stat-number">H-Index {{ $stats['h_index'] ?? '39' }}</div>
                             <div class="about-stat-label">Google Scholar</div>
                         </div>
                     </div>
@@ -287,41 +287,23 @@
                     Outside the classroom, his courses, workshops, and consultations have helped thousands of learners understand research methodology, defend dissertations with confidence, and strengthen HR practice inside their organizations.
                 </p>
 
-                <!-- Structured Career Achievements Block (Section 4.2 - 6 Categories) -->
+                <!-- Structured Career Achievements Block (Dynamic From Database) -->
                 <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 20px; padding: 2rem; margin: 2.5rem 0; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);">
                     <h3 style="font-family: var(--font-heading); font-size: 1.45rem; font-weight: 800; color: #0f172a; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.6rem;">
-                        <i class="fas fa-trophy" style="color: #eab308; font-size: 1.3rem;"></i> Career Achievements
+                        <i class="fas fa-trophy" style="color: #eab308; font-size: 1.3rem;"></i> Career Achievements & Leadership
                     </h3>
                     
                     <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.1rem; color: #334155; font-size: 0.98rem; line-height: 1.65;">
+                        @foreach($awardsAndMemberships as $award)
                         <li style="display: flex; align-items: flex-start; gap: 0.85rem;">
                             <i class="fas fa-check-circle" style="color: #0284c7; margin-top: 4px; font-size: 1.1rem;"></i>
-                            <span><strong>Research Leadership:</strong> Principal/Co-PI on funded projects in healthcare, education, and sustainable development.</span>
+                            <span><strong>{{ $award->title }}:</strong> {{ $award->description }} ({{ $award->organization ?? 'Global' }})</span>
                         </li>
-                        <li style="display: flex; align-items: flex-start; gap: 0.85rem;">
-                            <i class="fas fa-check-circle" style="color: #0284c7; margin-top: 4px; font-size: 1.1rem;"></i>
-                            <span><strong>Teaching & Mentorship:</strong> DBA, MBA, PhD, and undergraduate instruction with 4.6+ satisfaction ratings.</span>
-                        </li>
-                        <li style="display: flex; align-items: flex-start; gap: 0.85rem;">
-                            <i class="fas fa-check-circle" style="color: #0284c7; margin-top: 4px; font-size: 1.1rem;"></i>
-                            <span><strong>Published Authority:</strong> Peer-reviewed work in <em>Journal of Knowledge Management</em>, <em>Personnel Review</em>, <em>Leadership & Organization Development Journal</em>, <em>Journal of Intellectual Capital</em>, and <em>CSR & Environmental Management</em>.</span>
-                        </li>
-                        <li style="display: flex; align-items: flex-start; gap: 0.85rem;">
-                            <i class="fas fa-check-circle" style="color: #0284c7; margin-top: 4px; font-size: 1.1rem;"></i>
-                            <span><strong>Institutional Leadership:</strong> Former Head of ORIC; member of academic councils, ethics committees, and editorial boards.</span>
-                        </li>
-                        <li style="display: flex; align-items: flex-start; gap: 0.85rem;">
-                            <i class="fas fa-check-circle" style="color: #0284c7; margin-top: 4px; font-size: 1.1rem;"></i>
-                            <span><strong>Global Recognition:</strong> Young Scholar Award nominee (ASPA 2015); member of ASPA and Community of Inquiry Framework (University of Calgary); Associate Regional Director of IIMP Canada.</span>
-                        </li>
-                        <li style="display: flex; align-items: flex-start; gap: 0.85rem;">
-                            <i class="fas fa-check-circle" style="color: #0284c7; margin-top: 4px; font-size: 1.1rem;"></i>
-                            <span><strong>Grant Success:</strong> Funding secured from the Ministry of Higher Education (Oman) and HEC Pakistan.</span>
-                        </li>
+                        @endforeach
                     </ul>
                 </div>
 
-                <!-- Services Offered Section (Section 5 & 2.3 - Third Person Framing) -->
+                <!-- Services Offered Section -->
                 <div style="margin: 3rem 0;">
                     <h3 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: #0f172a; margin-bottom: 1.5rem;">
                         Services Offered & Advisory Frameworks
@@ -374,7 +356,7 @@
                     </div>
                 </div>
 
-                <!-- Training Photo Showcase Section -->
+                <!-- Training Photo Showcase Section (Dynamic From Database) -->
                 <div style="margin: 3.5rem 0 2rem 0; padding-top: 2.5rem; border-top: 1px solid #e2e8f0;">
                     <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
                         <div>
@@ -392,37 +374,15 @@
                     </p>
 
                     <div class="training-photos-grid">
+                        @foreach($galleryImages as $photo)
                         <div class="training-photo-card">
-                            <img src="{{ asset('images/hero_img_3.jpg') }}" alt="Hands-on Computer Lab Training Session" class="training-photo-img">
+                            <img src="{{ asset($photo->image_path) }}" alt="{{ $photo->title }}" class="training-photo-img">
                             <div class="training-photo-caption">
-                                <div style="font-weight: 800; font-size: 0.95rem; color: #fef08a;">Computer Lab Bootcamps</div>
-                                <div style="font-size: 0.8rem; color: #cbd5e1;">Hands-on NVivo & SmartPLS software training</div>
+                                <div style="font-weight: 800; font-size: 0.95rem; color: #fef08a;">{{ $photo->title }}</div>
+                                <div style="font-size: 0.8rem; color: #cbd5e1;">{{ $photo->caption }}</div>
                             </div>
                         </div>
-
-                        <div class="training-photo-card">
-                            <img src="{{ asset('images/hero_img_4.jpg') }}" alt="CPD Executive Seminar & Faculty Auditorium" class="training-photo-img">
-                            <div class="training-photo-caption">
-                                <div style="font-weight: 800; font-size: 0.95rem; color: #fef08a;">CPD Faculty Seminars</div>
-                                <div style="font-size: 0.8rem; color: #cbd5e1;">ORIC capacity-building & research policy</div>
-                            </div>
-                        </div>
-
-                        <div class="training-photo-card">
-                            <img src="{{ asset('images/hero_img_1.jpg') }}" alt="1-on-1 Academic Advisory & Consultation" class="training-photo-img">
-                            <div class="training-photo-caption">
-                                <div style="font-weight: 800; font-size: 0.95rem; color: #fef08a;">1-on-1 Research Mentorship</div>
-                                <div style="font-size: 0.8rem; color: #cbd5e1;">PhD dissertation & Scopus journal defense</div>
-                            </div>
-                        </div>
-
-                        <div class="training-photo-card">
-                            <img src="{{ asset('images/hero_img_2.jpg') }}" alt="University Keynote & Faculty Mentorship" class="training-photo-img">
-                            <div class="training-photo-caption">
-                                <div style="font-weight: 800; font-size: 0.95rem; color: #fef08a;">Academic Leadership</div>
-                                <div style="font-size: 0.8rem; color: #cbd5e1;">Teesside University & global partnerships</div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
 

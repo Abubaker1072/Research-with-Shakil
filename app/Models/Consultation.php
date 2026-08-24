@@ -15,6 +15,7 @@ class Consultation extends Model
         'whatsapp',
         'service_type',
         'academic_level',
+        'institution',
         'message',
         'status',
     ];

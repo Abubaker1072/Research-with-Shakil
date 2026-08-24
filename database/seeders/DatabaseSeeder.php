@@ -16,6 +16,12 @@ class DatabaseSeeder extends Seeder
             PublicationSeeder::class,
             ServiceSeeder::class,
             TestimonialSeeder::class,
+            TrainingSeeder::class,
+            AwardSeeder::class,
+            ResearchInterestSeeder::class,
+            GallerySeeder::class,
+            SiteSettingSeeder::class,
+            ConsultationSeeder::class,
         ]);
 
         Schema::enableForeignKeyConstraints();

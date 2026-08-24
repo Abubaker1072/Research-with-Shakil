@@ -1,7 +1,7 @@
 <nav class="navbar-white">
     <div class="container nav-container">
         <!-- Brand Logo -->
-        <a href="{{ route('home') }}" class="nav-brand">
+        <a href="{{ route('home') }}" class="nav-brand" style="margin-right: 3.5rem; flex-shrink: 0; display: inline-flex; align-items: center;">
             <img src="{{ asset('images/logo.png') }}" alt="Research with Shakil Logo" class="brand-logo-img" id="nav-brand-logo">
         </a>
 
