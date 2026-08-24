@@ -120,21 +120,37 @@
         box-shadow: 0 4px 12px rgba(30, 58, 138, 0.25);
     }
 
-    /* Academic Publication Card (Compact & Well-Proportioned) */
+    /* 2-Column Grid Layout for Publications Cards (2 Boxes Per Row) */
+    #publicationsContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        align-items: stretch;
+    }
     .pub-item-card {
         background: #ffffff;
         border-radius: 14px;
         border: 1px solid #e2e8f0;
         padding: 1.35rem;
-        margin-bottom: 1.15rem;
+        margin-bottom: 0 !important;
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
         transition: all 0.25s ease;
         position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
     }
     .pub-item-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 24px rgba(30, 58, 138, 0.08);
+        transform: translateY(-4px);
+        box-shadow: 0 10px 24px rgba(30, 58, 138, 0.1);
         border-color: #cbd5e1;
+    }
+    @media (max-width: 992px) {
+        #publicationsContainer {
+            grid-template-columns: 1fr !important;
+            gap: 1.25rem !important;
+        }
     }
     .pub-card-header {
         display: flex;

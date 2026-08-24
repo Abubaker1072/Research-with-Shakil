@@ -2,6 +2,104 @@
 
 @section('title', '1-on-1 Academic Advisory & Consultation | Dr. Muhammad Shakil Ahmad')
 
+@push('styles')
+<style>
+    /* 2-Column Grid Layout for Consultation Cards (2 Boxes Per Row) */
+    .consultation-grid-2col {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.75rem;
+        margin-bottom: 4rem;
+        align-items: stretch;
+    }
+
+    .consultation-card-box {
+        background: #ffffff;
+        border: 1px solid #cbd5e1;
+        border-radius: 18px;
+        padding: 1.5rem;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        height: 100%;
+        position: relative;
+    }
+    .consultation-card-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 14px 30px rgba(30, 58, 138, 0.12);
+        border-color: #0284c7;
+    }
+    .consultation-img-wrapper {
+        height: 210px;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 1.25rem;
+        background: #f1f5f9;
+        border: 1px solid #e2e8f0;
+    }
+    .consultation-img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    .consultation-card-box:hover .consultation-img-wrapper img {
+        transform: scale(1.04);
+    }
+    .consultation-card-category {
+        font-size: 0.78rem;
+        font-weight: 800;
+        color: #0284c7;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 0.4rem;
+    }
+    .consultation-card-title {
+        font-family: var(--font-heading);
+        font-size: 1.25rem;
+        font-weight: 800;
+        color: #0f172a;
+        margin-bottom: 0.6rem;
+        line-height: 1.3;
+    }
+    .consultation-card-desc {
+        font-size: 0.92rem;
+        color: #475569;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+    .consultation-features-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1.25rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.45rem;
+    }
+    .consultation-features-list li {
+        font-size: 0.88rem;
+        color: #334155;
+        font-weight: 600;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .consultation-features-list li i {
+        color: #0284c7;
+        margin-top: 3px;
+    }
+
+    @media (max-width: 992px) {
+        .consultation-grid-2col {
+            grid-template-columns: 1fr !important;
+            gap: 1.5rem !important;
+        }
+    }
+</style>
+@endpush
+
 @section('content')
 
 <!-- Navy & Gold Header Banner -->
@@ -15,9 +113,9 @@
     </div>
 </section>
 
-<!-- STICKY STACKING CARDS SCROLL SECTION -->
+<!-- 2-COLUMN SIDE-BY-SIDE PROGRAM CARDS SECTION -->
 <section class="section-padding" style="background: var(--surface);">
-    <div class="container" style="max-width: 1100px;">
+    <div class="container" style="max-width: 1150px;">
         <div class="section-header text-center reveal-scroll-up" style="margin-bottom: 3rem;">
             <div class="section-subtitle">ADVISORY PARTNERSHIPS</div>
             <h2 class="section-title">Coaching & Consultation Programs</h2>
@@ -26,7 +124,7 @@
             </p>
         </div>
 
-        <div class="stacked-cards-container" style="margin-bottom: 4rem;">
+        <div class="consultation-grid-2col">
             @foreach($services as $index => $service)
             @php
                 $fallbackImages = [
@@ -42,31 +140,31 @@
                     $img = $fallbackImages[$index] ?? 'consultation_prog_2.jpg';
                 }
             @endphp
-            <div class="stacked-card stacked-card-clickable reveal-card-box" data-delay="{{ $index }}">
-                <div class="stacked-card-grid">
-                    <!-- Left: Program Visual Preview -->
-                    <div>
-                        <img src="{{ asset('images/' . $img) }}" alt="{{ $service->title }}" class="stacked-card-preview-img">
+            <div class="consultation-card-box reveal-card-box" data-delay="{{ $index }}">
+                <div>
+                    <!-- Visual Image Preview -->
+                    <div class="consultation-img-wrapper">
+                        <img src="{{ asset('images/' . $img) }}" alt="{{ $service->title }}">
                     </div>
 
-                    <!-- Right: Details & Features List -->
-                    <div>
-                        <div class="stacked-card-category">1-ON-1 ADVISORY PROGRAM {{ $index + 1 }}</div>
-                        <h3 class="stacked-card-title">{{ $service->title }}</h3>
-                        <p class="stacked-card-desc">{{ $service->full_description ?? $service->short_description }}</p>
+                    <!-- Category, Title & Description -->
+                    <div class="consultation-card-category">1-ON-1 ADVISORY PROGRAM {{ $index + 1 }}</div>
+                    <h3 class="consultation-card-title">{{ $service->title }}</h3>
+                    <p class="consultation-card-desc">{{ $service->full_description ?? $service->short_description }}</p>
 
-                        @if($service->features)
-                        <ul class="stacked-card-features">
-                            @foreach($service->features as $f)
-                            <li><i class="fas fa-check" style="color: var(--navy);"></i> {{ $f }}</li>
-                            @endforeach
-                        </ul>
-                        @endif
+                    @if($service->features)
+                    <ul class="consultation-features-list">
+                        @foreach($service->features as $f)
+                        <li><i class="fas fa-check-circle"></i> {{ $f }}</li>
+                        @endforeach
+                    </ul>
+                    @endif
+                </div>
 
-                        <a href="#consultation-booking-form" onclick="selectServiceOption('{{ $service->title }}')" class="btn-navy" style="width: 100%; text-align: center; display: inline-block;" id="consultation-apply-btn-{{ $service->id }}">
-                            BOOK THIS PROGRAM <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
-                        </a>
-                    </div>
+                <div style="margin-top: auto; padding-top: 1rem;">
+                    <a href="#consultation-booking-form" onclick="selectServiceOption('{{ $service->title }}')" class="btn-navy" style="width: 100%; text-align: center; display: block; border-radius: 10px;" id="consultation-apply-btn-{{ $service->id }}">
+                        BOOK THIS PROGRAM <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
+                    </a>
                 </div>
             </div>
             @endforeach
