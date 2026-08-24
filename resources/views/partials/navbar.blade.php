@@ -76,7 +76,7 @@
 
         <!-- Right Side Primary CTA -->
         <div class="nav-cta-wrapper">
-            <a href="#booking-form-section" class="btn-navy" id="nav-lets-talk-btn">
+            <a href="{{ route('home') }}#booking-form-section" class="btn-navy" id="nav-lets-talk-btn">
                 Let's Talk <i class="fas fa-arrow-right"></i>
             </a>
         </div>
