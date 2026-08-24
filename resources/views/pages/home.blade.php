@@ -50,12 +50,28 @@
         border-color: #0284c7 !important;
     }
 
-    /* Hero & Meet Shakil Section Responsive Layout Styles */
+    /* Hero & Meet Shakil Section Responsive Layout Styles (iOS & Android Optimized) */
+    .hero-institution-badge {
+        font-size: 0.8rem;
+        font-weight: 800;
+        color: #fef08a;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        margin-bottom: 0.85rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 0.35rem 0.9rem;
+        border-radius: 30px;
+        backdrop-filter: blur(8px);
+    }
     .hero-portrait-card {
         border-radius: 24px;
         overflow: hidden;
-        border: 4px solid rgba(255,255,255,0.15);
-        box-shadow: 0 20px 45px rgba(0,0,0,0.3);
+        border: 4px solid rgba(255,255,255,0.18);
+        box-shadow: 0 20px 45px rgba(0,0,0,0.35);
         max-width: 440px;
         margin: 0 auto;
         background: #0f172a;
@@ -92,18 +108,18 @@
     @media (max-width: 992px) {
         .reveal-scroll-left,
         .reveal-scroll-right {
-            transform: translateY(30px) !important;
+            transform: translateY(25px) !important;
         }
 
         .hero-grid,
         .meet-shakil-grid {
             grid-template-columns: 1fr !important;
-            gap: 2.5rem !important;
+            gap: 2rem !important;
         }
 
         .hero-portrait-card {
             max-width: 360px !important;
-            margin-top: 1.5rem !important;
+            margin-top: 1.25rem !important;
         }
 
         .hero-portrait-card img {
@@ -112,7 +128,7 @@
 
         .meet-shakil-img-card {
             max-width: 380px !important;
-            margin: 1.5rem auto 0 auto !important;
+            margin: 1.25rem auto 0 auto !important;
         }
 
         .meet-shakil-img-card img {
@@ -120,37 +136,47 @@
         }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 576px) {
         .hero-title-mdi {
-            font-size: 1.7rem !important;
-            line-height: 1.25 !important;
+            font-size: 1.65rem !important;
+            line-height: 1.28 !important;
         }
 
         .hero-text-mdi {
-            font-size: 0.96rem !important;
+            font-size: 0.95rem !important;
+            line-height: 1.65 !important;
+        }
+
+        .hero-institution-badge {
+            font-size: 0.72rem !important;
+            padding: 0.3rem 0.75rem !important;
+            letter-spacing: 0.8px !important;
         }
 
         .hero-portrait-card {
             max-width: 100% !important;
+            border-radius: 20px !important;
         }
 
         .hero-portrait-card img {
-            height: 300px !important;
+            height: 320px !important;
         }
 
         .meet-shakil-img-card img {
-            height: 260px !important;
+            height: 270px !important;
         }
 
         .hero-cta-buttons {
             flex-direction: column !important;
             width: 100% !important;
+            gap: 0.75rem !important;
         }
 
         .hero-cta-buttons a {
             width: 100% !important;
             text-align: center !important;
             justify-content: center !important;
+            padding: 0.85rem 1.25rem !important;
         }
     }
 </style>
@@ -163,7 +189,9 @@
     <div class="container hero-grid">
         <!-- Left Side: Title, Description & Primary CTA -->
         <div>
-            <div style="font-size: 0.85rem; font-weight: 800; color: #fef08a; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 0.5rem;">TEESSIDE INTERNATIONAL BUSINESS SCHOOL (UK)</div>
+            <div class="hero-institution-badge">
+                <i class="fas fa-university" style="font-size: 0.75rem;"></i> TEESSIDE INTERNATIONAL BUSINESS SCHOOL (UK)
+            </div>
             <h1 class="hero-title-mdi" style="font-size: 2.25rem; line-height: 1.25;">
                 Research Methodology Courses, Training & HR Consulting with Dr. Shakil Ahmad
             </h1>
@@ -175,10 +203,10 @@
             </p>
             
             <div class="hero-cta-buttons" style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <a href="{{ route('courses.index') }}" class="btn-navy" id="hero-explore-courses" style="padding: 0.9rem 2.2rem; font-weight: 800; background: #eab308; color: #0f172a;">
+                <a href="{{ route('courses.index') }}" class="btn-navy" id="hero-explore-courses" style="padding: 0.9rem 2.2rem; font-weight: 800; background: #eab308; color: #0f172a; border-radius: 10px;">
                     Explore My Courses <i class="fas fa-graduation-cap" style="margin-left: 6px;"></i>
                 </a>
-                <a href="{{ route('consultation.index') }}" class="btn-light-surface" style="padding: 0.9rem 1.8rem; font-weight: 700;">
+                <a href="{{ route('consultation.index') }}" class="btn-light-surface" style="padding: 0.9rem 1.8rem; font-weight: 700; border-radius: 10px;">
                     Book a Consultation <i class="fas fa-calendar-check" style="margin-left: 6px;"></i>
                 </a>
             </div>

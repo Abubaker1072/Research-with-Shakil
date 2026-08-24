@@ -1786,4 +1786,27 @@ img {
   .reveal-scroll-right {
     transform: translateY(25px) !important;
   }
+
+  /* iOS Safari Auto-Zoom Prevention on Inputs */
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="tel"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+
+  /* Tap Highlight Clear & Responsive Containers */
+  body {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Form Grid 1-Column Mobile Override */
+  .form-row-grid,
+  .form-grid-responsive {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
 }

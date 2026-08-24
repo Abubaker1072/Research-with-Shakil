@@ -253,9 +253,9 @@
             </p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem; margin-bottom: 5rem;">
-            @foreach($trainings as $program)
-            <div class="module-card">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 5rem;">
+            @foreach($trainings as $index => $program)
+            <div class="module-card reveal-card-box" data-delay="{{ $index }}">
                 <div>
                     <div class="module-icon-box">
                         <i class="fas {{ $program->icon ?? 'fa-book-open' }}"></i>
@@ -288,9 +288,9 @@
 </section>
 
 <!-- Interactive Institutional Training Proposal Form Section -->
-<section id="training-proposal-form" class="section-padding" style="background: #f8fafc; border-top: 1px solid #e2e8f0;">
+<section id="training-proposal-form" class="section-padding" style="background: #f8fafc; border-top: 1px solid #e2e8f0; overflow: hidden;">
     <div class="container" style="max-width: 660px;">
-        <div style="background: #ffffff; padding: 1.75rem 2rem; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(0,0,0,0.06);">
+        <div class="reveal-scroll-up" style="background: #ffffff; padding: 1.75rem 2rem; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(0,0,0,0.06);">
             
             <div class="section-header text-center" style="margin-bottom: 1.25rem;">
                 <div class="section-subtitle">INSTITUTIONAL INQUIRY</div>
@@ -353,6 +353,23 @@
 </section>
 
 <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const revealObserver = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                const delay = parseInt(entry.target.getAttribute("data-delay") || "0", 10);
+                entry.target.style.transitionDelay = (delay * 0.12) + "s";
+                entry.target.classList.add("in-view");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal-scroll-up, .reveal-card-box").forEach(function (el) {
+        revealObserver.observe(el);
+    });
+});
+
 function selectTrainingTrack(trackName) {
     const selectElem = document.getElementById("training_track_select");
     if (selectElem) {
