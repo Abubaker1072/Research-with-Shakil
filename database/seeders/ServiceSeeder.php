@@ -16,7 +16,7 @@ class ServiceSeeder extends Seeder
                 'slug' => Str::slug('Dissertation & Thesis Coaching'),
                 'icon' => 'fas fa-graduation-cap',
                 'short_description' => '1-on-1 personalized guidance for thesis proposal drafting, research methodology design, and defense preparation.',
-                'full_description' => 'Comprehensive mentorship tailored for Master\'s and PhD candidates. We guide you through literature gap identification, research questions formulation, methodology selection, data collection strategy, and defense slide deck optimization.',
+                'full_description' => 'Comprehensive mentorship tailored for Master\'s and PhD candidates. Detailed guidance is provided for literature gap identification, research question formulation, methodology selection, data collection strategy, and defense slide deck optimization.',
                 'features' => [
                     'Proposal Structuring & Review',
                     'Theoretical Framework Alignment',
@@ -32,7 +32,7 @@ class ServiceSeeder extends Seeder
                 'slug' => Str::slug('Systematic Literature Review & Meta-Analysis Consulting'),
                 'icon' => 'fas fa-book-open',
                 'short_description' => 'End-to-end guidance on PRISMA guidelines, protocol registration, search matrix, data extraction & meta-analytic modeling.',
-                'full_description' => 'Transform scattered literature into high-impact systematic reviews. We provide step-by-step advisory on PRISMA 2020 compliance, database search strings (Scopus, Web of Science, PubMed), quality appraisal tools, and effect size synthesis.',
+                'full_description' => 'Transform scattered literature into high-impact systematic reviews. Structured advisory covers PRISMA 2020 compliance, database search strings (Scopus, Web of Science, PubMed), quality appraisal tools, and effect size synthesis.',
                 'features' => [
                     'PRISMA 2020 Compliant Protocol',
                     'Search String & Database Strategy',

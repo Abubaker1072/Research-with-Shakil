@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'My courses (18) | Dr. Muhammad Shakil Ahmad')
+@section('title', 'Online Courses & Bootcamps (18) | Dr. Muhammad Shakil Ahmad')
 
 @push('styles')
 <style>
@@ -290,10 +290,10 @@
         <div class="courses-title-row">
             <div>
                 <h1 class="courses-page-title">
-                    My courses <span class="courses-count-badge" id="resultsCountBadge">18 Courses</span>
+                    Online Courses & Bootcamps <span class="courses-count-badge" id="resultsCountBadge">18 Courses</span>
                 </h1>
                 <p style="color: #64748b; font-size: 0.98rem; margin: 0.4rem 0 0 0;">
-                    Explore 18 self-paced video bootcamps by Dr. Muhammad Shakil Ahmad. All courses open on Udemy.
+                    Explore 18 self-paced video bootcamps by Dr. Muhammad Shakil Ahmad. Every course links directly to its dedicated Udemy page.
                 </p>
             </div>
             
@@ -343,7 +343,12 @@
             @endphp
 
             @foreach($courses as $index => $course)
-            <a href="{{ $course->udemy_url }}" target="_blank" class="img2-course-card course-card-item" data-category="{{ $course->category }}" data-title="{{ strtolower($course->title) }}" data-desc="{{ strtolower($course->description) }}">
+            @php
+                $targetUrl = (!empty($course->udemy_url) && str_contains($course->udemy_url, '/course/')) 
+                    ? $course->udemy_url 
+                    : 'https://www.udemy.com/course/' . $course->slug . '/';
+            @endphp
+            <a href="{{ $targetUrl }}" target="_blank" rel="noopener noreferrer" class="img2-course-card course-card-item" data-category="{{ $course->category }}" data-title="{{ strtolower($course->title) }}" data-desc="{{ strtolower($course->description) }}">
                 <div>
                     <!-- Thumbnail with Bestseller badge -->
                     <div class="img2-thumb-wrapper">

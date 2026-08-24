@@ -12,7 +12,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $featuredCourses = Course::where('is_featured', true)->take(6)->get();
+        $courses = Course::all();
+        $featuredCourses = $courses->take(6);
         $services = Service::where('is_active', true)->orderBy('sort_order')->take(4)->get();
         $highlightedPubs = Publication::where('is_highlighted', true)->take(3)->get();
         $testimonials = Testimonial::where('is_featured', true)->get();
@@ -25,6 +26,7 @@ class HomeController extends Controller
         ];
 
         return view('pages.home', compact(
+            'courses',
             'featuredCourses',
             'services',
             'highlightedPubs',

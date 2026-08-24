@@ -114,36 +114,33 @@
         color: #0f172a;
         margin-bottom: 0.75rem;
     }
-    .module-desc {
-        color: #475569;
-        font-size: 0.95rem;
-        line-height: 1.65;
-        margin-bottom: 1.25rem;
-    }
-    .module-checklist {
+    .module-list-group {
         list-style: none;
         padding: 0;
-        margin: 0 0 1.75rem 0;
+        margin: 0 0 1.5rem 0;
         display: flex;
         flex-direction: column;
-        gap: 0.6rem;
+        gap: 0.65rem;
     }
-    .module-checklist li {
-        font-size: 0.88rem;
+    .module-list-item {
+        font-size: 0.9rem;
         color: #334155;
         display: flex;
-        align-items: center;
-        gap: 0.6rem;
+        align-items: flex-start;
+        gap: 0.65rem;
+        line-height: 1.5;
     }
-    .module-checklist li i {
-        color: #eab308;
-        font-size: 0.85rem;
+    .module-list-item i {
+        color: #0284c7;
+        font-size: 0.9rem;
+        margin-top: 3px;
+        flex-shrink: 0;
     }
     .module-badge-row {
         display: flex;
         gap: 0.5rem;
         flex-wrap: wrap;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.25rem;
     }
     .module-badge {
         font-size: 0.78rem;
@@ -203,7 +200,7 @@
 <section class="section-padding" style="background: #ffffff;">
     <div class="container">
         
-        <div class="trainings-overview-grid" style="margin-bottom: 5rem;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; margin-bottom: 5rem;">
             <div>
                 <div style="font-size: 0.85rem; font-weight: 700; color: #1e3a8a; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 0.5rem;">GLOBAL RESEARCH ADVISORY</div>
                 <h2 style="font-family: var(--font-heading); font-size: 2.25rem; color: #0f172a; margin-bottom: 1.25rem; line-height: 1.25;">
@@ -212,43 +209,69 @@
                 <p style="color: #475569; font-size: 1rem; line-height: 1.7; margin-bottom: 1.25rem;">
                     Since 2015, Dr. Shakil has delivered intensive, practical training workshops for universities, ORIC centers, and research institutes across Pakistan, the Middle East, Europe, UK, USA, Canada, and Australia.
                 </p>
-                <p style="color: #475569; font-size: 1rem; line-height: 1.7; margin-bottom: 1.75rem;">
-                    Our training programs bridge the gap between academic theory and high-impact publishing by equipping scholars with cutting-edge software tools (NVivo, MAXQDA, VOSviewer, AMOS, SmartPLS), systematic literature methodologies, and funding strategy.
-                </p>
+                
+                <!-- Program Highlights Structured List -->
+                <div style="margin-bottom: 1.75rem; display: flex; flex-direction: column; gap: 0.75rem;">
+                    <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                        <i class="fas fa-check-circle" style="color: #0284c7; margin-top: 4px; font-size: 1.1rem;"></i>
+                        <span style="color: #334155; font-weight: 600; font-size: 0.95rem;"><strong>Software Tool Mastery:</strong> Hands-on lab coding in NVivo, MAXQDA, VOSviewer, SmartPLS 4, AMOS & SPSS.</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                        <i class="fas fa-check-circle" style="color: #0284c7; margin-top: 4px; font-size: 1.1rem;"></i>
+                        <span style="color: #334155; font-weight: 600; font-size: 0.95rem;"><strong>PRISMA 2020 Protocols:</strong> Systematic review matrices, risk of bias tools, and GRADE meta-analysis.</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                        <i class="fas fa-check-circle" style="color: #0284c7; margin-top: 4px; font-size: 1.1rem;"></i>
+                        <span style="color: #334155; font-weight: 600; font-size: 0.95rem;"><strong>Institutional Capacity:</strong> Strategic ORIC roadmaps to multiply Scopus Q1 and SSCI publication output.</span>
+                    </div>
+                </div>
+
                 <a href="#training-proposal-form" class="btn-navy" style="padding: 0.85rem 1.75rem;">
-                    Request Custom Training Syllabus <i class="fas fa-download" style="margin-left: 6px;"></i>
+                    Request Custom Training Proposal <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
                 </a>
             </div>
 
-            <!-- Pictures Grid (4-Photo Layout for Desktop & Mobile) -->
-            <div class="trainings-pictures-grid">
-                <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
-                    <img src="{{ asset('images/hero_img_3.jpg') }}" alt="Computer Lab Workshop" style="width: 100%; height: 210px; object-fit: cover; display: block;">
+            <!-- Pictures Grid Showcase -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+                <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; position: relative;">
+                    <img src="{{ asset('images/hero_img_3.jpg') }}" alt="Computer Lab Workshop Session" style="width: 100%; height: 200px; object-fit: cover; display: block;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(0deg, rgba(15,23,42,0.9) 0%, transparent 100%); padding: 0.75rem 1rem; color: #ffffff; font-weight: 700; font-size: 0.8rem;">
+                        Hands-On Computer Lab Sessions
+                    </div>
                 </div>
-                <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
-                    <img src="{{ asset('images/hero_img_4.jpg') }}" alt="CPD Centre Building" style="width: 100%; height: 210px; object-fit: cover; display: block;">
+                <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; position: relative;">
+                    <img src="{{ asset('images/hero_img_4.jpg') }}" alt="CPD Centre Auditorium Lecture" style="width: 100%; height: 200px; object-fit: cover; display: block;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(0deg, rgba(15,23,42,0.9) 0%, transparent 100%); padding: 0.75rem 1rem; color: #ffffff; font-weight: 700; font-size: 0.8rem;">
+                        CPD Faculty Executive Seminars
+                    </div>
                 </div>
-                <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
-                    <img src="{{ asset('images/course_qualitative_thumb.png') }}" alt="Qualitative Training Workshop" style="width: 100%; height: 210px; object-fit: cover; display: block;">
+                <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; position: relative;">
+                    <img src="{{ asset('images/course_qualitative_thumb.png') }}" alt="NVivo Qualitative Bootcamp" style="width: 100%; height: 200px; object-fit: cover; display: block;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(0deg, rgba(15,23,42,0.9) 0%, transparent 100%); padding: 0.75rem 1rem; color: #ffffff; font-weight: 700; font-size: 0.8rem;">
+                        NVivo & MAXQDA Bootcamps
+                    </div>
                 </div>
-                <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
-                    <img src="{{ asset('images/course_slr_thumb.png') }}" alt="Systematic Review Workshop" style="width: 100%; height: 210px; object-fit: cover; display: block;">
+                <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; position: relative;">
+                    <img src="{{ asset('images/course_bibliometrics_thumb.png') }}" alt="VOSviewer Science Mapping" style="width: 100%; height: 200px; object-fit: cover; display: block;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(0deg, rgba(15,23,42,0.9) 0%, transparent 100%); padding: 0.75rem 1rem; color: #ffffff; font-weight: 700; font-size: 0.8rem;">
+                        VOSviewer Science Mapping
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Workshop Tracks Grid -->
+        <!-- Workshop Tracks Grid (Lists instead of Paragraphs) -->
         <div class="section-header text-center" style="margin-bottom: 3.5rem;">
             <div class="section-subtitle">WORKSHOP TRACKS</div>
-            <h2 class="section-title" style="font-size: 2.25rem;">Specialized Research Training Modules</h2>
+            <h2 class="section-title" style="font-size: 2.25rem;">Specialized Research Training Programs</h2>
             <p style="color: #64748b; max-width: 650px; margin: 0.5rem auto 0 auto; font-size: 1rem;">
-                Explore our 6 core institutional workshop tracks available for on-campus and online university delivery.
+                Explore 6 core institutional workshop tracks, presented with detailed module items and learning outcomes.
             </p>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem; margin-bottom: 5rem;">
             
-            <!-- Track 1 -->
+            <!-- Program 1 -->
             <div class="module-card">
                 <div>
                     <div class="module-icon-box">
@@ -258,22 +281,33 @@
                         <span class="module-badge"><i class="fas fa-clock"></i> 2-Day Workshop</span>
                         <span class="module-badge" style="background: #e0f2fe; color: #0369a1;">Scopus / SSCI</span>
                     </div>
-                    <h3 class="module-title">Systematic Literature Review (SLR)</h3>
-                    <p class="module-desc">
-                        Hands-on training on PRISMA 2020 guidelines, protocol registration, search matrix design, quality assessment (PICO/PEO), and synthesis for Q1 journal submissions.
-                    </p>
-                    <ul class="module-checklist">
-                        <li><i class="fas fa-check-circle"></i> PRISMA 2020 Flowchart & Protocol Formulation</li>
-                        <li><i class="fas fa-check-circle"></i> Systematic Search Strings (Scopus & WoS)</li>
-                        <li><i class="fas fa-check-circle"></i> Quality Appraisal & Synthesis Frameworks</li>
+                    <h3 class="module-title">Systematic Literature Review (SLR) Masterclass</h3>
+                    
+                    <ul class="module-list-group">
+                        <li class="module-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>PRISMA 2020 Protocol:</strong> Protocol formulation, registration, search matrix design, and flowchart generation.</span>
+                        </li>
+                        <li class="module-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Advanced Search Strings:</strong> Constructing Boolean operators for Scopus, Web of Science, and PubMed.</span>
+                        </li>
+                        <li class="module-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Quality Appraisal & Bias:</strong> PICO/PEO frameworks, CASP checklists, and GRADE evidence scoring.</span>
+                        </li>
+                        <li class="module-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Q1 Journal Publishing:</strong> Structuring systematic synthesis for top-tier peer-reviewed journals.</span>
+                        </li>
                     </ul>
                 </div>
                 <a href="#training-proposal-form" onclick="selectTrainingTrack('Systematic Literature Review (SLR)')" class="btn-navy" style="width: 100%; text-align: center; display: block; padding: 0.75rem;">
-                    Inquire for Track <i class="fas fa-arrow-right" style="margin-left: 4px;"></i>
+                    Inquire for Program <i class="fas fa-arrow-right" style="margin-left: 4px;"></i>
                 </a>
             </div>
 
-            <!-- Track 2 -->
+            <!-- Program 2 -->
             <div class="module-card">
                 <div>
                     <div class="module-icon-box">
@@ -283,22 +317,33 @@
                         <span class="module-badge"><i class="fas fa-clock"></i> 3-Day Bootcamp</span>
                         <span class="module-badge" style="background: #fcf6e5; color: #854d0e;">NVivo & MAXQDA</span>
                     </div>
-                    <h3 class="module-title">Qualitative Data Analysis (NVivo / MAXQDA)</h3>
-                    <p class="module-desc">
-                        Step-by-step interview transcript coding, thematic network development, Braun & Clarke framework, inter-coder reliability, and qualitative reporting.
-                    </p>
-                    <ul class="module-checklist">
-                        <li><i class="fas fa-check-circle"></i> Node Hierarchy & Thematic Coding Matrices</li>
-                        <li><i class="fas fa-check-circle"></i> Sentiment & Cross-Tabulation Analysis</li>
-                        <li><i class="fas fa-check-circle"></i> Qualitative Rigor & Trustworthiness</li>
+                    <h3 class="module-title">Qualitative Data Analysis (NVivo & MAXQDA)</h3>
+                    
+                    <ul class="module-list-group">
+                        <li class="module-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Transcript Coding & Nodes:</strong> Importing interview transcriptions, audio, and documents to build node hierarchies.</span>
+                        </li>
+                        <li class="module-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Thematic Frameworks:</strong> Applying Braun & Clarke 6-stage thematic analysis and grounded theory coding.</span>
+                        </li>
+                        <li class="module-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Advanced Software Queries:</strong> Running matrix coding, word trees, sentiment analysis, and cross-tabulations.</span>
+                        </li>
+                        <li class="module-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Rigor & Trustworthiness:</strong> Inter-coder reliability testing and audit trails for thesis defense.</span>
+                        </li>
                     </ul>
                 </div>
                 <a href="#training-proposal-form" onclick="selectTrainingTrack('Qualitative Data Analysis (NVivo / MAXQDA)')" class="btn-navy" style="width: 100%; text-align: center; display: block; padding: 0.75rem;">
-                    Inquire for Track <i class="fas fa-arrow-right" style="margin-left: 4px;"></i>
+                    Inquire for Program <i class="fas fa-arrow-right" style="margin-left: 4px;"></i>
                 </a>
             </div>
 
-            <!-- Track 3 -->
+            <!-- Program 3 -->
             <div class="module-card">
                 <div>
                     <div class="module-icon-box">
@@ -308,22 +353,33 @@
                         <span class="module-badge"><i class="fas fa-clock"></i> 2-Day Workshop</span>
                         <span class="module-badge" style="background: #f0fdf4; color: #166534;">VOSviewer & R</span>
                     </div>
-                    <h3 class="module-title">Bibliometrics & Science Mapping</h3>
-                    <p class="module-desc">
-                        Co-citation analysis, bibliographic coupling, keyword co-occurrence, author networks, and automated science mapping using Web of Science and Scopus data.
-                    </p>
-                    <ul class="module-checklist">
-                        <li><i class="fas fa-check-circle"></i> VOSviewer Cluster Visualization</li>
-                        <li><i class="fas fa-check-circle"></i> Bibliometrix R-Package Analysis</li>
-                        <li><i class="fas fa-check-circle"></i> Performance Metrics & Citation Analysis</li>
+                    <h3 class="module-title">Bibliometrics & Science Mapping (VOSviewer)</h3>
+                    
+                    <ul class="module-list-group">
+                        <li class="module-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Database Data Harvesting:</strong> Exporting formatted RIS and BibTeX records from Scopus and Web of Science.</span>
+                        </li>
+                        <li class="module-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Co-Citation & Network Maps:</strong> Constructing author networks, journal co-citations, and keyword clusters.</span>
+                        </li>
+                        <li class="module-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Software Visualizations:</strong> Overlay visualization, density maps, and Bibliometrix R-package integration.</span>
+                        </li>
+                        <li class="module-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>High-Impact Reporting:</strong> Translating science mapping outputs into publication-ready bibliometric manuscripts.</span>
+                        </li>
                     </ul>
                 </div>
                 <a href="#training-proposal-form" onclick="selectTrainingTrack('Bibliometrics & Science Mapping')" class="btn-navy" style="width: 100%; text-align: center; display: block; padding: 0.75rem;">
-                    Inquire for Track <i class="fas fa-arrow-right" style="margin-left: 4px;"></i>
+                    Inquire for Program <i class="fas fa-arrow-right" style="margin-left: 4px;"></i>
                 </a>
             </div>
 
-            <!-- Track 4 -->
+            <!-- Program 4 -->
             <div class="module-card">
                 <div>
                     <div class="module-icon-box">
@@ -334,21 +390,32 @@
                         <span class="module-badge" style="background: #fef2f2; color: #991b1b;">SmartPLS 4 & AMOS</span>
                     </div>
                     <h3 class="module-title">Quantitative Modeling (PLS-SEM & AMOS)</h3>
-                    <p class="module-desc">
-                        Structural Equation Modeling (PLS-SEM), mediation/moderation testing, scale validation (CFA/EFA), and robust quantitative hypothesis testing.
-                    </p>
-                    <ul class="module-checklist">
-                        <li><i class="fas fa-check-circle"></i> Measurement & Structural Model Assessment</li>
-                        <li><i class="fas fa-check-circle"></i> Multi-Group & Moderation Analysis</li>
-                        <li><i class="fas fa-check-circle"></i> Reporting SEM Results for Top Journals</li>
+                    
+                    <ul class="module-list-group">
+                        <li class="module-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Structural Equation Modeling:</strong> Evaluating reflective and formative measurement and structural models.</span>
+                        </li>
+                        <li class="module-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Mediation & Moderation:</strong> Bootstrapping mediation effects, slope analysis, and multi-group moderation (MGA).</span>
+                        </li>
+                        <li class="module-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Scale Construct Validation:</strong> Confirmatory Factor Analysis (CFA), convergent & discriminant validity (HTMT).</span>
+                        </li>
+                        <li class="module-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Statistical Reporting:</strong> APA table formatting and SmartPLS 4 / AMOS report generation.</span>
+                        </li>
                     </ul>
                 </div>
                 <a href="#training-proposal-form" onclick="selectTrainingTrack('Quantitative Modeling (PLS-SEM & AMOS)')" class="btn-navy" style="width: 100%; text-align: center; display: block; padding: 0.75rem;">
-                    Inquire for Track <i class="fas fa-arrow-right" style="margin-left: 4px;"></i>
+                    Inquire for Program <i class="fas fa-arrow-right" style="margin-left: 4px;"></i>
                 </a>
             </div>
 
-            <!-- Track 5 -->
+            <!-- Program 5 -->
             <div class="module-card">
                 <div>
                     <div class="module-icon-box">
@@ -358,22 +425,33 @@
                         <span class="module-badge"><i class="fas fa-clock"></i> 2-Day Seminar</span>
                         <span class="module-badge" style="background: #faf5ff; color: #6b21a8;">HEC & International</span>
                     </div>
-                    <h3 class="module-title">Grant Writing & Research Proposals</h3>
-                    <p class="module-desc">
-                        Designing competitive grant proposals for international funding bodies (e.g. HEC, TRC Oman, Erasmus+, and national research funds).
-                    </p>
-                    <ul class="module-checklist">
-                        <li><i class="fas fa-check-circle"></i> Grant Proposal Architecture & Rationale</li>
-                        <li><i class="fas fa-check-circle"></i> Budget Justification & Work Packages</li>
-                        <li><i class="fas fa-check-circle"></i> Reviewer Defense & Pitch Strategy</li>
+                    <h3 class="module-title">Academic Grant Writing & Funding Proposals</h3>
+                    
+                    <ul class="module-list-group">
+                        <li class="module-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Proposal Architecture:</strong> Structuring rationale, state-of-the-art literature gaps, and research objectives.</span>
+                        </li>
+                        <li class="module-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Budget & Work Packages:</strong> Designing project milestones, Gantt charts, risk management, and budget lines.</span>
+                        </li>
+                        <li class="module-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Funding Agencies:</strong> Targeting HEC NRPU, TRC Oman, Horizon Europe, and international agency calls.</span>
+                        </li>
+                        <li class="module-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Reviewer Defense Strategy:</strong> Anticipating reviewer critiques and pitching proposal value proposition.</span>
+                        </li>
                     </ul>
                 </div>
                 <a href="#training-proposal-form" onclick="selectTrainingTrack('Grant Writing & Research Proposals')" class="btn-navy" style="width: 100%; text-align: center; display: block; padding: 0.75rem;">
-                    Inquire for Track <i class="fas fa-arrow-right" style="margin-left: 4px;"></i>
+                    Inquire for Program <i class="fas fa-arrow-right" style="margin-left: 4px;"></i>
                 </a>
             </div>
 
-            <!-- Track 6 -->
+            <!-- Program 6 -->
             <div class="module-card">
                 <div>
                     <div class="module-icon-box">
@@ -383,18 +461,29 @@
                         <span class="module-badge"><i class="fas fa-clock"></i> 1-Day Executive</span>
                         <span class="module-badge" style="background: #f8fafc; color: #334155;">ORIC Leadership</span>
                     </div>
-                    <h3 class="module-title">Faculty Development & Institutional Advisory</h3>
-                    <p class="module-desc">
-                        Strategic guidance for ORICs, post-graduate research committees, and department chairs on boosting institutional publication productivity.
-                    </p>
-                    <ul class="module-checklist">
-                        <li><i class="fas fa-check-circle"></i> ORIC Research Commercialization Roadmaps</li>
-                        <li><i class="fas fa-check-circle"></i> Faculty Publication Mentorship Strategies</li>
-                        <li><i class="fas fa-check-circle"></i> Institutional Impact & Citation Metrics</li>
+                    <h3 class="module-title">Faculty Development & ORIC Advisory</h3>
+                    
+                    <ul class="module-list-group">
+                        <li class="module-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>ORIC Strategic Roadmaps:</strong> Institutional commercialization policies and industry collaboration.</span>
+                        </li>
+                        <li class="module-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Faculty Output Productivity:</strong> Mentorship frameworks to multiply Scopus Q1 and SSCI publications.</span>
+                        </li>
+                        <li class="module-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Citation & H-Index Growth:</strong> Building research visibility, Google Scholar profiles, and institutional rankings.</span>
+                        </li>
+                        <li class="module-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Thesis Supervision Best Practices:</strong> Frameworks for effective PhD/DBA mentorship and viva defense.</span>
+                        </li>
                     </ul>
                 </div>
                 <a href="#training-proposal-form" onclick="selectTrainingTrack('Faculty Development & Institutional Advisory')" class="btn-navy" style="width: 100%; text-align: center; display: block; padding: 0.75rem;">
-                    Inquire for Track <i class="fas fa-arrow-right" style="margin-left: 4px;"></i>
+                    Inquire for Program <i class="fas fa-arrow-right" style="margin-left: 4px;"></i>
                 </a>
             </div>
 

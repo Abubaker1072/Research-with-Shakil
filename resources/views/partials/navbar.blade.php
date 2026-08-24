@@ -18,10 +18,10 @@
                 </a>
             </li>
 
-            <!-- ABOUT US Dropdown Menu -->
+            <!-- ABOUT Dropdown Menu -->
             <li class="nav-item-dropdown">
                 <a href="{{ route('about') }}" class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}">
-                    About Us <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-left: 2px;"></i>
+                    About <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-left: 2px;"></i>
                 </a>
                 <ul class="dropdown-menu">
                     <li><a href="{{ route('about') }}" class="dropdown-item">Dr. Shakil Ahmad Profile</a></li>

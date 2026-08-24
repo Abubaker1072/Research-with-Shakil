@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Research & Publications | Dr. Muhammad Shakil Ahmad')
+@section('title', 'Peer-Reviewed Research & Publications | Dr. Muhammad Shakil Ahmad')
 
 @push('styles')
 <style>
@@ -11,19 +11,32 @@
         position: relative;
         overflow: hidden;
     }
+    .pub-hero-section::before {
+        content: '';
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(234, 179, 8, 0.12) 0%, rgba(0,0,0,0) 70%);
+        top: -150px;
+        right: -100px;
+        pointer-events: none;
+    }
     .pub-hero-badge {
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
-        padding: 0.4rem 1rem;
+        padding: 0.4rem 1.1rem;
         background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 30px;
         font-size: 0.85rem;
         color: #fef08a;
-        font-weight: 600;
+        font-weight: 700;
         margin-bottom: 1.25rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
     .pub-hero-title {
         font-family: var(--font-heading);
@@ -31,21 +44,52 @@
         font-weight: 800;
         color: #ffffff;
         margin-bottom: 1rem;
+        line-height: 1.2;
     }
     .pub-hero-subtitle {
         color: #cbd5e1;
-        max-width: 750px;
+        max-width: 780px;
         margin: 0 auto 2rem auto;
         font-size: 1.1rem;
         line-height: 1.7;
     }
 
-    /* Filter Panel */
+    /* Scholar Hero Card */
+    .scholar-hero-card {
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 20px;
+        padding: 1.5rem 2rem;
+        max-width: 800px;
+        margin: 2rem auto 0 auto;
+        backdrop-filter: blur(10px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+    .scholar-stat-item {
+        text-align: center;
+    }
+    .scholar-stat-num {
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: #facc15;
+    }
+    .scholar-stat-label {
+        font-size: 0.82rem;
+        color: #cbd5e1;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    /* Control & Filter Panel */
     .pub-filter-panel {
         background: #ffffff;
         border: 1px solid #e2e8f0;
-        border-radius: 16px;
-        padding: 1.25rem 1.5rem;
+        border-radius: 18px;
+        padding: 1.5rem;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
         margin-bottom: 3rem;
     }
@@ -53,40 +97,43 @@
         display: flex;
         gap: 0.6rem;
         flex-wrap: wrap;
-        margin-top: 1rem;
+        margin-top: 1.25rem;
     }
     .pub-filter-btn {
-        padding: 0.5rem 1.1rem;
+        padding: 0.55rem 1.25rem;
         border-radius: 10px;
-        font-size: 0.85rem;
+        font-size: 0.88rem;
         font-weight: 600;
         cursor: pointer;
         transition: all 0.25s ease;
         border: 1px solid #e2e8f0;
         background: #f8fafc;
         color: #475569;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
     }
     .pub-filter-btn.active {
-        background: #1e3a8a;
+        background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
         color: #ffffff;
         border-color: #1e3a8a;
-        box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
+        box-shadow: 0 4px 12px rgba(30, 58, 138, 0.25);
     }
 
-    /* Publication Item Card */
+    /* Academic Publication Card */
     .pub-item-card {
         background: #ffffff;
-        border-radius: 16px;
+        border-radius: 18px;
         border: 1px solid #e2e8f0;
-        padding: 1.75rem;
-        margin-bottom: 1.5rem;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+        padding: 2rem;
+        margin-bottom: 1.75rem;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
         transition: all 0.25s ease;
         position: relative;
     }
     .pub-item-card:hover {
         transform: translateY(-3px);
-        box-shadow: 0 10px 25px rgba(30, 58, 138, 0.08);
+        box-shadow: 0 12px 28px rgba(30, 58, 138, 0.09);
         border-color: #cbd5e1;
     }
     .pub-card-header {
@@ -95,16 +142,18 @@
         justify-content: space-between;
         flex-wrap: wrap;
         gap: 0.75rem;
-        margin-bottom: 0.75rem;
+        margin-bottom: 0.85rem;
     }
     .pub-badge-type {
         display: inline-flex;
         align-items: center;
-        gap: 0.4rem;
+        gap: 0.45rem;
         font-size: 0.78rem;
         font-weight: 700;
-        padding: 0.25rem 0.75rem;
+        padding: 0.28rem 0.8rem;
         border-radius: 6px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
     }
     .pub-badge-type.grant {
         background: #fef9c3;
@@ -123,17 +172,23 @@
     }
     .pub-card-title {
         font-family: var(--font-heading);
-        font-size: 1.3rem;
+        font-size: 1.35rem;
         font-weight: 700;
         color: #0f172a;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.6rem;
         line-height: 1.4;
+    }
+    .pub-card-authors {
+        font-size: 0.94rem;
+        color: #334155;
+        margin-bottom: 0.6rem;
+        font-weight: 500;
     }
     .pub-card-journal {
         color: #1e3a8a;
         font-size: 0.95rem;
-        font-weight: 600;
-        margin-bottom: 0.75rem;
+        font-weight: 700;
+        margin-bottom: 0.85rem;
         display: flex;
         align-items: center;
         gap: 0.5rem;
@@ -143,6 +198,10 @@
         font-size: 0.94rem;
         line-height: 1.65;
         margin-bottom: 1.25rem;
+        background: #f8fafc;
+        padding: 1rem 1.25rem;
+        border-radius: 12px;
+        border-left: 3px solid #cbd5e1;
     }
     .pub-card-footer {
         display: flex;
@@ -150,7 +209,7 @@
         justify-content: space-between;
         flex-wrap: wrap;
         gap: 1rem;
-        padding-top: 0.9rem;
+        padding-top: 1rem;
         border-top: 1px solid #f1f5f9;
         font-size: 0.88rem;
         color: #64748b;
@@ -159,8 +218,8 @@
         background: #f1f5f9;
         border: 1px solid #cbd5e1;
         color: #334155;
-        padding: 0.3rem 0.75rem;
-        border-radius: 6px;
+        padding: 0.35rem 0.85rem;
+        border-radius: 8px;
         font-size: 0.8rem;
         font-weight: 600;
         cursor: pointer;
@@ -171,27 +230,62 @@
         color: #ffffff;
         border-color: #1e3a8a;
     }
+    .scholar-direct-link-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        color: #0369a1;
+        font-weight: 700;
+        font-size: 0.85rem;
+        text-decoration: none;
+    }
+    .scholar-direct-link-btn:hover {
+        text-decoration: underline;
+    }
 </style>
 @endpush
 
 @section('content')
 
-<!-- Rich Hero Section -->
+<!-- Hero Header Section -->
 <section class="pub-hero-section">
     <div class="container text-center">
         <div class="pub-hero-badge">
             <i class="fas fa-microscope"></i> SCOPUS & WEB OF SCIENCE INDEXED RESEARCH
         </div>
-        <h1 class="pub-hero-title">Research & Publications</h1>
+        <h1 class="pub-hero-title">Research & Peer-Reviewed Publications</h1>
         <p class="pub-hero-subtitle">
-            Peer-reviewed Q1 journal articles, systematic literature reviews, and competitive international research grants secured across leading journals.
+            Author of 90+ papers in SSCI and Scopus Q1 journals across Human Resource Management, Project Management, Healthcare, and Sustainable Development.
         </p>
 
-        <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 2rem; font-size: 0.95rem; color: #cbd5e1;">
-            <div><i class="fas fa-check-circle" style="color: #facc15; margin-right: 6px;"></i> Journal of Knowledge Management</div>
-            <div><i class="fas fa-check-circle" style="color: #facc15; margin-right: 6px;"></i> Leadership & Org Dev Journal</div>
-            <div><i class="fas fa-check-circle" style="color: #facc15; margin-right: 6px;"></i> HEC & Oman TRC Funded PI</div>
+        <!-- Official Google Scholar Card -->
+        <div class="scholar-hero-card">
+            <div style="text-align: left;">
+                <div style="font-size: 0.8rem; font-weight: 800; color: #fef08a; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.25rem;">OFFICIAL CITATIONS PROFILE</div>
+                <div style="font-weight: 800; font-size: 1.25rem; color: #ffffff;">Google Scholar Repository</div>
+                <div style="font-size: 0.88rem; color: #cbd5e1; margin-top: 0.25rem;">Dr. Muhammad Shakil Ahmad • Teesside University (UK)</div>
+            </div>
+
+            <div style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
+                <div class="scholar-stat-item">
+                    <div class="scholar-stat-num">90+</div>
+                    <div class="scholar-stat-label">Publications</div>
+                </div>
+                <div class="scholar-stat-item">
+                    <div class="scholar-stat-num">39</div>
+                    <div class="scholar-stat-label">H-Index</div>
+                </div>
+                <div class="scholar-stat-item">
+                    <div class="scholar-stat-num">1,800+</div>
+                    <div class="scholar-stat-label">Citations</div>
+                </div>
+
+                <a href="https://scholar.google.com/citations?user=Kr6MOa0AAAAJ&hl=en&oi=ao" target="_blank" class="btn-navy" style="background: #eab308; color: #0f172a; font-weight: 800; padding: 0.75rem 1.4rem; border-radius: 12px; text-decoration: none; white-space: nowrap;">
+                    <i class="fas fa-graduation-cap" style="margin-right: 6px;"></i> Scholar Profile <i class="fas fa-external-link-alt" style="font-size: 0.75rem; margin-left: 4px;"></i>
+                </a>
+            </div>
         </div>
+
     </div>
 </section>
 
@@ -201,25 +295,37 @@
         
         <!-- Filter & Search Control Panel -->
         <div class="pub-filter-panel">
-            <div style="display: flex; gap: 1rem; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+            <div style="display: flex; gap: 1rem; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-bottom: 1rem;">
                 <div style="position: relative; flex: 1; min-width: 280px;">
-                    <i class="fas fa-search" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: #94a3b8;"></i>
-                    <input type="text" id="pubSearchInput" class="form-control" style="padding-left: 2.8rem; border-radius: 10px; background: #f8fafc;" placeholder="Search papers by title, journal, topic, or DOI...">
+                    <i class="fas fa-search" style="position: absolute; left: 1.1rem; top: 50%; transform: translateY(-50%); color: #94a3b8; font-size: 1rem;"></i>
+                    <input type="text" id="pubSearchInput" class="form-control" style="padding-left: 2.8rem; border-radius: 12px; background: #f8fafc; border: 1px solid #cbd5e1; height: 46px;" placeholder="Search papers by title, journal, author, or DOI...">
                 </div>
-                <div style="font-size: 0.88rem; color: #64748b; font-weight: 500;" id="pubCountText">
-                    Showing all publications & grants
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <span style="font-size: 0.88rem; color: #64748b; font-weight: 600;" id="pubCountText">Showing all items</span>
+                    <a href="https://scholar.google.com/citations?user=Kr6MOa0AAAAJ&hl=en&oi=ao" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #f0f7ff; color: #0369a1; border: 1px solid #bae6fd; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; font-size: 0.88rem; text-decoration: none;">
+                        <i class="fas fa-graduation-cap"></i> Google Scholar Profile <i class="fas fa-external-link-alt" style="font-size: 0.75rem;"></i>
+                    </a>
                 </div>
             </div>
 
+            <!-- Category Filter Tabs -->
             <div class="pub-filter-tabs">
-                <button class="pub-filter-btn active" data-filter="all">All Items</button>
-                <button class="pub-filter-btn" data-filter="grant">Funded Research Grants</button>
-                <button class="pub-filter-btn" data-filter="review">Systematic Literature Reviews</button>
-                <button class="pub-filter-btn" data-filter="article">Scopus / SSCI Journal Articles</button>
+                <button class="pub-filter-btn active" data-filter="all">
+                    <i class="fas fa-layer-group"></i> All Publications
+                </button>
+                <button class="pub-filter-btn" data-filter="grant">
+                    <i class="fas fa-coins"></i> Funded Research Grants
+                </button>
+                <button class="pub-filter-btn" data-filter="review">
+                    <i class="fas fa-book"></i> Systematic Literature Reviews
+                </button>
+                <button class="pub-filter-btn" data-filter="article">
+                    <i class="fas fa-file-alt"></i> Scopus / SSCI Articles
+                </button>
             </div>
         </div>
 
-        <!-- Publications List -->
+        <!-- Publications List Container -->
         <div id="publicationsContainer">
             
             <!-- 1. Grants -->
@@ -227,14 +333,17 @@
             <div class="pub-item-card pub-card-item" data-type="grant" data-search="{{ strtolower($grant->title . ' ' . $grant->journal . ' ' . $grant->authors) }}">
                 <div class="pub-card-header">
                     <span class="pub-badge-type grant"><i class="fas fa-coins"></i> Funded Research Grant</span>
-                    <span style="font-size: 0.85rem; font-weight: 700; color: #854d0e; background: #fef9c3; padding: 0.2rem 0.6rem; border-radius: 6px;">Year: {{ $grant->year }}</span>
+                    <span style="font-size: 0.85rem; font-weight: 700; color: #854d0e; background: #fef9c3; padding: 0.25rem 0.75rem; border-radius: 6px; border: 1px solid #fef08a;">Awarded Year: {{ $grant->year }}</span>
                 </div>
                 <h2 class="pub-card-title">{{ $grant->title }}</h2>
                 <div class="pub-card-journal"><i class="fas fa-university"></i> Funding Body: {{ $grant->journal }}</div>
-                <p class="pub-card-abstract">{{ $grant->abstract }}</p>
+                <div class="pub-card-authors"><i class="fas fa-user-tie" style="color: #0284c7; margin-right: 4px;"></i> <strong>Investigator Role:</strong> {{ $grant->authors }}</div>
+                <div class="pub-card-abstract">{{ $grant->abstract }}</div>
                 <div class="pub-card-footer">
-                    <div><i class="fas fa-user-tie"></i> Role: {{ $grant->authors }}</div>
-                    <div><i class="fas fa-check-double" style="color: #166534;"></i> Status: Awarded & Completed</div>
+                    <div><i class="fas fa-check-double" style="color: #166534; margin-right: 4px;"></i> <strong>Status:</strong> Awarded & Completed</div>
+                    <a href="https://scholar.google.com/citations?user=Kr6MOa0AAAAJ&hl=en&oi=ao" target="_blank" class="scholar-direct-link-btn">
+                        View Scholar Record <i class="fas fa-external-link-alt"></i>
+                    </a>
                 </div>
             </div>
             @endforeach
@@ -244,17 +353,20 @@
             <div class="pub-item-card pub-card-item" data-type="review" data-search="{{ strtolower($sr->title . ' ' . $sr->journal . ' ' . $sr->authors . ' ' . $sr->doi) }}">
                 <div class="pub-card-header">
                     <span class="pub-badge-type review"><i class="fas fa-book"></i> Systematic Literature Review</span>
-                    <span style="font-size: 0.8rem; font-weight: 700; color: #0369a1; background: #e0f2fe; padding: 0.2rem 0.6rem; border-radius: 6px;">Scopus Q1</span>
+                    <span style="font-size: 0.8rem; font-weight: 700; color: #0369a1; background: #e0f2fe; padding: 0.25rem 0.75rem; border-radius: 6px; border: 1px solid #bae6fd;">Scopus Q1 / SSCI</span>
                 </div>
                 <h2 class="pub-card-title">{{ $sr->title }}</h2>
                 <div class="pub-card-journal"><i class="fas fa-journal-whills"></i> {{ $sr->journal }} ({{ $sr->year }})</div>
-                <p class="pub-card-abstract">{{ $sr->abstract }}</p>
+                <div class="pub-card-authors"><i class="fas fa-users" style="color: #0284c7; margin-right: 4px;"></i> <strong>Authors:</strong> {{ $sr->authors }}</div>
+                <div class="pub-card-abstract">{{ $sr->abstract }}</div>
                 <div class="pub-card-footer">
-                    <div><i class="fas fa-user-edit"></i> Authors: {{ $sr->authors }}</div>
                     <div style="display: flex; align-items: center; gap: 0.6rem;">
-                        <span style="font-family: monospace; font-size: 0.82rem;">DOI: {{ $sr->doi }}</span>
-                        <button onclick="copyDOIText('{{ $sr->doi }}', this)" class="copy-doi-btn">Copy DOI <i class="fas fa-copy"></i></button>
+                        <span style="font-family: monospace; font-size: 0.85rem; font-weight: 600; color: #334155;">DOI: {{ $sr->doi }}</span>
+                        <button onclick="copyDOIText('{{ $sr->doi }}', this)" class="copy-doi-btn">Copy DOI <i class="fas fa-copy" style="margin-left: 2px;"></i></button>
                     </div>
+                    <a href="https://scholar.google.com/citations?user=Kr6MOa0AAAAJ&hl=en&oi=ao" target="_blank" class="scholar-direct-link-btn">
+                        Google Scholar Citation <i class="fas fa-external-link-alt"></i>
+                    </a>
                 </div>
             </div>
             @endforeach
@@ -264,17 +376,20 @@
             <div class="pub-item-card pub-card-item" data-type="article" data-search="{{ strtolower($ja->title . ' ' . $ja->journal . ' ' . $ja->authors . ' ' . $ja->doi) }}">
                 <div class="pub-card-header">
                     <span class="pub-badge-type article"><i class="fas fa-file-alt"></i> Peer-Reviewed Journal Article</span>
-                    <span style="font-size: 0.8rem; font-weight: 700; color: #166534; background: #f0fdf4; padding: 0.2rem 0.6rem; border-radius: 6px;">SSCI / Scopus</span>
+                    <span style="font-size: 0.8rem; font-weight: 700; color: #166534; background: #f0fdf4; padding: 0.25rem 0.75rem; border-radius: 6px; border: 1px solid #bbf7d0;">SSCI / Scopus</span>
                 </div>
                 <h2 class="pub-card-title">{{ $ja->title }}</h2>
                 <div class="pub-card-journal"><i class="fas fa-feather"></i> {{ $ja->journal }} ({{ $ja->year }})</div>
-                <p class="pub-card-abstract">{{ $ja->abstract }}</p>
+                <div class="pub-card-authors"><i class="fas fa-users" style="color: #0284c7; margin-right: 4px;"></i> <strong>Authors:</strong> {{ $ja->authors }}</div>
+                <div class="pub-card-abstract">{{ $ja->abstract }}</div>
                 <div class="pub-card-footer">
-                    <div><i class="fas fa-users"></i> Authors: {{ $ja->authors }}</div>
                     <div style="display: flex; align-items: center; gap: 0.6rem;">
-                        <span style="font-family: monospace; font-size: 0.82rem;">DOI: {{ $ja->doi }}</span>
-                        <button onclick="copyDOIText('{{ $ja->doi }}', this)" class="copy-doi-btn">Copy DOI <i class="fas fa-copy"></i></button>
+                        <span style="font-family: monospace; font-size: 0.85rem; font-weight: 600; color: #334155;">DOI: {{ $ja->doi }}</span>
+                        <button onclick="copyDOIText('{{ $ja->doi }}', this)" class="copy-doi-btn">Copy DOI <i class="fas fa-copy" style="margin-left: 2px;"></i></button>
                     </div>
+                    <a href="https://scholar.google.com/citations?user=Kr6MOa0AAAAJ&hl=en&oi=ao" target="_blank" class="scholar-direct-link-btn">
+                        Google Scholar Citation <i class="fas fa-external-link-alt"></i>
+                    </a>
                 </div>
             </div>
             @endforeach
@@ -284,7 +399,7 @@
     </div>
 </section>
 
-<!-- Interactive Live Filter Script -->
+<!-- Interactive Filter & Copy DOI Script -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const filterButtons = document.querySelectorAll(".pub-filter-btn");
@@ -313,7 +428,11 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        pubCountText.innerText = "Showing " + count + " publication" + (count !== 1 ? "s" : "");
+        if (currentFilter === "all" && !currentQuery) {
+            pubCountText.innerText = "Showing all " + count + " publication items";
+        } else {
+            pubCountText.innerText = "Showing " + count + " filtered publication" + (count !== 1 ? "s" : "");
+        }
     }
 
     filterButtons.forEach(function (btn) {

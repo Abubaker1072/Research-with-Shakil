@@ -4,9 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>@yield('title', 'Dr. Muhammad Shakil Ahmad | Researcher, Trainer & Executive Coach')</title>
-    <meta name="description" content="@yield('meta_description', 'Official website of Dr. Muhammad Shakil Ahmad - PhD in Management, Researcher, Academic Editor, Grant PI, and Executive Life Coach. Master Systematic Literature Review, Thematic Analysis, and Research Publication.')">
+    <title>@yield('title', 'Dr. Shakil Ahmad | Research Methodology Courses, Training & HR Consulting')</title>
+    <meta name="description" content="@yield('meta_description', 'Dr. Muhammad Shakil Ahmad, PhD, is a UK-based research methodology expert and HR consultant with 16,000+ learners trained. Explore courses, trainings & consultations.')">
+    <meta name="keywords" content="@yield('meta_keywords', 'research methodology courses online, dissertation coach, PhD research training, academic writing consultant, HR consultant UK, thesis writing help, Dr. Shakil Ahmad')">
     
+    <!-- Structured Data: Global Person Schema (AEO / GEO / SEO) -->
+    <script type="application/ld+json">
+    {
+      "{{ '@context' }}": "https://schema.org",
+      "@type": "Person",
+      "name": "Dr. Muhammad Shakil Ahmad",
+      "jobTitle": "Senior Lecturer",
+      "worksFor": {
+        "@type": "CollegeOrUniversity",
+        "name": "Teesside University",
+        "department": "Teesside International Business School"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "PhD in Management"
+      },
+      "description": "Dr. Muhammad Shakil Ahmad is a Senior Lecturer at Teesside International Business School, Teesside University (UK), research methodology, project management, and HR expert with 90+ SSCI publications and 16,000+ global learners.",
+      "sameAs": [
+        "https://www.udemy.com/user/dr-muhammad-shakil-ahmad/",
+        "https://scholar.google.com/citations?user=Kr6MOa0AAAAJ&hl=en&oi=ao"
+      ]
+    }
+    </script>
+
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -15,6 +40,9 @@
     @stack('styles')
 </head>
 <body>
+
+    <!-- Top Red Announcement Banner -->
+    @include('partials.under-development-banner')
 
     <!-- Header Navigation -->
     @include('partials.navbar')

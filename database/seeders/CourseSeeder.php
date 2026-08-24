@@ -24,7 +24,7 @@ class CourseSeeder extends Seeder
                 'price' => 9.99,
                 'category' => 'Literature Review',
                 'description' => 'Systematic Literature Review, PRISMA, PICO, PEO, GRADE framework for high ranked journals.',
-                'udemy_url' => $udemyProfileUrl,
+                'udemy_url' => 'https://www.udemy.com/course/systematic-literature-review-a-practical-guide/',
                 'is_featured' => true,
             ],
             [
@@ -37,8 +37,8 @@ class CourseSeeder extends Seeder
                 'level' => 'All Levels',
                 'price' => 9.99,
                 'category' => 'Qualitative Research',
-                'description' => 'Transform your research skills by learning thematic analysis with Braun & Clarke coding framework.',
-                'udemy_url' => $udemyProfileUrl,
+                'description' => 'Transform research skills by learning thematic analysis with Braun & Clarke coding framework.',
+                'udemy_url' => 'https://www.udemy.com/course/master-thematic-analysis-a-comprehensive-step-by-step-guide/',
                 'is_featured' => true,
             ],
             [
@@ -52,7 +52,7 @@ class CourseSeeder extends Seeder
                 'price' => 9.99,
                 'category' => 'Quantitative Research',
                 'description' => '#1 Meta-Analysis Course for Researchers: A Practical guide to effect sizes, forest plots & bias.',
-                'udemy_url' => $udemyProfileUrl,
+                'udemy_url' => 'https://www.udemy.com/course/how-to-conduct-a-meta-analysis-a-practical-guide/',
                 'is_featured' => true,
             ],
             [
@@ -66,7 +66,7 @@ class CourseSeeder extends Seeder
                 'price' => 9.99,
                 'category' => 'Literature Review',
                 'description' => 'The step-by-step process using an applied critical-thinking framework to synthesize literature.',
-                'udemy_url' => $udemyProfileUrl,
+                'udemy_url' => 'https://www.udemy.com/course/the-literature-review-a-comprehensive-six-step-guide/',
                 'is_featured' => true,
             ],
             [
@@ -80,7 +80,7 @@ class CourseSeeder extends Seeder
                 'price' => 9.99,
                 'category' => 'Bibliometrics',
                 'description' => 'Mastering Bibliometrics; Step-by-Step Guide; Co-Citation networks & VOSviewer science mapping.',
-                'udemy_url' => $udemyProfileUrl,
+                'udemy_url' => 'https://www.udemy.com/course/bibliometric-analysis-a-theoretical-stepwise-guide/',
                 'is_featured' => true,
             ],
             [
@@ -94,7 +94,7 @@ class CourseSeeder extends Seeder
                 'price' => 9.99,
                 'category' => 'Qualitative Research',
                 'description' => 'Fundamentals of Qualitative Research design, phenomenology, grounded theory & interview coding.',
-                'udemy_url' => $udemyProfileUrl,
+                'udemy_url' => 'https://www.udemy.com/course/how-to-conduct-qualitative-research-researchers-guide/',
                 'is_featured' => true,
             ],
             [
@@ -108,7 +108,7 @@ class CourseSeeder extends Seeder
                 'price' => 9.99,
                 'category' => 'Dissertation Help',
                 'description' => 'Write a winning dissertation proposal that satisfies defense committees and IRB ethical clearance.',
-                'udemy_url' => $udemyProfileUrl,
+                'udemy_url' => 'https://www.udemy.com/course/qualitative-dissertation-proposal-step-by-step-guide/',
                 'is_featured' => false,
             ],
             [
@@ -122,7 +122,7 @@ class CourseSeeder extends Seeder
                 'price' => 9.99,
                 'category' => 'Journal Publishing',
                 'description' => 'Insider secrets from a journal reviewer and editor on structuring papers for top SSCI and Scopus Q1/Q2 journals.',
-                'udemy_url' => $udemyProfileUrl,
+                'udemy_url' => 'https://www.udemy.com/course/how-to-write-a-scientific-paper-for-high-ranked-journals/',
                 'is_featured' => false,
             ],
             [
@@ -136,7 +136,7 @@ class CourseSeeder extends Seeder
                 'price' => 9.99,
                 'category' => 'Dissertation Help',
                 'description' => 'Complete end-to-end guide to writing, revising, formatting, and defending your PhD or Master\'s thesis.',
-                'udemy_url' => $udemyProfileUrl,
+                'udemy_url' => 'https://www.udemy.com/course/dissertation-writing-bootcamp-defend-with-distinction/',
                 'is_featured' => false,
             ],
             [
@@ -150,7 +150,7 @@ class CourseSeeder extends Seeder
                 'price' => 9.99,
                 'category' => 'Qualitative Research',
                 'description' => 'Master node hierarchies, sentiment analysis, cross-tabulation, and visual diagrams in NVivo & MAXQDA.',
-                'udemy_url' => $udemyProfileUrl,
+                'udemy_url' => 'https://www.udemy.com/course/advanced-nvivo-maxqda-qualitative-coding-masterclass/',
                 'is_featured' => false,
             ],
             [
@@ -164,7 +164,7 @@ class CourseSeeder extends Seeder
                 'price' => 9.99,
                 'category' => 'Journal Publishing',
                 'description' => 'How to respond to reviewer comments, write response letters, and successfully navigate major revisions.',
-                'udemy_url' => $udemyProfileUrl,
+                'udemy_url' => 'https://www.udemy.com/course/scopus-ssci-q1-journal-peer-review-revision-strategies/',
                 'is_featured' => false,
             ],
             [
@@ -178,7 +178,7 @@ class CourseSeeder extends Seeder
                 'price' => 9.99,
                 'category' => 'Quantitative Research',
                 'description' => 'Confirmatory Factor Analysis (CFA), path modeling, mediation/moderation analysis, and reporting SEM results.',
-                'udemy_url' => $udemyProfileUrl,
+                'udemy_url' => 'https://www.udemy.com/course/structural-equation-modeling-sem-with-amos-smartpls-4/',
                 'is_featured' => false,
             ],
             [
@@ -192,7 +192,7 @@ class CourseSeeder extends Seeder
                 'price' => 9.99,
                 'category' => 'Bibliometrics',
                 'description' => 'Exporting Web of Science and Scopus data to generate cluster maps, keyword co-occurrence, and author networks.',
-                'udemy_url' => $udemyProfileUrl,
+                'udemy_url' => 'https://www.udemy.com/course/science-mapping-co-citation-networks-using-vosviewer/',
                 'is_featured' => false,
             ],
             [
@@ -206,7 +206,7 @@ class CourseSeeder extends Seeder
                 'price' => 9.99,
                 'category' => 'Grant Writing',
                 'description' => 'Formulating research proposals, project budgets, impact statements, and grant defense strategy.',
-                'udemy_url' => $udemyProfileUrl,
+                'udemy_url' => 'https://www.udemy.com/course/academic-grant-writing-securing-hec-international-funds/',
                 'is_featured' => false,
             ],
             [
@@ -220,7 +220,7 @@ class CourseSeeder extends Seeder
                 'price' => 9.99,
                 'category' => 'Research Methods',
                 'description' => 'Constructing conceptual models, identifying research gaps, and choosing appropriate philosophical paradigms.',
-                'udemy_url' => $udemyProfileUrl,
+                'udemy_url' => 'https://www.udemy.com/course/research-methodology-theoretical-framework-formulation/',
                 'is_featured' => false,
             ],
             [
@@ -234,7 +234,7 @@ class CourseSeeder extends Seeder
                 'price' => 9.99,
                 'category' => 'Literature Review',
                 'description' => 'In-depth guide to PRISMA flowcharts, risk of bias assessment tools (NOS, CASP), and protocol registration.',
-                'udemy_url' => $udemyProfileUrl,
+                'udemy_url' => 'https://www.udemy.com/course/prisma-2020-protocol-quality-assessment-in-slr/',
                 'is_featured' => false,
             ],
             [
@@ -248,7 +248,7 @@ class CourseSeeder extends Seeder
                 'price' => 9.99,
                 'category' => 'Dissertation Help',
                 'description' => 'Strategic guidance for PhD scholars to manage supervisors, stay on track, and pass oral viva defense.',
-                'udemy_url' => $udemyProfileUrl,
+                'udemy_url' => 'https://www.udemy.com/course/executive-academic-mentorship-from-idea-to-defense/',
                 'is_featured' => false,
             ],
             [
@@ -262,7 +262,7 @@ class CourseSeeder extends Seeder
                 'price' => 9.99,
                 'category' => 'Quantitative Research',
                 'description' => 'Descriptive stats, ANOVA, multiple regression, reliability testing, and data cleaning step-by-step in SPSS.',
-                'udemy_url' => $udemyProfileUrl,
+                'udemy_url' => 'https://www.udemy.com/course/applied-spss-statistical-data-analysis-for-beginners-pros/',
                 'is_featured' => false,
             ],
         ];

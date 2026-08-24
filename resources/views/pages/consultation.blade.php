@@ -7,10 +7,10 @@
 <!-- Navy & Gold Header Banner -->
 <section style="padding: 5.5rem 0 3.5rem 0; background: var(--navy-deep); color: #ffffff; border-bottom: 3px solid var(--gold);">
     <div class="container text-center">
-        <h1 style="font-family: var(--font-heading); font-size: 2.75rem; color: #ffffff; margin-bottom: 0.5rem;">1-on-1 Consultation & Mentorship</h1>
+        <h1 style="font-family: var(--font-heading); font-size: 2.75rem; color: #ffffff; margin-bottom: 0.5rem;">1-on-1 Consultation & Academic Advisory</h1>
         <div class="gold-divider"></div>
-        <p style="color: #cbd5e1; max-width: 700px; margin: 0 auto; font-size: 1.05rem;">
-            Personalized, high-touch academic advisory programs designed to elevate your thesis, literature review, Scopus/SSCI journal manuscript, and grant proposals.
+        <p style="color: #cbd5e1; max-width: 750px; margin: 0 auto; font-size: 1.05rem; line-height: 1.7;">
+            Personalized academic advisory and mentorship for PhD candidates, Master's thesis defense, Scopus journal revisions, and international grant proposals led by Dr. Muhammad Shakil Ahmad.
         </p>
     </div>
 </section>
@@ -19,10 +19,10 @@
 <section class="section-padding" style="background: var(--surface);">
     <div class="container" style="max-width: 1100px;">
         <div class="section-header text-center" style="margin-bottom: 3rem;">
-            <div class="section-subtitle">HOW WE PARTNER WITH YOU</div>
+            <div class="section-subtitle">ADVISORY PARTNERSHIPS</div>
             <h2 class="section-title">Coaching & Consultation Programs</h2>
             <p style="color: var(--muted); font-size: 1rem;">
-                Explore our specialized 1-on-1 mentorship programs tailored for research scholars, PhD candidates, and university faculty.
+                Explore specialized 1-on-1 mentorship programs tailored for research scholars, PhD candidates, and university faculty.
             </p>
         </div>
 
@@ -76,10 +76,10 @@
     <div class="container" style="max-width: 850px;">
         <div style="background: var(--surface); padding: 2.75rem; border-radius: 16px; border: 1px solid var(--border); box-shadow: var(--shadow-md);">
             <div class="section-header" style="margin-bottom: 2rem;">
-                <div class="section-subtitle">Get In Touch</div>
+                <div class="section-subtitle">APPLY FOR ADVISORY</div>
                 <h2 class="section-title" style="font-size: 2rem;">Book a 1-on-1 Consultation Session</h2>
                 <p style="color: var(--muted); font-size: 0.95rem; margin-top: 0.5rem;">
-                    Fill in your details below and Dr. Shakil's team will contact you within 24 hours to schedule your strategy call.
+                    Submit project details below to schedule an academic advisory strategy call.
                 </p>
             </div>
 
@@ -124,7 +124,7 @@
 
                 <div class="form-group">
                     <label class="form-label">Message & Project Overview *</label>
-                    <textarea name="message" class="form-control" placeholder="Describe your research topic, current progress, or defense timeline..." rows="4" required></textarea>
+                    <textarea name="message" class="form-control" placeholder="Describe research topic, current progress, or defense timeline..." rows="4" required></textarea>
                 </div>
 
                 <div style="text-align: center; margin-top: 1.5rem;">

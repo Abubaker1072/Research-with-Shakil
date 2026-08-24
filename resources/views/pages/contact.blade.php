@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Contact Us & Book Consultation | Research with Shakil')
+@section('title', 'Contact & Advisory Inquiries | Research with Shakil')
 
 @push('styles')
 <style>
@@ -124,9 +124,9 @@
 <!-- Hero Header Banner -->
 <section class="contact-hero-section">
     <div class="container text-center">
-        <h1 class="contact-hero-title">We're Here for Your Academic Success</h1>
+        <h1 class="contact-hero-title">Academic Mentorship & Support</h1>
         <p class="contact-hero-subtitle">
-            Have questions about 1-on-1 advisory, institutional workshops, or thesis mentorship? Send us a message and Dr. Shakil's team will respond within 24 hours.
+            Have questions about 1-on-1 advisory, institutional workshops, or thesis mentorship? Send an inquiry and Dr. Shakil's advisory team will respond promptly.
         </p>
     </div>
 </section>
@@ -136,15 +136,15 @@
     <div class="container">
         
         <div class="contact-info-grid">
-            <!-- Card 1: Location -->
+            <!-- Card 1: Academic Institution -->
             <div class="contact-info-card">
                 <div class="contact-info-icon">
-                    <i class="fas fa-map-marker-alt"></i>
+                    <i class="fas fa-university"></i>
                 </div>
-                <h3 class="contact-info-heading">Our Office Location</h3>
+                <h3 class="contact-info-heading">Academic Institution</h3>
                 <p class="contact-info-text">
-                    ORIC Leadership Complex, Street 1-A,<br>
-                    Research Enclave, Islamabad, Pakistan
+                    Teesside International Business School,<br>
+                    Teesside University, United Kingdom
                 </p>
             </div>
 
@@ -156,7 +156,7 @@
                 <h3 class="contact-info-heading">Email Advisory</h3>
                 <p class="contact-info-text">
                     info@researchwithshakil.com<br>
-                    <span style="font-size: 0.82rem; color: #1e3a8a; font-weight: 600;">24-Hour Response Guarantee</span>
+                    <span style="font-size: 0.82rem; color: #1e3a8a; font-weight: 600;">Academic Advisory Support</span>
                 </p>
             </div>
 
@@ -165,10 +165,10 @@
                 <div class="contact-info-icon">
                     <i class="fas fa-phone-alt"></i>
                 </div>
-                <h3 class="contact-info-heading">Phone Helpline</h3>
+                <h3 class="contact-info-heading">Advisory Helpline</h3>
                 <p class="contact-info-text">
-                    +92 300 0000000<br>
-                    051 8480200 (Mon - Sat, 9 AM - 6 PM)
+                    Academic Advisory Helpdesk<br>
+                    Mon - Sat, 9 AM - 6 PM (GMT)
                 </p>
             </div>
 
@@ -177,12 +177,12 @@
                 <div class="contact-info-icon" style="background: #dcfce7; color: #166534;">
                     <i class="fab fa-whatsapp"></i>
                 </div>
-                <h3 class="contact-info-heading">WhatsApp Instant Chat</h3>
+                <h3 class="contact-info-heading">WhatsApp Support</h3>
                 <p class="contact-info-text" style="margin-bottom: 0.75rem;">
-                    Chat directly with our mentorship team for quick advisory.
+                    Contact the advisory team for scheduling inquiries.
                 </p>
                 <a href="https://wa.me/923000000000?text=Hello%20Dr.%20Shakil,%20I%20would%20like%20to%20inquire%20about%20research%20consultation" target="_blank" style="color: #166534; font-weight: 700; font-size: 0.88rem; text-decoration: none;">
-                    Start WhatsApp Chat <i class="fas fa-arrow-right" style="font-size: 0.75rem;"></i>
+                    Start WhatsApp Message <i class="fas fa-arrow-right" style="font-size: 0.75rem;"></i>
                 </a>
             </div>
         </div>
@@ -191,10 +191,10 @@
         <div style="max-width: 850px; margin: 0 auto; background: #ffffff; padding: 3rem; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(0,0,0,0.06);">
             
             <div class="section-header text-center" style="margin-bottom: 2rem;">
-                <div class="section-subtitle">SEND YOUR INQUIRY</div>
+                <div class="section-subtitle">SEND AN INQUIRY</div>
                 <h2 class="section-title" style="font-size: 2rem;">Schedule a Consultation Session</h2>
                 <p style="color: #64748b; font-size: 0.95rem; margin-top: 0.5rem;">
-                    Please fill out the form below and Dr. Shakil Ahmad's advisory team will respond within 24 hours.
+                    Fill out the form below and Dr. Shakil Ahmad's advisory team will respond promptly.
                 </p>
             </div>
 
@@ -238,8 +238,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-label" for="message">Your Research Goal / Inquiry *</label>
-                    <textarea name="message" id="message" class="form-control" placeholder="Provide details about your thesis topic, current progress, or publication goal..." rows="4" required></textarea>
+                    <label class="form-label" for="message">Research Goal / Inquiry *</label>
+                    <textarea name="message" id="message" class="form-control" placeholder="Provide details regarding thesis topic, current progress, or publication goal..." rows="4" required></textarea>
                 </div>
 
                 <div style="text-align: center; margin-top: 2rem;">
@@ -259,11 +259,11 @@
 
             <div class="faq-card">
                 <div class="faq-header">
-                    <span>How quickly will Dr. Shakil's team respond to my inquiry?</span>
+                    <span>How quickly does the advisory team respond to inquiries?</span>
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-body">
-                    Our team reviews all consultation applications within 24 hours. You will receive an email and a WhatsApp message with available strategy call time slots.
+                    All consultation applications are reviewed promptly. Applicants receive an email or WhatsApp message with available strategy call time slots.
                 </div>
             </div>
 
@@ -273,27 +273,27 @@
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-body">
-                    1-on-1 advisory sessions are conducted online via Zoom or Microsoft Teams for international scholars across the UK, USA, Europe, Middle East, and Asia. In-person sessions can be scheduled at the ORIC Complex in Islamabad.
+                    1-on-1 advisory sessions are conducted online via Zoom or Microsoft Teams for international scholars across the UK, USA, Europe, Middle East, and Asia.
                 </div>
             </div>
 
             <div class="faq-card">
                 <div class="faq-header">
-                    <span>Can institutional workshops be customized for our university?</span>
+                    <span>Can institutional workshops be customized for an academic institution?</span>
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-body">
-                    Yes! All institutional workshops and ORIC faculty capacity-building seminars are tailored to your department's specific research domain, software tools (NVivo, SmartPLS, VOSviewer), and target defense timeline.
+                    Yes. All institutional workshops and ORIC faculty capacity-building seminars are tailored to the institution's specific research domain, software tools (NVivo, SmartPLS, VOSviewer), and target timeline.
                 </div>
             </div>
 
             <div class="faq-card">
                 <div class="faq-header">
-                    <span>How do I access Dr. Shakil's 18 online video bootcamps?</span>
+                    <span>How can Dr. Shakil's 18 online video bootcamps be accessed?</span>
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-body">
-                    You can browse all 18 online courses on our <a href="{{ route('courses.index') }}">Courses page</a>. Clicking any course redirects to Dr. Shakil's official Udemy instructor profile for instant enrollment and lifetime access.
+                    All 18 online courses can be explored on the <a href="{{ route('courses.index') }}">Courses page</a>. Clicking any course redirects directly to its dedicated course page on Udemy.
                 </div>
             </div>
 
