@@ -411,10 +411,9 @@
                     <p style="font-size: 0.85rem; color: #64748b; font-weight: 600; margin-bottom: 1.25rem;">Senior Lecturer • Teesside University (UK)</p>
 
                     <div style="display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 1.5rem; text-align: left; background: #f8fafc; padding: 1rem; border-radius: 12px; border: 1px solid #e2e8f0; font-size: 0.85rem; color: #334155;">
-                        <div><i class="fas fa-graduation-cap" style="color: #1e3a8a; width: 20px;"></i> <strong>Degree:</strong> PhD in Management</div>
-                        <div><i class="fas fa-university" style="color: #1e3a8a; width: 20px;"></i> <strong>Institution:</strong> Teesside University UK</div>
-                        <div><i class="fas fa-award" style="color: #eab308; width: 20px;"></i> <strong>Google Scholar:</strong> H-Index 39</div>
-                        <div><i class="fas fa-book" style="color: #166534; width: 20px;"></i> <strong>Publications:</strong> 53+ SSCI Papers</div>
+                        @foreach($qualifications as $qual)
+                        <div><i class="fas {{ $qual->icon }}" style="color: {{ $qual->icon_color }}; width: 20px;"></i> <strong>{{ $qual->label }}:</strong> {{ $qual->title }}</div>
+                        @endforeach
                     </div>
 
                     <div class="about-social-row">

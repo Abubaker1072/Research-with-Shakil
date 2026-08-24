@@ -13,6 +13,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->string('icon')->default('fas fa-graduation-cap');
+            $table->string('image')->nullable();
             $table->string('short_description');
             $table->text('full_description');
             $table->json('features')->nullable();

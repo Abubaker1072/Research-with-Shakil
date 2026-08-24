@@ -26,23 +26,13 @@
             </p>
         </div>
 
-        @php
-            $programPreviews = [
-                'course_lit_review_thumb.png',
-                'course_slr_thumb.png',
-                'course_qualitative_thumb.png',
-                'course_bibliometrics_thumb.png',
-                'course_meta_thumb.png',
-            ];
-        @endphp
-
         <div class="stacked-cards-container" style="margin-bottom: 4rem;">
             @foreach($services as $index => $service)
             <div class="stacked-card">
                 <div class="stacked-card-grid">
                     <!-- Left: Program Visual Preview -->
                     <div>
-                        <img src="{{ asset('images/' . ($programPreviews[$index % 5])) }}" alt="{{ $service->title }}" class="stacked-card-preview-img">
+                        <img src="{{ asset('images/' . ($service->image ?? 'course_lit_review_thumb.png')) }}" alt="{{ $service->title }}" class="stacked-card-preview-img">
                     </div>
 
                     <!-- Right: Details & Features List -->
