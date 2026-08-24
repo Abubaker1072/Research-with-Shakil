@@ -28,11 +28,25 @@
 
         <div class="stacked-cards-container" style="margin-bottom: 4rem;">
             @foreach($services as $index => $service)
+            @php
+                $fallbackImages = [
+                    0 => 'course_lit_review_thumb.png',
+                    1 => 'consultation_prog_2.jpg',
+                    2 => 'consultation_prog_3.jpg',
+                    3 => 'consultation_prog_4.jpg',
+                    4 => 'consultation_prog_5.jpg',
+                ];
+
+                $img = $service->image;
+                if (!$img || str_contains($img, 'course_') || str_contains($img, 'thumb')) {
+                    $img = $fallbackImages[$index] ?? 'consultation_prog_2.jpg';
+                }
+            @endphp
             <div class="stacked-card">
                 <div class="stacked-card-grid">
                     <!-- Left: Program Visual Preview -->
                     <div>
-                        <img src="{{ asset('images/' . ($service->image ?? 'course_lit_review_thumb.png')) }}" alt="{{ $service->title }}" class="stacked-card-preview-img">
+                        <img src="{{ asset('images/' . $img) }}" alt="{{ $service->title }}" class="stacked-card-preview-img">
                     </div>
 
                     <!-- Right: Details & Features List -->
