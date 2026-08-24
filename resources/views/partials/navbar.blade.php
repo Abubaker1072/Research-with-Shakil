@@ -1,7 +1,7 @@
 <nav class="navbar-white">
     <div class="container nav-container">
         <!-- Brand Logo -->
-        <a href="{{ route('home') }}" class="nav-brand">
+        <a href="/" class="nav-brand">
             <img src="{{ asset('images/logo.png') }}" alt="Research with Shakil Logo" class="brand-logo-img" id="nav-brand-logo">
         </a>
 
@@ -13,62 +13,62 @@
         <!-- Navigation Links with Dropdown Menus & Mobile Responsive Drawer -->
         <ul class="nav-links" id="mainNavLinks">
             <li>
-                <a href="{{ route('home') }}" class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}">
+                <a href="/" class="nav-link {{ request()->is('/') ? 'active' : '' }}">
                     Home
                 </a>
             </li>
 
             <!-- ABOUT Dropdown Menu -->
             <li class="nav-item-dropdown">
-                <a href="{{ route('about') }}" class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}">
+                <a href="/about" class="nav-link {{ request()->is('about*') ? 'active' : '' }}">
                     About <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-left: 2px;"></i>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="{{ route('about') }}" class="dropdown-item">Dr. Shakil Ahmad Profile</a></li>
-                    <li><a href="{{ route('about') }}#qualifications" class="dropdown-item">Academic Qualifications</a></li>
-                    <li><a href="{{ route('about') }}#teaching-experience" class="dropdown-item">Teaching & Research Advisory</a></li>
+                    <li><a href="/about" class="dropdown-item">Dr. Shakil Ahmad Profile</a></li>
+                    <li><a href="/about#qualifications" class="dropdown-item">Academic Qualifications</a></li>
+                    <li><a href="/about#teaching-experience" class="dropdown-item">Teaching & Research Advisory</a></li>
                 </ul>
             </li>
 
             <!-- COURSES Dropdown Menu -->
             <li class="nav-item-dropdown">
-                <a href="{{ route('courses.index') }}" class="nav-link {{ request()->routeIs('courses.*') ? 'active' : '' }}">
+                <a href="/courses" class="nav-link {{ request()->is('courses*') ? 'active' : '' }}">
                     Courses <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-left: 2px;"></i>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="{{ route('courses.index') }}" class="dropdown-item">All Online Courses</a></li>
-                    <li><a href="{{ route('courses.index') }}?category=Systematic+Literature+Review" class="dropdown-item">Systematic Literature Review</a></li>
-                    <li><a href="{{ route('courses.index') }}?category=Qualitative+Analysis" class="dropdown-item">Qualitative & Thematic Analysis</a></li>
-                    <li><a href="{{ route('courses.index') }}?category=Bibliometrics" class="dropdown-item">Bibliometrics & Meta-Analysis</a></li>
+                    <li><a href="/courses" class="dropdown-item">All Online Courses</a></li>
+                    <li><a href="/courses?category=Systematic+Literature+Review" class="dropdown-item">Systematic Literature Review</a></li>
+                    <li><a href="/courses?category=Qualitative+Analysis" class="dropdown-item">Qualitative & Thematic Analysis</a></li>
+                    <li><a href="/courses?category=Bibliometrics" class="dropdown-item">Bibliometrics & Meta-Analysis</a></li>
                 </ul>
             </li>
 
             <!-- TRAININGS Page -->
             <li>
-                <a href="{{ route('trainings.index') }}" class="nav-link {{ request()->routeIs('trainings.*') ? 'active' : '' }}">
+                <a href="/trainings" class="nav-link {{ request()->is('trainings*') ? 'active' : '' }}">
                     Trainings
                 </a>
             </li>
 
             <!-- CONSULTATION Dropdown Menu -->
             <li class="nav-item-dropdown">
-                <a href="{{ route('consultation.index') }}" class="nav-link {{ request()->routeIs('consultation.*') ? 'active' : '' }}">
+                <a href="/consultation" class="nav-link {{ request()->is('consultation*') ? 'active' : '' }}">
                     Consultation <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-left: 2px;"></i>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="{{ route('consultation.index') }}" class="dropdown-item">1-on-1 Consultation Overview</a></li>
-                    <li><a href="{{ route('consultation.index') }}#consultation-booking-form" class="dropdown-item">Book Advisory Session</a></li>
+                    <li><a href="/consultation" class="dropdown-item">1-on-1 Consultation Overview</a></li>
+                    <li><a href="/consultation#consultation-booking-form" class="dropdown-item">Book Advisory Session</a></li>
                 </ul>
             </li>
 
             <li>
-                <a href="{{ route('publications.index') }}" class="nav-link {{ request()->routeIs('publications.*') ? 'active' : '' }}">
+                <a href="/publications" class="nav-link {{ request()->is('publications*') ? 'active' : '' }}">
                     Publications
                 </a>
             </li>
 
             <li>
-                <a href="{{ route('contact.index') }}" class="nav-link {{ request()->routeIs('contact.*') ? 'active' : '' }}">
+                <a href="/contact" class="nav-link {{ request()->is('contact*') ? 'active' : '' }}">
                     Contact
                 </a>
             </li>
@@ -76,7 +76,7 @@
 
         <!-- Right Side Primary CTA -->
         <div class="nav-cta-wrapper">
-            <a href="{{ route('home') }}#booking-form-section" class="btn-navy" id="nav-lets-talk-btn">
+            <a href="/#booking-form-section" class="btn-navy" id="nav-lets-talk-btn">
                 Let's Talk <i class="fas fa-arrow-right"></i>
             </a>
         </div>

@@ -24,7 +24,7 @@
                 <a href="#booking-form-section" class="btn-navy" id="hero-get-in-touch" style="padding: 0.9rem 2.2rem; font-weight: 800;">
                     BOOK CONSULTATION <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
                 </a>
-                <a href="{{ route('courses.index') }}" class="btn-light-surface" style="padding: 0.9rem 1.8rem; font-weight: 700;">
+                <a href="/courses" class="btn-light-surface" style="padding: 0.9rem 1.8rem; font-weight: 700;">
                     Explore Online Courses
                 </a>
             </div>
@@ -81,7 +81,7 @@
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; align-items: stretch;">
             
             <!-- 1. COURSES OVERVIEW SECTION -->
-            <div style="background: #ffffff; border-radius: 18px; border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%; cursor: pointer;" class="overview-card-editorial" onclick="window.location.href='{{ route('courses.index') }}'">
+            <div style="background: #ffffff; border-radius: 18px; border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%; cursor: pointer;" class="overview-card-editorial" onclick="window.location.href='/courses'">
                 <div>
                     <div style="height: 160px; position: relative; overflow: hidden; background: #0f172a;">
                         <img src="{{ asset('images/courses_overview_banner.png') }}" alt="Courses Overview" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.95;">
@@ -108,14 +108,14 @@
                 </div>
 
                 <div style="padding: 0 1.4rem 1.4rem 1.4rem; margin-top: auto;">
-                    <a href="{{ route('courses.index') }}" class="btn-navy" style="width: 100%; text-align: center; display: block; padding: 0.75rem 1.25rem; font-size: 0.88rem; font-weight: 700; border-radius: 10px;" id="overview-view-courses-btn" onclick="event.stopPropagation();">
+                    <a href="/courses" class="btn-navy" style="width: 100%; text-align: center; display: block; padding: 0.75rem 1.25rem; font-size: 0.88rem; font-weight: 700; border-radius: 10px;" id="overview-view-courses-btn" onclick="event.stopPropagation();">
                         View All Courses <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
                     </a>
                 </div>
             </div>
 
             <!-- 2. TRAININGS OVERVIEW SECTION -->
-            <div style="background: #ffffff; border-radius: 18px; border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%; cursor: pointer;" class="overview-card-editorial" onclick="window.location.href='{{ route('trainings.index') }}'">
+            <div style="background: #ffffff; border-radius: 18px; border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%; cursor: pointer;" class="overview-card-editorial" onclick="window.location.href='/trainings'">
                 <div>
                     <div style="height: 160px; position: relative; overflow: hidden; background: #0f172a;">
                         <img src="{{ asset('images/trainings_overview_banner.jpg') }}" alt="Trainings Overview" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.95;">
@@ -142,14 +142,14 @@
                 </div>
 
                 <div style="padding: 0 1.4rem 1.4rem 1.4rem; margin-top: auto;">
-                    <a href="{{ route('trainings.index') }}" class="btn-navy" style="width: 100%; text-align: center; display: block; padding: 0.75rem 1.25rem; font-size: 0.88rem; font-weight: 700; border-radius: 10px;" id="overview-explore-trainings-btn" onclick="event.stopPropagation();">
+                    <a href="/trainings" class="btn-navy" style="width: 100%; text-align: center; display: block; padding: 0.75rem 1.25rem; font-size: 0.88rem; font-weight: 700; border-radius: 10px;" id="overview-explore-trainings-btn" onclick="event.stopPropagation();">
                         Explore Trainings <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
                     </a>
                 </div>
             </div>
 
             <!-- 3. CONSULTATION OVERVIEW SECTION -->
-            <div style="background: #ffffff; border-radius: 18px; border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%; cursor: pointer;" class="overview-card-editorial" onclick="window.location.href='{{ route('consultation.index') }}'">
+            <div style="background: #ffffff; border-radius: 18px; border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%; cursor: pointer;" class="overview-card-editorial" onclick="window.location.href='/consultation'">
                 <div>
                     <div style="height: 160px; position: relative; overflow: hidden; background: #0f172a;">
                         <img src="{{ asset('images/consultation_overview_banner.jpg') }}" alt="Consultation Overview" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.95;">
@@ -176,7 +176,7 @@
                 </div>
 
                 <div style="padding: 0 1.4rem 1.4rem 1.4rem; margin-top: auto;">
-                    <a href="{{ route('consultation.index') }}" class="btn-navy" style="width: 100%; text-align: center; display: block; padding: 0.75rem 1.25rem; font-size: 0.88rem; font-weight: 700; border-radius: 10px;" id="overview-book-consultation-btn" onclick="event.stopPropagation();">
+                    <a href="/consultation" class="btn-navy" style="width: 100%; text-align: center; display: block; padding: 0.75rem 1.25rem; font-size: 0.88rem; font-weight: 700; border-radius: 10px;" id="overview-book-consultation-btn" onclick="event.stopPropagation();">
                         Book Consultation <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
                     </a>
                 </div>
