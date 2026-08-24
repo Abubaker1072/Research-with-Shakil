@@ -21,7 +21,7 @@ class HomeController extends Controller
         $stats = [
             'learners' => 21550,
             'reviews' => 1865,
-            'courses' => 18,
+            'courses' => Course::count(),
             'grants_count' => 2,
         ];
 

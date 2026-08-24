@@ -8,18 +8,18 @@
 <style>
     .service-card-block {
         background: #ffffff;
-        border-radius: 20px;
+        border-radius: 16px;
         border: 1px solid #cbd5e1;
         box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        padding: 2.5rem;
-        margin-bottom: 2.5rem;
+        padding: 1.5rem 1.75rem;
+        margin-bottom: 1.75rem;
     }
     .service-card-title {
         font-family: var(--font-heading);
-        font-size: 1.85rem;
+        font-size: 1.45rem;
         font-weight: 800;
         color: #0f172a;
-        margin-bottom: 0.75rem;
+        margin-bottom: 0.6rem;
     }
     .direct-answer-text {
         font-size: 1.05rem;
@@ -97,7 +97,7 @@
             <h2 class="service-card-title">Courses: On-Demand Courses in Research & Academic Writing</h2>
             
             <div class="direct-answer-text">
-                Dr. Shakil Ahmad's 18 self-paced courses teach the full research process — from formulating a research question to publishing in a peer-reviewed journal — and are available with lifetime access on Udemy.
+                Dr. Shakil Ahmad's self-paced courses teach the full research process — from formulating a research question to publishing in a peer-reviewed journal — and are available with lifetime access on Udemy.
             </div>
 
             <div class="service-list-grid">
@@ -128,7 +128,7 @@
 
             <div>
                 <a href="{{ route('courses.index') }}" class="btn-navy" style="padding: 0.85rem 1.8rem; font-weight: 700;">
-                    View All 18 Courses on Udemy <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
+                    View All Courses on Udemy <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
                 </a>
             </div>
         </div>
@@ -234,7 +234,7 @@
         "@type": "Person",
         "name": "Dr. Muhammad Shakil Ahmad"
       },
-      "description": "18 self-paced courses teaching research methodology, literature review writing, data analysis, and academic publishing on Udemy."
+      "description": "Self-paced courses teaching research methodology, literature review writing, data analysis, and academic publishing on Udemy."
     },
     {
       "@type": "Service",
@@ -302,7 +302,7 @@
 
             <details style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1.25rem 1.5rem; cursor: pointer;">
                 <summary style="font-weight: 800; font-size: 1.05rem; color: #0f172a;">
-                    Do I need a background in statistics to take the research methodology courses?
+                    Is a background in statistics required to take the research methodology courses?
                 </summary>
                 <p style="color: #475569; font-size: 0.96rem; line-height: 1.65; margin-top: 0.85rem;">
                     No. The courses are designed for beginners through advanced researchers, with dedicated modules for statistical tools like SPSS, AMOS, and SmartPLS for those who need them.
@@ -345,7 +345,7 @@
     },
     {
       "@type": "Question",
-      "name": "Do I need a background in statistics to take the research methodology courses?",
+      "name": "Is a background in statistics required to take the research methodology courses?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "No. The courses are designed for beginners through advanced researchers, with dedicated modules for statistical tools like SPSS and AMOS for those who need them."
@@ -367,7 +367,7 @@
         
         <div>
             <a href="{{ route('contact.index') }}" class="btn-navy" style="background: #eab308; color: #0f172a; font-weight: 800; padding: 0.85rem 2.2rem; font-size: 1rem;">
-                Contact Me <i class="fas fa-envelope" style="margin-left: 6px;"></i>
+                Contact Advisory Team <i class="fas fa-envelope" style="margin-left: 6px;"></i>
             </a>
         </div>
     </div>

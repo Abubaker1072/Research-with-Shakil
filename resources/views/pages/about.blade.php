@@ -254,7 +254,7 @@
                     <div style="display: flex; align-items: center; gap: 0.75rem;">
                         <i class="fas fa-journal-whills" style="font-size: 1.5rem; color: #0284c7;"></i>
                         <div>
-                            <div class="about-stat-number">90+ Papers</div>
+                            <div class="about-stat-number">53+ Papers</div>
                             <div class="about-stat-label">SSCI & Scopus Q1</div>
                         </div>
                     </div>
@@ -280,7 +280,7 @@
                 </p>
 
                 <p class="about-text-body">
-                    He has authored more than 90 papers in SSCI-indexed journals (H-index: 39), supervised DBA, MBA, and PhD scholars, and led funded research projects spanning healthcare, education, and sustainable development.
+                    He has authored more than 53 papers in SSCI-indexed journals (H-index: 39), supervised DBA, MBA, and PhD scholars, and led funded research projects spanning healthcare, education, and sustainable development.
                 </p>
 
                 <p class="about-text-body">
@@ -335,7 +335,7 @@
                                 <div style="font-size: 0.78rem; font-weight: 800; color: #0284c7; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.4rem;">SELF-PACED LEARNING</div>
                                 <h4 style="font-weight: 800; font-size: 1.15rem; color: #0f172a; margin-bottom: 0.6rem;">On-Demand Courses</h4>
                                 <p style="font-size: 0.92rem; color: #475569; line-height: 1.6; margin-bottom: 1.25rem;">
-                                    18 self-paced courses covering research methodology, dissertation writing, and data analysis, available on Udemy with lifetime access.
+                                    Self-paced courses covering research methodology, dissertation writing, and data analysis, available on Udemy with lifetime access.
                                 </p>
                             </div>
                             <a href="{{ route('courses.index') }}" class="btn-navy" style="padding: 0.75rem 1.25rem; font-size: 0.88rem; text-align: center; border-radius: 10px;">
@@ -431,7 +431,7 @@
                     <div>
                         <div style="font-size: 0.8rem; font-weight: 800; color: #fef08a; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.35rem;">SCOPUS & GOOGLE SCHOLAR</div>
                         <div style="font-size: 1.2rem; font-weight: 800;">Google Scholar Citations & H-Index 39 Profile</div>
-                        <div style="font-size: 0.88rem; color: #cbd5e1; margin-top: 0.2rem;">Author of 90+ papers in peer-reviewed SSCI & Scopus Q1 journals.</div>
+                        <div style="font-size: 0.88rem; color: #cbd5e1; margin-top: 0.2rem;">Author of 53+ papers in peer-reviewed SSCI & Scopus Q1 journals.</div>
                     </div>
                     <a href="https://scholar.google.com/citations?user=Kr6MOa0AAAAJ&hl=en&oi=ao" target="_blank" class="btn-navy" style="background: #eab308; color: #0f172a; font-weight: 800; padding: 0.8rem 1.5rem; border-radius: 10px; text-decoration: none; white-space: nowrap;">
                         <i class="fas fa-graduation-cap" style="margin-right: 6px;"></i> View Scholar Profile <i class="fas fa-external-link-alt" style="font-size: 0.75rem; margin-left: 4px;"></i>
@@ -454,7 +454,7 @@
                         <div><i class="fas fa-graduation-cap" style="color: #1e3a8a; width: 20px;"></i> <strong>Degree:</strong> PhD in Management</div>
                         <div><i class="fas fa-university" style="color: #1e3a8a; width: 20px;"></i> <strong>Institution:</strong> Teesside University UK</div>
                         <div><i class="fas fa-award" style="color: #eab308; width: 20px;"></i> <strong>Google Scholar:</strong> H-Index 39</div>
-                        <div><i class="fas fa-book" style="color: #166534; width: 20px;"></i> <strong>Publications:</strong> 90+ SSCI Papers</div>
+                        <div><i class="fas fa-book" style="color: #166534; width: 20px;"></i> <strong>Publications:</strong> 53+ SSCI Papers</div>
                     </div>
 
                     <div class="about-social-row">

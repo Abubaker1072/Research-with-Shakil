@@ -20,7 +20,7 @@
             <div>
                 <h4 class="footer-col-title">Offerings</h4>
                 <ul class="footer-links-list">
-                    <li><a href="{{ route('courses.index') }}">All 18 Online Courses</a></li>
+                    <li><a href="{{ route('courses.index') }}">All Online Courses</a></li>
                     <li><a href="{{ route('trainings.index') }}">Institutional Trainings</a></li>
                     <li><a href="{{ route('consultation.index') }}">1-on-1 Consultation</a></li>
                     <li><a href="{{ route('consultation.index') }}#consultation-booking-form">Dissertation Mentorship</a></li>

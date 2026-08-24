@@ -187,20 +187,20 @@
             </div>
         </div>
 
-        <!-- Consultation Form Box -->
-        <div style="max-width: 850px; margin: 0 auto; background: #ffffff; padding: 3rem; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(0,0,0,0.06);">
+        <!-- Consultation Form Box (Compact & Well-Proportioned) -->
+        <div style="max-width: 660px; margin: 0 auto; background: #ffffff; padding: 1.75rem 2rem; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(0,0,0,0.06);">
             
-            <div class="section-header text-center" style="margin-bottom: 2rem;">
+            <div class="section-header text-center" style="margin-bottom: 1.25rem;">
                 <div class="section-subtitle">SEND AN INQUIRY</div>
-                <h2 class="section-title" style="font-size: 2rem;">Schedule a Consultation Session</h2>
-                <p style="color: #64748b; font-size: 0.95rem; margin-top: 0.5rem;">
+                <h2 class="section-title" style="font-size: 1.65rem; margin-bottom: 0.2rem;">Schedule a Consultation Session</h2>
+                <p style="color: #64748b; font-size: 0.9rem; margin-top: 0.3rem;">
                     Fill out the form below and Dr. Shakil Ahmad's advisory team will respond promptly.
                 </p>
             </div>
 
             <form action="{{ route('contact.store') }}" method="POST" id="contact-page-form">
                 @csrf
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem;">
                     <div class="form-group">
                         <label class="form-label" for="name">Your Name *</label>
                         <input type="text" name="name" id="name" class="form-control" placeholder="Full Name" required>
@@ -211,7 +211,7 @@
                     </div>
                 </div>
 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem;">
                     <div class="form-group">
                         <label class="form-label" for="whatsapp">WhatsApp Number *</label>
                         <input type="text" name="whatsapp" id="whatsapp" class="form-control" placeholder="+92 300 0000000" required>
@@ -239,11 +239,11 @@
 
                 <div class="form-group">
                     <label class="form-label" for="message">Research Goal / Inquiry *</label>
-                    <textarea name="message" id="message" class="form-control" placeholder="Provide details regarding thesis topic, current progress, or publication goal..." rows="4" required></textarea>
+                    <textarea name="message" id="message" class="form-control" placeholder="Provide details regarding thesis topic, current progress, or publication goal..." rows="3" required></textarea>
                 </div>
 
-                <div style="text-align: center; margin-top: 2rem;">
-                    <button type="submit" class="btn-navy" style="padding: 0.9rem 2.5rem; font-size: 1rem;" id="contact-submit-btn">
+                <div style="text-align: center; margin-top: 1.25rem;">
+                    <button type="submit" class="btn-navy" style="padding: 0.7rem 2.2rem; font-size: 0.9rem; border-radius: 10px;" id="contact-submit-btn">
                         Submit Inquiry <i class="fas fa-paper-plane" style="margin-left: 6px;"></i>
                     </button>
                 </div>

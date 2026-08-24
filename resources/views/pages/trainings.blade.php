@@ -78,12 +78,12 @@
         margin-top: 0.25rem;
     }
     
-    /* Interactive Module Track Cards */
+    /* Interactive Module Track Cards (Compact & Sleek) */
     .module-card {
         background: #ffffff;
         border-radius: 16px;
         border: 1px solid #e2e8f0;
-        padding: 2.25rem;
+        padding: 1.5rem 1.75rem;
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         display: flex;
@@ -246,15 +246,15 @@
                     </div>
                 </div>
                 <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; position: relative;">
-                    <img src="{{ asset('images/course_qualitative_thumb.png') }}" alt="NVivo Qualitative Bootcamp" style="width: 100%; height: 200px; object-fit: cover; display: block;">
+                    <img src="{{ asset('images/dr_shakil_presentation_quote.jpg') }}" alt="Research Mentorship Keynote Presentation" style="width: 100%; height: 200px; object-fit: cover; object-position: center 20%; display: block;">
                     <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(0deg, rgba(15,23,42,0.9) 0%, transparent 100%); padding: 0.75rem 1rem; color: #ffffff; font-weight: 700; font-size: 0.8rem;">
-                        NVivo & MAXQDA Bootcamps
+                        Research Mentorship Keynote
                     </div>
                 </div>
                 <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; position: relative;">
-                    <img src="{{ asset('images/course_bibliometrics_thumb.png') }}" alt="VOSviewer Science Mapping" style="width: 100%; height: 200px; object-fit: cover; display: block;">
+                    <img src="{{ asset('images/dr_shakil_symposium_speaker.jpg') }}" alt="Global Reach Symposium 2024" style="width: 100%; height: 200px; object-fit: cover; object-position: center 20%; display: block;">
                     <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(0deg, rgba(15,23,42,0.9) 0%, transparent 100%); padding: 0.75rem 1rem; color: #ffffff; font-weight: 700; font-size: 0.8rem;">
-                        VOSviewer Science Mapping
+                        Global Reach Symposium 2024
                     </div>
                 </div>
             </div>
@@ -494,20 +494,20 @@
 
 <!-- Interactive Institutional Training Proposal Form Section -->
 <section id="training-proposal-form" class="section-padding" style="background: #f8fafc; border-top: 1px solid #e2e8f0;">
-    <div class="container" style="max-width: 850px;">
-        <div style="background: #ffffff; padding: 3rem; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(0,0,0,0.06);">
+    <div class="container" style="max-width: 660px;">
+        <div style="background: #ffffff; padding: 1.75rem 2rem; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(0,0,0,0.06);">
             
-            <div class="section-header text-center" style="margin-bottom: 2rem;">
+            <div class="section-header text-center" style="margin-bottom: 1.25rem;">
                 <div class="section-subtitle">INSTITUTIONAL INQUIRY</div>
-                <h2 class="section-title" style="font-size: 2rem;">Request Institutional Training Proposal</h2>
-                <p style="color: #64748b; font-size: 0.95rem; margin-top: 0.5rem;">
+                <h2 class="section-title" style="font-size: 1.65rem; margin-bottom: 0.2rem;">Request Institutional Training Proposal</h2>
+                <p style="color: #64748b; font-size: 0.9rem; margin-top: 0.3rem;">
                     Provide your university or organization details below to receive a customized workshop agenda, schedule, and fee proposal.
                 </p>
             </div>
 
             <form action="{{ route('contact.store') }}" method="POST" id="trainingProposalForm">
                 @csrf
-                <div class="form-row-grid">
+                <div class="form-grid-responsive">
                     <div class="form-group">
                         <label class="form-label">Full Name / Representative *</label>
                         <input type="text" name="name" class="form-control" placeholder="Dr. / Prof. Your Name" required>
@@ -518,7 +518,7 @@
                     </div>
                 </div>
 
-                <div class="form-row-grid">
+                <div class="form-grid-responsive">
                     <div class="form-group">
                         <label class="form-label">WhatsApp / Official Phone *</label>
                         <input type="text" name="whatsapp" class="form-control" placeholder="+92 300 0000000" required>
@@ -543,11 +543,11 @@
 
                 <div class="form-group">
                     <label class="form-label">Proposed Dates & Audience Size *</label>
-                    <textarea name="message" class="form-control" placeholder="Specify expected participant count (e.g. 30 faculty members), target dates, and preferred delivery mode (On-Campus or Online)..." rows="4" required></textarea>
+                    <textarea name="message" class="form-control" placeholder="Specify expected participant count (e.g. 30 faculty members), target dates, and preferred delivery mode..." rows="3" required></textarea>
                 </div>
 
-                <div style="text-align: center; margin-top: 2rem;">
-                    <button type="submit" class="btn-navy" style="padding: 0.9rem 2.5rem; font-size: 1rem;" id="trainings-submit-btn">
+                <div style="text-align: center; margin-top: 1.25rem;">
+                    <button type="submit" class="btn-navy" style="padding: 0.7rem 2.2rem; font-size: 0.9rem; border-radius: 10px;" id="trainings-submit-btn">
                         Submit Proposal Request <i class="fas fa-paper-plane" style="margin-left: 6px;"></i>
                     </button>
                 </div>

@@ -24,7 +24,7 @@
         "@type": "CollegeOrUniversity",
         "name": "PhD in Management"
       },
-      "description": "Dr. Muhammad Shakil Ahmad is a Senior Lecturer at Teesside International Business School, Teesside University (UK), research methodology, project management, and HR expert with 90+ SSCI publications and 16,000+ global learners.",
+      "description": "Dr. Muhammad Shakil Ahmad is a Senior Lecturer at Teesside International Business School, Teesside University (UK), research methodology, project management, and HR expert with 53+ SSCI publications and 16,000+ global learners.",
       "sameAs": [
         "https://www.udemy.com/user/dr-muhammad-shakil-ahmad/",
         "https://scholar.google.com/citations?user=Kr6MOa0AAAAJ&hl=en&oi=ao"

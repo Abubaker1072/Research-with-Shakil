@@ -120,20 +120,20 @@
         box-shadow: 0 4px 12px rgba(30, 58, 138, 0.25);
     }
 
-    /* Academic Publication Card */
+    /* Academic Publication Card (Compact & Well-Proportioned) */
     .pub-item-card {
         background: #ffffff;
-        border-radius: 18px;
+        border-radius: 14px;
         border: 1px solid #e2e8f0;
-        padding: 2rem;
-        margin-bottom: 1.75rem;
+        padding: 1.35rem;
+        margin-bottom: 1.15rem;
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
         transition: all 0.25s ease;
         position: relative;
     }
     .pub-item-card:hover {
         transform: translateY(-3px);
-        box-shadow: 0 12px 28px rgba(30, 58, 138, 0.09);
+        box-shadow: 0 10px 24px rgba(30, 58, 138, 0.08);
         border-color: #cbd5e1;
     }
     .pub-card-header {
@@ -142,15 +142,15 @@
         justify-content: space-between;
         flex-wrap: wrap;
         gap: 0.75rem;
-        margin-bottom: 0.85rem;
+        margin-bottom: 0.65rem;
     }
     .pub-badge-type {
         display: inline-flex;
         align-items: center;
         gap: 0.45rem;
-        font-size: 0.78rem;
+        font-size: 0.75rem;
         font-weight: 700;
-        padding: 0.28rem 0.8rem;
+        padding: 0.22rem 0.65rem;
         border-radius: 6px;
         text-transform: uppercase;
         letter-spacing: 0.5px;
@@ -172,35 +172,35 @@
     }
     .pub-card-title {
         font-family: var(--font-heading);
-        font-size: 1.35rem;
+        font-size: 1.15rem;
         font-weight: 700;
         color: #0f172a;
-        margin-bottom: 0.6rem;
-        line-height: 1.4;
+        margin-bottom: 0.45rem;
+        line-height: 1.35;
     }
     .pub-card-authors {
-        font-size: 0.94rem;
+        font-size: 0.88rem;
         color: #334155;
-        margin-bottom: 0.6rem;
+        margin-bottom: 0.45rem;
         font-weight: 500;
     }
     .pub-card-journal {
         color: #1e3a8a;
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         font-weight: 700;
-        margin-bottom: 0.85rem;
+        margin-bottom: 0.65rem;
         display: flex;
         align-items: center;
         gap: 0.5rem;
     }
     .pub-card-abstract {
         color: #475569;
-        font-size: 0.94rem;
-        line-height: 1.65;
-        margin-bottom: 1.25rem;
+        font-size: 0.88rem;
+        line-height: 1.55;
+        margin-bottom: 0.85rem;
         background: #f8fafc;
-        padding: 1rem 1.25rem;
-        border-radius: 12px;
+        padding: 0.75rem 1rem;
+        border-radius: 10px;
         border-left: 3px solid #cbd5e1;
     }
     .pub-card-footer {
@@ -242,6 +242,70 @@
     .scholar-direct-link-btn:hover {
         text-decoration: underline;
     }
+
+    /* Animated Staggered Reveal Styles */
+    @keyframes pubFadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(22px) scale(0.98);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+    .pub-item-card.animate-reveal {
+        animation: pubFadeInUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .pub-load-more-card {
+        background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+        border-radius: 20px;
+        padding: 2.25rem 2rem;
+        text-align: center;
+        color: #ffffff;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 12px 35px rgba(15, 23, 42, 0.18);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        position: relative;
+        overflow: hidden;
+    }
+    .pub-load-more-btn {
+        background: #eab308;
+        color: #0f172a;
+        font-weight: 800;
+        font-size: 1rem;
+        padding: 0.9rem 2.2rem;
+        border-radius: 14px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        box-shadow: 0 4px 15px rgba(234, 179, 8, 0.35);
+    }
+    .pub-load-more-btn:hover {
+        background: #facc15;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(234, 179, 8, 0.5);
+    }
+    .pub-progress-bar-bg {
+        width: 100%;
+        max-width: 360px;
+        height: 8px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 10px;
+        margin: 0.85rem auto 1.35rem auto;
+        overflow: hidden;
+    }
+    .pub-progress-bar-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #fef08a 0%, #eab308 100%);
+        border-radius: 10px;
+        transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
 </style>
 @endpush
 
@@ -255,7 +319,7 @@
         </div>
         <h1 class="pub-hero-title">Research & Peer-Reviewed Publications</h1>
         <p class="pub-hero-subtitle">
-            Author of 90+ papers in SSCI and Scopus Q1 journals across Human Resource Management, Project Management, Healthcare, and Sustainable Development.
+            Author of 53+ papers in SSCI and Scopus Q1 journals across Human Resource Management, Project Management, Healthcare, and Sustainable Development.
         </p>
 
         <!-- Official Google Scholar Card -->
@@ -268,7 +332,7 @@
 
             <div style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
                 <div class="scholar-stat-item">
-                    <div class="scholar-stat-num">90+</div>
+                    <div class="scholar-stat-num">53+</div>
                     <div class="scholar-stat-label">Publications</div>
                 </div>
                 <div class="scholar-stat-item">
@@ -396,22 +460,37 @@
 
         </div>
 
+        <!-- Clean Load More Publications Action -->
+        <div id="loadMorePubsCard" style="text-align: center; margin: 2.5rem 0 1rem 0; display: none;">
+            <button id="loadMorePubsBtn" class="btn-navy" style="padding: 0.85rem 2.2rem; font-weight: 700; font-size: 0.95rem; border-radius: 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.6rem; background: #0f172a; color: #ffffff; border: 1px solid #1e293b; box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12); transition: all 0.25s ease;">
+                <span>Show More Publications</span> <i class="fas fa-chevron-down" id="loadMoreBtnIcon"></i>
+            </button>
+        </div>
+
     </div>
 </section>
 
-<!-- Interactive Filter & Copy DOI Script -->
+<!-- Interactive Filter, Copy DOI & Animated 8-Item Limit Script -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const filterButtons = document.querySelectorAll(".pub-filter-btn");
     const pubCards = document.querySelectorAll(".pub-card-item");
     const searchInput = document.getElementById("pubSearchInput");
     const pubCountText = document.getElementById("pubCountText");
+    const loadMoreCard = document.getElementById("loadMorePubsCard");
+    const loadMoreBtn = document.getElementById("loadMorePubsBtn");
+    const loadMoreTitle = document.getElementById("loadMoreTitle");
+    const loadMoreSubtext = document.getElementById("loadMoreSubtext");
+    const progressBarFill = document.getElementById("pubProgressBarFill");
+    const totalPubCountNum = document.getElementById("totalPubCountNum");
 
+    let isExpanded = false;
     let currentFilter = "all";
     let currentQuery = "";
+    const INITIAL_LIMIT = 8;
 
-    function filterPubs() {
-        let count = 0;
+    function renderPublications(animate = false) {
+        let matchingCards = [];
 
         pubCards.forEach(function (card) {
             const cardType = card.getAttribute("data-type");
@@ -421,18 +500,68 @@ document.addEventListener("DOMContentLoaded", function () {
             const matchesQuery = (!currentQuery || searchData.includes(currentQuery));
 
             if (matchesFilter && matchesQuery) {
-                card.style.display = "block";
-                count++;
+                matchingCards.push(card);
             } else {
                 card.style.display = "none";
+                card.classList.remove("animate-reveal");
             }
         });
 
-        if (currentFilter === "all" && !currentQuery) {
-            pubCountText.innerText = "Showing all " + count + " publication items";
+        const totalMatching = matchingCards.length;
+        const isFiltered = (currentFilter !== "all" || currentQuery !== "");
+
+        matchingCards.forEach(function (card, index) {
+            card.style.display = "block";
+
+            if (!isFiltered && !isExpanded && index >= INITIAL_LIMIT) {
+                card.style.display = "none";
+            } else if (animate && !isFiltered && index >= INITIAL_LIMIT) {
+                card.classList.remove("animate-reveal");
+                card.style.animationDelay = ((index - INITIAL_LIMIT) * 0.06) + "s";
+                void card.offsetWidth;
+                card.classList.add("animate-reveal");
+            }
+        });
+
+        const visibleCount = isFiltered ? totalMatching : (isExpanded ? totalMatching : Math.min(INITIAL_LIMIT, totalMatching));
+
+        if (!isFiltered) {
+            pubCountText.innerText = "Showing " + visibleCount + " of " + totalMatching + " publications";
         } else {
-            pubCountText.innerText = "Showing " + count + " filtered publication" + (count !== 1 ? "s" : "");
+            pubCountText.innerText = "Showing " + totalMatching + " filtered publication" + (totalMatching !== 1 ? "s" : "");
         }
+
+        if (!isFiltered && totalMatching > INITIAL_LIMIT) {
+            loadMoreCard.style.display = "block";
+
+            if (isExpanded) {
+                loadMoreBtn.innerHTML = '<span>Show Top 8 Publications</span> <i class="fas fa-chevron-up"></i>';
+            } else {
+                const remaining = totalMatching - INITIAL_LIMIT;
+                loadMoreBtn.innerHTML = '<span>Show More Publications (' + remaining + ' remaining)</span> <i class="fas fa-chevron-down"></i>';
+            }
+        } else {
+            loadMoreCard.style.display = "none";
+        }
+    }
+
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener("click", function () {
+            isExpanded = !isExpanded;
+            renderPublications(isExpanded);
+
+            if (isExpanded) {
+                const firstNewlyRevealed = pubCards[INITIAL_LIMIT];
+                if (firstNewlyRevealed) {
+                    firstNewlyRevealed.scrollIntoView({ behavior: "smooth", block: "nearest" });
+                }
+            } else {
+                const searchPanel = document.querySelector(".pub-filter-panel");
+                if (searchPanel) {
+                    searchPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+            }
+        });
     }
 
     filterButtons.forEach(function (btn) {
@@ -441,16 +570,18 @@ document.addEventListener("DOMContentLoaded", function () {
             this.classList.add("active");
 
             currentFilter = this.getAttribute("data-filter");
-            filterPubs();
+            renderPublications();
         });
     });
 
     if (searchInput) {
         searchInput.addEventListener("input", function () {
             currentQuery = this.value.trim().toLowerCase();
-            filterPubs();
+            renderPublications();
         });
     }
+
+    renderPublications();
 });
 
 function copyDOIText(doi, btnElem) {

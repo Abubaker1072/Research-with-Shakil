@@ -18,6 +18,8 @@ class Course extends Model
         'lectures_count',
         'level',
         'price',
+        'original_price',
+        'image',
         'category',
         'description',
         'udemy_url',
@@ -27,6 +29,7 @@ class Course extends Model
     protected $casts = [
         'rating' => 'float',
         'price' => 'float',
+        'original_price' => 'float',
         'is_featured' => 'boolean',
     ];
 }

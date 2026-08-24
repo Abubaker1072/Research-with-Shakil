@@ -36,7 +36,7 @@
                     Courses <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-left: 2px;"></i>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="{{ route('courses.index') }}" class="dropdown-item">All 18 Online Courses</a></li>
+                    <li><a href="{{ route('courses.index') }}" class="dropdown-item">All Online Courses</a></li>
                     <li><a href="{{ route('courses.index') }}?category=Systematic+Literature+Review" class="dropdown-item">Systematic Literature Review</a></li>
                     <li><a href="{{ route('courses.index') }}?category=Qualitative+Analysis" class="dropdown-item">Qualitative & Thematic Analysis</a></li>
                     <li><a href="{{ route('courses.index') }}?category=Bibliometrics" class="dropdown-item">Bibliometrics & Meta-Analysis</a></li>

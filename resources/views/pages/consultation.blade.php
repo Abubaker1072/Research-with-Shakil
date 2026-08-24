@@ -73,12 +73,12 @@
 
 <!-- Responsive Booking & Consultation Form Section -->
 <section id="consultation-booking-form" class="section-padding" style="background: #ffffff; border-top: 1px solid var(--border);">
-    <div class="container" style="max-width: 850px;">
-        <div style="background: var(--surface); padding: 2.75rem; border-radius: 16px; border: 1px solid var(--border); box-shadow: var(--shadow-md);">
-            <div class="section-header" style="margin-bottom: 2rem;">
+    <div class="container" style="max-width: 660px;">
+        <div style="background: var(--surface); padding: 1.75rem 2rem; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.06);">
+            <div class="section-header" style="margin-bottom: 1.25rem;">
                 <div class="section-subtitle">APPLY FOR ADVISORY</div>
-                <h2 class="section-title" style="font-size: 2rem;">Book a 1-on-1 Consultation Session</h2>
-                <p style="color: var(--muted); font-size: 0.95rem; margin-top: 0.5rem;">
+                <h2 class="section-title" style="font-size: 1.65rem; margin-bottom: 0.2rem;">Book a 1-on-1 Consultation Session</h2>
+                <p style="color: var(--muted); font-size: 0.9rem; margin-top: 0.3rem;">
                     Submit project details below to schedule an academic advisory strategy call.
                 </p>
             </div>
@@ -124,11 +124,11 @@
 
                 <div class="form-group">
                     <label class="form-label">Message & Project Overview *</label>
-                    <textarea name="message" class="form-control" placeholder="Describe research topic, current progress, or defense timeline..." rows="4" required></textarea>
+                    <textarea name="message" class="form-control" placeholder="Describe research topic, current progress, or defense timeline..." rows="3" required></textarea>
                 </div>
 
-                <div style="text-align: center; margin-top: 1.5rem;">
-                    <button type="submit" class="btn-navy" style="padding: 0.9rem 2.5rem;" id="consultation-submit-btn">
+                <div style="text-align: center; margin-top: 1.25rem;">
+                    <button type="submit" class="btn-navy" style="padding: 0.7rem 2.2rem; font-size: 0.9rem; border-radius: 10px;" id="consultation-submit-btn">
                         Submit Consultation Request <i class="fas fa-paper-plane" style="margin-left: 6px;"></i>
                     </button>
                 </div>
