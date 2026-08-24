@@ -239,9 +239,10 @@
     <div class="container">
         <div class="about-main-grid">
             
-            <!-- Left Side: Bio, Achievements, Help Section & Training Gallery -->
-            <div>
-                <!-- Impact Stats Bar -->
+            <!-- Left Main Column -->
+            <div class="reveal-scroll-up">
+                
+                <!-- Trust Stats Strip -->
                 <div class="about-stats-container">
                     <div style="display: flex; align-items: center; gap: 0.75rem;">
                         <i class="fas fa-users" style="font-size: 1.5rem; color: #1e3a8a;"></i>
@@ -401,7 +402,7 @@
             </div>
 
             <!-- Right Side: Profile Card -->
-            <div>
+            <div class="reveal-scroll-right">
                 <div class="about-profile-card">
                     <div class="about-avatar-circle">
                         <img src="{{ asset('images/hero_dr_shakil_cutout_v2.jpg') }}" alt="Dr. Muhammad Shakil Ahmad">
@@ -436,5 +437,22 @@
         </div>
     </div>
 </section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const revealObserver = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("in-view");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal-scroll-up, .reveal-scroll-right, .reveal-card-box").forEach(function (el) {
+        revealObserver.observe(el);
+    });
+});
+</script>
 
 @endsection

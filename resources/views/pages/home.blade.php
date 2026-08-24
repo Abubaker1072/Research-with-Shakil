@@ -50,10 +50,107 @@
         border-color: #0284c7 !important;
     }
 
-    @media (max-width: 768px) {
+    /* Hero & Meet Shakil Section Responsive Layout Styles */
+    .hero-portrait-card {
+        border-radius: 24px;
+        overflow: hidden;
+        border: 4px solid rgba(255,255,255,0.15);
+        box-shadow: 0 20px 45px rgba(0,0,0,0.3);
+        max-width: 440px;
+        margin: 0 auto;
+        background: #0f172a;
+    }
+    .hero-portrait-card img {
+        width: 100%;
+        height: 480px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .meet-shakil-grid {
+        display: grid;
+        grid-template-columns: 1fr 340px;
+        gap: 3.5rem;
+        align-items: center;
+    }
+
+    .meet-shakil-img-card {
+        border-radius: 20px;
+        overflow: hidden;
+        border: 4px solid #ffffff;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        background: #0f172a;
+        transition: transform 0.3s ease;
+    }
+    .meet-shakil-img-card img {
+        width: 100%;
+        height: 380px;
+        object-fit: cover;
+        display: block;
+    }
+
+    @media (max-width: 992px) {
         .reveal-scroll-left,
         .reveal-scroll-right {
             transform: translateY(30px) !important;
+        }
+
+        .hero-grid,
+        .meet-shakil-grid {
+            grid-template-columns: 1fr !important;
+            gap: 2.5rem !important;
+        }
+
+        .hero-portrait-card {
+            max-width: 360px !important;
+            margin-top: 1.5rem !important;
+        }
+
+        .hero-portrait-card img {
+            height: 380px !important;
+        }
+
+        .meet-shakil-img-card {
+            max-width: 380px !important;
+            margin: 1.5rem auto 0 auto !important;
+        }
+
+        .meet-shakil-img-card img {
+            height: 320px !important;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero-title-mdi {
+            font-size: 1.7rem !important;
+            line-height: 1.25 !important;
+        }
+
+        .hero-text-mdi {
+            font-size: 0.96rem !important;
+        }
+
+        .hero-portrait-card {
+            max-width: 100% !important;
+        }
+
+        .hero-portrait-card img {
+            height: 300px !important;
+        }
+
+        .meet-shakil-img-card img {
+            height: 260px !important;
+        }
+
+        .hero-cta-buttons {
+            flex-direction: column !important;
+            width: 100% !important;
+        }
+
+        .hero-cta-buttons a {
+            width: 100% !important;
+            text-align: center !important;
+            justify-content: center !important;
         }
     }
 </style>
@@ -77,7 +174,7 @@
                 Get expert help with research methodology, academic writing, and HR strategy — through self-paced courses, institutional training, or direct consultation.
             </p>
             
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <div class="hero-cta-buttons" style="display: flex; gap: 1rem; flex-wrap: wrap;">
                 <a href="{{ route('courses.index') }}" class="btn-navy" id="hero-explore-courses" style="padding: 0.9rem 2.2rem; font-weight: 800; background: #eab308; color: #0f172a;">
                     Explore My Courses <i class="fas fa-graduation-cap" style="margin-left: 6px;"></i>
                 </a>
@@ -89,8 +186,8 @@
 
         <!-- Right Side: Official Hero Portrait Photo -->
         <div>
-            <div style="border-radius: 24px; overflow: hidden; border: 4px solid rgba(255,255,255,0.15); box-shadow: 0 20px 45px rgba(0,0,0,0.3); max-width: 440px; margin: 0 auto; background: #0f172a;">
-                <img src="{{ asset('images/dr_shakil_hero.jpg') }}" alt="Dr. Muhammad Shakil Ahmad - Senior Lecturer at Teesside University UK" style="width: 100%; height: 500px; object-fit: cover; display: block;">
+            <div class="hero-portrait-card">
+                <img src="{{ asset('images/dr_shakil_hero.jpg') }}" alt="Dr. Muhammad Shakil Ahmad - Senior Lecturer at Teesside University UK">
             </div>
         </div>
     </div>
@@ -127,7 +224,7 @@
 <!-- MEET DR. MUHAMMAD SHAKIL AHMAD SECTION -->
 <section class="section-padding" style="background: #ffffff; border-bottom: 1px solid #e2e8f0; overflow: hidden;" id="meet-shakil-section">
     <div class="container" style="max-width: 1050px;">
-        <div style="display: grid; grid-template-columns: 1fr 320px; gap: 3rem; align-items: center;">
+        <div class="meet-shakil-grid">
             <div class="reveal-scroll-left">
                 <div class="section-subtitle" style="color: #0284c7; font-weight: 800; letter-spacing: 1.5px;">ABOUT THE INSTRUCTOR</div>
                 <h2 style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800; color: #0f172a; margin-bottom: 1.25rem;">
@@ -150,8 +247,8 @@
                 </a>
             </div>
             <div style="text-align: center;" class="reveal-scroll-right">
-                <div style="border-radius: 20px; overflow: hidden; border: 4px solid #ffffff; box-shadow: 0 15px 35px rgba(0,0,0,0.12); background: #0f172a; transition: transform 0.3s ease;">
-                    <img src="{{ asset($bioImage ?? 'images/dr_shakil_presentation_quote.jpg') }}" alt="Dr. Muhammad Shakil Ahmad Presentation Bio" style="width: 100%; height: 380px; object-fit: cover; display: block;">
+                <div class="meet-shakil-img-card">
+                    <img src="{{ asset($bioImage ?? 'images/dr_shakil_presentation_quote.jpg') }}" alt="Dr. Muhammad Shakil Ahmad Presentation Bio">
                 </div>
             </div>
         </div>

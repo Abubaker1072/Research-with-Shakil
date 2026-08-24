@@ -92,7 +92,7 @@
     <div class="container" style="max-width: 1100px;">
 
         <!-- 1. COURSES SECTION -->
-        <div class="service-card-block" id="on-demand-courses">
+        <div class="service-card-block reveal-card-box" id="on-demand-courses" data-delay="0">
             <div style="font-size: 0.82rem; font-weight: 800; color: #0284c7; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.35rem;">SERVICE OFFERING 1</div>
             <h2 class="service-card-title">Courses: On-Demand Courses in Research & Academic Writing</h2>
             
@@ -134,7 +134,7 @@
         </div>
 
         <!-- 2. TRAININGS SECTION -->
-        <div class="service-card-block" id="live-trainings">
+        <div class="service-card-block reveal-card-box" id="live-trainings" data-delay="1">
             <div style="font-size: 0.82rem; font-weight: 800; color: #0284c7; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.35rem;">SERVICE OFFERING 2</div>
             <h2 class="service-card-title">Trainings: Live Trainings & Workshops</h2>
             
@@ -179,7 +179,7 @@
         </div>
 
         <!-- 3. CONSULTATIONS SECTION -->
-        <div class="service-card-block" id="one-on-one-consultation">
+        <div class="service-card-block reveal-card-box" id="one-on-one-consultation" data-delay="2">
             <div style="font-size: 0.82rem; font-weight: 800; color: #0284c7; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.35rem;">SERVICE OFFERING 3</div>
             <h2 class="service-card-title">Consultations: One-on-One Consultation</h2>
             
@@ -372,5 +372,24 @@
         </div>
     </div>
 </section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const revealObserver = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                const delay = parseInt(entry.target.getAttribute("data-delay") || "0", 10);
+                entry.target.style.transitionDelay = (delay * 0.12) + "s";
+                entry.target.classList.add("in-view");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal-scroll-up, .reveal-card-box").forEach(function (el) {
+        revealObserver.observe(el);
+    });
+});
+</script>
 
 @endsection

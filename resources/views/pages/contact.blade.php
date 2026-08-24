@@ -200,23 +200,23 @@
 
             <form action="{{ route('contact.store') }}" method="POST" id="contact-page-form">
                 @csrf
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem;">
-                    <div class="form-group">
+                <div class="form-row-grid" style="margin-bottom: 1rem;">
+                    <div class="form-group" style="margin-bottom: 0;">
                         <label class="form-label" for="name">Your Name *</label>
                         <input type="text" name="name" id="name" class="form-control" placeholder="Full Name" required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style="margin-bottom: 0;">
                         <label class="form-label" for="email">Email Address *</label>
                         <input type="email" name="email" id="email" class="form-control" placeholder="your.name@university.edu" required>
                     </div>
                 </div>
 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem;">
-                    <div class="form-group">
+                <div class="form-row-grid" style="margin-bottom: 1rem;">
+                    <div class="form-group" style="margin-bottom: 0;">
                         <label class="form-label" for="whatsapp">WhatsApp Number *</label>
                         <input type="text" name="whatsapp" id="whatsapp" class="form-control" placeholder="+92 300 0000000" required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style="margin-bottom: 0;">
                         <label class="form-label" for="academic_level">Academic Role *</label>
                         <select name="academic_level" id="academic_level" class="form-control" required>
                             <option value="PhD Candidate">PhD Candidate</option>
