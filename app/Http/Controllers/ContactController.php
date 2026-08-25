@@ -33,7 +33,8 @@ class ContactController extends Controller
         $consultation = Consultation::create($validated);
 
         // Build pre-filled WhatsApp link
-        $phone = '923000000000'; // Default WhatsApp contact
+        $rawPhone = \App\Models\SiteSetting::get('whatsapp_number', '923000000000');
+        $phone = preg_replace('/[^0-9]/', '', $rawPhone);
         $text = "Hello Dr. Shakil Ahmad, I submitted an inquiry via your website.\n\n" .
                 "Name: {$consultation->name}\n" .
                 "Service Requested: {$consultation->service_type}\n" .
