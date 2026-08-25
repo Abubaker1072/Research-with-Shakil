@@ -61,6 +61,8 @@ INSERT INTO `site_settings` (`key`, `value`, `group`, `type`, `created_at`, `upd
 ('hero_headline', 'Master High-Impact Research & Academic Publishing', 'hero', 'string', '2026-08-24 13:49:02', '2026-08-24 13:49:02'),
 ('hero_subtitle', 'Senior Lecturer at Teesside University (UK) & Management Researcher', 'hero', 'string', '2026-08-24 13:49:02', '2026-08-24 13:49:02'),
 ('hero_tagline', 'Structured step-by-step masterclasses, 1-on-1 dissertation coaching, and quantitative/qualitative methodologies for global researchers.', 'hero', 'string', '2026-08-24 13:49:02', '2026-08-24 13:49:02'),
+('home_hero_bg_image', 'images/junaid_zaida_library_bg.jpg', 'home', 'string', '2026-08-24 13:49:02', '2026-08-24 13:49:02'),
+('hero_portrait_image', 'images/dr_shakil_hero.jpg', 'hero', 'string', '2026-08-24 13:49:02', '2026-08-24 13:49:02'),
 ('home_bio_image', 'images/dr_shakil_presentation_quote.jpg', 'home', 'string', '2026-08-24 13:49:02', '2026-08-24 13:49:02'),
 ('home_quote_image', 'images/dr_shakil_impact_factor_presentation.jpg', 'home', 'string', '2026-08-24 13:49:02', '2026-08-24 13:49:02'),
 ('stat_learners', '16,000+', 'stats', 'string', '2026-08-24 13:49:02', '2026-08-24 13:49:02'),

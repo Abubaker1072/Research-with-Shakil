@@ -184,8 +184,8 @@
 
 @section('content')
 
-<!-- Hero Section with Campus Background Image -->
-<section class="mdi-hero-section">
+<!-- Hero Section with Dynamic Campus Background Image from Database -->
+<section class="mdi-hero-section" style="background: linear-gradient(180deg, rgba(8, 26, 56, 0.70) 0%, rgba(14, 38, 78, 0.78) 100%), url('{{ asset($heroBgImage ?? 'images/junaid_zaida_library_bg.jpg') }}') center/cover no-repeat;">
     <div class="container hero-grid">
         <!-- Left Side: Title, Description & Primary CTA -->
         <div>
@@ -215,7 +215,7 @@
         <!-- Right Side: Official Hero Portrait Photo -->
         <div>
             <div class="hero-portrait-card">
-                <img src="{{ asset('images/dr_shakil_hero.jpg') }}" alt="Dr. Muhammad Shakil Ahmad - Senior Lecturer at Teesside University UK">
+                <img src="{{ asset($heroPortraitImage ?? 'images/dr_shakil_hero.jpg') }}" alt="Dr. Muhammad Shakil Ahmad - Senior Lecturer at Teesside University UK">
             </div>
         </div>
     </div>

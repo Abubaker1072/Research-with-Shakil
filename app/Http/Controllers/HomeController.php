@@ -31,6 +31,8 @@ class HomeController extends Controller
         ];
 
         $bioImage = SiteSetting::get('home_bio_image', 'images/dr_shakil_presentation_quote.jpg');
+        $heroBgImage = SiteSetting::get('home_hero_bg_image', 'images/junaid_zaida_library_bg.jpg');
+        $heroPortraitImage = SiteSetting::get('hero_portrait_image', 'images/dr_shakil_hero.jpg');
 
         return view('pages.home', compact(
             'courses',
@@ -40,7 +42,9 @@ class HomeController extends Controller
             'testimonials',
             'heroGallery',
             'stats',
-            'bioImage'
+            'bioImage',
+            'heroBgImage',
+            'heroPortraitImage'
         ));
     }
 }

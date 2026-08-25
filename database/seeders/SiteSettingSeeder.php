@@ -15,6 +15,8 @@ class SiteSettingSeeder extends Seeder
             ['key' => 'hero_headline', 'value' => 'Master High-Impact Research & Academic Publishing', 'group' => 'hero', 'type' => 'string'],
             ['key' => 'hero_subtitle', 'value' => 'Senior Lecturer at Teesside University (UK) & Management Researcher', 'group' => 'hero', 'type' => 'string'],
             ['key' => 'hero_tagline', 'value' => 'Structured step-by-step masterclasses, 1-on-1 dissertation coaching, and quantitative/qualitative methodologies for global researchers.', 'group' => 'hero', 'type' => 'string'],
+            ['key' => 'home_hero_bg_image', 'value' => 'images/junaid_zaida_library_bg.jpg', 'group' => 'home', 'type' => 'string'],
+            ['key' => 'hero_portrait_image', 'value' => 'images/dr_shakil_hero.jpg', 'group' => 'hero', 'type' => 'string'],
             ['key' => 'home_bio_image', 'value' => 'images/dr_shakil_presentation_quote.jpg', 'group' => 'home', 'type' => 'string'],
             ['key' => 'home_quote_image', 'value' => 'images/dr_shakil_impact_factor_presentation.jpg', 'group' => 'home', 'type' => 'string'],
             ['key' => 'stat_learners', 'value' => '16,000+', 'group' => 'stats', 'type' => 'string'],
