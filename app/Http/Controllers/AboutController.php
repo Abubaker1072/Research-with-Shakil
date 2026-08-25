@@ -33,9 +33,9 @@ class AboutController extends Controller
             ? Qualification::orderBy('sort_order')->get() 
             : collect([
                 (object)['icon' => 'fa-graduation-cap', 'icon_color' => '#1e3a8a', 'label' => 'Degree', 'title' => 'PhD in Management'],
-                (object)['icon' => 'fa-university', 'icon_color' => '#1e3a8a', 'label' => 'Institution', 'title' => 'Teesside University UK'],
+                (object)['icon' => 'fa-chalkboard-teacher', 'icon_color' => '#0284c7', 'label' => 'Academic Role', 'title' => 'Senior Lecturer & Researcher'],
                 (object)['icon' => 'fa-award', 'icon_color' => '#eab308', 'label' => 'Google Scholar', 'title' => 'H-Index 39'],
-                (object)['icon' => 'fa-book', 'icon_color' => '#166534', 'label' => 'Publications', 'title' => '53+ SSCI Papers'],
+                (object)['icon' => 'fa-book', 'icon_color' => '#166534', 'label' => 'Publications', 'title' => '90+ Research Papers'],
             ]);
 
         $galleryImages = Schema::hasTable('galleries') 
