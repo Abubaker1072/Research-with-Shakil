@@ -244,7 +244,7 @@
         "@type": "Person",
         "name": "Dr. Muhammad Shakil Ahmad"
       },
-      "description": "Customized cohort-based live research training programs for universities, research centers, and HR departments."
+      "description": "Customized cohort-based live research training programs for universities, ORIC centers, and HR departments."
     },
     {
       "@type": "Service",
