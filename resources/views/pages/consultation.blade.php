@@ -598,6 +598,27 @@
     </div>
 </section>
 
+<!-- NOT SURE WHERE TO START? CTA BANNER -->
+<section style="background: #0f172a; color: #ffffff; padding: 4rem 0; text-align: center; border-top: 3px solid #eab308;">
+    <div class="container" style="max-width: 800px;">
+        <h2 style="font-family: var(--font-heading); font-size: 2.25rem; font-weight: 800; color: #ffffff; margin-bottom: 1rem;">
+            Not Sure Where to Start?
+        </h2>
+        <p style="color: #cbd5e1; font-size: 1.05rem; line-height: 1.65; margin-bottom: 2rem;">
+            Tell me what you're working on — a thesis, a publication, an HR challenge, or a training need — and I'll point you to the right service.
+        </p>
+        
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="{{ route('contact.index') }}" class="btn-navy" style="background: #eab308; color: #0f172a; font-weight: 800; padding: 0.85rem 2.2rem; font-size: 1rem; border-radius: 12px; text-decoration: none;">
+                Contact Me <i class="fas fa-envelope" style="margin-left: 6px;"></i>
+            </a>
+            <a href="#consultation-booking-form" class="btn-navy" style="background: transparent; color: #ffffff; border: 2px solid #ffffff; font-weight: 800; padding: 0.85rem 2.2rem; font-size: 1rem; border-radius: 12px; text-decoration: none;">
+                Book a Free Discovery Call <i class="fas fa-calendar-check" style="margin-left: 6px;"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const revealObserver = new IntersectionObserver(function (entries, observer) {

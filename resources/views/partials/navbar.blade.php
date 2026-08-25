@@ -38,8 +38,10 @@
                 <ul class="dropdown-menu">
                     <li><a href="{{ route('courses.index') }}" class="dropdown-item">All Online Courses</a></li>
                     <li><a href="{{ route('courses.index', ['category' => 'Systematic Literature Review']) }}" class="dropdown-item">Systematic Literature Review</a></li>
-                    <li><a href="{{ route('courses.index', ['category' => 'Qualitative Analysis']) }}" class="dropdown-item">Qualitative & Thematic Analysis</a></li>
-                    <li><a href="{{ route('courses.index', ['category' => 'Bibliometrics']) }}" class="dropdown-item">Bibliometrics & Meta-Analysis</a></li>
+                    <li><a href="{{ route('courses.index', ['category' => 'Qualitative & Thematic Analysis']) }}" class="dropdown-item">Qualitative & Thematic Analysis</a></li>
+                    <li><a href="{{ route('courses.index', ['category' => 'Bibliometrics & Meta-Analysis']) }}" class="dropdown-item">Bibliometrics & Meta-Analysis</a></li>
+                    <li><a href="{{ route('courses.index', ['category' => 'Dissertation Help']) }}" class="dropdown-item">Dissertation Help</a></li>
+                    <li><a href="{{ route('courses.index', ['category' => 'Journal Publishing']) }}" class="dropdown-item">Journal Publishing</a></li>
                 </ul>
             </li>
 
@@ -84,6 +86,13 @@
                     <li><a href="{{ route('publications.index') }}?type=review" class="dropdown-item">Systematic Reviews</a></li>
                     <li><a href="{{ route('publications.index') }}?type=article" class="dropdown-item">Journal Articles</a></li>
                 </ul>
+            </li>
+
+            <!-- GRANTS Direct Nav Tab -->
+            <li>
+                <a href="{{ route('publications.index') }}?type=grant" class="nav-link">
+                    Grants
+                </a>
             </li>
 
             <li>

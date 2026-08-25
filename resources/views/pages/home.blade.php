@@ -728,7 +728,7 @@
                     <div style="width: 42px; height: 42px; border-radius: 50%; background: #065f46; color: #ffffff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem;">AK</div>
                     <div>
                         <div style="font-weight: 800; color: #0f172a; font-size: 0.92rem;">Dr. Aisha Khan</div>
-                        <div style="font-weight: 500; color: #64748b; font-size: 0.8rem;">Head of Department & ORIC Member (Lahore, Pakistan)</div>
+                        <div style="font-weight: 500; color: #64748b; font-size: 0.8rem;">Head of Department (Lahore, Pakistan)</div>
                     </div>
                 </div>
             </div>
@@ -787,7 +787,7 @@
                         <span style="font-size: 0.75rem; font-weight: 700; background: #f0fdf4; color: #166534; padding: 0.2rem 0.6rem; border-radius: 6px;">Journal Revision</span>
                     </div>
                     <blockquote style="font-size: 0.95rem; color: #334155; line-height: 1.65; margin: 0 0 1.25rem 0; font-style: italic;">
-                        “Dr. Shakil is a master research educator. His guidance on SmartPLS 4 structural equation modeling and peer-review response letters helped our team achieve final acceptance in a top SSCI journal.”
+                        “Dr. Shakil is a master research educator. His guidance on systematic literature reviews, methodology design, and peer-review response letters helped our team achieve final acceptance in a top SSCI journal.”
                     </blockquote>
                 </div>
                 <div style="border-top: 1px solid #e2e8f0; padding-top: 0.85rem; display: flex; align-items: center; gap: 0.75rem;">
