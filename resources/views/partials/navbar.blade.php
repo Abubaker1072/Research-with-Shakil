@@ -73,10 +73,17 @@
                 </ul>
             </li>
 
-            <li>
+            <!-- PUBLICATIONS & GRANTS Dropdown Menu -->
+            <li class="nav-item-dropdown">
                 <a href="{{ route('publications.index') }}" class="nav-link {{ request()->routeIs('publications*') ? 'active' : '' }}">
-                    Publications
+                    Publications <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-left: 2px;"></i>
                 </a>
+                <ul class="dropdown-menu">
+                    <li><a href="{{ route('publications.index') }}" class="dropdown-item">All Publications</a></li>
+                    <li><a href="{{ route('publications.index') }}?type=grant" class="dropdown-item">Grants</a></li>
+                    <li><a href="{{ route('publications.index') }}?type=review" class="dropdown-item">Systematic Reviews</a></li>
+                    <li><a href="{{ route('publications.index') }}?type=article" class="dropdown-item">Journal Articles</a></li>
+                </ul>
             </li>
 
             <li>

@@ -9,6 +9,8 @@ class ConsultationSeeder extends Seeder
 {
     public function run(): void
     {
+        Consultation::truncate();
+
         $inquiries = [
             [
                 'name' => 'Dr. Ali Raza',
@@ -17,7 +19,7 @@ class ConsultationSeeder extends Seeder
                 'service_type' => 'Dissertation & Thesis Coaching',
                 'academic_level' => 'PhD Candidate',
                 'institution' => 'NUST Islamabad',
-                'message' => 'Looking for advisory on structural equation modeling (SmartPLS 4) and thesis writing defense.',
+                'message' => 'Looking for advisory on research methodology design and thesis writing defense.',
                 'status' => 'pending',
             ],
             [
@@ -43,10 +45,7 @@ class ConsultationSeeder extends Seeder
         ];
 
         foreach ($inquiries as $inquiry) {
-            Consultation::updateOrCreate(
-                ['email' => $inquiry['email'], 'service_type' => $inquiry['service_type']],
-                $inquiry
-            );
+            Consultation::create($inquiry);
         }
     }
 }

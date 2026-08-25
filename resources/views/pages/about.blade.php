@@ -288,10 +288,10 @@
                     Outside the classroom, his courses, workshops, and consultations have helped thousands of learners understand research methodology, defend dissertations with confidence, and strengthen HR practice inside their organizations.
                 </p>
 
-                <!-- Structured Career Achievements Block (Dynamic From Database) -->
-                <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 20px; padding: 2rem; margin: 2.5rem 0; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);">
+                <!-- Structured Career Achievements Block (Academic Qualifications & Achievements) -->
+                <div id="qualifications" style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 20px; padding: 2rem; margin: 2.5rem 0; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03); scroll-margin-top: 110px;">
                     <h3 style="font-family: var(--font-heading); font-size: 1.45rem; font-weight: 800; color: #0f172a; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.6rem;">
-                        <i class="fas fa-trophy" style="color: #eab308; font-size: 1.3rem;"></i> Career Achievements & Leadership
+                        <i class="fas fa-trophy" style="color: #eab308; font-size: 1.3rem;"></i> Academic Qualifications & Career Achievements
                     </h3>
                     
                     <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.1rem; color: #334155; font-size: 0.98rem; line-height: 1.65;">
@@ -304,10 +304,10 @@
                     </ul>
                 </div>
 
-                <!-- Services Offered Section -->
-                <div style="margin: 3rem 0;">
+                <!-- Teaching & Research Advisory Section -->
+                <div id="teaching-experience" style="margin: 3rem 0; scroll-margin-top: 110px;">
                     <h3 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: #0f172a; margin-bottom: 1.5rem;">
-                        Services Offered & Advisory Frameworks
+                        Teaching & Research Advisory Frameworks
                     </h3>
 
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
@@ -371,7 +371,7 @@
                         </a>
                     </div>
                     <p style="color: #64748b; font-size: 0.95rem; margin-bottom: 1.5rem;">
-                        Visual highlights from university capacity-building workshops, ORIC seminars, and hands-on software bootcamps conducted worldwide.
+                        Visual highlights from university capacity-building workshops, academic seminars, and hands-on software bootcamps conducted worldwide.
                     </p>
 
                     <div class="training-photos-grid">

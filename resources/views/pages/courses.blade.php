@@ -378,7 +378,7 @@
             <div class="filter-search-row">
                 <div class="search-input-wrapper">
                     <i class="fas fa-search"></i>
-                    <input type="text" id="courseSearchInput" class="search-input-field" placeholder="Search courses by topic (e.g. SLR, NVivo, Meta-Analysis, Scopus)...">
+                    <input type="text" id="courseSearchInput" class="search-input-field" placeholder="Search courses by topic (e.g. SLR, Systematic Review, Meta-Analysis, Scopus)...">
                 </div>
                 <div style="font-size: 0.88rem; color: #64748b; font-weight: 500;" id="filterStatusText">
                     Showing 6 courses per page
@@ -491,13 +491,19 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentCategory = "all";
     let currentSearch = "";
 
+    function normalizeCategory(str) {
+        return (str || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+    }
+
     function getMatchingCards() {
+        const normCurrent = normalizeCategory(currentCategory);
         return courseCards.filter(function (card) {
             const cardCategory = card.getAttribute("data-category");
+            const normCard = normalizeCategory(cardCategory);
             const title = card.getAttribute("data-title");
             const desc = card.getAttribute("data-desc");
 
-            const matchesCategory = (currentCategory === "all" || cardCategory === currentCategory);
+            const matchesCategory = (currentCategory === "all" || normCard.includes(normCurrent) || normCurrent.includes(normCard));
             const matchesSearch = (!currentSearch || title.includes(currentSearch) || desc.includes(currentSearch));
 
             return matchesCategory && matchesSearch;
@@ -556,6 +562,21 @@ document.addEventListener("DOMContentLoaded", function () {
         // Enable / Disable Prev & Next buttons
         prevPageBtn.disabled = (currentPage === 1);
         nextPageBtn.disabled = (currentPage === totalPages || totalPages === 0);
+    }
+
+    // Check URL parameters for pre-selected category filter
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryParam = urlParams.get('category');
+    if (categoryParam) {
+        currentCategory = categoryParam;
+        const normParam = normalizeCategory(categoryParam);
+        filterButtons.forEach(function (btn) {
+            const btnCategory = btn.getAttribute("data-category");
+            if (normalizeCategory(btnCategory).includes(normParam) || normParam.includes(normalizeCategory(btnCategory))) {
+                filterButtons.forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+            }
+        });
     }
 
     // Prev Button Click

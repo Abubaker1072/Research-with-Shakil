@@ -9,6 +9,8 @@ class QualificationSeeder extends Seeder
 {
     public function run(): void
     {
+        Qualification::truncate();
+
         $qualifications = [
             [
                 'label' => 'Degree',
@@ -19,11 +21,11 @@ class QualificationSeeder extends Seeder
                 'sort_order' => 1,
             ],
             [
-                'label' => 'Institution',
-                'title' => 'Teesside University UK',
-                'institution' => 'Teesside International Business School',
-                'icon' => 'fa-university',
-                'icon_color' => '#1e3a8a',
+                'label' => 'Academic Role',
+                'title' => 'Senior Lecturer & Researcher',
+                'institution' => '15+ Years Academic Leadership',
+                'icon' => 'fa-chalkboard-teacher',
+                'icon_color' => '#0284c7',
                 'sort_order' => 2,
             ],
             [
@@ -36,8 +38,8 @@ class QualificationSeeder extends Seeder
             ],
             [
                 'label' => 'Publications',
-                'title' => '53+ SSCI Papers',
-                'institution' => 'Scopus Q1 Peer-Reviewed',
+                'title' => '90+ Research Papers',
+                'institution' => 'Scopus Q1 & SSCI Peer-Reviewed',
                 'icon' => 'fa-book',
                 'icon_color' => '#166534',
                 'sort_order' => 4,
@@ -45,7 +47,7 @@ class QualificationSeeder extends Seeder
         ];
 
         foreach ($qualifications as $qual) {
-            Qualification::updateOrCreate(['label' => $qual['label']], $qual);
+            Qualification::create($qual);
         }
     }
 }

@@ -11,95 +11,168 @@ class ServiceSeeder extends Seeder
     public function run(): void
     {
         $services = [
+            // For Researchers & Students
             [
-                'title' => 'Dissertation & Thesis Coaching',
-                'slug' => Str::slug('Dissertation & Thesis Coaching'),
-                'icon' => 'fas fa-graduation-cap',
-                'image' => 'course_lit_review_thumb.png',
-                'short_description' => '1-on-1 personalized guidance for thesis proposal drafting, research methodology design, and defense preparation.',
-                'full_description' => 'Comprehensive mentorship tailored for Master\'s and PhD candidates. Detailed guidance is provided for literature gap identification, research question formulation, methodology selection, data collection strategy, and defense slide deck optimization.',
+                'title' => 'Assistance in Proposal Writing',
+                'slug' => Str::slug('Assistance in Proposal Writing'),
+                'icon' => 'fas fa-file-alt',
+                'image' => 'consultation_prog_2.jpg',
+                'short_description' => 'Building a proposal that clears committee review the first time: a clear problem statement, justified methodology, and objectives answerable within timeline.',
+                'full_description' => 'Building a proposal that clears committee review the first time: a clear problem statement, justified methodology, and objectives that are answerable within your timeline.',
                 'features' => [
-                    'Proposal Structuring & Review',
-                    'Theoretical Framework Alignment',
-                    'Defense Mock Sessions & Q&A Prep',
-                    'IRB / Ethics Committee Guidance'
+                    'Clear Problem Statement Formulation',
+                    'Justified Methodology & Research Design',
+                    'Committee-Ready Proposal Structure',
+                    'Timeline & Feasibility Alignment'
                 ],
                 'target_audience' => 'PhD Candidates & Master\'s Researchers',
                 'is_active' => true,
                 'sort_order' => 1,
             ],
             [
-                'title' => 'Systematic Literature Review & Meta-Analysis Consulting',
-                'slug' => Str::slug('Systematic Literature Review & Meta-Analysis Consulting'),
-                'icon' => 'fas fa-book-open',
-                'image' => 'consultation_prog_2.jpg',
-                'short_description' => 'End-to-end guidance on PRISMA guidelines, protocol registration, search matrix, data extraction & meta-analytic modeling.',
-                'full_description' => 'Transform scattered literature into high-impact systematic reviews. Structured advisory covers PRISMA 2020 compliance, database search strings (Scopus, Web of Science, PubMed), quality appraisal tools, and effect size synthesis.',
+                'title' => 'Help with the Research Publication Process',
+                'slug' => Str::slug('Help with the Research Publication Process'),
+                'icon' => 'fas fa-feather-alt',
+                'image' => 'consultation_prog_3.jpg',
+                'short_description' => 'Guidance through journal selection, positioning your contribution, navigating peer review, and drafting response-to-reviewers letters.',
+                'full_description' => 'Guidance through journal selection, positioning your contribution, navigating peer review, and drafting a response-to-reviewers letter that gets you across the finish line.',
                 'features' => [
-                    'PRISMA 2020 Compliant Protocol',
-                    'Search String & Database Strategy',
-                    'Risk of Bias & Quality Appraisal',
-                    'Bibliometric & Meta-Analysis Setup'
+                    'Journal Selection & Impact Matching',
+                    'Positioning Research Contribution',
+                    'Navigating Peer Review & Revisions',
+                    'Response-to-Reviewers Drafting'
                 ],
                 'target_audience' => 'Academic Researchers & Faculty',
                 'is_active' => true,
                 'sort_order' => 2,
             ],
             [
-                'title' => 'Scientific Paper Writing & Journal Submission Support',
-                'slug' => Str::slug('Scientific Paper Writing & Journal Submission Support'),
-                'icon' => 'fas fa-feather-alt',
-                'image' => 'consultation_prog_3.jpg',
-                'short_description' => 'Expert editing, journal targeting, response to reviewers, and structural polishing for Scopus & WOS indexed journals.',
-                'full_description' => 'Maximize your publication success rate in top-tier journals (SSCI, SCI, Scopus Q1/Q2). Receive detailed review of your manuscript structure, Academic English flow, reviewer response letter drafting, and journal matching.',
+                'title' => 'Dissertation Writing Consultancy',
+                'slug' => Str::slug('Dissertation Writing Consultancy'),
+                'icon' => 'fas fa-graduation-cap',
+                'image' => 'course_lit_review_thumb.png',
+                'short_description' => 'Chapter-by-chapter support through problem formulation, literature review, methodology design, data analysis, and defense preparation.',
+                'full_description' => 'Chapter-by-chapter support through problem formulation, literature review, methodology design, data analysis, and defense preparation.',
                 'features' => [
-                    'Journal Selection & Impact Matching',
-                    'Pre-submission Peer Review',
-                    'Response to Reviewers Drafting',
-                    'Academic English & Style Refinement'
+                    'Chapter-by-Chapter Structural Guidance',
+                    'Literature Synthesis & Gap Definition',
+                    'Data Analysis Strategy & Interpretation',
+                    'Defense Mock Sessions & Q&A Preparation'
                 ],
-                'target_audience' => 'Early & Mid-career Researchers',
+                'target_audience' => 'PhD & DBA Candidates',
                 'is_active' => true,
                 'sort_order' => 3,
             ],
             [
-                'title' => 'Grant Writing & Research Advisory',
-                'slug' => Str::slug('Grant Writing & Research Advisory'),
-                'icon' => 'fas fa-award',
+                'title' => 'Systematic Literature Review Support',
+                'slug' => Str::slug('Systematic Literature Review Support'),
+                'icon' => 'fas fa-book-open',
                 'image' => 'consultation_prog_4.jpg',
-                'short_description' => 'Consultancy for national and international research grant applications (HEC, Ministry grants, international funds).',
-                'full_description' => 'Securing competitive research funding requires a compelling narrative, realistic budget breakdown, clear milestone matrix, and demonstrated societal impact. Leverage Dr. Shakil\'s track record in securing grants from Oman MoHESR and HEC Pakistan.',
+                'short_description' => 'Defining search strategy, applying inclusion/exclusion criteria (e.g. PRISMA), and synthesizing findings into a credible evidence base.',
+                'full_description' => 'Defining your search strategy, applying inclusion/exclusion criteria (e.g., PRISMA), and synthesizing findings into a credible evidence base for your study.',
                 'features' => [
-                    'Grant Proposal Concept Notes',
-                    'Budget & Milestones Planning',
-                    'Societal & Economic Impact Framing',
-                    'ORIC / Institutional Alignment'
+                    'Search Strategy & String Design',
+                    'PRISMA Inclusion/Exclusion Protocol',
+                    'Quality Appraisal & Risk of Bias',
+                    'Evidence Base Synthesis for Publication'
                 ],
-                'target_audience' => 'Universities & Institutional PIs',
+                'target_audience' => 'Scholars & Institutional PIs',
                 'is_active' => true,
                 'sort_order' => 4,
             ],
+
+            // For Organizations
             [
-                'title' => '1-on-1 Academic & Career Life Coaching',
-                'slug' => Str::slug('1-on-1 Academic & Career Life Coaching'),
-                'icon' => 'fas fa-user-tie',
+                'title' => 'Workplace Policy Design & Review',
+                'slug' => Str::slug('Workplace Policy Design & Review'),
+                'icon' => 'fas fa-balance-scale',
                 'image' => 'consultation_prog_5.jpg',
-                'short_description' => 'Personalized executive coaching to overcome academic burnout, establish career direction, and build academic brand.',
-                'full_description' => 'Tailored coaching sessions focusing on productivity systems, research career roadmap, managing academic stress, building ORCID / Google Scholar visibility, and achieving work-life balance in higher education.',
+                'short_description' => 'Auditing and rebuilding HR policies so they are consistent, fair, and legally sound — not just copied from a template.',
+                'full_description' => 'Auditing and rebuilding HR policies (performance management, grievance handling, employee relations) so they\'re consistent, fair, and legally sound — not just copied from a template.',
                 'features' => [
-                    'Academic Career Roadmap',
-                    'Burnout & Productivity Coaching',
-                    'Personal Academic Branding',
-                    'Time Management & Focus Frameworks'
+                    'Performance Management Policy Audit',
+                    'Grievance Handling & Employee Relations',
+                    'Custom Legal & Operational Alignment',
+                    'Fairness & Consistency Verification'
                 ],
-                'target_audience' => 'Academicians & Corporate Executives',
+                'target_audience' => 'Organizations & HR Leadership',
                 'is_active' => true,
                 'sort_order' => 5,
             ],
+            [
+                'title' => 'Organizational Innovation Consulting',
+                'slug' => Str::slug('Organizational Innovation Consulting'),
+                'icon' => 'fas fa-lightbulb',
+                'image' => 'hero_img_2.jpg',
+                'short_description' => 'Helping leadership teams build structures and culture that let innovation happen consistently, rather than depending on individual initiative.',
+                'full_description' => 'Helping leadership teams build the structures and culture that let innovation happen consistently, rather than depending on individual initiative.',
+                'features' => [
+                    'Innovation Infrastructure & Frameworks',
+                    'Culture Building & Systematic Ideation',
+                    'Cross-Functional Collaboration Systems',
+                    'Measurable Innovation Metrics'
+                ],
+                'target_audience' => 'Executive Teams & Corporate Leadership',
+                'is_active' => true,
+                'sort_order' => 6,
+            ],
+            [
+                'title' => 'Servant Leadership Practice',
+                'slug' => Str::slug('Servant Leadership Practice'),
+                'icon' => 'fas fa-hands-helping',
+                'image' => 'dr_shakil_presentation_quote.jpg',
+                'short_description' => 'Translating servant leadership principles into concrete manager behaviors and evaluation criteria for daily organizational operations.',
+                'full_description' => 'Translating servant leadership principles into concrete manager behaviors and evaluation criteria, so it becomes how the organization actually operates, not just a slogan in the handbook.',
+                'features' => [
+                    'Behavioral Criteria & Competency Maps',
+                    'Managerial Evaluation & Feedback Loops',
+                    'Operational Servant Leadership Embedding',
+                    'Leadership Workshop & Coaching'
+                ],
+                'target_audience' => 'Managers & HR Leadership',
+                'is_active' => true,
+                'sort_order' => 7,
+            ],
+            [
+                'title' => 'Sustainable HR Management Systems',
+                'slug' => Str::slug('Sustainable HR Management Systems'),
+                'icon' => 'fas fa-leaf',
+                'image' => 'hero_img_4.jpg',
+                'short_description' => 'Designing HR systems built for long-term organizational health: retention, employee wellbeing, and workforce planning beyond single budget cycles.',
+                'full_description' => 'Designing HR systems built for long-term organizational health: retention, employee wellbeing, and workforce planning that holds up beyond a single budget cycle.',
+                'features' => [
+                    'Long-Term Retention Architecture',
+                    'Employee Wellbeing Frameworks',
+                    'Strategic Workforce Planning',
+                    'Sustainable Organizational Health'
+                ],
+                'target_audience' => 'CHROs & Strategic HR Directors',
+                'is_active' => true,
+                'sort_order' => 8,
+            ],
+            [
+                'title' => 'Workplace Dignity Assessments',
+                'slug' => Str::slug('Workplace Dignity Assessments'),
+                'icon' => 'fas fa-shield-alt',
+                'image' => 'dr_shakil_symposium_speaker.jpg',
+                'short_description' => 'Reviewing treatment of employees across all levels, identifying where policy or culture quietly undermines morale and retention.',
+                'full_description' => 'Reviewing how employees are treated across every level of the organization, and identifying where policy or culture is quietly undermining morale and retention.',
+                'features' => [
+                    'Cross-Level Dignity Audits',
+                    'Morale & Retention Bottleneck Identification',
+                    'Culture & Behavioral Risk Assessment',
+                    'Actionable Dignity Restoration Plan'
+                ],
+                'target_audience' => 'Leadership Teams & HR Heads',
+                'is_active' => true,
+                'sort_order' => 9,
+            ],
         ];
 
+        Service::truncate();
+
         foreach ($services as $s) {
-            Service::updateOrCreate(['slug' => $s['slug']], $s);
+            Service::create($s);
         }
     }
 }

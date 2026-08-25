@@ -165,7 +165,7 @@
             Institutional & Research Trainings
         </h1>
         <p class="trainings-hero-subtitle">
-            Customized university workshops, ORIC capacity-building seminars, and hands-on research bootcamps led by Dr. Muhammad Shakil Ahmad across international institutions.
+            Customized university workshops, faculty capacity-building seminars, and hands-on research bootcamps led by Dr. Muhammad Shakil Ahmad across international institutions.
         </p>
 
         <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
@@ -207,22 +207,22 @@
                     Empowering Academic Faculties & Research Centers Globally
                 </h2>
                 <p style="color: #475569; font-size: 1rem; line-height: 1.7; margin-bottom: 1.25rem;">
-                    Since 2015, Dr. Shakil has delivered intensive, practical training workshops for universities, ORIC centers, and research institutes across Pakistan, the Middle East, Europe, UK, USA, Canada, and Australia.
+                    Since 2015, Dr. Shakil has delivered intensive, practical training workshops for universities, research centers, and research institutes across Pakistan, the Middle East, Europe, UK, USA, Canada, and Australia.
                 </p>
                 
                 <!-- Program Highlights Structured List -->
                 <div style="margin-bottom: 1.75rem; display: flex; flex-direction: column; gap: 0.75rem;">
                     <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
                         <i class="fas fa-check-circle" style="color: #0284c7; margin-top: 4px; font-size: 1.1rem;"></i>
-                        <span style="color: #334155; font-weight: 600; font-size: 0.95rem;"><strong>Software Tool Mastery:</strong> Hands-on lab coding in NVivo, MAXQDA, VOSviewer, SmartPLS 4, AMOS & SPSS.</span>
+                        <span style="color: #334155; font-weight: 600; font-size: 0.95rem;"><strong>Academic Methodology Mastery:</strong> Hands-on training in research paper writing, literature synthesis, and thematic analysis.</span>
                     </div>
                     <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
                         <i class="fas fa-check-circle" style="color: #0284c7; margin-top: 4px; font-size: 1.1rem;"></i>
-                        <span style="color: #334155; font-weight: 600; font-size: 0.95rem;"><strong>PRISMA 2020 Protocols:</strong> Systematic review matrices, risk of bias tools, and GRADE meta-analysis.</span>
+                        <span style="color: #334155; font-weight: 600; font-size: 0.95rem;"><strong>PRISMA 2020 Protocols:</strong> Systematic review matrices, risk of bias tools, and quality appraisal.</span>
                     </div>
                     <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
                         <i class="fas fa-check-circle" style="color: #0284c7; margin-top: 4px; font-size: 1.1rem;"></i>
-                        <span style="color: #334155; font-weight: 600; font-size: 0.95rem;"><strong>Institutional Capacity:</strong> Strategic ORIC roadmaps to multiply Scopus Q1 and SSCI publication output.</span>
+                        <span style="color: #334155; font-weight: 600; font-size: 0.95rem;"><strong>Institutional Capacity:</strong> Strategic roadmaps to multiply Scopus Q1 and SSCI publication output and grant success.</span>
                     </div>
                 </div>
 
@@ -320,19 +320,19 @@
                     </div>
                     <div class="form-group">
                         <label class="form-label">Institution / University Name *</label>
-                        <input type="text" name="institution" class="form-control" placeholder="University / ORIC Name" required>
+                        <input type="text" name="institution" class="form-control" placeholder="University Name" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="form-label">Select Workshop Track *</label>
                     <select name="service_type" id="training_track_select" class="form-control" required>
-                        <option value="Systematic Literature Review (SLR)">Systematic Literature Review (SLR)</option>
-                        <option value="Qualitative Data Analysis (NVivo / MAXQDA)">Qualitative Data Analysis (NVivo / MAXQDA)</option>
-                        <option value="Bibliometrics & Science Mapping">Bibliometrics & Science Mapping</option>
-                        <option value="Quantitative Modeling (PLS-SEM & AMOS)">Quantitative Modeling (PLS-SEM & AMOS)</option>
-                        <option value="Grant Writing & Research Proposals">Grant Writing & Research Proposals</option>
-                        <option value="Faculty Development & Institutional Advisory">Faculty Development & Institutional Advisory</option>
+                        <option value="Research Paper Writing">Research Paper Writing</option>
+                        <option value="Dissertation Writing">Dissertation Writing</option>
+                        <option value="Systematic Literature Review and Protocol Development">Systematic Literature Review and Protocol Development</option>
+                        <option value="Thematic Analysis">Thematic Analysis</option>
+                        <option value="Grant Writing">Grant Writing</option>
+                        <option value="How to write research papers for high ranked journals">How to write research papers for high ranked journals</option>
                     </select>
                 </div>
 

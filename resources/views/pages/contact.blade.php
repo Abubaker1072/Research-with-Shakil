@@ -136,19 +136,7 @@
     <div class="container">
         
         <div class="contact-info-grid">
-            <!-- Card 1: Academic Institution -->
-            <div class="contact-info-card">
-                <div class="contact-info-icon">
-                    <i class="fas fa-university"></i>
-                </div>
-                <h3 class="contact-info-heading">Academic Institution</h3>
-                <p class="contact-info-text">
-                    Teesside International Business School,<br>
-                    Teesside University, United Kingdom
-                </p>
-            </div>
-
-            <!-- Card 2: Email -->
+            <!-- Card 1: Email -->
             <div class="contact-info-card">
                 <div class="contact-info-icon">
                     <i class="fas fa-envelope-open-text"></i>
@@ -283,7 +271,7 @@
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-body">
-                    Yes. All institutional workshops and ORIC faculty capacity-building seminars are tailored to the institution's specific research domain, software tools (NVivo, SmartPLS, VOSviewer), and target timeline.
+                    Yes. All institutional workshops and faculty capacity-building seminars are tailored to the institution's specific research domain, methodological tools (VOSviewer, Bibliometrics), and target timeline.
                 </div>
             </div>
 

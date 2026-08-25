@@ -9,10 +9,12 @@ class GallerySeeder extends Seeder
 {
     public function run(): void
     {
+        Gallery::truncate();
+
         $photos = [
             [
                 'title' => 'Hands-on Computer Lab Training Session',
-                'caption' => 'Hands-on NVivo & SmartPLS software training in computer labs',
+                'caption' => 'Hands-on research software & data analysis training in computer labs',
                 'image_path' => 'images/hero_img_3.jpg',
                 'category' => 'workshop',
                 'page' => 'trainings',
@@ -20,7 +22,7 @@ class GallerySeeder extends Seeder
             ],
             [
                 'title' => 'CPD Executive Seminar & Faculty Auditorium',
-                'caption' => 'ORIC capacity-building & research policy auditorium lecture',
+                'caption' => 'Academic capacity-building & research policy auditorium lecture',
                 'image_path' => 'images/hero_img_4.jpg',
                 'category' => 'seminar',
                 'page' => 'trainings',
@@ -74,10 +76,18 @@ class GallerySeeder extends Seeder
                 'page' => 'all',
                 'sort_order' => 8,
             ],
+            [
+                'title' => 'Impact Factor Publications Presentation',
+                'caption' => 'Dr. Muhammad Shakil Ahmad presenting on Impact Factor Publications',
+                'image_path' => 'images/dr_shakil_impact_factor_presentation.jpg',
+                'category' => 'quote_home',
+                'page' => 'home',
+                'sort_order' => 9,
+            ],
         ];
 
         foreach ($photos as $photo) {
-            Gallery::updateOrCreate(['image_path' => $photo['image_path']], $photo);
+            Gallery::create($photo);
         }
     }
 }

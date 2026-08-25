@@ -10,16 +10,78 @@ class TrainingSeeder extends Seeder
 {
     public function run(): void
     {
+        Training::truncate();
+
         $trainings = [
             [
-                'title' => 'Systematic Literature Review (SLR) Masterclass',
-                'slug' => Str::slug('Systematic Literature Review (SLR) Masterclass'),
-                'icon' => 'fa-book-open',
+                'title' => 'Research Paper Writing',
+                'slug' => Str::slug('Research Paper Writing'),
+                'icon' => 'fa-feather-alt',
                 'duration_badge' => '2-Day Workshop',
-                'type_badge' => 'Scopus / SSCI',
+                'type_badge' => 'Academic Writing',
                 'badge_color' => '#0369a1',
                 'badge_bg' => '#e0f2fe',
-                'short_description' => 'Comprehensive masterclass on PRISMA 2020 protocols, search matrix design, quality appraisal, and publishing in Q1 peer-reviewed journals.',
+                'short_description' => 'Comprehensive guidance on crafting research paper manuscripts, structuring arguments, abstract formulation, and academic style.',
+                'modules' => [
+                    [
+                        'title' => 'Manuscript Architecture',
+                        'desc' => 'Structuring IMRAD sections, title formulation, and executive summary writing.'
+                    ],
+                    [
+                        'title' => 'Literature Gap & Rationale',
+                        'desc' => 'Framing novelty, problem statements, and clear research hypotheses.'
+                    ],
+                    [
+                        'title' => 'Academic Style & Flow',
+                        'desc' => 'Enhancing clarity, academic vocabulary, tone, and citation ethics.'
+                    ],
+                    [
+                        'title' => 'Submission Readiness',
+                        'desc' => 'Formatting tables, figures, cover letters, and checklist verification.'
+                    ]
+                ],
+                'is_active' => true,
+                'sort_order' => 1,
+            ],
+            [
+                'title' => 'Dissertation Writing',
+                'slug' => Str::slug('Dissertation Writing'),
+                'icon' => 'fa-graduation-cap',
+                'duration_badge' => '3-Day Bootcamp',
+                'type_badge' => 'PhD / Master\'s',
+                'badge_color' => '#1e3a8a',
+                'badge_bg' => '#e0e7ff',
+                'short_description' => 'End-to-end guidance for PhD and Master\'s candidates on thesis proposals, chapter writing, methodology defense, and viva prep.',
+                'modules' => [
+                    [
+                        'title' => 'Proposal Formulation',
+                        'desc' => 'Developing robust research questions, scope, and theoretical foundations.'
+                    ],
+                    [
+                        'title' => 'Chapter Structuring',
+                        'desc' => 'Writing literature review, methodology, findings, and discussion chapters.'
+                    ],
+                    [
+                        'title' => 'Viva & Defense Prep',
+                        'desc' => 'Mock viva defense sessions, slide deck design, and handling examiner Q&A.'
+                    ],
+                    [
+                        'title' => 'Ethics & Compliance',
+                        'desc' => 'Navigating IRB approvals, participant consent, and academic integrity.'
+                    ]
+                ],
+                'is_active' => true,
+                'sort_order' => 2,
+            ],
+            [
+                'title' => 'Systematic Literature Review and Protocol Development',
+                'slug' => Str::slug('Systematic Literature Review and Protocol Development'),
+                'icon' => 'fa-book-open',
+                'duration_badge' => '2-Day Masterclass',
+                'type_badge' => 'PRISMA 2020',
+                'badge_color' => '#0369a1',
+                'badge_bg' => '#e0f2fe',
+                'short_description' => 'Mastering PRISMA 2020 protocols, search matrix design, quality appraisal (PICO/PEO), and systematic synthesis for high-impact journals.',
                 'modules' => [
                     [
                         'title' => 'PRISMA 2020 Protocol',
@@ -31,115 +93,55 @@ class TrainingSeeder extends Seeder
                     ],
                     [
                         'title' => 'Quality Appraisal & Bias',
-                        'desc' => 'PICO/PEO frameworks, CASP checklists, and GRADE evidence scoring.'
+                        'desc' => 'PICO/PEO frameworks, CASP checklists, and evidence scoring.'
                     ],
                     [
-                        'title' => 'Q1 Journal Publishing',
-                        'desc' => 'Structuring systematic synthesis for top-tier peer-reviewed journals.'
-                    ]
-                ],
-                'is_active' => true,
-                'sort_order' => 1,
-            ],
-            [
-                'title' => 'Qualitative Data Analysis (NVivo & MAXQDA)',
-                'slug' => Str::slug('Qualitative Data Analysis (NVivo & MAXQDA)'),
-                'icon' => 'fa-laptop-code',
-                'duration_badge' => '3-Day Bootcamp',
-                'type_badge' => 'NVivo & MAXQDA',
-                'badge_color' => '#854d0e',
-                'badge_bg' => '#fcf6e5',
-                'short_description' => 'Hands-on coding, thematic frameworks, matrix queries, and inter-coder reliability for qualitative research.',
-                'modules' => [
-                    [
-                        'title' => 'Transcript Coding & Nodes',
-                        'desc' => 'Importing interview transcriptions, audio, and documents to build node hierarchies.'
-                    ],
-                    [
-                        'title' => 'Thematic Frameworks',
-                        'desc' => 'Applying Braun & Clarke 6-stage thematic analysis and grounded theory coding.'
-                    ],
-                    [
-                        'title' => 'Advanced Software Queries',
-                        'desc' => 'Running matrix coding, word trees, sentiment analysis, and cross-tabulations.'
-                    ],
-                    [
-                        'title' => 'Rigor & Trustworthiness',
-                        'desc' => 'Inter-coder reliability testing and audit trails for thesis defense.'
-                    ]
-                ],
-                'is_active' => true,
-                'sort_order' => 2,
-            ],
-            [
-                'title' => 'Bibliometrics & Science Mapping (VOSviewer)',
-                'slug' => Str::slug('Bibliometrics & Science Mapping (VOSviewer)'),
-                'icon' => 'fa-project-diagram',
-                'duration_badge' => '2-Day Workshop',
-                'type_badge' => 'VOSviewer & R',
-                'badge_color' => '#166534',
-                'badge_bg' => '#f0fdf4',
-                'short_description' => 'Harvesting Scopus & Web of Science data, co-citation mapping, keyword clustering, and Bibliometrix integration.',
-                'modules' => [
-                    [
-                        'title' => 'Database Data Harvesting',
-                        'desc' => 'Exporting formatted RIS and BibTeX records from Scopus and Web of Science.'
-                    ],
-                    [
-                        'title' => 'Co-Citation & Network Maps',
-                        'desc' => 'Constructing author networks, journal co-citations, and keyword clusters.'
-                    ],
-                    [
-                        'title' => 'Software Visualizations',
-                        'desc' => 'Overlay visualization, density maps, and Bibliometrix R-package integration.'
-                    ],
-                    [
-                        'title' => 'High-Impact Reporting',
-                        'desc' => 'Translating science mapping outputs into publication-ready bibliometric manuscripts.'
+                        'title' => 'High-Impact Synthesis',
+                        'desc' => 'Structuring systematic literature review manuscripts for publication.'
                     ]
                 ],
                 'is_active' => true,
                 'sort_order' => 3,
             ],
             [
-                'title' => 'Quantitative Modeling (PLS-SEM & AMOS)',
-                'slug' => Str::slug('Quantitative Modeling (PLS-SEM & AMOS)'),
-                'icon' => 'fa-chart-line',
-                'duration_badge' => '3-Day Bootcamp',
-                'type_badge' => 'SmartPLS 4 & AMOS',
-                'badge_color' => '#991b1b',
-                'badge_bg' => '#fef2f2',
-                'short_description' => 'Structural equation modeling, reflective/formative measurement, mediation/moderation bootstrapping, and scale validation.',
+                'title' => 'Thematic Analysis',
+                'slug' => Str::slug('Thematic Analysis'),
+                'icon' => 'fa-list-ol',
+                'duration_badge' => '2-Day Workshop',
+                'type_badge' => 'Qualitative Research',
+                'badge_color' => '#166534',
+                'badge_bg' => '#f0fdf4',
+                'short_description' => 'Hands-on training in Braun & Clarke thematic analysis, inductive/deductive coding, codebook formulation, and thematic synthesis.',
                 'modules' => [
                     [
-                        'title' => 'Structural Equation Modeling',
-                        'desc' => 'Evaluating reflective and formative measurement and structural models.'
+                        'title' => 'Braun & Clarke Framework',
+                        'desc' => '6-stage reflexive thematic analysis process and data familiarization.'
                     ],
                     [
-                        'title' => 'Mediation & Moderation',
-                        'desc' => 'Bootstrapping mediation effects, slope analysis, and multi-group moderation (MGA).'
+                        'title' => 'Codebook Formulation',
+                        'desc' => 'Initial coding, generating themes, defining and naming thematic structures.'
                     ],
                     [
-                        'title' => 'Scale Construct Validation',
-                        'desc' => 'Confirmatory Factor Analysis (CFA), convergent & discriminant validity (HTMT).'
+                        'title' => 'Qualitative Rigor & Trustworthiness',
+                        'desc' => 'Member checking, reflexivity, audit trails, and inter-coder reliability.'
                     ],
                     [
-                        'title' => 'Statistical Reporting',
-                        'desc' => 'APA table formatting and SmartPLS 4 / AMOS report generation.'
+                        'title' => 'Writing Qualitative Results',
+                        'desc' => 'Presenting qualitative quotes, thematic maps, and narrative synthesis.'
                     ]
                 ],
                 'is_active' => true,
                 'sort_order' => 4,
             ],
             [
-                'title' => 'Academic Grant Writing & Funding Proposals',
-                'slug' => Str::slug('Academic Grant Writing & Funding Proposals'),
+                'title' => 'Grant Writing',
+                'slug' => Str::slug('Grant Writing'),
                 'icon' => 'fa-file-signature',
                 'duration_badge' => '2-Day Seminar',
-                'type_badge' => 'HEC & International',
+                'type_badge' => 'Research Funding',
                 'badge_color' => '#6b21a8',
                 'badge_bg' => '#faf5ff',
-                'short_description' => 'Proposal architecture, work packages, Gantt charts, budget lines, and pitching to international research funding bodies.',
+                'short_description' => 'Proposal architecture, work packages, Gantt charts, budget lines, and pitching to national and international research funding bodies.',
                 'modules' => [
                     [
                         'title' => 'Proposal Architecture',
@@ -151,7 +153,7 @@ class TrainingSeeder extends Seeder
                     ],
                     [
                         'title' => 'Funding Agencies',
-                        'desc' => 'Targeting HEC NRPU, TRC Oman, Horizon Europe, and international agency calls.'
+                        'desc' => 'Targeting HEC NRPU, Oman Research Council, and international agency calls.'
                     ],
                     [
                         'title' => 'Reviewer Defense Strategy',
@@ -162,30 +164,30 @@ class TrainingSeeder extends Seeder
                 'sort_order' => 5,
             ],
             [
-                'title' => 'Faculty Development & ORIC Advisory',
-                'slug' => Str::slug('Faculty Development & ORIC Advisory'),
-                'icon' => 'fa-users-cog',
-                'duration_badge' => '1-Day Executive',
-                'type_badge' => 'ORIC Leadership',
-                'badge_color' => '#334155',
-                'badge_bg' => '#f8fafc',
-                'short_description' => 'ORIC strategic roadmaps, commercialization policy, faculty citation growth, and effective PhD/DBA supervision frameworks.',
+                'title' => 'How to write research papers for high ranked journals',
+                'slug' => Str::slug('How to write research papers for high ranked journals'),
+                'icon' => 'fa-award',
+                'duration_badge' => '2-Day Seminar',
+                'type_badge' => 'Scopus Q1 / SSCI',
+                'badge_color' => '#854d0e',
+                'badge_bg' => '#fef9c3',
+                'short_description' => 'Strategies for publishing in Scopus Q1 and SSCI indexed journals, handling peer review, and responding to reviewer comments.',
                 'modules' => [
                     [
-                        'title' => 'ORIC Strategic Roadmaps',
-                        'desc' => 'Institutional commercialization policies and industry collaboration.'
+                        'title' => 'Journal Selection & Targeting',
+                        'desc' => 'Analyzing aim, scope, impact factor, and desk reject criteria of Q1 journals.'
                     ],
                     [
-                        'title' => 'Faculty Output Productivity',
-                        'desc' => 'Mentorship frameworks to multiply Scopus Q1 and SSCI publications.'
+                        'title' => 'High-Impact Manuscript Writing',
+                        'desc' => 'Crafting compelling introduction, theoretical contributions, and discussions.'
                     ],
                     [
-                        'title' => 'Citation & H-Index Growth',
-                        'desc' => 'Building research visibility, Google Scholar profiles, and institutional rankings.'
+                        'title' => 'Navigating Peer Review',
+                        'desc' => 'Understanding editor decisions, reviewer expectations, and revisions.'
                     ],
                     [
-                        'title' => 'Thesis Supervision Best Practices',
-                        'desc' => 'Frameworks for effective PhD/DBA mentorship and viva defense.'
+                        'title' => 'Response to Reviewers Matrix',
+                        'desc' => 'Drafting persuasive, point-by-point author responses to reviewer critiques.'
                     ]
                 ],
                 'is_active' => true,
@@ -194,7 +196,7 @@ class TrainingSeeder extends Seeder
         ];
 
         foreach ($trainings as $training) {
-            Training::updateOrCreate(['slug' => $training['slug']], $training);
+            Training::create($training);
         }
     }
 }

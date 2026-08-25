@@ -3,10 +3,9 @@
         <div class="footer-grid-navy">
             <!-- Col 1: Academic & Contact Details -->
             <div>
-                <h4 class="footer-col-title" style="margin-top: 0;">Academic Institution</h4>
+                <h4 class="footer-col-title" style="margin-top: 0;">Contact & Advisory</h4>
                 <p style="color: #cbd5e1; font-size: 0.92rem; line-height: 1.7; margin-bottom: 0.75rem;">
-                    Teesside International Business School,<br>
-                    Teesside University, United Kingdom
+                    Research Methodology & Academic Advisory
                 </p>
                 <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 0.75rem;">
                     <strong>Email</strong> info@researchwithshakil.com
@@ -35,7 +34,7 @@
                     <li><a href="https://scholar.google.com/citations?user=Kr6MOa0AAAAJ&hl=en&oi=ao" target="_blank">Google Scholar Profile</a></li>
                     <li><a href="https://www.udemy.com/user/dr-muhammad-shakil-ahmad/" target="_blank">Udemy Instructor Profile</a></li>
                     <li><a href="{{ route('publications.index') }}">Research Publications</a></li>
-                    <li><a href="{{ route('publications.index') }}#grants">Oman & HEC Grants</a></li>
+                    <li><a href="{{ route('publications.index') }}?type=grant">Grants</a></li>
                     <li><a href="{{ route('admin.inquiries') }}">Admin Portal</a></li>
                 </ul>
             </div>
@@ -45,8 +44,8 @@
                 <h4 class="footer-col-title">About</h4>
                 <ul class="footer-links-list">
                     <li><a href="{{ route('about') }}">Dr. Shakil Ahmad Bio</a></li>
-                    <li><a href="{{ route('about') }}#qualifications">Academic Achievements</a></li>
-                    <li><a href="{{ route('about') }}#teaching-experience">ORIC Leadership</a></li>
+                    <li><a href="{{ route('about') }}#qualifications">Academic Qualifications</a></li>
+                    <li><a href="{{ route('about') }}#teaching-experience">Teaching & Research Advisory</a></li>
                     <li><a href="{{ route('consultation.index') }}">Booking & Consultation</a></li>
                 </ul>
             </div>

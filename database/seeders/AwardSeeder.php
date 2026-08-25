@@ -9,6 +9,8 @@ class AwardSeeder extends Seeder
 {
     public function run(): void
     {
+        Award::truncate();
+
         $awards = [
             [
                 'title' => 'Young Scholar Award (2015)',
@@ -38,17 +40,10 @@ class AwardSeeder extends Seeder
                 'description' => 'Leading regional marketing education standards and professional development programs.',
                 'sort_order' => 4,
             ],
-            [
-                'title' => 'In-charge, ORIC (Office of Research Innovation & Commercialization)',
-                'organization' => 'University Leadership',
-                'year' => 'Academic Leadership',
-                'description' => 'Steering university-industry linkages, technology transfer, and research grant compliance.',
-                'sort_order' => 5,
-            ],
         ];
 
         foreach ($awards as $award) {
-            Award::updateOrCreate(['title' => $award['title']], $award);
+            Award::create($award);
         }
     }
 }

@@ -14,6 +14,7 @@ class SiteSettingSeeder extends Seeder
             ['key' => 'hero_name', 'value' => 'Dr. Muhammad Shakil Ahmad', 'group' => 'hero', 'type' => 'string'],
             ['key' => 'hero_subtitle', 'value' => 'Senior Lecturer at Teesside University (UK) & Management Researcher', 'group' => 'hero', 'type' => 'string'],
             ['key' => 'home_bio_image', 'value' => 'images/dr_shakil_presentation_quote.jpg', 'group' => 'home', 'type' => 'string'],
+            ['key' => 'home_quote_image', 'value' => 'images/dr_shakil_impact_factor_presentation.jpg', 'group' => 'home', 'type' => 'string'],
             ['key' => 'stat_learners', 'value' => '16000', 'group' => 'stats', 'type' => 'number'],
             ['key' => 'stat_reviews', 'value' => '1800', 'group' => 'stats', 'type' => 'number'],
             ['key' => 'stat_workshops', 'value' => '50+', 'group' => 'stats', 'type' => 'string'],

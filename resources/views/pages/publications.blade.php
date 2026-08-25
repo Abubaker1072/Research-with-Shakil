@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Peer-Reviewed Research & Publications | Dr. Muhammad Shakil Ahmad')
+@section('title', 'Peer-Reviewed Research, Publications & Grants | Dr. Muhammad Shakil Ahmad')
 
 @push('styles')
 <style>
@@ -93,13 +93,17 @@
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
         margin-bottom: 3rem;
     }
+    .pub-filter-row {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
     .pub-filter-tabs {
         display: flex;
         gap: 0.6rem;
         flex-wrap: wrap;
-        margin-top: 1.25rem;
     }
-    .pub-filter-btn {
+    .pub-filter-btn, .pub-year-btn {
         padding: 0.55rem 1.25rem;
         border-radius: 10px;
         font-size: 0.88rem;
@@ -113,11 +117,17 @@
         align-items: center;
         gap: 0.4rem;
     }
-    .pub-filter-btn.active {
+    .pub-filter-btn.active, .pub-year-btn.active {
         background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
         color: #ffffff;
         border-color: #1e3a8a;
         box-shadow: 0 4px 12px rgba(30, 58, 138, 0.25);
+    }
+    .pub-year-btn.active {
+        background: #eab308;
+        color: #0f172a;
+        border-color: #eab308;
+        box-shadow: 0 4px 12px rgba(234, 179, 8, 0.3);
     }
 
     /* 2-Column Grid Layout for Publications Cards (2 Boxes Per Row) */
@@ -259,68 +269,20 @@
         text-decoration: underline;
     }
 
-    /* Animated Staggered Reveal Styles */
-    @keyframes pubFadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(22px) scale(0.98);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-    }
-    .pub-item-card.animate-reveal {
-        animation: pubFadeInUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-
-    .pub-load-more-card {
-        background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
-        border-radius: 20px;
-        padding: 2.25rem 2rem;
-        text-align: center;
-        color: #ffffff;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-        box-shadow: 0 12px 35px rgba(15, 23, 42, 0.18);
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        position: relative;
-        overflow: hidden;
-    }
-    .pub-load-more-btn {
-        background: #eab308;
-        color: #0f172a;
+    /* Year Group Divider Label */
+    .year-group-heading {
+        grid-column: 1 / -1;
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
         font-weight: 800;
-        font-size: 1rem;
-        padding: 0.9rem 2.2rem;
-        border-radius: 14px;
-        border: none;
-        cursor: pointer;
-        transition: all 0.25s ease;
-        display: inline-flex;
+        color: #0f172a;
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #e2e8f0;
+        display: flex;
         align-items: center;
         gap: 0.6rem;
-        box-shadow: 0 4px 15px rgba(234, 179, 8, 0.35);
-    }
-    .pub-load-more-btn:hover {
-        background: #facc15;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(234, 179, 8, 0.5);
-    }
-    .pub-progress-bar-bg {
-        width: 100%;
-        max-width: 360px;
-        height: 8px;
-        background: rgba(255, 255, 255, 0.15);
-        border-radius: 10px;
-        margin: 0.85rem auto 1.35rem auto;
-        overflow: hidden;
-    }
-    .pub-progress-bar-fill {
-        height: 100%;
-        background: linear-gradient(90deg, #fef08a 0%, #eab308 100%);
-        border-radius: 10px;
-        transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
     }
 </style>
 @endpush
@@ -333,9 +295,9 @@
         <div class="pub-hero-badge">
             <i class="fas fa-microscope"></i> SCOPUS & WEB OF SCIENCE INDEXED RESEARCH
         </div>
-        <h1 class="pub-hero-title">Research & Peer-Reviewed Publications</h1>
+        <h1 class="pub-hero-title">Research Publications & Grants</h1>
         <p class="pub-hero-subtitle">
-            Author of 90+ papers in SSCI and Scopus Q1 journals across Human Resource Management, Project Management, Healthcare, and Sustainable Development.
+            Author of 90+ papers in SSCI and Scopus Q1 journals across Human Resource Management, Project Management, Healthcare, and Sustainable Development, alongside funded research grants.
         </p>
 
         <!-- Official Google Scholar Card -->
@@ -343,7 +305,7 @@
             <div style="text-align: left;">
                 <div style="font-size: 0.8rem; font-weight: 800; color: #fef08a; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.25rem;">OFFICIAL CITATIONS PROFILE</div>
                 <div style="font-weight: 800; font-size: 1.25rem; color: #ffffff;">Google Scholar Repository</div>
-                <div style="font-size: 0.88rem; color: #cbd5e1; margin-top: 0.25rem;">Dr. Muhammad Shakil Ahmad • Teesside University (UK)</div>
+                <div style="font-size: 0.88rem; color: #cbd5e1; margin-top: 0.25rem;">Dr. Muhammad Shakil Ahmad • Senior Lecturer</div>
             </div>
 
             <div style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
@@ -375,221 +337,193 @@
         
         <!-- Filter & Search Control Panel -->
         <div class="pub-filter-panel">
-            <div style="display: flex; gap: 1rem; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-bottom: 1rem;">
+            <div style="display: flex; gap: 1rem; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-bottom: 1.25rem;">
                 <div style="position: relative; flex: 1; min-width: 280px;">
                     <i class="fas fa-search" style="position: absolute; left: 1.1rem; top: 50%; transform: translateY(-50%); color: #94a3b8; font-size: 1rem;"></i>
                     <input type="text" id="pubSearchInput" class="form-control" style="padding-left: 2.8rem; border-radius: 12px; background: #f8fafc; border: 1px solid #cbd5e1; height: 46px;" placeholder="Search papers by title, journal, author, or DOI...">
                 </div>
                 <div style="display: flex; align-items: center; gap: 1rem;">
                     <span style="font-size: 0.88rem; color: #64748b; font-weight: 600;" id="pubCountText">Showing all items</span>
-                    <a href="https://scholar.google.com/citations?user=Kr6MOa0AAAAJ&hl=en&oi=ao" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #f0f7ff; color: #0369a1; border: 1px solid #bae6fd; padding: 0.65rem 1.25rem; border-radius: 10px; font-weight: 700; font-size: 0.88rem; text-decoration: none;">
-                        <i class="fas fa-graduation-cap"></i> Google Scholar Profile <i class="fas fa-external-link-alt" style="font-size: 0.75rem;"></i>
-                    </a>
                 </div>
             </div>
 
-            <!-- Category Filter Tabs -->
-            <div class="pub-filter-tabs">
-                <button class="pub-filter-btn active" data-filter="all">
-                    <i class="fas fa-layer-group"></i> All Publications
-                </button>
-                <button class="pub-filter-btn" data-filter="grant">
-                    <i class="fas fa-coins"></i> Funded Research Grants
-                </button>
-                <button class="pub-filter-btn" data-filter="review">
-                    <i class="fas fa-book"></i> Systematic Literature Reviews
-                </button>
-                <button class="pub-filter-btn" data-filter="article">
-                    <i class="fas fa-file-alt"></i> Scopus / SSCI Articles
-                </button>
+            <div class="pub-filter-row">
+                <!-- Type Filter Tabs (Grants, Systematic Reviews, Articles) -->
+                <div class="pub-filter-tabs" id="typeFilterTabs">
+                    <button class="pub-filter-btn active" data-filter="all">
+                        <i class="fas fa-layer-group"></i> All Publications & Grants
+                    </button>
+                    <button class="pub-filter-btn" data-filter="grant" id="grants-tab-btn">
+                        <i class="fas fa-hand-holding-usd" style="color: #eab308;"></i> Grants
+                    </button>
+                    <button class="pub-filter-btn" data-filter="review">
+                        <i class="fas fa-book"></i> Systematic Literature Reviews
+                    </button>
+                    <button class="pub-filter-btn" data-filter="article">
+                        <i class="fas fa-file-alt"></i> Scopus / SSCI Articles
+                    </button>
+                </div>
+
+                <!-- Year-Wise Organization Filter Pills (Task 8 & 9) -->
+                <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; padding-top: 0.75rem; border-top: 1px dashed #cbd5e1;">
+                    <span style="font-size: 0.82rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 0.5rem;">
+                        <i class="fas fa-calendar-alt"></i> Filter By Year:
+                    </span>
+                    <button class="pub-year-btn active" data-year="all">All Years</button>
+                    @foreach($years as $yr)
+                    <button class="pub-year-btn" data-year="{{ $yr }}">{{ $yr }}</button>
+                    @endforeach
+                </div>
             </div>
         </div>
 
-        <!-- Publications List Container -->
+        <!-- Publications List Container Organized Chronologically & Year-Wise -->
         <div id="publicationsContainer">
             
-            <!-- 1. Grants -->
-            @foreach($grants as $grant)
-            <div class="pub-item-card pub-card-item" data-type="grant" data-search="{{ strtolower($grant->title . ' ' . $grant->journal . ' ' . $grant->authors) }}">
-                <div class="pub-card-header">
-                    <span class="pub-badge-type grant"><i class="fas fa-coins"></i> Funded Research Grant</span>
-                    <span style="font-size: 0.85rem; font-weight: 700; color: #854d0e; background: #fef9c3; padding: 0.25rem 0.75rem; border-radius: 6px; border: 1px solid #fef08a;">Awarded Year: {{ $grant->year }}</span>
-                </div>
-                <h2 class="pub-card-title">{{ $grant->title }}</h2>
-                <div class="pub-card-journal"><i class="fas fa-university"></i> Funding Body: {{ $grant->journal }}</div>
-                <div class="pub-card-authors"><i class="fas fa-user-tie" style="color: #0284c7; margin-right: 4px;"></i> <strong>Investigator Role:</strong> {{ $grant->authors }}</div>
-                <div class="pub-card-abstract">{{ $grant->abstract }}</div>
-                <div class="pub-card-footer">
-                    <div><i class="fas fa-check-double" style="color: #166534; margin-right: 4px;"></i> <strong>Status:</strong> Awarded & Completed</div>
-                    <a href="https://scholar.google.com/citations?user=Kr6MOa0AAAAJ&hl=en&oi=ao" target="_blank" class="scholar-direct-link-btn">
-                        View Scholar Record <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            @endforeach
+            @php
+                $groupedPublications = $allPublications->groupBy('year');
+            @endphp
 
-            <!-- 2. Systematic Reviews -->
-            @foreach($systematicReviews as $sr)
-            <div class="pub-item-card pub-card-item" data-type="review" data-search="{{ strtolower($sr->title . ' ' . $sr->journal . ' ' . $sr->authors . ' ' . $sr->doi) }}">
-                <div class="pub-card-header">
-                    <span class="pub-badge-type review"><i class="fas fa-book"></i> Systematic Literature Review</span>
-                    <span style="font-size: 0.8rem; font-weight: 700; color: #0369a1; background: #e0f2fe; padding: 0.25rem 0.75rem; border-radius: 6px; border: 1px solid #bae6fd;">Scopus Q1 / SSCI</span>
+            @foreach($groupedPublications as $year => $pubsInYear)
+                <div class="year-group-heading year-header-item" data-year="{{ $year }}">
+                    <i class="fas fa-calendar-check" style="color: #0284c7;"></i> Publications & Grants in {{ $year }}
                 </div>
-                <h2 class="pub-card-title">{{ $sr->title }}</h2>
-                <div class="pub-card-journal"><i class="fas fa-journal-whills"></i> {{ $sr->journal }} ({{ $sr->year }})</div>
-                <div class="pub-card-authors"><i class="fas fa-users" style="color: #0284c7; margin-right: 4px;"></i> <strong>Authors:</strong> {{ $sr->authors }}</div>
-                <div class="pub-card-abstract">{{ $sr->abstract }}</div>
-                <div class="pub-card-footer">
-                    <div style="display: flex; align-items: center; gap: 0.6rem;">
-                        <span style="font-family: monospace; font-size: 0.85rem; font-weight: 600; color: #334155;">DOI: {{ $sr->doi }}</span>
-                        <button onclick="copyDOIText('{{ $sr->doi }}', this)" class="copy-doi-btn">Copy DOI <i class="fas fa-copy" style="margin-left: 2px;"></i></button>
+
+                @foreach($pubsInYear as $pub)
+                @php
+                    $pubTypeKey = strtolower($pub->type === 'Grant' ? 'grant' : ($pub->type === 'Systematic Review' ? 'review' : 'article'));
+                @endphp
+                <div class="pub-item-card pub-card-item" data-type="{{ $pubTypeKey }}" data-year="{{ $pub->year }}" data-search="{{ strtolower($pub->title . ' ' . $pub->journal . ' ' . $pub->authors . ' ' . ($pub->doi ?? '')) }}">
+                    <div class="pub-card-header">
+                        @if($pub->type === 'Grant')
+                            <span class="pub-badge-type grant"><i class="fas fa-hand-holding-usd"></i> Funded Grant</span>
+                            <span style="font-size: 0.85rem; font-weight: 700; color: #854d0e; background: #fef9c3; padding: 0.25rem 0.75rem; border-radius: 6px; border: 1px solid #fef08a;">Year: {{ $pub->year }}</span>
+                        @elseif($pub->type === 'Systematic Review')
+                            <span class="pub-badge-type review"><i class="fas fa-book"></i> Systematic Review</span>
+                            <span style="font-size: 0.8rem; font-weight: 700; color: #0369a1; background: #e0f2fe; padding: 0.25rem 0.75rem; border-radius: 6px; border: 1px solid #bae6fd;">Year: {{ $pub->year }}</span>
+                        @else
+                            <span class="pub-badge-type article"><i class="fas fa-file-alt"></i> Journal Article</span>
+                            <span style="font-size: 0.8rem; font-weight: 700; color: #166534; background: #f0fdf4; padding: 0.25rem 0.75rem; border-radius: 6px; border: 1px solid #bbf7d0;">Year: {{ $pub->year }}</span>
+                        @endif
                     </div>
-                    <a href="https://scholar.google.com/citations?user=Kr6MOa0AAAAJ&hl=en&oi=ao" target="_blank" class="scholar-direct-link-btn">
-                        Google Scholar Citation <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            @endforeach
 
-            <!-- 3. Journal Articles -->
-            @foreach($journalArticles as $ja)
-            <div class="pub-item-card pub-card-item" data-type="article" data-search="{{ strtolower($ja->title . ' ' . $ja->journal . ' ' . $ja->authors . ' ' . $ja->doi) }}">
-                <div class="pub-card-header">
-                    <span class="pub-badge-type article"><i class="fas fa-file-alt"></i> Peer-Reviewed Journal Article</span>
-                    <span style="font-size: 0.8rem; font-weight: 700; color: #166534; background: #f0fdf4; padding: 0.25rem 0.75rem; border-radius: 6px; border: 1px solid #bbf7d0;">SSCI / Scopus</span>
-                </div>
-                <h2 class="pub-card-title">{{ $ja->title }}</h2>
-                <div class="pub-card-journal"><i class="fas fa-feather"></i> {{ $ja->journal }} ({{ $ja->year }})</div>
-                <div class="pub-card-authors"><i class="fas fa-users" style="color: #0284c7; margin-right: 4px;"></i> <strong>Authors:</strong> {{ $ja->authors }}</div>
-                <div class="pub-card-abstract">{{ $ja->abstract }}</div>
-                <div class="pub-card-footer">
-                    <div style="display: flex; align-items: center; gap: 0.6rem;">
-                        <span style="font-family: monospace; font-size: 0.85rem; font-weight: 600; color: #334155;">DOI: {{ $ja->doi }}</span>
-                        <button onclick="copyDOIText('{{ $ja->doi }}', this)" class="copy-doi-btn">Copy DOI <i class="fas fa-copy" style="margin-left: 2px;"></i></button>
+                    <h2 class="pub-card-title">{{ $pub->title }}</h2>
+                    <div class="pub-card-journal">
+                        <i class="fas {{ $pub->type === 'Grant' ? 'fa-university' : 'fa-journal-whills' }}"></i> 
+                        {{ $pub->journal }}
                     </div>
-                    <a href="https://scholar.google.com/citations?user=Kr6MOa0AAAAJ&hl=en&oi=ao" target="_blank" class="scholar-direct-link-btn">
-                        Google Scholar Citation <i class="fas fa-external-link-alt"></i>
-                    </a>
+                    <div class="pub-card-authors">
+                        <i class="fas fa-user-tie" style="color: #0284c7; margin-right: 4px;"></i> 
+                        <strong>{{ $pub->type === 'Grant' ? 'Investigator:' : 'Authors:' }}</strong> {{ $pub->authors }}
+                    </div>
+                    <div class="pub-card-abstract">{{ $pub->abstract }}</div>
+                    
+                    <div class="pub-card-footer">
+                        @if(!empty($pub->doi))
+                        <div style="display: flex; align-items: center; gap: 0.6rem;">
+                            <span style="font-family: monospace; font-size: 0.85rem; font-weight: 600; color: #334155;">DOI: {{ $pub->doi }}</span>
+                            <button onclick="copyDOIText('{{ $pub->doi }}', this)" class="copy-doi-btn">Copy DOI <i class="fas fa-copy" style="margin-left: 2px;"></i></button>
+                        </div>
+                        @else
+                        <div><i class="fas fa-check-double" style="color: #166534; margin-right: 4px;"></i> <strong>Status:</strong> Awarded & Completed</div>
+                        @endif
+
+                        <a href="https://scholar.google.com/citations?user=Kr6MOa0AAAAJ&hl=en&oi=ao" target="_blank" class="scholar-direct-link-btn">
+                            Google Scholar Record <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
                 </div>
-            </div>
+                @endforeach
             @endforeach
 
-        </div>
-
-        <!-- Clean Load More Publications Action -->
-        <div id="loadMorePubsCard" style="text-align: center; margin: 2.5rem 0 1rem 0; display: none;">
-            <button id="loadMorePubsBtn" class="btn-navy" style="padding: 0.85rem 2.2rem; font-weight: 700; font-size: 0.95rem; border-radius: 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.6rem; background: #0f172a; color: #ffffff; border: 1px solid #1e293b; box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12); transition: all 0.25s ease;">
-                <span>Show More Publications</span> <i class="fas fa-chevron-down" id="loadMoreBtnIcon"></i>
-            </button>
         </div>
 
     </div>
 </section>
 
-<!-- Interactive Filter, Copy DOI & Animated 8-Item Limit Script -->
+<!-- Interactive Year-Wise & Grants Filter JavaScript -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const filterButtons = document.querySelectorAll(".pub-filter-btn");
+    const yearButtons = document.querySelectorAll(".pub-year-btn");
     const pubCards = document.querySelectorAll(".pub-card-item");
+    const yearHeaders = document.querySelectorAll(".year-header-item");
     const searchInput = document.getElementById("pubSearchInput");
     const pubCountText = document.getElementById("pubCountText");
-    const loadMoreCard = document.getElementById("loadMorePubsCard");
-    const loadMoreBtn = document.getElementById("loadMorePubsBtn");
-    const loadMoreTitle = document.getElementById("loadMoreTitle");
-    const loadMoreSubtext = document.getElementById("loadMoreSubtext");
-    const progressBarFill = document.getElementById("pubProgressBarFill");
-    const totalPubCountNum = document.getElementById("totalPubCountNum");
 
-    let isExpanded = false;
     let currentFilter = "all";
+    let currentYear = "all";
     let currentQuery = "";
-    const INITIAL_LIMIT = 8;
 
-    function renderPublications(animate = false) {
-        let matchingCards = [];
+    function renderPublications() {
+        let matchingCards = 0;
+        const visibleYears = new Set();
 
         pubCards.forEach(function (card) {
             const cardType = card.getAttribute("data-type");
+            const cardYear = card.getAttribute("data-year");
             const searchData = card.getAttribute("data-search");
 
             const matchesFilter = (currentFilter === "all" || cardType === currentFilter);
+            const matchesYear = (currentYear === "all" || cardYear === currentYear);
             const matchesQuery = (!currentQuery || searchData.includes(currentQuery));
 
-            if (matchesFilter && matchesQuery) {
-                matchingCards.push(card);
+            if (matchesFilter && matchesYear && matchesQuery) {
+                card.style.display = "flex";
+                matchingCards++;
+                visibleYears.add(cardYear);
             } else {
                 card.style.display = "none";
-                card.classList.remove("animate-reveal");
             }
         });
 
-        const totalMatching = matchingCards.length;
-        const isFiltered = (currentFilter !== "all" || currentQuery !== "");
-
-        matchingCards.forEach(function (card, index) {
-            card.style.display = "block";
-
-            if (!isFiltered && !isExpanded && index >= INITIAL_LIMIT) {
-                card.style.display = "none";
-            } else if (animate && !isFiltered && index >= INITIAL_LIMIT) {
-                card.classList.remove("animate-reveal");
-                card.style.animationDelay = ((index - INITIAL_LIMIT) * 0.06) + "s";
-                void card.offsetWidth;
-                card.classList.add("animate-reveal");
+        // Toggle year header dividers based on visible cards
+        yearHeaders.forEach(function (header) {
+            const headerYear = header.getAttribute("data-year");
+            if (visibleYears.has(headerYear)) {
+                header.style.display = "flex";
+            } else {
+                header.style.display = "none";
             }
         });
 
-        const visibleCount = isFiltered ? totalMatching : (isExpanded ? totalMatching : Math.min(INITIAL_LIMIT, totalMatching));
-
-        if (!isFiltered) {
-            pubCountText.innerText = "Showing " + visibleCount + " of " + totalMatching + " publications";
-        } else {
-            pubCountText.innerText = "Showing " + totalMatching + " filtered publication" + (totalMatching !== 1 ? "s" : "");
-        }
-
-        if (!isFiltered && totalMatching > INITIAL_LIMIT) {
-            loadMoreCard.style.display = "block";
-
-            if (isExpanded) {
-                loadMoreBtn.innerHTML = '<span>Show Top 8 Publications</span> <i class="fas fa-chevron-up"></i>';
-            } else {
-                const remaining = totalMatching - INITIAL_LIMIT;
-                loadMoreBtn.innerHTML = '<span>Show More Publications (' + remaining + ' remaining)</span> <i class="fas fa-chevron-down"></i>';
-            }
-        } else {
-            loadMoreCard.style.display = "none";
-        }
+        pubCountText.innerText = "Showing " + matchingCards + " publication" + (matchingCards !== 1 ? "s" : "");
     }
 
-    if (loadMoreBtn) {
-        loadMoreBtn.addEventListener("click", function () {
-            isExpanded = !isExpanded;
-            renderPublications(isExpanded);
-
-            if (isExpanded) {
-                const firstNewlyRevealed = pubCards[INITIAL_LIMIT];
-                if (firstNewlyRevealed) {
-                    firstNewlyRevealed.scrollIntoView({ behavior: "smooth", block: "nearest" });
-                }
-            } else {
-                const searchPanel = document.querySelector(".pub-filter-panel");
-                if (searchPanel) {
-                    searchPanel.scrollIntoView({ behavior: "smooth", block: "start" });
-                }
+    // Check URL parameters for pre-selected type filter (e.g. ?type=grant)
+    const urlParams = new URLSearchParams(window.location.search);
+    const typeParam = urlParams.get('type');
+    if (typeParam) {
+        currentFilter = typeParam;
+        filterButtons.forEach(function (btn) {
+            if (btn.getAttribute("data-filter") === typeParam) {
+                filterButtons.forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
             }
         });
     }
 
+    // Type Filter Buttons Click
     filterButtons.forEach(function (btn) {
         btn.addEventListener("click", function () {
             filterButtons.forEach(b => b.classList.remove("active"));
             this.classList.add("active");
-
             currentFilter = this.getAttribute("data-filter");
             renderPublications();
         });
     });
 
+    // Year Filter Buttons Click
+    yearButtons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+            yearButtons.forEach(b => b.classList.remove("active"));
+            this.classList.add("active");
+            currentYear = this.getAttribute("data-year");
+            renderPublications();
+        });
+    });
+
+    // Search Input
     if (searchInput) {
         searchInput.addEventListener("input", function () {
             currentQuery = this.value.trim().toLowerCase();

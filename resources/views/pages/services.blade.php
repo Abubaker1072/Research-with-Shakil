@@ -107,10 +107,10 @@
                     <ul>
                         <li><i class="fas fa-check-circle"></i> Research Methodology for Beginners</li>
                         <li><i class="fas fa-check-circle"></i> Writing a Winning Literature Review (PRISMA 2020)</li>
-                        <li><i class="fas fa-check-circle"></i> Quantitative & Qualitative Data Analysis (NVivo / MAXQDA)</li>
+                        <li><i class="fas fa-check-circle"></i> Qualitative & Thematic Analysis</li>
                         <li><i class="fas fa-check-circle"></i> Structuring and Defending Your Thesis / Dissertation</li>
                         <li><i class="fas fa-check-circle"></i> Academic Writing & Publishing in SSCI / Scopus Journals</li>
-                        <li><i class="fas fa-check-circle"></i> SPSS, AMOS & Statistical Analysis for Researchers</li>
+                        <li><i class="fas fa-check-circle"></i> Research Paper Writing & Statistical Analysis</li>
                     </ul>
                 </div>
 
@@ -305,7 +305,7 @@
                     Do I need a background in statistics to take the research methodology courses?
                 </summary>
                 <p style="color: #475569; font-size: 0.96rem; line-height: 1.65; margin-top: 0.85rem;">
-                    No. The courses are designed for beginners through advanced researchers, with dedicated modules for statistical tools like SPSS and AMOS for those who need them.
+                    No. The courses are designed for beginners through advanced researchers, with step-by-step guidance for research design and analysis.
                 </p>
             </details>
 
@@ -348,7 +348,7 @@
       "name": "Do I need a background in statistics to take the research methodology courses?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. The courses are designed for beginners through advanced researchers, with dedicated modules for statistical tools like SPSS and AMOS for those who need them."
+        "text": "No. The courses are designed for beginners through advanced researchers, with dedicated modules for step-by-step research execution."
       }
     }
   ]
@@ -362,12 +362,15 @@
             Not Sure Where to Start?
         </h2>
         <p style="color: #cbd5e1; font-size: 1.05rem; line-height: 1.65; margin-bottom: 2rem;">
-            If you're unsure whether a course, a training program, or a consultation is the right fit, reach out — I'll help you find the path that matches your goals.
+            Tell me what you're working on — a thesis, a publication, an HR challenge, or a training need — and I'll point you to the right service.
         </p>
         
-        <div>
-            <a href="{{ route('contact.index') }}" class="btn-navy" style="background: #eab308; color: #0f172a; font-weight: 800; padding: 0.85rem 2.2rem; font-size: 1rem;">
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="{{ route('contact.index') }}" class="btn-navy" style="background: #eab308; color: #0f172a; font-weight: 800; padding: 0.85rem 2.2rem; font-size: 1rem; border-radius: 12px; text-decoration: none;">
                 Contact Me <i class="fas fa-envelope" style="margin-left: 6px;"></i>
+            </a>
+            <a href="{{ route('consultation.index') }}#consultation-booking-form" class="btn-navy" style="background: transparent; color: #ffffff; border: 2px solid #ffffff; font-weight: 800; padding: 0.85rem 2.2rem; font-size: 1rem; border-radius: 12px; text-decoration: none;">
+                Book a Free Discovery Call <i class="fas fa-calendar-check" style="margin-left: 6px;"></i>
             </a>
         </div>
     </div>

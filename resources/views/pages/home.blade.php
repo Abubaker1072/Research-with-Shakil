@@ -405,7 +405,7 @@
         <div class="scholar-quote-grid-photo-left">
             <div class="scroll-quote-img-left" id="quote-img-element">
                 <div class="scholar-photo-frame">
-                    <img src="{{ asset('images/hero_dr_shakil_cutout_v2.jpg') }}" alt="Dr. Muhammad Shakil Ahmad" class="scholar-photo-img">
+                    <img src="{{ asset('images/dr_shakil_impact_factor_presentation.jpg') }}" alt="Dr. Muhammad Shakil Ahmad Presentation" class="scholar-photo-img">
                 </div>
             </div>
 
@@ -467,7 +467,7 @@
                     <i class="fas fa-university" style="color: #0284c7;"></i> Institutional Leadership
                 </div>
                 <p style="color: #475569; font-size: 0.92rem; line-height: 1.65; margin: 0;">
-                    Former Head, Office of Research, Innovation and Commercialization (ORIC); member of academic councils, ethics committees, and editorial boards.
+                    Member of academic councils, ethics committees, and editorial boards.
                 </p>
             </div>
 
@@ -504,7 +504,7 @@
                 <div class="domains-subtitle">RESEARCH & TRAINING DOMAINS</div>
                 <h2 class="domains-headline">Nine domains.<br>Real depth.</h2>
                 <p style="color: #475569; font-size: 1rem; line-height: 1.65; margin-top: 1rem;">
-                    Comprehensive methodological expertise spanning systematic reviews, qualitative software coding, quantitative structural modeling, and journal publishing.
+                    Comprehensive methodological expertise spanning systematic reviews, qualitative research, research paper writing, grant proposals, and journal publishing.
                 </p>
                 <div style="margin-top: 1.75rem; border-radius: 16px; overflow: hidden; border: 1px solid #cbd5e1; box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);">
                     <img src="{{ asset('images/dr_shakil_teaching_symposium.jpg') }}" alt="Dr. Muhammad Shakil Ahmad presenting at Global Reach Symposium" style="width: 100%; height: 310px; object-fit: cover; object-position: center 20%; display: block;">
@@ -522,7 +522,7 @@
                 </div>
                 <div class="domain-item-row">
                     <span class="domain-num">02</span>
-                    <span class="domain-text">Qualitative & Thematic Analysis (NVivo / MAXQDA)</span>
+                    <span class="domain-text">Qualitative & Thematic Analysis</span>
                 </div>
                 <div class="domain-item-row">
                     <span class="domain-num">07</span>
@@ -534,7 +534,7 @@
                 </div>
                 <div class="domain-item-row">
                     <span class="domain-num">08</span>
-                    <span class="domain-text">SPSS, AMOS & SmartPLS Quantitative Analysis</span>
+                    <span class="domain-text">Research Paper Writing & Publication Strategy</span>
                 </div>
                 <div class="domain-item-row">
                     <span class="domain-num">04</span>
@@ -857,7 +857,7 @@
       "@type": "Review",
       "author": { "@type": "Person", "name": "Eleanor Vance" },
       "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-      "reviewBody": "Taking Dr. Shakil's NVivo qualitative coding bootcamp transformed my dissertation and helped me pass my defense with distinction."
+      "reviewBody": "Taking Dr. Shakil's qualitative research and thematic analysis bootcamp transformed my dissertation and helped me pass my defense with distinction."
     },
     {
       "@type": "Review",
