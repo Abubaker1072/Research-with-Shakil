@@ -445,7 +445,7 @@
                 <div class="consultation-card-box reveal-card-box" style="grid-column: 1 / -1;">
                     <div>
                         <div class="consultation-img-wrapper" style="height: 230px;">
-                            <img src="{{ asset('images/dr_shakil_symposium_speaker.jpg') }}" alt="Workplace Dignity Assessments">
+                            <img src="{{ asset('images/dr_shakil_cpd_centre.jpg') }}" alt="Workplace Dignity Assessments">
                         </div>
                         <div class="consultation-card-category">ORGANIZATIONAL CULTURE</div>
                         <h3 class="consultation-card-title">Workplace Dignity Assessments</h3>
