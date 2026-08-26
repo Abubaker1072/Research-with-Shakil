@@ -189,9 +189,6 @@
     <div class="container hero-grid">
         <!-- Left Side: Title, Description & Primary CTA -->
         <div>
-            <div class="hero-institution-badge">
-                <i class="fas fa-university" style="font-size: 0.75rem;"></i> TEESSIDE INTERNATIONAL BUSINESS SCHOOL (UK)
-            </div>
             <h1 class="hero-title-mdi" style="font-size: 2.25rem; line-height: 1.25;">
                 Research Methodology Courses, Training & HR Consulting with Dr. Shakil Ahmad
             </h1>
