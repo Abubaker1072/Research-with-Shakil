@@ -395,7 +395,7 @@
                 <div class="consultation-card-box reveal-card-box">
                     <div>
                         <div class="consultation-img-wrapper">
-                            <img src="{{ asset('images/dr_shakil_presentation_quote.jpg') }}" alt="Servant Leadership Practice">
+                            <img src="{{ asset('images/dr_shakil_hero.jpg') }}" alt="Servant Leadership Practice">
                         </div>
                         <div class="consultation-card-category">LEADERSHIP DEVELOPMENT</div>
                         <h3 class="consultation-card-title">Servant Leadership Practice</h3>
