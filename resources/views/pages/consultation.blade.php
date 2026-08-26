@@ -442,7 +442,7 @@
                 <div class="consultation-card-box reveal-card-box">
                     <div>
                         <div class="consultation-img-wrapper">
-                            <img src="{{ asset('images/hd_proposal_writing.png') }}" alt="Assistance in Proposal Writing" loading="eager">
+                            <img src="{{ asset('images/dr_shakil_library_suit.jpg') }}" alt="Assistance in Proposal Writing" loading="eager">
                             <span class="consultation-badge-tag">Proposal Stage</span>
                         </div>
                         <div class="consultation-card-category">PROPOSAL & METHODOLOGY</div>
@@ -468,7 +468,7 @@
                 <div class="consultation-card-box reveal-card-box">
                     <div>
                         <div class="consultation-img-wrapper">
-                            <img src="{{ asset('images/hd_research_publication.png') }}" alt="Help with the Research Publication Process" loading="eager">
+                            <img src="{{ asset('images/dr_shakil_presentation_quote.jpg') }}" alt="Help with the Research Publication Process" loading="eager">
                             <span class="consultation-badge-tag">Publication Target</span>
                         </div>
                         <div class="consultation-card-category">JOURNAL PUBLISHING</div>
@@ -494,7 +494,7 @@
                 <div class="consultation-card-box reveal-card-box">
                     <div>
                         <div class="consultation-img-wrapper">
-                            <img src="{{ asset('images/hd_dissertation_mentorship.png') }}" alt="Dissertation Writing Consultancy" loading="eager">
+                            <img src="{{ asset('images/hero_img_3.jpg') }}" alt="Dissertation Writing Consultancy" loading="eager">
                             <span class="consultation-badge-tag">Full Mentorship</span>
                         </div>
                         <div class="consultation-card-category">DISSERTATION MENTORSHIP</div>
@@ -520,7 +520,7 @@
                 <div class="consultation-card-box reveal-card-box">
                     <div>
                         <div class="consultation-img-wrapper">
-                            <img src="{{ asset('images/hd_literature_review.png') }}" alt="Systematic Literature Review Support" loading="eager">
+                            <img src="{{ asset('images/dr_shakil_teaching_symposium.jpg') }}" alt="Systematic Literature Review Support" loading="eager">
                             <span class="consultation-badge-tag">PRISMA Framework</span>
                         </div>
                         <div class="consultation-card-category">LITERATURE REVIEWS</div>
@@ -726,7 +726,7 @@
                 <div class="consultation-card-box reveal-card-box">
                     <div>
                         <div class="consultation-img-wrapper">
-                            <img src="{{ asset('images/consultation_prog_5.jpg') }}" alt="Workplace Policy Design & Review">
+                            <img src="{{ asset('images/hero_img_4.jpg') }}" alt="Workplace Policy Design & Review">
                             <span class="consultation-badge-tag">HR Policy Audit</span>
                         </div>
                         <div class="consultation-card-category">HR POLICY & GOVERNANCE</div>
@@ -752,7 +752,7 @@
                 <div class="consultation-card-box reveal-card-box">
                     <div>
                         <div class="consultation-img-wrapper">
-                            <img src="{{ asset('images/hero_img_2.jpg') }}" alt="Organizational Innovation Consulting">
+                            <img src="{{ asset('images/dr_shakil_library_suit.jpg') }}" alt="Organizational Innovation Consulting">
                             <span class="consultation-badge-tag">Innovation Culture</span>
                         </div>
                         <div class="consultation-card-category">INNOVATION STRATEGY</div>
@@ -778,7 +778,7 @@
                 <div class="consultation-card-box reveal-card-box">
                     <div>
                         <div class="consultation-img-wrapper">
-                            <img src="{{ asset('images/dr_shakil_hero.jpg') }}" alt="Servant Leadership Practice">
+                            <img src="{{ asset('images/dr_shakil_presentation_quote.jpg') }}" alt="Servant Leadership Practice">
                             <span class="consultation-badge-tag">Leadership Coaching</span>
                         </div>
                         <div class="consultation-card-category">LEADERSHIP DEVELOPMENT</div>
@@ -804,7 +804,7 @@
                 <div class="consultation-card-box reveal-card-box">
                     <div>
                         <div class="consultation-img-wrapper">
-                            <img src="{{ asset('images/hero_img_4.jpg') }}" alt="Sustainable HR Management Systems">
+                            <img src="{{ asset('images/hero_img_3.jpg') }}" alt="Sustainable HR Management Systems">
                             <span class="consultation-badge-tag">Retention Strategy</span>
                         </div>
                         <div class="consultation-card-category">SUSTAINABLE HR</div>
@@ -830,7 +830,7 @@
                 <div class="consultation-card-box reveal-card-box" style="grid-column: 1 / -1;">
                     <div>
                         <div class="consultation-img-wrapper" style="height: 280px;">
-                            <img src="{{ asset('images/dr_shakil_cpd_centre.jpg') }}" alt="Workplace Dignity Assessments - Dr. Shakil Ahmad Symposium" style="object-position: center 15%;">
+                            <img src="{{ asset('images/dr_shakil_teaching_symposium.jpg') }}" alt="Workplace Dignity Assessments - Dr. Shakil Ahmad Symposium" style="object-position: center 15%;">
                             <span class="consultation-badge-tag">Culture Audit & Symposium</span>
                         </div>
                         <div class="consultation-card-category">ORGANIZATIONAL CULTURE</div>
@@ -985,6 +985,30 @@
                     </button>
                 </div>
             </form>
+        </div>
+    </div>
+</section>
+
+<!-- Closing CTA Banner Section: Not Sure Where to Start? -->
+<section class="services-cta-section" style="background: linear-gradient(135deg, #0b132b 0%, #1c2541 50%, #0f172a 100%); color: #ffffff; padding: 4.5rem 1rem; text-align: center; border-top: 3px solid #eab308; position: relative; overflow: hidden;">
+    <div class="container reveal-scroll-up" style="max-width: 820px; position: relative; z-index: 2;">
+        <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(234, 179, 8, 0.15); border: 1px solid rgba(234, 179, 8, 0.3); color: #fef08a; padding: 0.4rem 1.1rem; border-radius: 20px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 1.25rem;">
+            <i class="fas fa-compass"></i> NEED GUIDANCE?
+        </div>
+        <h2 style="font-family: var(--font-heading); font-size: 2.4rem; font-weight: 800; color: #ffffff; margin-bottom: 1rem; line-height: 1.25;">
+            Not Sure Where to Start?
+        </h2>
+        <p style="color: #cbd5e1; font-size: 1.1rem; line-height: 1.75; margin-bottom: 2.25rem; max-width: 720px; margin-left: auto; margin-right: auto;">
+            Tell me what you're working on — a thesis, a publication, an HR challenge, or a training need — and I'll point you to the right service.
+        </p>
+        
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; align-items: center;">
+            <a href="{{ route('contact.index') }}" class="btn-navy" style="background: #eab308; color: #0f172a; font-weight: 800; padding: 0.95rem 2.4rem; font-size: 1rem; border-radius: 12px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: transform 0.25s ease, box-shadow 0.25s ease; box-shadow: 0 4px 15px rgba(234, 179, 8, 0.3);">
+                Contact Me <i class="fas fa-envelope"></i>
+            </a>
+            <a href="#consultation-booking-form" class="btn-navy" style="background: transparent; color: #ffffff; border: 2px solid #ffffff; font-weight: 800; padding: 0.95rem 2.4rem; font-size: 1rem; border-radius: 12px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.25s ease, color 0.25s ease;">
+                Book a Free Discovery Call <i class="fas fa-calendar-check"></i>
+            </a>
         </div>
     </div>
 </section>
