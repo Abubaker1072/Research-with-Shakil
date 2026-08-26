@@ -21,12 +21,37 @@
             <!-- ABOUT Dropdown Menu -->
             <li class="nav-item-dropdown">
                 <a href="{{ route('about') }}" class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}">
-                    About <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-left: 2px;"></i>
+                    About Us <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-left: 2px;"></i>
                 </a>
                 <ul class="dropdown-menu">
                     <li><a href="{{ route('about') }}" class="dropdown-item">Dr. Shakil Ahmad Profile</a></li>
                     <li><a href="{{ route('about') }}#qualifications" class="dropdown-item">Academic Qualifications</a></li>
                     <li><a href="{{ route('about') }}#teaching-experience" class="dropdown-item">Teaching & Research Advisory</a></li>
+                </ul>
+            </li>
+
+            <!-- SERVICES Dropdown Menu -->
+            <li class="nav-item-dropdown">
+                <a href="{{ route('services.index') }}" class="nav-link {{ request()->routeIs('services*') ? 'active' : '' }}">
+                    Services <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-left: 2px;"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="{{ route('services.index') }}" class="dropdown-item">All Services</a></li>
+                    <li><a href="{{ route('services.index') }}#on-demand-courses" class="dropdown-item">On-Demand Courses</a></li>
+                    <li><a href="{{ route('services.index') }}#live-trainings" class="dropdown-item">Live Trainings & Workshops</a></li>
+                    <li><a href="{{ route('services.index') }}#one-on-one-consultation" class="dropdown-item">1-on-1 Consultation</a></li>
+                </ul>
+            </li>
+
+            <!-- CONSULTATION SERVICES Dropdown Menu -->
+            <li class="nav-item-dropdown">
+                <a href="{{ route('consultation.index') }}" class="nav-link {{ request()->routeIs('consultation*') ? 'active' : '' }}">
+                    Consultation Services <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-left: 2px;"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="{{ route('consultation.index') }}" class="dropdown-item">Consultation Overview</a></li>
+                    <li><a href="{{ route('consultation.index') }}#for-students" class="dropdown-item">For Students & Researchers</a></li>
+                    <li><a href="{{ route('consultation.index') }}#for-organizations" class="dropdown-item">For Organizations & HR</a></li>
                 </ul>
             </li>
 
@@ -37,43 +62,17 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li><a href="{{ route('courses.index') }}" class="dropdown-item">All Online Courses</a></li>
-                    <li><a href="{{ route('courses.index', ['category' => 'Systematic Literature Review']) }}" class="dropdown-item">Systematic Literature Review</a></li>
-                    <li><a href="{{ route('courses.index', ['category' => 'Qualitative Analysis']) }}" class="dropdown-item">Qualitative & Thematic Analysis</a></li>
-                    <li><a href="{{ route('courses.index', ['category' => 'Bibliometrics']) }}" class="dropdown-item">Bibliometrics & Meta-Analysis</a></li>
+                    <li><a href="{{ route('courses.index', ['category' => 'Literature Review']) }}" class="dropdown-item">Literature Review & SLR</a></li>
+                    <li><a href="{{ route('courses.index', ['category' => 'Qualitative Research']) }}" class="dropdown-item">Qualitative Research & Thematic Analysis</a></li>
+                    <li><a href="{{ route('courses.index', ['category' => 'Meta-Analysis']) }}" class="dropdown-item">Meta-Analysis</a></li>
+                    <li><a href="{{ route('courses.index', ['category' => 'Journal Publishing']) }}" class="dropdown-item">Journal Publishing</a></li>
+                    <li><a href="{{ route('courses.index', ['category' => 'Dissertation Help']) }}" class="dropdown-item">Dissertation Help</a></li>
+                    <li><a href="{{ route('courses.index', ['category' => 'Bibliometrics']) }}" class="dropdown-item">Bibliometrics</a></li>
+                    <li><a href="{{ route('courses.index', ['category' => 'Research Methods']) }}" class="dropdown-item">Research Methods</a></li>
                 </ul>
             </li>
 
-            <!-- SERVICES Dropdown Menu -->
-            <li class="nav-item-dropdown">
-                <a href="{{ route('services.index') }}" class="nav-link {{ request()->routeIs('services*') ? 'active' : '' }}">
-                    Services <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-left: 2px;"></i>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a href="{{ route('services.index') }}" class="dropdown-item">All Consultancy Services</a></li>
-                    <li><a href="{{ route('consultation.index') }}" class="dropdown-item">1-on-1 Dissertation Mentorship</a></li>
-                    <li><a href="{{ route('consultation.index') }}#consultation-booking-form" class="dropdown-item">Book Custom Consultation</a></li>
-                </ul>
-            </li>
-
-            <!-- TRAININGS Page -->
-            <li>
-                <a href="{{ route('trainings.index') }}" class="nav-link {{ request()->routeIs('trainings*') ? 'active' : '' }}">
-                    Trainings
-                </a>
-            </li>
-
-            <!-- CONSULTATION Dropdown Menu -->
-            <li class="nav-item-dropdown">
-                <a href="{{ route('consultation.index') }}" class="nav-link {{ request()->routeIs('consultation*') ? 'active' : '' }}">
-                    Consultation <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-left: 2px;"></i>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a href="{{ route('consultation.index') }}" class="dropdown-item">1-on-1 Consultation Overview</a></li>
-                    <li><a href="{{ route('consultation.index') }}#consultation-booking-form" class="dropdown-item">Book Advisory Session</a></li>
-                </ul>
-            </li>
-
-            <!-- PUBLICATIONS & GRANTS Dropdown Menu -->
+            <!-- PUBLICATIONS Dropdown Menu -->
             <li class="nav-item-dropdown">
                 <a href="{{ route('publications.index') }}" class="nav-link {{ request()->routeIs('publications*') ? 'active' : '' }}">
                     Publications <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-left: 2px;"></i>
@@ -88,7 +87,7 @@
 
             <li>
                 <a href="{{ route('contact.index') }}" class="nav-link {{ request()->routeIs('contact*') ? 'active' : '' }}">
-                    Contact
+                    Contact Us
                 </a>
             </li>
         </ul>

@@ -19,8 +19,10 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
 Route::get('/courses/{slug}', [CourseController::class, 'show'])->name('courses.show');
 
-// Trainings Page
-Route::get('/trainings', [TrainingController::class, 'index'])->name('trainings.index');
+// Trainings Page (Redirected to Services to maintain 6-page simple structure)
+Route::get('/trainings', function () {
+    return redirect()->route('services.index');
+})->name('trainings.index');
 
 // Consultation Page
 Route::get('/consultation', [ConsultationController::class, 'index'])->name('consultation.index');

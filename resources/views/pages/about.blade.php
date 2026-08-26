@@ -335,7 +335,7 @@
                                     Customized, cohort-based training for universities, HR departments, and organizations, delivered online or in person.
                                 </p>
                             </div>
-                            <a href="{{ route('trainings.index') }}" class="btn-navy" style="padding: 0.75rem 1.25rem; font-size: 0.88rem; text-align: center; border-radius: 10px;">
+                            <a href="{{ route('services.index') }}#live-trainings" class="btn-navy" style="padding: 0.75rem 1.25rem; font-size: 0.88rem; text-align: center; border-radius: 10px;">
                                 View Trainings <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
                             </a>
                         </div>
@@ -366,8 +366,8 @@
                                 Institutional Training & Research Workshops
                             </h3>
                         </div>
-                        <a href="{{ route('trainings.index') }}" style="color: #1e3a8a; font-weight: 700; font-size: 0.9rem; text-decoration: none;">
-                            Explore All Programs <i class="fas fa-arrow-right" style="margin-left: 4px;"></i>
+                        <a href="{{ route('services.index') }}#live-trainings" style="color: #1e3a8a; font-weight: 700; font-size: 0.9rem; text-decoration: none;">
+                            Explore All Services <i class="fas fa-arrow-right" style="margin-left: 4px;"></i>
                         </a>
                     </div>
                     <p style="color: #64748b; font-size: 0.95rem; margin-bottom: 1.5rem;">
@@ -452,6 +452,15 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".reveal-scroll-up, .reveal-scroll-right, .reveal-card-box").forEach(function (el) {
         revealObserver.observe(el);
     });
+
+    if (window.location.hash) {
+        setTimeout(function() {
+            const targetEl = document.querySelector(window.location.hash);
+            if (targetEl) {
+                targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }, 200);
+    }
 });
 </script>
 

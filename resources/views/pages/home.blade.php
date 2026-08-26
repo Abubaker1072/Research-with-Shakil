@@ -185,7 +185,7 @@
 @section('content')
 
 <!-- Hero Section with Dynamic Campus Background Image from Database -->
-<section class="mdi-hero-section" style="background: linear-gradient(180deg, rgba(8, 26, 56, 0.70) 0%, rgba(14, 38, 78, 0.78) 100%), url('{{ asset($heroBgImage ?? 'images/junaid_zaida_library_bg.jpg') }}') center/cover no-repeat;">
+<section class="mdi-hero-section" style="background: linear-gradient(180deg, rgba(8, 26, 56, 0.70) 0%, rgba(14, 38, 78, 0.78) 100%), url('{{ asset($heroBgImage ?? 'images/hero_campus_bg.jpg') }}') center/cover no-repeat;">
     <div class="container hero-grid">
         <!-- Left Side: Title, Description & Primary CTA -->
         <div>
@@ -330,7 +330,7 @@
             </div>
 
             <!-- 2. TRAININGS OVERVIEW SECTION -->
-            <div style="background: #ffffff; border-radius: 18px; border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%; cursor: pointer;" class="overview-card-editorial" onclick="window.location.href='/trainings'">
+            <div style="background: #ffffff; border-radius: 18px; border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%; cursor: pointer;" class="overview-card-editorial" onclick="window.location.href='{{ route('services.index') }}#live-trainings'">
                 <div>
                     <div style="height: 160px; position: relative; overflow: hidden; background: #0f172a;">
                         <img src="{{ asset('images/trainings_overview_banner.jpg') }}" alt="Trainings Overview" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.95;">
@@ -356,7 +356,7 @@
                 </div>
 
                 <div style="padding: 0 1.4rem 1.4rem 1.4rem; margin-top: auto;">
-                    <a href="{{ route('trainings.index') }}" class="btn-navy" style="width: 100%; text-align: center; display: block; padding: 0.75rem 1.25rem; font-size: 0.88rem; font-weight: 700; border-radius: 10px;" id="overview-explore-trainings-btn" onclick="event.stopPropagation();">
+                    <a href="{{ route('services.index') }}#live-trainings" class="btn-navy" style="width: 100%; text-align: center; display: block; padding: 0.75rem 1.25rem; font-size: 0.88rem; font-weight: 700; border-radius: 10px;" id="overview-explore-trainings-btn" onclick="event.stopPropagation();">
                         View Trainings <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
                     </a>
                 </div>
@@ -728,7 +728,7 @@
                     <div style="width: 42px; height: 42px; border-radius: 50%; background: #065f46; color: #ffffff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem;">AK</div>
                     <div>
                         <div style="font-weight: 800; color: #0f172a; font-size: 0.92rem;">Dr. Aisha Khan</div>
-                        <div style="font-weight: 500; color: #64748b; font-size: 0.8rem;">Head of Department & ORIC Member (Lahore, Pakistan)</div>
+                        <div style="font-weight: 500; color: #64748b; font-size: 0.8rem;">Head of Department (Lahore, Pakistan)</div>
                     </div>
                 </div>
             </div>
@@ -787,7 +787,7 @@
                         <span style="font-size: 0.75rem; font-weight: 700; background: #f0fdf4; color: #166534; padding: 0.2rem 0.6rem; border-radius: 6px;">Journal Revision</span>
                     </div>
                     <blockquote style="font-size: 0.95rem; color: #334155; line-height: 1.65; margin: 0 0 1.25rem 0; font-style: italic;">
-                        “Dr. Shakil is a master research educator. His guidance on SmartPLS 4 structural equation modeling and peer-review response letters helped our team achieve final acceptance in a top SSCI journal.”
+                        “Dr. Shakil is a master research educator. His guidance on research methodology and peer-review response letters helped our team achieve final acceptance in a top SSCI journal.”
                     </blockquote>
                 </div>
                 <div style="border-top: 1px solid #e2e8f0; padding-top: 0.85rem; display: flex; align-items: center; gap: 0.75rem;">

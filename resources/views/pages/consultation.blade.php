@@ -196,7 +196,7 @@
     <div class="container" style="max-width: 1150px;">
 
         <!-- 1. FOR RESEARCHERS & STUDENTS SECTION -->
-        <div style="margin-bottom: 4rem;">
+        <div id="for-students" style="margin-bottom: 4rem; scroll-margin-top: 100px;">
             <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
                 <span style="background: #e0f2fe; color: #0369a1; padding: 0.4rem 1rem; border-radius: 20px; font-weight: 800; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 1px;">
                     SECTION 1
@@ -321,7 +321,7 @@
 
 
         <!-- 2. FOR ORGANIZATIONS SECTION -->
-        <div style="margin-bottom: 3.5rem;">
+        <div id="for-organizations" style="margin-bottom: 3.5rem; scroll-margin-top: 100px;">
             <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
                 <span style="background: #fef9c3; color: #854d0e; padding: 0.4rem 1rem; border-radius: 20px; font-weight: 800; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 1px;">
                     SECTION 2
@@ -488,9 +488,9 @@
                 <!-- Step 1 -->
                 <div style="background: rgba(255, 255, 255, 0.08); padding: 1.75rem; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.15);">
                     <div class="step-number-circle">1</div>
-                    <h3 style="font-size: 1.2rem; font-weight: 800; color: #ffffff; margin-bottom: 0.5rem;">Book an Initial Call</h3>
+                    <h3 style="font-size: 1.2rem; font-weight: 800; color: #ffffff; margin-bottom: 0.5rem;">Book an Initial Consultation Call</h3>
                     <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; margin: 0;">
-                        Submit your project details via the booking form below to schedule your initial consultation call.
+                        Book your initial consultation call via the scheduling form below.
                     </p>
                 </div>
 
@@ -499,16 +499,16 @@
                     <div class="step-number-circle">2</div>
                     <h3 style="font-size: 1.2rem; font-weight: 800; color: #ffffff; margin-bottom: 0.5rem;">Share Your Challenge</h3>
                     <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; margin: 0;">
-                        Share your research thesis, publication goals, HR challenge, or institutional objective in detail.
+                        Share your research, HR challenge, or institutional goal in detail.
                     </p>
                 </div>
 
                 <!-- Step 3 -->
                 <div style="background: rgba(255, 255, 255, 0.08); padding: 1.75rem; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.15);">
                     <div class="step-number-circle">3</div>
-                    <h3 style="font-size: 1.2rem; font-weight: 800; color: #ffffff; margin-bottom: 0.5rem;">Receive Tailored Plan</h3>
+                    <h3 style="font-size: 1.2rem; font-weight: 800; color: #ffffff; margin-bottom: 0.5rem;">Receive a Tailored Plan</h3>
                     <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; margin: 0;">
-                        Receive a customized engagement roadmap — whether a targeted one-off session or an ongoing advisory relationship.
+                        Receive a tailored plan — one-off session or ongoing engagement.
                     </p>
                 </div>
 

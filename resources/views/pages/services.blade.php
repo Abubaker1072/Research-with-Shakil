@@ -5,21 +5,44 @@
 @section('meta_keywords', 'research methodology training, dissertation consultation, PhD thesis help, HR consulting services, academic writing courses, university research workshops')
 
 @push('styles')
+@push('styles')
 <style>
+    .services-hero-section {
+        padding: 5rem 0 3.5rem 0;
+        background: var(--navy-deep);
+        color: #ffffff;
+        border-bottom: 3px solid var(--gold);
+    }
+    .services-hero-title {
+        font-family: var(--font-heading);
+        font-size: 2.75rem;
+        color: #ffffff;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+    .services-hero-desc {
+        color: #e2e8f0;
+        font-size: 1.1rem;
+        line-height: 1.7;
+        max-width: 750px;
+        margin: 0 auto;
+    }
     .service-card-block {
         background: #ffffff;
         border-radius: 16px;
         border: 1px solid #cbd5e1;
         box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        padding: 1.5rem 1.75rem;
-        margin-bottom: 1.75rem;
+        padding: 1.75rem 2rem;
+        margin-bottom: 2rem;
+        scroll-margin-top: 110px;
     }
     .service-card-title {
         font-family: var(--font-heading);
-        font-size: 1.45rem;
+        font-size: 1.5rem;
         font-weight: 800;
         color: #0f172a;
         margin-bottom: 0.6rem;
+        line-height: 1.3;
     }
     .direct-answer-text {
         font-size: 1.05rem;
@@ -42,13 +65,13 @@
         background: #f8fafc;
         border: 1px solid #e2e8f0;
         border-radius: 14px;
-        padding: 1.25rem 1.5rem;
+        padding: 1.35rem 1.5rem;
     }
     .service-list-box h4 {
         font-size: 1.05rem;
         font-weight: 800;
         color: #0f172a;
-        margin-bottom: 0.75rem;
+        margin-bottom: 0.85rem;
     }
     .service-list-box ul {
         list-style: none;
@@ -56,18 +79,130 @@
         margin: 0;
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
-        font-size: 0.92rem;
+        gap: 0.6rem;
+        font-size: 0.94rem;
         color: #334155;
     }
     .service-list-box ul li {
         display: flex;
         align-items: flex-start;
-        gap: 0.5rem;
+        gap: 0.6rem;
+        word-break: break-word;
     }
     .service-list-box ul li i {
         color: #0284c7;
         margin-top: 4px;
+        flex-shrink: 0;
+    }
+    .workshop-tracks-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 0.75rem;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* CTA Section Styling */
+    .services-cta-section {
+        background: #0f172a;
+        color: #ffffff;
+        padding: 4rem 0;
+        text-align: center;
+        border-top: 3px solid #eab308;
+    }
+    .services-cta-title {
+        font-family: var(--font-heading);
+        font-size: 2.25rem;
+        font-weight: 800;
+        color: #ffffff;
+        margin-bottom: 1rem;
+    }
+    .services-cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* Tablet Responsiveness (768px - 992px) */
+    @media (max-width: 992px) {
+        .services-hero-title {
+            font-size: 2.25rem;
+        }
+        .service-card-block {
+            padding: 1.5rem 1.5rem;
+        }
+        .service-card-title {
+            font-size: 1.35rem;
+        }
+    }
+
+    /* Mobile Responsiveness (< 768px) */
+    @media (max-width: 768px) {
+        .services-hero-section {
+            padding: 3.5rem 1rem 2.5rem 1rem;
+        }
+        .services-hero-title {
+            font-size: 1.85rem;
+            line-height: 1.25;
+        }
+        .services-hero-desc {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .service-card-block {
+            padding: 1.25rem 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 14px;
+        }
+        .service-card-title {
+            font-size: 1.25rem;
+        }
+        .direct-answer-text {
+            font-size: 0.95rem;
+            padding: 0.85rem 1rem;
+            border-left-width: 3px;
+        }
+        .service-list-grid {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        .workshop-tracks-grid {
+            grid-template-columns: 1fr !important;
+            gap: 0.65rem !important;
+        }
+        .service-action-btn {
+            width: 100% !important;
+            text-align: center !important;
+            justify-content: center !important;
+            padding: 0.85rem 1rem !important;
+            font-size: 0.95rem !important;
+        }
+        .services-cta-section {
+            padding: 3rem 1rem;
+        }
+        .services-cta-title {
+            font-size: 1.75rem;
+        }
+        .services-cta-buttons {
+            flex-direction: column;
+            width: 100%;
+        }
+        .services-cta-buttons .btn-navy {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    /* Extra Small Mobile Screens (< 480px) */
+    @media (max-width: 480px) {
+        .services-hero-title {
+            font-size: 1.6rem;
+        }
+        .service-list-box {
+            padding: 1rem 1rem;
+        }
     }
 </style>
 @endpush
@@ -75,13 +210,13 @@
 @section('content')
 
 <!-- Services Hero Banner -->
-<section style="padding: 5rem 0 3.5rem 0; background: var(--navy-deep); color: #ffffff; border-bottom: 3px solid var(--gold);">
+<section class="services-hero-section">
     <div class="container text-center" style="max-width: 900px;">
         <div style="font-size: 0.85rem; font-weight: 800; color: #fef08a; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 0.5rem;">ACADEMIC & EXECUTIVE ADVISORY</div>
-        <h1 style="font-family: var(--font-heading); font-size: 2.75rem; color: #ffffff; margin-bottom: 1rem;">
+        <h1 class="services-hero-title">
             Ways to Work With Dr. Shakil Ahmad
         </h1>
-        <p style="color: #e2e8f0; font-size: 1.1rem; line-height: 1.7; max-width: 750px; margin: 0 auto;">
+        <p class="services-hero-desc">
             Dr. Shakil Ahmad offers three ways to get research and HR expertise: on-demand online courses, live training for universities and organizations, and one-on-one consultation for individual research or HR challenges.
         </p>
     </div>
@@ -127,7 +262,7 @@
             </div>
 
             <div>
-                <a href="{{ route('courses.index') }}" class="btn-navy" style="padding: 0.85rem 1.8rem; font-weight: 700;">
+                <a href="{{ route('courses.index') }}" class="btn-navy service-action-btn" style="padding: 0.85rem 1.8rem; font-weight: 700;">
                     View All 18 Courses on Udemy <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
                 </a>
             </div>
@@ -143,6 +278,21 @@
             </div>
 
             <div class="service-list-grid">
+                <!-- Workshop Topics -->
+                <div class="service-list-box" style="grid-column: 1 / -1; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.25rem 1.5rem; margin-bottom: 0.5rem;">
+                    <h4 style="font-size: 1.1rem; font-weight: 800; color: #0f172a; margin-bottom: 0.85rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-chalkboard-teacher" style="color: #0284c7;"></i> Core Workshop & Live Training Tracks
+                    </h4>
+                    <ul class="workshop-tracks-grid">
+                        <li style="display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.95rem; color: #1e293b; font-weight: 600;"><i class="fas fa-check-circle" style="color: #0284c7; flex-shrink: 0; margin-top: 4px;"></i> Research Paper Writing</li>
+                        <li style="display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.95rem; color: #1e293b; font-weight: 600;"><i class="fas fa-check-circle" style="color: #0284c7; flex-shrink: 0; margin-top: 4px;"></i> Dissertation Writing</li>
+                        <li style="display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.95rem; color: #1e293b; font-weight: 600;"><i class="fas fa-check-circle" style="color: #0284c7; flex-shrink: 0; margin-top: 4px;"></i> Systematic Literature Review and Protocol Development</li>
+                        <li style="display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.95rem; color: #1e293b; font-weight: 600;"><i class="fas fa-check-circle" style="color: #0284c7; flex-shrink: 0; margin-top: 4px;"></i> Thematic Analysis</li>
+                        <li style="display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.95rem; color: #1e293b; font-weight: 600;"><i class="fas fa-check-circle" style="color: #0284c7; flex-shrink: 0; margin-top: 4px;"></i> Grant Writing</li>
+                        <li style="display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.95rem; color: #1e293b; font-weight: 600;"><i class="fas fa-check-circle" style="color: #0284c7; flex-shrink: 0; margin-top: 4px;"></i> How to write research papers for high ranked journals</li>
+                    </ul>
+                </div>
+
                 <!-- Formats Available -->
                 <div class="service-list-box">
                     <h4>Formats Available</h4>
@@ -172,7 +322,7 @@
             </p>
 
             <div>
-                <a href="{{ route('trainings.index') }}#training-proposal-form" class="btn-navy" style="padding: 0.85rem 1.8rem; font-weight: 700;">
+                <a href="{{ route('consultation.index') }}#consultation-booking-form" class="btn-navy service-action-btn" style="padding: 0.85rem 1.8rem; font-weight: 700;">
                     Request a Training Proposal <i class="fas fa-paper-plane" style="margin-left: 6px;"></i>
                 </a>
             </div>
@@ -212,7 +362,7 @@
             </div>
 
             <div>
-                <a href="{{ route('consultation.index') }}" class="btn-navy" style="padding: 0.85rem 1.8rem; font-weight: 700;">
+                <a href="{{ route('consultation.index') }}" class="btn-navy service-action-btn" style="padding: 0.85rem 1.8rem; font-weight: 700;">
                     Book Your Consultation <i class="fas fa-calendar-check" style="margin-left: 6px;"></i>
                 </a>
             </div>
@@ -244,7 +394,7 @@
         "@type": "Person",
         "name": "Dr. Muhammad Shakil Ahmad"
       },
-      "description": "Customized cohort-based live research training programs for universities, ORIC centers, and HR departments."
+      "description": "Customized cohort-based live research training programs for universities, research centers, and HR departments."
     },
     {
       "@type": "Service",
@@ -356,16 +506,16 @@
 </script>
 
 <!-- NOT SURE WHERE TO START? CTA BANNER -->
-<section style="background: #0f172a; color: #ffffff; padding: 4rem 0; text-align: center; border-top: 3px solid #eab308;">
+<section class="services-cta-section">
     <div class="container" style="max-width: 800px;">
-        <h2 style="font-family: var(--font-heading); font-size: 2.25rem; font-weight: 800; color: #ffffff; margin-bottom: 1rem;">
+        <h2 class="services-cta-title">
             Not Sure Where to Start?
         </h2>
         <p style="color: #cbd5e1; font-size: 1.05rem; line-height: 1.65; margin-bottom: 2rem;">
             Tell me what you're working on — a thesis, a publication, an HR challenge, or a training need — and I'll point you to the right service.
         </p>
         
-        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <div class="services-cta-buttons">
             <a href="{{ route('contact.index') }}" class="btn-navy" style="background: #eab308; color: #0f172a; font-weight: 800; padding: 0.85rem 2.2rem; font-size: 1rem; border-radius: 12px; text-decoration: none;">
                 Contact Me <i class="fas fa-envelope" style="margin-left: 6px;"></i>
             </a>
