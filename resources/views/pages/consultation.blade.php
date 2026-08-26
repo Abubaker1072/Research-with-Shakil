@@ -245,7 +245,7 @@
                 <div class="consultation-card-box reveal-card-box">
                     <div>
                         <div class="consultation-img-wrapper">
-                            <img src="{{ asset('images/consultation_prog_3.jpg') }}" alt="Help with the Research Publication Process">
+                            <img src="{{ asset('images/dr_shakil_symposium_speaker.jpg') }}" alt="Help with the Research Publication Process">
                         </div>
                         <div class="consultation-card-category">JOURNAL PUBLISHING</div>
                         <h3 class="consultation-card-title">Help with the Research Publication Process</h3>
@@ -270,7 +270,7 @@
                 <div class="consultation-card-box reveal-card-box">
                     <div>
                         <div class="consultation-img-wrapper">
-                            <img src="{{ asset('images/course_lit_review_thumb.png') }}" alt="Dissertation Writing Consultancy">
+                            <img src="{{ asset('images/consultation_prog_4.jpg') }}" alt="Dissertation Writing Consultancy">
                         </div>
                         <div class="consultation-card-category">DISSERTATION MENTORSHIP</div>
                         <h3 class="consultation-card-title">Dissertation Writing Consultancy</h3>
@@ -295,7 +295,7 @@
                 <div class="consultation-card-box reveal-card-box">
                     <div>
                         <div class="consultation-img-wrapper">
-                            <img src="{{ asset('images/consultation_prog_4.jpg') }}" alt="Systematic Literature Review Support">
+                            <img src="{{ asset('images/dr_shakil_impact_factor_presentation.jpg') }}" alt="Systematic Literature Review Support">
                         </div>
                         <div class="consultation-card-category">LITERATURE REVIEWS</div>
                         <h3 class="consultation-card-title">Systematic Literature Review Support</h3>
