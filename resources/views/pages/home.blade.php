@@ -405,7 +405,7 @@
         <div class="scholar-quote-grid-photo-left">
             <div class="scroll-quote-img-left" id="quote-img-element">
                 <div class="scholar-photo-frame">
-                    <img src="{{ asset('images/dr_shakil_impact_factor_presentation.jpg') }}" alt="Dr. Muhammad Shakil Ahmad Presentation" class="scholar-photo-img">
+                    <img src="{{ asset('images/review_magnifying_glass.jpg') }}" alt="Academic Literature Review & Publication Mentorship" class="scholar-photo-img">
                 </div>
             </div>
 

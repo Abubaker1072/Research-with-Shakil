@@ -173,7 +173,7 @@
 
     /* Image Wrapper inside Card */
     .consultation-img-wrapper {
-        height: 210px;
+        height: 250px;
         border-radius: 14px;
         overflow: hidden;
         margin-bottom: 1.35rem;
@@ -185,6 +185,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center 10%;
         image-rendering: -webkit-optimize-contrast;
         filter: contrast(1.04) brightness(1.02) saturate(1.06);
         transition: transform 0.4s ease, filter 0.4s ease;
@@ -829,8 +830,8 @@
                 <!-- 5. Workplace Dignity Assessments -->
                 <div class="consultation-card-box reveal-card-box" style="grid-column: 1 / -1;">
                     <div>
-                        <div class="consultation-img-wrapper" style="height: 280px;">
-                            <img src="{{ asset('images/dr_shakil_teaching_symposium.jpg') }}" alt="Workplace Dignity Assessments - Dr. Shakil Ahmad Symposium" style="object-position: center 15%;">
+                        <div class="consultation-img-wrapper" style="height: 320px;">
+                            <img src="{{ asset('images/dr_shakil_teaching_symposium.jpg') }}" alt="Workplace Dignity Assessments - Dr. Shakil Ahmad Symposium" style="object-position: center 25%;">
                             <span class="consultation-badge-tag">Culture Audit & Symposium</span>
                         </div>
                         <div class="consultation-card-category">ORGANIZATIONAL CULTURE</div>
