@@ -173,7 +173,7 @@
 
     /* Image Wrapper inside Card */
     .consultation-img-wrapper {
-        height: 250px;
+        height: 270px;
         border-radius: 14px;
         overflow: hidden;
         margin-bottom: 1.35rem;
@@ -185,7 +185,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center 10%;
+        object-position: center 5%;
         image-rendering: -webkit-optimize-contrast;
         filter: contrast(1.04) brightness(1.02) saturate(1.06);
         transition: transform 0.4s ease, filter 0.4s ease;
@@ -325,7 +325,20 @@
             gap: 1.75rem !important;
         }
         .consultation-img-wrapper {
-            height: 200px !important;
+            height: 240px !important;
+        }
+        .card-featured-horizontal {
+            flex-direction: column !important;
+            padding: 1.5rem !important;
+        }
+        .card-featured-horizontal > div:first-child {
+            flex: none !important;
+            max-width: 100% !important;
+            width: 100% !important;
+        }
+        .card-featured-horizontal .consultation-img-wrapper {
+            height: 240px !important;
+            margin-bottom: 1.25rem !important;
         }
         .services-nav-pills {
             justify-content: flex-start !important;
@@ -828,32 +841,36 @@
                 </div>
 
                 <!-- 5. Workplace Dignity Assessments -->
-                <div class="consultation-card-box reveal-card-box" style="grid-column: 1 / -1;">
-                    <div>
-                        <div class="consultation-img-wrapper" style="height: 320px;">
-                            <img src="{{ asset('images/dr_shakil_teaching_symposium.jpg') }}" alt="Workplace Dignity Assessments - Dr. Shakil Ahmad Symposium" style="object-position: center 25%;">
+                <div class="consultation-card-box reveal-card-box card-featured-horizontal" style="grid-column: 1 / -1; display: flex; flex-direction: row; gap: 2rem; align-items: stretch; padding: 2rem;">
+                    <div style="flex: 0 0 380px; max-width: 380px; width: 100%; position: relative;">
+                        <div class="consultation-img-wrapper" style="height: 100%; min-height: 290px; margin-bottom: 0;">
+                            <img src="{{ asset('images/dr_shakil_teaching_symposium.jpg') }}" alt="Workplace Dignity Assessments - Dr. Shakil Ahmad Symposium" style="object-position: center 10%;">
                             <span class="consultation-badge-tag">Culture Audit & Symposium</span>
                         </div>
-                        <div class="consultation-card-category">ORGANIZATIONAL CULTURE</div>
-                        <h3 class="consultation-card-title">Workplace Dignity Assessments</h3>
-                        <p class="consultation-card-desc">
-                            Reviewing how employees are treated across every level of the organization, and identifying where policy or culture is quietly undermining morale and retention.
-                        </p>
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 0.75rem; margin-bottom: 1.25rem;">
-                            <ul class="consultation-features-list" style="margin: 0;">
-                                <li><i class="fas fa-check-circle"></i> Cross-Level Dignity Audits</li>
-                                <li><i class="fas fa-check-circle"></i> Morale & Retention Bottleneck Analysis</li>
-                            </ul>
-                            <ul class="consultation-features-list" style="margin: 0;">
-                                <li><i class="fas fa-check-circle"></i> Culture Risk Assessment</li>
-                                <li><i class="fas fa-check-circle"></i> Actionable Dignity Restoration Plan</li>
-                            </ul>
-                        </div>
                     </div>
-                    <div style="margin-top: auto; padding-top: 1rem;">
-                        <a href="#consultation-booking-form" onclick="selectServiceOption('Workplace Dignity Assessments')" class="btn-navy" style="width: 100%; text-align: center; display: block; border-radius: 12px; padding: 0.85rem 1rem; font-size: 0.92rem;">
-                            BOOK THIS CONSULTATION <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
-                        </a>
+                    <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <div class="consultation-card-category">ORGANIZATIONAL CULTURE</div>
+                            <h3 class="consultation-card-title" style="font-size: 1.5rem; margin-bottom: 0.6rem;">Workplace Dignity Assessments</h3>
+                            <p class="consultation-card-desc" style="font-size: 0.98rem; margin-bottom: 1.25rem;">
+                                Reviewing how employees are treated across every level of the organization, and identifying where policy or culture is quietly undermining morale and retention.
+                            </p>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; margin-bottom: 1.25rem;">
+                                <ul class="consultation-features-list" style="margin: 0;">
+                                    <li><i class="fas fa-check-circle"></i> Cross-Level Dignity Audits</li>
+                                    <li><i class="fas fa-check-circle"></i> Morale & Retention Bottleneck Analysis</li>
+                                </ul>
+                                <ul class="consultation-features-list" style="margin: 0;">
+                                    <li><i class="fas fa-check-circle"></i> Culture Risk Assessment</li>
+                                    <li><i class="fas fa-check-circle"></i> Actionable Dignity Restoration Plan</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div style="margin-top: auto; padding-top: 0.5rem;">
+                            <a href="#consultation-booking-form" onclick="selectServiceOption('Workplace Dignity Assessments')" class="btn-navy" style="display: inline-block; border-radius: 12px; padding: 0.85rem 2.2rem; font-size: 0.95rem;">
+                                BOOK THIS CONSULTATION <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
