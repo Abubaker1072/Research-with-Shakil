@@ -26,8 +26,10 @@
       },
       "description": "Dr. Muhammad Shakil Ahmad is a Senior Lecturer at Teesside International Business School, Teesside University (UK), research methodology, project management, and HR expert with 90+ SSCI publications and 16,000+ global learners.",
       "sameAs": [
-        "https://www.udemy.com/user/dr-muhammad-shakil-ahmad/",
-        "https://scholar.google.com/citations?user=Kr6MOa0AAAAJ&hl=en&oi=ao"
+        "https://www.udemy.com/user/muhammadshakilahmad/",
+        "https://scholar.google.com/citations?user=Kr6MOa0AAAAJ&hl=en&oi=ao",
+        "https://www.linkedin.com/company/146106967/",
+        "https://www.facebook.com/MentorResearch/"
       ]
     }
     </script>
@@ -54,13 +56,6 @@
                 <i class="fas fa-check-circle" style="font-size: 1.25rem;"></i>
                 <div>
                     <strong>Success!</strong> {{ session('success') }}
-                    @if(session('whatsapp_url'))
-                        <div style="margin-top: 0.5rem;">
-                            <a href="{{ session('whatsapp_url') }}" target="_blank" class="btn btn-whatsapp" style="padding: 0.4rem 1rem; font-size: 0.85rem;">
-                                <i class="fab fa-whatsapp"></i> Continue on WhatsApp
-                            </a>
-                        </div>
-                    @endif
                 </div>
             </div>
         </div>
@@ -70,6 +65,9 @@
     <main>
         @yield('content')
     </main>
+
+    <!-- Dissertation & Research Inquiry Pop-up Modal -->
+    @include('partials.popup-modal')
 
     <!-- Floating WhatsApp CTA -->
     @include('partials.whatsapp-button')

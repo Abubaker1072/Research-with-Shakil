@@ -30,28 +30,16 @@
                 </ul>
             </li>
 
-            <!-- SERVICES Dropdown Menu -->
+            <!-- SERVICES & CONSULTATION Dropdown Menu (Merged) -->
             <li class="nav-item-dropdown">
-                <a href="{{ route('services.index') }}" class="nav-link {{ request()->routeIs('services*') ? 'active' : '' }}">
-                    Services <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-left: 2px;"></i>
+                <a href="{{ route('consultation.index') }}" class="nav-link {{ request()->routeIs('consultation*') || request()->routeIs('services*') ? 'active' : '' }}">
+                    Services & Consultation <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-left: 2px;"></i>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="{{ route('services.index') }}" class="dropdown-item">All Services</a></li>
-                    <li><a href="{{ route('services.index') }}#on-demand-courses" class="dropdown-item">On-Demand Courses</a></li>
-                    <li><a href="{{ route('services.index') }}#live-trainings" class="dropdown-item">Live Trainings & Workshops</a></li>
-                    <li><a href="{{ route('services.index') }}#one-on-one-consultation" class="dropdown-item">1-on-1 Consultation</a></li>
-                </ul>
-            </li>
-
-            <!-- CONSULTATION SERVICES Dropdown Menu -->
-            <li class="nav-item-dropdown">
-                <a href="{{ route('consultation.index') }}" class="nav-link {{ request()->routeIs('consultation*') ? 'active' : '' }}">
-                    Consultation Services <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-left: 2px;"></i>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a href="{{ route('consultation.index') }}" class="dropdown-item">Consultation Overview</a></li>
-                    <li><a href="{{ route('consultation.index') }}#for-students" class="dropdown-item">For Students & Researchers</a></li>
-                    <li><a href="{{ route('consultation.index') }}#for-organizations" class="dropdown-item">For Organizations & HR</a></li>
+                    <li><a href="{{ route('consultation.index') }}" class="dropdown-item">All Services & Consultation</a></li>
+                    <li><a href="{{ route('consultation.index') }}#for-students" class="dropdown-item">1-on-1 Advisory (Students & Researchers)</a></li>
+                    <li><a href="{{ route('consultation.index') }}#for-organizations" class="dropdown-item">Institutional & HR Consultation</a></li>
+                    <li><a href="{{ route('consultation.index') }}#consultation-booking-form" class="dropdown-item">Book a Consultation Session</a></li>
                 </ul>
             </li>
 

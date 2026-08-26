@@ -135,7 +135,7 @@
 <section style="background: #f8fafc; padding-bottom: 4rem;">
     <div class="container">
         
-        <div class="contact-info-grid">
+        <div class="contact-info-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); max-width: 750px; margin-left: auto; margin-right: auto;">
             <!-- Card 1: Email -->
             <div class="contact-info-card">
                 <div class="contact-info-icon">
@@ -143,34 +143,22 @@
                 </div>
                 <h3 class="contact-info-heading">Email Advisory</h3>
                 <p class="contact-info-text">
-                    info@researchwithshakil.com<br>
-                    <span style="font-size: 0.82rem; color: #1e3a8a; font-weight: 600;">Academic Advisory Support</span>
+                    <strong>info@researchwithshakil.com</strong><br>
+                    <span style="font-size: 0.82rem; color: #1e3a8a; font-weight: 600;">Primary Contact & Inquiry Medium</span>
                 </p>
             </div>
 
-            <!-- Card 3: Call Us -->
-            <div class="contact-info-card">
-                <div class="contact-info-icon">
-                    <i class="fas fa-phone-alt"></i>
-                </div>
-                <h3 class="contact-info-heading">Advisory Helpline</h3>
-                <p class="contact-info-text">
-                    Academic Advisory Helpdesk<br>
-                    Mon - Sat, 9 AM - 6 PM (GMT)
-                </p>
-            </div>
-
-            <!-- Card 4: WhatsApp -->
+            <!-- Card 2: WhatsApp -->
             <div class="contact-info-card">
                 <div class="contact-info-icon" style="background: #dcfce7; color: #166534;">
                     <i class="fab fa-whatsapp"></i>
                 </div>
-                <h3 class="contact-info-heading">WhatsApp Support</h3>
+                <h3 class="contact-info-heading">WhatsApp Chat Support</h3>
                 <p class="contact-info-text" style="margin-bottom: 0.75rem;">
-                    Contact the advisory team for scheduling inquiries.
+                    Quick queries & scheduling assistance via WhatsApp.
                 </p>
                 <a href="https://wa.me/923000000000?text=Hello%20Dr.%20Shakil,%20I%20would%20like%20to%20inquire%20about%20research%20consultation" target="_blank" style="color: #166534; font-weight: 700; font-size: 0.88rem; text-decoration: none;">
-                    Start WhatsApp Message <i class="fas fa-arrow-right" style="font-size: 0.75rem;"></i>
+                    Start WhatsApp Chat <i class="fas fa-arrow-right" style="font-size: 0.75rem;"></i>
                 </a>
             </div>
         </div>
@@ -179,10 +167,10 @@
         <div style="max-width: 660px; margin: 0 auto; background: #ffffff; padding: 1.75rem 2rem; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(0,0,0,0.06);">
             
             <div class="section-header text-center" style="margin-bottom: 1.25rem;">
-                <div class="section-subtitle">SEND AN INQUIRY</div>
-                <h2 class="section-title" style="font-size: 1.65rem; margin-bottom: 0.2rem;">Schedule a Consultation Session</h2>
+                <div class="section-subtitle">EMAIL INQUIRY FORM</div>
+                <h2 class="section-title" style="font-size: 1.65rem; margin-bottom: 0.2rem;">Send an Academic Inquiry</h2>
                 <p style="color: #64748b; font-size: 0.9rem; margin-top: 0.3rem;">
-                    Fill out the form below and Dr. Shakil Ahmad's advisory team will respond promptly.
+                    Submit your details below and Dr. Shakil Ahmad's team will respond directly to your email address.
                 </p>
             </div>
 
@@ -201,8 +189,8 @@
 
                 <div class="form-row-grid" style="margin-bottom: 1rem;">
                     <div class="form-group" style="margin-bottom: 0;">
-                        <label class="form-label" for="whatsapp">WhatsApp Number *</label>
-                        <input type="text" name="whatsapp" id="whatsapp" class="form-control" placeholder="+92 300 0000000" required>
+                        <label class="form-label" for="whatsapp">WhatsApp Number <span style="font-weight: 400; color: #64748b;">(Optional)</span></label>
+                        <input type="text" name="whatsapp" id="whatsapp" class="form-control" placeholder="+92 300 0000000">
                     </div>
                     <div class="form-group" style="margin-bottom: 0;">
                         <label class="form-label" for="academic_level">Academic Role *</label>

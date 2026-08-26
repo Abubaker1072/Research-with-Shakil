@@ -19,20 +19,19 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
 Route::get('/courses/{slug}', [CourseController::class, 'show'])->name('courses.show');
 
-// Trainings Page (Redirected to Services to maintain 6-page simple structure)
-Route::get('/trainings', function () {
-    return redirect()->route('services.index');
-})->name('trainings.index');
-
-// Consultation Page
+// Services & Consultation (Merged page)
 Route::get('/consultation', [ConsultationController::class, 'index'])->name('consultation.index');
+
+Route::get('/services', function () {
+    return redirect()->route('consultation.index');
+})->name('services.index');
+
+Route::get('/trainings', function () {
+    return redirect()->route('consultation.index');
+})->name('trainings.index');
 
 // Research & Publications
 Route::get('/publications', [PublicationController::class, 'index'])->name('publications.index');
-
-// Services & Mentorship
-Route::get('/services', [ServiceController::class, 'index'])->name('services.index');
-Route::get('/services/{slug}', [ServiceController::class, 'show'])->name('services.show');
 
 // Contact & Booking
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');

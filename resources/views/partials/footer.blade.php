@@ -20,10 +20,10 @@
                 <h4 class="footer-col-title">Offerings</h4>
                 <ul class="footer-links-list">
                     <li><a href="{{ route('courses.index') }}">All Online Courses</a></li>
-                    <li><a href="{{ route('services.index') }}">All Services</a></li>
-                    <li><a href="{{ route('services.index') }}#live-trainings">Institutional Trainings</a></li>
-                    <li><a href="{{ route('consultation.index') }}">Consultation Services</a></li>
-                    <li><a href="{{ route('consultation.index') }}#consultation-booking-form">Dissertation Mentorship</a></li>
+                    <li><a href="{{ route('consultation.index') }}">Services & Consultation</a></li>
+                    <li><a href="{{ route('consultation.index') }}#for-students">1-on-1 Dissertation Advisory</a></li>
+                    <li><a href="{{ route('consultation.index') }}#for-organizations">Organizational & HR Consultation</a></li>
+                    <li><a href="{{ route('consultation.index') }}#consultation-booking-form">Book Consultation Session</a></li>
                 </ul>
             </div>
 
@@ -32,7 +32,7 @@
                 <h4 class="footer-col-title">Resources</h4>
                 <ul class="footer-links-list">
                     <li><a href="{{ \App\Models\SiteSetting::get('google_scholar_url', 'https://scholar.google.com/citations?user=Kr6MOa0AAAAJ&hl=en&oi=ao') }}" target="_blank">Google Scholar Profile</a></li>
-                    <li><a href="{{ \App\Models\SiteSetting::get('udemy_profile_url', 'https://www.udemy.com/user/dr-muhammad-shakil-ahmad/') }}" target="_blank">Udemy Instructor Profile</a></li>
+                    <li><a href="{{ \App\Models\SiteSetting::get('udemy_profile_url', 'https://www.udemy.com/user/muhammadshakilahmad/') }}" target="_blank">Udemy Instructor Profile</a></li>
                     <li><a href="{{ route('publications.index') }}">Research Publications</a></li>
                     <li><a href="{{ route('publications.index') }}?type=grant">Grants</a></li>
                     <li><a href="{{ route('admin.inquiries') }}">Admin Portal</a></li>
@@ -65,10 +65,14 @@
 
             <!-- Social Icon Boxes -->
             <div class="footer-social-boxes">
-                <a href="{{ \App\Models\SiteSetting::get('google_scholar_url', '#') }}" target="_blank" class="social-box-icon" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-                <a href="{{ \App\Models\SiteSetting::get('udemy_profile_url', '#') }}" target="_blank" class="social-box-icon" title="Udemy"><i class="fab fa-udemy"></i></a>
-                <a href="{{ \App\Models\SiteSetting::get('twitter_url', '#') }}" target="_blank" class="social-box-icon" title="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="{{ \App\Models\SiteSetting::get('linkedin_url', '#') }}" target="_blank" class="social-box-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="{{ \App\Models\SiteSetting::get('google_scholar_url', 'https://scholar.google.com/citations?user=Kr6MOa0AAAAJ&hl=en&oi=ao') }}" target="_blank" class="social-box-icon" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                <a href="{{ \App\Models\SiteSetting::get('udemy_profile_url', 'https://www.udemy.com/user/muhammadshakilahmad/') }}" target="_blank" class="social-box-icon" title="Udemy Profile">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display: inline-block; vertical-align: middle; width: 18px; height: 18px;">
+                        <path d="M12 14.711L6.084 11.3V5.5H3V13L12 18.211L21 13V5.5H17.916V11.3L12 14.711Z"/>
+                    </svg>
+                </a>
+                <a href="{{ \App\Models\SiteSetting::get('linkedin_url', 'https://www.linkedin.com/company/146106967/') }}" target="_blank" class="social-box-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="{{ \App\Models\SiteSetting::get('facebook_url', 'https://www.facebook.com/MentorResearch/') }}" target="_blank" class="social-box-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
             </div>
         </div>
     </div>

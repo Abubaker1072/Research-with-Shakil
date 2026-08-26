@@ -28,9 +28,9 @@ class SiteSettingSeeder extends Seeder
             ['key' => 'contact_email', 'value' => 'info@researchwithshakil.com', 'group' => 'contact', 'type' => 'string'],
             ['key' => 'whatsapp_number', 'value' => '+92 300 0000000', 'group' => 'contact', 'type' => 'string'],
             ['key' => 'google_scholar_url', 'value' => 'https://scholar.google.com/citations?user=Kr6MOa0AAAAJ&hl=en&oi=ao', 'group' => 'social', 'type' => 'string'],
-            ['key' => 'udemy_profile_url', 'value' => 'https://www.udemy.com/user/dr-muhammad-shakil-ahmad/', 'group' => 'social', 'type' => 'string'],
-            ['key' => 'linkedin_url', 'value' => 'https://linkedin.com', 'group' => 'social', 'type' => 'string'],
-            ['key' => 'twitter_url', 'value' => 'https://twitter.com', 'group' => 'social', 'type' => 'string'],
+            ['key' => 'udemy_profile_url', 'value' => 'https://www.udemy.com/user/muhammadshakilahmad/', 'group' => 'social', 'type' => 'string'],
+            ['key' => 'linkedin_url', 'value' => 'https://www.linkedin.com/company/146106967/', 'group' => 'social', 'type' => 'string'],
+            ['key' => 'facebook_url', 'value' => 'https://www.facebook.com/MentorResearch/', 'group' => 'social', 'type' => 'string'],
             ['key' => 'footer_about_text', 'value' => 'Research Methodology & Academic Advisory', 'group' => 'footer', 'type' => 'string'],
             ['key' => 'footer_copyright', 'value' => 'Research with Shakil | All rights reserved', 'group' => 'footer', 'type' => 'string'],
         ];

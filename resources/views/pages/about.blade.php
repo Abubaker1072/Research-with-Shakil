@@ -418,17 +418,19 @@
                     </div>
 
                     <div class="about-social-row">
-                        <a href="https://www.udemy.com/user/dr-muhammad-shakil-ahmad/" target="_blank" class="about-social-btn" title="Udemy Profile">
-                            <i class="fab fa-udemy"></i>
+                        <a href="{{ \App\Models\SiteSetting::get('udemy_profile_url', 'https://www.udemy.com/user/muhammadshakilahmad/') }}" target="_blank" class="about-social-btn" title="Udemy Profile">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display: inline-block; vertical-align: middle; width: 20px; height: 20px;">
+                                <path d="M12 14.711L6.084 11.3V5.5H3V13L12 18.211L21 13V5.5H17.916V11.3L12 14.711Z"/>
+                            </svg>
                         </a>
-                        <a href="https://scholar.google.com/citations?user=Kr6MOa0AAAAJ&hl=en&oi=ao" target="_blank" class="about-social-btn" title="Google Scholar">
+                        <a href="{{ \App\Models\SiteSetting::get('google_scholar_url', 'https://scholar.google.com/citations?user=Kr6MOa0AAAAJ&hl=en&oi=ao') }}" target="_blank" class="about-social-btn" title="Google Scholar">
                             <i class="fas fa-graduation-cap"></i>
                         </a>
-                        <a href="https://linkedin.com" target="_blank" class="about-social-btn" title="LinkedIn">
+                        <a href="{{ \App\Models\SiteSetting::get('linkedin_url', 'https://www.linkedin.com/company/146106967/') }}" target="_blank" class="about-social-btn" title="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="https://twitter.com" target="_blank" class="about-social-btn" title="Twitter / X">
-                            <i class="fab fa-x-twitter"></i>
+                        <a href="{{ \App\Models\SiteSetting::get('facebook_url', 'https://www.facebook.com/MentorResearch/') }}" target="_blank" class="about-social-btn" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
                         </a>
                     </div>
                 </div>
