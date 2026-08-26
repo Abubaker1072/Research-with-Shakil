@@ -199,7 +199,7 @@
                 Dr. Muhammad Shakil Ahmad is a Senior Lecturer at Teesside International Business School, Teesside University (UK), and a research methodology, project management, and HR expert who has trained over 16,000 learners worldwide through online courses, live training programs, and one-on-one consultations. He holds a PhD in Management, has published 90+ papers in SSCI-indexed journals (H-index 39), and has 15+ years of academic experience across the UK, Oman, Pakistan, and South Korea.
             </p>
             <p style="color: #cbd5e1; font-size: 1rem; margin-bottom: 2rem; line-height: 1.6; font-weight: 500;">
-                Get expert help with research methodology, academic writing, and HR strategy — through self-paced courses, institutional training, or direct consultation.
+                Get expert help with research methodology, academic writing, and HR strategy  through self-paced courses, institutional training, or direct consultation.
             </p>
             
             <div class="hero-cta-buttons" style="display: flex; gap: 1rem; flex-wrap: wrap;">
@@ -578,19 +578,14 @@
                     </div>
                 </div>
 
-                <div class="form-grid-responsive">
-                    <div class="form-group">
-                        <label class="form-label">WhatsApp Number *</label>
-                        <input type="text" name="whatsapp" class="form-control" placeholder="+92 300 0000000" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Academic Role *</label>
-                        <select name="academic_level" class="form-control" required>
-                            <option value="PhD Candidate">PhD Candidate</option>
-                            <option value="Master's Researcher">Master's Student</option>
-                            <option value="University Faculty">University Faculty</option>
-                        </select>
-                    </div>
+                <div class="form-group">
+                    <label class="form-label">Academic Role *</label>
+                    <select name="academic_level" class="form-control" required>
+                        <option value="PhD Candidate">PhD Candidate</option>
+                        <option value="Master's Researcher">Master's Student</option>
+                        <option value="University Faculty">University Faculty</option>
+                        <option value="Corporate / HR Leadership">Corporate / HR Leadership</option>
+                    </select>
                 </div>
 
                 <div class="form-group">

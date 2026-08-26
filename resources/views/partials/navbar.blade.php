@@ -25,8 +25,7 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li><a href="{{ route('about') }}" class="dropdown-item">Dr. Shakil Ahmad Profile</a></li>
-                    <li><a href="{{ route('about') }}#qualifications" class="dropdown-item">Academic Qualifications</a></li>
-                    <li><a href="{{ route('about') }}#teaching-experience" class="dropdown-item">Teaching & Research Advisory</a></li>
+                   
                 </ul>
             </li>
 
@@ -38,8 +37,7 @@
                 <ul class="dropdown-menu">
                     <li><a href="{{ route('consultation.index') }}" class="dropdown-item">All Services & Consultation</a></li>
                     <li><a href="{{ route('consultation.index') }}#for-students" class="dropdown-item">1-on-1 Advisory (Students & Researchers)</a></li>
-                    <li><a href="{{ route('consultation.index') }}#for-organizations" class="dropdown-item">Institutional & HR Consultation</a></li>
-                    <li><a href="{{ route('consultation.index') }}#consultation-booking-form" class="dropdown-item">Book a Consultation Session</a></li>
+                    
                 </ul>
             </li>
 

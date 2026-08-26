@@ -933,21 +933,15 @@
                     </div>
                 </div>
 
-                <div class="form-row-grid" style="margin-bottom: 1.25rem;">
-                    <div class="form-group" style="margin-bottom: 0;">
-                        <label class="form-label" style="font-weight: 700; color: #0f172a; font-size: 0.88rem; margin-bottom: 0.4rem; display: block;">WhatsApp Number <span style="font-weight: 400; color: #64748b;">(Optional)</span></label>
-                        <input type="text" name="whatsapp" class="form-control" style="width: 100%; height: 48px; border-radius: 12px; border: 1px solid #cbd5e1; padding: 0 1rem; font-size: 0.94rem;" placeholder="+92 300 0000000">
-                    </div>
-                    <div class="form-group" style="margin-bottom: 0;">
-                        <label class="form-label" style="font-weight: 700; color: #0f172a; font-size: 0.88rem; margin-bottom: 0.4rem; display: block;">Category / Role *</label>
-                        <select name="academic_level" class="form-control" style="width: 100%; height: 48px; border-radius: 12px; border: 1px solid #cbd5e1; padding: 0 1rem; font-size: 0.94rem;" required>
-                            <option value="PhD Candidate">PhD / DBA Candidate</option>
-                            <option value="Master's Researcher">Master's Student</option>
-                            <option value="University Faculty">University Faculty</option>
-                            <option value="Corporate / HR Leadership">Corporate / HR Leadership</option>
-                            <option value="Independent Scholar">Independent Scholar</option>
-                        </select>
-                    </div>
+                <div class="form-group" style="margin-bottom: 1.25rem;">
+                    <label class="form-label" style="font-weight: 700; color: #0f172a; font-size: 0.88rem; margin-bottom: 0.4rem; display: block;">Category / Role *</label>
+                    <select name="academic_level" class="form-control" style="width: 100%; height: 48px; border-radius: 12px; border: 1px solid #cbd5e1; padding: 0 1rem; font-size: 0.94rem;" required>
+                        <option value="PhD Candidate">PhD / DBA Candidate</option>
+                        <option value="Master's Researcher">Master's Student</option>
+                        <option value="University Faculty">University Faculty</option>
+                        <option value="Corporate / HR Leadership">Corporate / HR Leadership</option>
+                        <option value="Independent Scholar">Independent Scholar</option>
+                    </select>
                 </div>
 
                 <div class="form-group" style="margin-bottom: 1.25rem;">
