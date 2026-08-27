@@ -7,8 +7,8 @@
                 <p style="color: #cbd5e1; font-size: 0.92rem; line-height: 1.7; margin-bottom: 0.75rem;">
                     {{ \App\Models\SiteSetting::get('footer_about_text', 'Research Methodology & Academic Advisory') }}
                 </p>
-                <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 0.75rem;">
-                    <strong>Email</strong> {{ \App\Models\SiteSetting::get('contact_email', 'info@researchwithshakil.com') }}
+                <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 0.75rem; line-height: 1.6;">
+                    <strong>Email:</strong> <a href="mailto:researchwithshakilahmed@gmail.com" style="color: #cbd5e1; text-decoration: underline;">researchwithshakilahmed@gmail.com</a>
                 </p>
                 <p style="margin-bottom: 1.5rem;">
                     <a href="{{ route('contact.index') }}" style="color: var(--gold); font-size: 0.88rem; text-decoration: underline;">Contact & Advisory Inquiry</a>

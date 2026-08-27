@@ -338,8 +338,8 @@
                     <i class="fas fa-envelope-open-text"></i>
                 </div>
                 <h3 class="contact-info-heading">Direct Email Advisory</h3>
-                <p class="contact-info-text">
-                    <strong>info@researchwithshakil.com</strong>
+                <p class="contact-info-text" style="line-height: 1.6;">
+                    <strong><a href="mailto:researchwithshakilahmed@gmail.com" style="color: inherit; text-decoration: underline;">researchwithshakilahmed@gmail.com</a></strong>
                 </p>
                 <span class="contact-info-subtext">Primary Advisory & Inquiry Medium</span>
             </div>

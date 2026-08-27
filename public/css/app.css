@@ -1810,3 +1810,87 @@ img {
     gap: 1rem !important;
   }
 }
+
+/* ==========================================================================
+   ALL-DEVICE MOBILE & TABLET RESPONSIVENESS OVERRIDES
+   ========================================================================== */
+@media (max-width: 992px) {
+  .nav-container {
+    height: 80px !important;
+  }
+  .brand-logo-img {
+    height: 54px !important;
+    transform: scale(1.1) !important;
+  }
+  .sticky-services-nav {
+    top: 0 !important;
+  }
+  .consultation-card-box.card-featured-horizontal {
+    flex-direction: column !important;
+  }
+  .consultation-card-box.card-featured-horizontal > div:first-child {
+    flex: none !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-slide-card {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  .courses-grid-layout,
+  .cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+  .search-input-wrapper {
+    min-width: 100% !important;
+  }
+  .filter-search-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .udemy-profile-direct-btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  .hero-cta-buttons {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .hero-cta-buttons a {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+  .dissertation-modal-card {
+    padding: 1.75rem 1.25rem !important;
+    border-radius: 16px !important;
+    margin: 1rem !important;
+    max-width: calc(100vw - 2rem) !important;
+  }
+  .dissertation-modal-title {
+    font-size: 1.3rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-logo-img {
+    height: 48px !important;
+    transform: scale(1.05) !important;
+  }
+  .contact-hero-title,
+  .hero-title-mdi,
+  .pub-hero-title,
+  .trainings-hero-title {
+    font-size: 1.5rem !important;
+  }
+  .hero-text-mdi,
+  .contact-hero-subtitle {
+    font-size: 0.92rem !important;
+  }
+  .nav-links {
+    padding: 1rem 1.25rem !important;
+  }
+}

@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Consultation;
 use App\Models\SiteSetting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
 
 class ContactController extends Controller
 {
@@ -40,41 +42,76 @@ class ContactController extends Controller
                 : 'PhD Candidate / Researcher';
         }
 
+        if (empty($validated['institution'])) {
+            $validated['institution'] = 'N/A';
+        }
+
+        // Save directly into the database
         $consultation = Consultation::create($validated);
 
-        // Primary notification target email
-        $recipientEmail = SiteSetting::get('contact_email', 'info@researchwithshakil.com');
+        // Target notification recipient emails
+        $primaryEmail = 'researchwithshakilahmed@gmail.com';
+        $siteContactEmail = SiteSetting::get('contact_email', 'researchwithshakilahmed@gmail.com');
+        $recipientEmails = array_values(array_unique([$primaryEmail, $siteContactEmail]));
 
-        // Attempt sending email notification
-        try {
-            Mail::raw(
-                "New Website Inquiry Received:\n\n" .
-                "Name: {$consultation->name}\n" .
-                "Email: {$consultation->email}\n" .
-                "WhatsApp: {$consultation->whatsapp}\n" .
-                "Role/Level: {$consultation->academic_level}\n" .
-                "Service: {$consultation->service_type}\n\n" .
-                "Message:\n{$consultation->message}",
-                function ($message) use ($recipientEmail, $consultation) {
-                    $message->to($recipientEmail)
-                            ->replyTo($consultation->email, $consultation->name)
-                            ->subject("New Inquiry: {$consultation->service_type} - {$consultation->name}");
+        // Dispatch Email via Resend API
+        $resendApiKey = env('RESEND_API_KEY');
+        $resendFrom = env('RESEND_FROM_ADDRESS', 'onboarding@resend.dev');
+
+        $emailSent = false;
+
+        if (!empty($resendApiKey)) {
+            try {
+                $htmlContent = view('emails.inquiry', ['inquiry' => $consultation])->render();
+                
+                $response = Http::withHeaders([
+                    'Authorization' => 'Bearer ' . $resendApiKey,
+                    'Content-Type' => 'application/json',
+                ])->withoutVerifying()->post('https://api.resend.com/emails', [
+                    'from' => "Dr. Shakil Advisory <{$resendFrom}>",
+                    'to' => $recipientEmails,
+                    'reply_to' => $consultation->email,
+                    'subject' => "New Website Inquiry: {$consultation->service_type} - {$consultation->name}",
+                    'html' => $htmlContent,
+                ]);
+
+                if ($response->successful()) {
+                    $emailSent = true;
+                    Log::info('Resend Email Sent Successfully ID: ' . ($response->json('id') ?? 'N/A'));
+                } else {
+                    Log::error('Resend API Response Error: ' . $response->body());
                 }
-            );
-        } catch (\Throwable $e) {
-            // Silence mail server connection issues in local env while logging
-            \Illuminate\Support\Facades\Log::info('Mail dispatch log: ' . $e->getMessage());
+            } catch (\Throwable $e) {
+                Log::error('Resend API Exception: ' . $e->getMessage());
+            }
         }
+
+        // Fallback to standard Laravel mailer if Resend key is missing or failed
+        if (!$emailSent) {
+            try {
+                Mail::send('emails.inquiry', ['inquiry' => $consultation], function ($message) use ($recipientEmails, $consultation) {
+                    $message->to($recipientEmails)
+                            ->from(config('mail.from.address', 'researchwithshakilahmed@gmail.com'), config('mail.from.name', 'Dr. Shakil Advisory Platform'))
+                            ->replyTo($consultation->email, $consultation->name)
+                            ->subject("New Website Inquiry: {$consultation->service_type} - {$consultation->name}");
+                });
+            } catch (\Throwable $e) {
+                Log::error('Standard Mailer Notice: ' . $e->getMessage());
+            }
+        }
+
+        $successMsg = "Your inquiry has been sent successfully! Dr. Shakil's advisory team will respond to your email promptly.";
 
         if ($request->expectsJson() || $request->ajax()) {
             return response()->json([
                 'success' => true,
-                'message' => 'Your inquiry has been sent to info@researchwithshakil.com! Dr. Shakil\'s advisory team will respond to your email promptly.'
+                'message' => $successMsg
             ]);
         }
 
         return redirect()->back()->with([
-            'success' => 'Your inquiry has been sent to info@researchwithshakil.com! Dr. Shakil\'s advisory team will respond to your email promptly.'
+            'success' => $successMsg
         ]);
     }
 }
+
