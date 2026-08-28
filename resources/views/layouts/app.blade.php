@@ -78,5 +78,6 @@
     <!-- Custom JS -->
     <script src="{{ asset('js/app.js') }}"></script>
     @stack('scripts')
+    <!-- testing by pushing -->
 </body>
 </html>
