@@ -54,7 +54,7 @@ class ContactController extends Controller
         $siteContactEmail = SiteSetting::get('contact_email', 'researchwithshakilahmed@gmail.com');
         $recipientEmails = array_values(array_unique([$primaryEmail, $siteContactEmail]));
 
-        // Dispatch Email via Resend API
+        // Dispatch Email via Resend API if API Key is configured
         $resendApiKey = env('RESEND_API_KEY');
         $resendFrom = env('RESEND_FROM_ADDRESS', 'onboarding@resend.dev');
 
@@ -79,24 +79,29 @@ class ContactController extends Controller
                     $emailSent = true;
                     Log::info('Resend Email Sent Successfully ID: ' . ($response->json('id') ?? 'N/A'));
                 } else {
-                    Log::error('Resend API Response Error: ' . $response->body());
+                    Log::warning('Resend API Response Error (' . $response->status() . '): ' . $response->body() . ' - Falling back to SMTP Mailer.');
                 }
             } catch (\Throwable $e) {
                 Log::error('Resend API Exception: ' . $e->getMessage());
             }
         }
 
-        // Fallback to standard Laravel mailer if Resend key is missing or failed
+        // Fallback to standard Laravel SMTP mailer if Resend is missing or failed
         if (!$emailSent) {
             try {
-                Mail::send('emails.inquiry', ['inquiry' => $consultation], function ($message) use ($recipientEmails, $consultation) {
+                $fromAddress = config('mail.from.address') ?: 'researchwithshakilahmed@gmail.com';
+                $fromName = config('mail.from.name') ?: 'Dr. Shakil Advisory Platform';
+
+                Mail::send('emails.inquiry', ['inquiry' => $consultation], function ($message) use ($recipientEmails, $consultation, $fromAddress, $fromName) {
                     $message->to($recipientEmails)
-                            ->from(config('mail.from.address', 'researchwithshakilahmed@gmail.com'), config('mail.from.name', 'Dr. Shakil Advisory Platform'))
+                            ->from($fromAddress, $fromName)
                             ->replyTo($consultation->email, $consultation->name)
                             ->subject("New Website Inquiry: {$consultation->service_type} - {$consultation->name}");
                 });
+                $emailSent = true;
+                Log::info('Standard SMTP Mailer dispatched inquiry notification to: ' . implode(', ', $recipientEmails));
             } catch (\Throwable $e) {
-                Log::error('Standard Mailer Notice: ' . $e->getMessage());
+                Log::error('Standard Mailer Error: ' . $e->getMessage() . '. Please verify MAIL_PASSWORD (Gmail App Password) in .env');
             }
         }
 

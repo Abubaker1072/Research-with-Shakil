@@ -282,7 +282,32 @@
         border-bottom: 2px solid #e2e8f0;
         display: flex;
         align-items: center;
-        gap: 0.6rem;
+    /* Pagination Button Styles */
+    .pub-page-btn {
+        padding: 0.5rem 0.9rem;
+        border-radius: 8px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        border: 1px solid #cbd5e1;
+        background: #ffffff;
+        color: #334155;
+    }
+    .pub-page-btn:hover:not(.disabled) {
+        background: #1e3a8a;
+        color: #ffffff;
+        border-color: #1e3a8a;
+    }
+    .pub-page-btn.active {
+        background: #eab308;
+        color: #0f172a;
+        border-color: #eab308;
+        box-shadow: 0 3px 10px rgba(234, 179, 8, 0.3);
+    }
+    .pub-page-btn.disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
     }
 </style>
 @endpush
@@ -310,7 +335,7 @@
 
             <div style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
                 <div class="scholar-stat-item">
-                    <div class="scholar-stat-num">90+</div>
+                    <div class="scholar-stat-num">{{ count($allPublications) }}+</div>
                     <div class="scholar-stat-label">Publications</div>
                 </div>
                 <div class="scholar-stat-item">
@@ -318,7 +343,7 @@
                     <div class="scholar-stat-label">H-Index</div>
                 </div>
                 <div class="scholar-stat-item">
-                    <div class="scholar-stat-num">1,800+</div>
+                    <div class="scholar-stat-num">8,900+</div>
                     <div class="scholar-stat-label">Citations</div>
                 </div>
 
@@ -428,14 +453,20 @@
                         <div><i class="fas fa-check-double" style="color: #166534; margin-right: 4px;"></i> <strong>Status:</strong> Awarded & Completed</div>
                         @endif
 
-                        <a href="https://scholar.google.com/citations?user=Kr6MOa0AAAAJ&hl=en&oi=ao" target="_blank" class="scholar-direct-link-btn">
-                            Google Scholar Record <i class="fas fa-external-link-alt"></i>
+                        <a href="{{ !empty($pub->url) ? $pub->url : 'https://scholar.google.com/citations?user=Kr6MOa0AAAAJ&hl=en&oi=ao' }}" target="_blank" class="scholar-direct-link-btn">
+                            View Publication Record <i class="fas fa-external-link-alt"></i>
                         </a>
                     </div>
                 </div>
                 @endforeach
             @endforeach
 
+        </div>
+
+        <!-- Responsive Pagination Controls Bar (10 Boxes Per Page) -->
+        <div id="pubPaginationWrapper" style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem; margin-top: 2.5rem; width: 100%;">
+            <div id="pubPaginationNav" style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; flex-wrap: wrap;"></div>
+            <span style="font-size: 0.88rem; color: #64748b; font-weight: 600;" id="pubPageInfoText">Page 1</span>
         </div>
 
     </div>
@@ -450,14 +481,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const yearHeaders = document.querySelectorAll(".year-header-item");
     const searchInput = document.getElementById("pubSearchInput");
     const pubCountText = document.getElementById("pubCountText");
+    const paginationWrapper = document.getElementById("pubPaginationWrapper");
+    const paginationNav = document.getElementById("pubPaginationNav");
+    const pageInfoText = document.getElementById("pubPageInfoText");
 
     let currentFilter = "all";
     let currentYear = "all";
     let currentQuery = "";
+    let currentPage = 1;
+    const itemsPerPage = 10;
 
     function renderPublications() {
-        let matchingCards = 0;
-        const visibleYears = new Set();
+        const matchingCards = [];
 
         pubCards.forEach(function (card) {
             const cardType = card.getAttribute("data-type");
@@ -469,25 +504,98 @@ document.addEventListener("DOMContentLoaded", function () {
             const matchesQuery = (!currentQuery || searchData.includes(currentQuery));
 
             if (matchesFilter && matchesYear && matchesQuery) {
-                card.style.display = "flex";
-                matchingCards++;
-                visibleYears.add(cardYear);
+                matchingCards.push(card);
             } else {
                 card.style.display = "none";
             }
         });
 
-        // Toggle year header dividers based on visible cards
+        const totalMatching = matchingCards.length;
+        const totalPages = Math.ceil(totalMatching / itemsPerPage) || 1;
+
+        if (currentPage > totalPages) currentPage = totalPages;
+        if (currentPage < 1) currentPage = 1;
+
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+
+        const visibleYearsOnPage = new Set();
+
+        matchingCards.forEach(function (card, idx) {
+            if (idx >= startIndex && idx < endIndex) {
+                card.style.display = "flex";
+                visibleYearsOnPage.add(card.getAttribute("data-year"));
+            } else {
+                card.style.display = "none";
+            }
+        });
+
+        // Toggle year header dividers based on visible cards on current page
         yearHeaders.forEach(function (header) {
             const headerYear = header.getAttribute("data-year");
-            if (visibleYears.has(headerYear)) {
+            if (visibleYearsOnPage.has(headerYear)) {
                 header.style.display = "flex";
             } else {
                 header.style.display = "none";
             }
         });
 
-        pubCountText.innerText = "Showing " + matchingCards + " publication" + (matchingCards !== 1 ? "s" : "");
+        // Update Counter Text
+        if (totalMatching === 0) {
+            pubCountText.innerText = "No matching publications found";
+        } else {
+            const fromItem = startIndex + 1;
+            const toItem = Math.min(endIndex, totalMatching);
+            pubCountText.innerText = `Showing ${fromItem}–${toItem} of ${totalMatching} publication` + (totalMatching !== 1 ? "s" : "");
+        }
+
+        // Render Pagination Nav Controls
+        renderPaginationNav(totalPages, totalMatching);
+    }
+
+    function renderPaginationNav(totalPages, totalMatching) {
+        if (totalPages <= 1 || totalMatching === 0) {
+            paginationWrapper.style.display = "none";
+            return;
+        }
+
+        paginationWrapper.style.display = "flex";
+        pageInfoText.innerText = `Page ${currentPage} of ${totalPages}`;
+
+        let navHtml = '';
+
+        // Previous Page Button
+        navHtml += `<button class="pub-page-btn ${currentPage === 1 ? 'disabled' : ''}" data-page="${currentPage - 1}" ${currentPage === 1 ? 'disabled' : ''}><i class="fas fa-chevron-left"></i> Prev</button>`;
+
+        // Page Numbers
+        for (let p = 1; p <= totalPages; p++) {
+            if (p === 1 || p === totalPages || (p >= currentPage - 2 && p <= currentPage + 2)) {
+                navHtml += `<button class="pub-page-btn ${p === currentPage ? 'active' : ''}" data-page="${p}">${p}</button>`;
+            } else if (p === currentPage - 3 || p === currentPage + 3) {
+                navHtml += `<span style="color: #94a3b8; padding: 0 0.25rem; font-size: 0.85rem; font-weight: 700;">...</span>`;
+            }
+        }
+
+        // Next Page Button
+        navHtml += `<button class="pub-page-btn ${currentPage === totalPages ? 'disabled' : ''}" data-page="${currentPage + 1}" ${currentPage === totalPages ? 'disabled' : ''}>Next <i class="fas fa-chevron-right"></i></button>`;
+
+        paginationNav.innerHTML = navHtml;
+
+        // Page click handlers
+        paginationNav.querySelectorAll(".pub-page-btn").forEach(function(btn) {
+            btn.addEventListener("click", function() {
+                if (this.disabled || this.classList.contains("disabled")) return;
+                const targetPage = parseInt(this.getAttribute("data-page"));
+                if (targetPage && targetPage !== currentPage) {
+                    currentPage = targetPage;
+                    renderPublications();
+                    const container = document.getElementById("publicationsContainer");
+                    if (container) {
+                        container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
     }
 
     // Check URL parameters for pre-selected type filter (e.g. ?type=grant)
@@ -509,6 +617,7 @@ document.addEventListener("DOMContentLoaded", function () {
             filterButtons.forEach(b => b.classList.remove("active"));
             this.classList.add("active");
             currentFilter = this.getAttribute("data-filter");
+            currentPage = 1;
             renderPublications();
         });
     });
@@ -519,6 +628,7 @@ document.addEventListener("DOMContentLoaded", function () {
             yearButtons.forEach(b => b.classList.remove("active"));
             this.classList.add("active");
             currentYear = this.getAttribute("data-year");
+            currentPage = 1;
             renderPublications();
         });
     });
@@ -527,6 +637,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (searchInput) {
         searchInput.addEventListener("input", function () {
             currentQuery = this.value.trim().toLowerCase();
+            currentPage = 1;
             renderPublications();
         });
     }
