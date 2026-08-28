@@ -397,22 +397,22 @@
 </section>
 
 <!-- SCHOLAR QUOTE SECTION -->
-<section class="scholar-quote-section" id="scholar-quote-trigger">
+<section class="scholar-quote-section" id="scholar-quote-trigger" style="padding: 3rem 0 !important; background: var(--surface);">
     <div class="container">
-        <div class="scholar-quote-grid-photo-left">
+        <div class="scholar-quote-grid-photo-left" style="display: grid; grid-template-columns: 300px 1fr; gap: 2.5rem; align-items: center;">
             <div class="scroll-quote-img-left" id="quote-img-element">
-                <div class="scholar-photo-frame">
-                    <img src="{{ asset('images/review_magnifying_glass.jpg') }}" alt="Academic Literature Review & Publication Mentorship" class="scholar-photo-img">
+                <div class="scholar-photo-frame" style="max-width: 300px; padding: 0.75rem; border-radius: 12px; margin: 0 auto; background: #ffffff; border: 1px solid var(--border); box-shadow: 0 8px 20px rgba(14, 38, 78, 0.06);">
+                    <img src="{{ asset('images/review_magnifying_glass.jpg') }}" alt="Academic Literature Review & Publication Mentorship" class="scholar-photo-img" style="height: 210px; width: 100%; object-fit: cover; border-radius: 8px;">
                 </div>
             </div>
 
             <div class="scroll-quote-text-right" id="quote-text-element">
-                <blockquote class="scholar-quote-text">
+                <blockquote class="scholar-quote-text" style="font-family: var(--font-body), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important; font-size: 1.25rem !important; font-weight: 500 !important; font-style: normal !important; color: #0f172a !important; line-height: 1.6 !important; margin-bottom: 1rem !important;">
                     “Enrolling in the Research & Mentorship program with Dr. Shakil has been a transformative decision that has sharpened academic acumen and publication success”
                 </blockquote>
 
-                <div class="scholar-author-name">— Dr. Ayesha Rehman</div>
-                <div class="scholar-author-tag">SCOPUS Q1 PUBLISHED SCHOLAR 2024</div>
+                <div class="scholar-author-name" style="font-size: 1.02rem !important; font-weight: 600 !important; color: #0f172a !important;">— Dr. Ayesha Rehman</div>
+                <div class="scholar-author-tag" style="font-size: 0.75rem !important; font-weight: 700 !important; color: #b91c1c !important; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 0.2rem;">SCOPUS Q1 PUBLISHED SCHOLAR 2024</div>
             </div>
         </div>
     </div>

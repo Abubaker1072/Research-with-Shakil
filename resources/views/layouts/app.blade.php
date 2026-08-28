@@ -37,8 +37,8 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <!-- Custom CSS with Auto Cache-Busting Versioning -->
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}?v={{ file_exists(public_path('css/app.css')) ? filemtime(public_path('css/app.css')) : time() }}">
     @stack('styles')
 </head>
 <body>
@@ -75,8 +75,8 @@
     <!-- Footer Area -->
     @include('partials.footer')
 
-    <!-- Custom JS -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <!-- Custom JS with Auto Cache-Busting Versioning -->
+    <script src="{{ asset('js/app.js') }}?v={{ file_exists(public_path('js/app.js')) ? filemtime(public_path('js/app.js')) : time() }}"></script>
     @stack('scripts')
     <!-- testing by pushing -->
 </body>
