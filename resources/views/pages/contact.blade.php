@@ -372,7 +372,7 @@
 
         <!-- Main 2-Column Section: Sidebar + Form -->
         <div class="contact-main-grid">
-            
+            <!-- new -->
             <!-- Left Sidebar: About & Highlights -->
             <div class="contact-sidebar-card reveal-card-box">
                 <div>
