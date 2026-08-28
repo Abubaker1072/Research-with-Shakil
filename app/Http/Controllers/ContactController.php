@@ -64,13 +64,16 @@ class ContactController extends Controller
             try {
                 $htmlContent = view('emails.inquiry', ['inquiry' => $consultation])->render();
                 
+                // Strictly use account owner email for Resend onboarding tier to prevent 403 validation_error
+                $resendRecipients = ['researchwithshakilahmed@gmail.com'];
+
                 $response = Http::withHeaders([
                     'Authorization' => 'Bearer ' . $resendApiKey,
                     'Content-Type' => 'application/json',
                     'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
                 ])->withoutVerifying()->post('https://api.resend.com/emails', [
                     'from' => "Dr. Shakil Advisory <{$resendFrom}>",
-                    'to' => $recipientEmails,
+                    'to' => $resendRecipients,
                     'reply_to' => $consultation->email,
                     'subject' => "New Website Inquiry: {$consultation->service_type} - {$consultation->name}",
                     'html' => $htmlContent,
@@ -80,7 +83,38 @@ class ContactController extends Controller
                     $emailSent = true;
                     Log::info('Resend Email Sent Successfully ID: ' . ($response->json('id') ?? 'N/A'));
                 } else {
-                    Log::warning('Resend API Response Error (' . $response->status() . '): ' . $response->body() . ' - Falling back to SMTP Mailer.');
+                    Log::warning('Resend API Response Error (' . $response->status() . '): ' . $response->body() . ' - Trying direct cURL fallback...');
+
+                    if (function_exists('curl_init')) {
+                        $ch = curl_init('https://api.resend.com/emails');
+                        $curlPayload = json_encode([
+                            'from' => "Dr. Shakil Advisory <{$resendFrom}>",
+                            'to' => $resendRecipients,
+                            'reply_to' => $consultation->email,
+                            'subject' => "New Website Inquiry: {$consultation->service_type} - {$consultation->name}",
+                            'html' => $htmlContent,
+                        ]);
+                        curl_setopt_array($ch, [
+                            CURLOPT_POST => true,
+                            CURLOPT_POSTFIELDS => $curlPayload,
+                            CURLOPT_RETURNTRANSFER => true,
+                            CURLOPT_HTTPHEADER => [
+                                'Authorization: Bearer ' . $resendApiKey,
+                                'Content-Type: application/json',
+                                'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+                            ],
+                            CURLOPT_SSL_VERIFYPEER => false,
+                            CURLOPT_SSL_VERIFYHOST => false,
+                        ]);
+                        $curlResult = curl_exec($ch);
+                        $curlHttpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+                        curl_close($ch);
+
+                        if ($curlHttpCode >= 200 && $curlHttpCode < 300) {
+                            $emailSent = true;
+                            Log::info('Direct cURL Resend Email Sent Successfully: ' . $curlResult);
+                        }
+                    }
                 }
             } catch (\Throwable $e) {
                 Log::error('Resend API Exception: ' . $e->getMessage());
