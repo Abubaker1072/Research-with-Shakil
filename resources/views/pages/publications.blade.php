@@ -282,32 +282,75 @@
         border-bottom: 2px solid #e2e8f0;
         display: flex;
         align-items: center;
-    /* Pagination Button Styles */
+        gap: 0.6rem;
+    }
+
+    /* Premium Pagination Control Styles */
+    #pubPaginationWrapper {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 18px;
+        padding: 1.25rem 2rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.85rem;
+        width: 100%;
+    }
     .pub-page-btn {
-        padding: 0.5rem 0.9rem;
-        border-radius: 8px;
-        font-size: 0.85rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+        padding: 0.55rem 1.15rem;
+        border-radius: 10px;
+        font-size: 0.88rem;
         font-weight: 700;
         cursor: pointer;
-        transition: all 0.2s ease;
+        transition: all 0.25s ease;
         border: 1px solid #cbd5e1;
         background: #ffffff;
-        color: #334155;
+        color: #1e293b;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+        outline: none;
+        -webkit-appearance: none;
+        appearance: none;
     }
     .pub-page-btn:hover:not(.disabled) {
-        background: #1e3a8a;
+        background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
         color: #ffffff;
         border-color: #1e3a8a;
+        box-shadow: 0 4px 12px rgba(30, 58, 138, 0.25);
+        transform: translateY(-1px);
     }
     .pub-page-btn.active {
-        background: #eab308;
+        background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
         color: #0f172a;
         border-color: #eab308;
-        box-shadow: 0 3px 10px rgba(234, 179, 8, 0.3);
+        box-shadow: 0 4px 12px rgba(234, 179, 8, 0.35);
+        font-weight: 800;
     }
     .pub-page-btn.disabled {
-        opacity: 0.4;
+        background: #f8fafc;
+        color: #94a3b8;
+        border-color: #e2e8f0;
+        box-shadow: none;
         cursor: not-allowed;
+        opacity: 0.6;
+    }
+    .pub-page-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.35rem 1rem;
+        border-radius: 30px;
+        background: #e0f2fe;
+        color: #0369a1;
+        border: 1px solid #bae6fd;
+        font-size: 0.85rem;
+        font-weight: 700;
     }
 </style>
 @endpush
@@ -464,9 +507,9 @@
         </div>
 
         <!-- Responsive Pagination Controls Bar (10 Boxes Per Page) -->
-        <div id="pubPaginationWrapper" style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem; margin-top: 2.5rem; width: 100%;">
+        <div id="pubPaginationWrapper">
             <div id="pubPaginationNav" style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; flex-wrap: wrap;"></div>
-            <span style="font-size: 0.88rem; color: #64748b; font-weight: 600;" id="pubPageInfoText">Page 1</span>
+            <div class="pub-page-badge" id="pubPageInfoText"><i class="fas fa-layer-group"></i> Page 1 of 14</div>
         </div>
 
     </div>
@@ -560,7 +603,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         paginationWrapper.style.display = "flex";
-        pageInfoText.innerText = `Page ${currentPage} of ${totalPages}`;
+        pageInfoText.innerHTML = `<i class="fas fa-layer-group"></i> Page ${currentPage} of ${totalPages}`;
 
         let navHtml = '';
 
