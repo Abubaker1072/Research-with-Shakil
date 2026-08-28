@@ -86,7 +86,7 @@ class ContactController extends Controller
             }
         }
 
-        // Fallback to standard Laravel SMTP mailer if Resend is missing or failed
+        // Fallback Tier 2: Standard Laravel Mailer (SMTP / Configured Driver)
         if (!$emailSent) {
             try {
                 $fromAddress = config('mail.from.address') ?: 'researchwithshakilahmed@gmail.com';
@@ -101,7 +101,33 @@ class ContactController extends Controller
                 $emailSent = true;
                 Log::info('Standard SMTP Mailer dispatched inquiry notification to: ' . implode(', ', $recipientEmails));
             } catch (\Throwable $e) {
-                Log::error('Standard Mailer Error: ' . $e->getMessage() . '. Please verify MAIL_PASSWORD (Gmail App Password) in .env');
+                Log::error('Standard Mailer Error: ' . $e->getMessage() . '. Trying native PHP mail transport fallback...');
+            }
+        }
+
+        // Fallback Tier 3: Native PHP mail() function (Guarantees delivery on cPanel/VPS hosts)
+        if (!$emailSent && function_exists('mail')) {
+            try {
+                $toStr = implode(', ', $recipientEmails);
+                $subjectStr = "New Website Inquiry: {$consultation->service_type} - {$consultation->name}";
+                $htmlBody = view('emails.inquiry', ['inquiry' => $consultation])->render();
+                
+                $headers = [
+                    'MIME-Version: 1.0',
+                    'Content-type: text/html; charset=utf-8',
+                    'From: Dr. Shakil Advisory <researchwithshakilahmed@gmail.com>',
+                    "Reply-To: {$consultation->name} <{$consultation->email}>",
+                    'X-Mailer: PHP/' . phpversion()
+                ];
+
+                if (@mail($toStr, $subjectStr, $htmlBody, implode("\r\n", $headers))) {
+                    $emailSent = true;
+                    Log::info('Native PHP mail() function dispatched notification to: ' . $toStr);
+                } else {
+                    Log::warning('Native PHP mail() attempt returned false.');
+                }
+            } catch (\Throwable $e) {
+                Log::error('Native PHP mail() Exception: ' . $e->getMessage());
             }
         }
 
